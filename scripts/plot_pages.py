@@ -3,16 +3,16 @@ import sys
 
 spd = float(60*60*24)
 
-start = "2014-11-18-00h00m00s"
+start = "2015-01-05-01h13m57s"
 start = datetime.datetime.strptime(start, "%Y-%m-%d-%Hh%Mm%Ss")
 last = ""
 
 dayssince = []
 pages = []
 
-# the template already has 8 pages. thx reecer.
+# the template starts with 0 pages.
 dayssince.append(0)
-pages.append(8)
+pages.append(0)
 
 with open("scripts/pages.md") as file:
     for line in file.readlines():
@@ -50,7 +50,7 @@ ax = plt.gca()
 ax.xaxis.set_label_coords(0.74, -0.07)
 ax.yaxis.set_label_coords(-0.07, 0.9)
 
-plt.xlabel("Days since start (Nov. 18)")
+plt.xlabel("Days since start (5 Jan)")
 plt.ylabel("Pages")
 plt.title("")
 plt.text(1, 0.90*max(pages), r"Latest compile: %s pages" % (lastpages))
