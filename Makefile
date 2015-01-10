@@ -11,6 +11,6 @@ all:
 	clear
 	du -hs
 	ls -ltrh
-	acroread ${THESIS}.pdf
+	acroread ${THESIS}.pdf &
 	sh scripts/pages.sh
 	git status
