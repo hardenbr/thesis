@@ -10,7 +10,7 @@
 %\newcommand{\printmode}{}
 
 %%% For the electronic copy, use doublespacing, define "\proquestmode" to use outlined links, instead of colored links. 
-\documentclass[12pt,lot, lof]{puthesis}
+\documentclass[12pt,lot, lof]{style/puthesis}
 \newcommand{\proquestmode}{}
 % I prefer proquestmode to be off for electronic copies for normal use, since the colored links are less distracting. However when printed in black and white, the colored links are difficult to read. 
 
@@ -186,12 +186,12 @@
 
 \abstract{
 % Abstract can be any length, but should be max 350 words for a Dissertation for ProQuest's print indicies (150 words for a Master's Thesis) or it will be truncated for those uses.
-\input{abstract}
+\input{tex/abstract}
 }
 
 \acknowledgements{
 %I would like to thank...
-\input{acknowledgements}
+\input{tex/acknowledgements}
 }
 
 \dedication{To my parents.}
@@ -228,13 +228,11 @@
 %\tableofcontents\clearpage
 
 % \include lets us split up the document (and each include starts a new page):
-\include{tex/abstract}
-\include{tex/acknowledgements}
 \include{tex/chapter-intro}
 \include{tex/chapter-pastwork}
 \include{tex/chapter-conclusion}
 \appendix % all chapters following will be labeled as appendices
-\include{ch-appendicies/appendix-sample}
+\include{tex/appendix-sample}
 
 
 % Make the bibliography single spaced
