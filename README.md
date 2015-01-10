@@ -1,3 +1,3 @@
-make should create a thesis.
+'make' will create a thesis and a doctor.
 
-![progress](pages.png)
+![progress](plots/pages.png)
