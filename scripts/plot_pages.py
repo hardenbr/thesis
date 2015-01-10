@@ -37,10 +37,13 @@ import numpy as np
 dayssince = np.array(dayssince)
 pages = np.array(pages)
 
-from matplotlib import rcParams
+#having trouble with Helvetica font
+from matplotlib import rcParams,rc
 rcParams["font.family"] = "sans-serif"
 rcParams["font.sans-serif"] = ["Helvetica"]
 rcParams["font.size"] = "20"
+rc('text.latex', preamble=r'\usepackage{cmbright}')
+
 import matplotlib.pyplot as plt
 
 now = datetime.datetime.now()
