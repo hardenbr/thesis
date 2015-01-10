@@ -14,7 +14,7 @@ pages = []
 dayssince.append(0)
 pages.append(8)
 
-with open("pages.md") as file:
+with open("scripts/pages.md") as file:
     for line in file.readlines():
         
         line = line.strip()
@@ -60,5 +60,5 @@ plt.grid(False)
 plt.plot(dayssince, pages, "-")
 plt.plot(dayssince, pages, "rd")
 plt.fill_between(dayssince, 0, pages, facecolor='blue', interpolate=True)
-plt.savefig("pages.png")
-#plt.savefig("pages.pdf")
+plt.savefig("scripts/pages.png")
+#plt.savefig("scripts/pages.pdf")
