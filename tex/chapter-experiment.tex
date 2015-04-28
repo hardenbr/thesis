@@ -8,12 +8,13 @@ covers the Compact Muon Solenoid (CMS), the detector which this analysis uses to
 
 \section{CERN\label{sec:CERN}}
 overview of facilities, experiments, history
+reference from ch:experiment
 
 \section{LHC\label{sec:LHC}}
 \subsection{Overview}
 The LHC is a $pp$ accelerator that straddles the border between France and Switzerland~\cite{cern-jinst-lhc}. It was installed in a 27 km tunnel with diameter 3.7 m at an average depth of 100 m underground.
 The position of this tunnel with respect to nearby political and geographical points of interest is 
-shown in Figures~\ref{fig:lhc_mapwithcities,fig:lhc_map_tuna}.
+shown in Figures~\ref{fig:lhc_mapwithcities} and \ref{fig:lhc_map_tuna}.
 The tunnel was previously
 used by the Large Electron-Positron Collider (LEP) from 1989 to 2000 for electron-positron collisions~\cite{LEP_DR1979}.
 
@@ -134,7 +135,7 @@ The evolution of the integrated luminosity delivered to and recorded by CMS is s
 Figrure~\ref{fig:integratedlumi2012}. The delivered integrated luminosity is the amount of
 collisions delivered by the LHC to CMS, and ideally CMS would be able to same all of these collisions.
 Due to limitations of the data acquisition chain or availability of each subsystem, discussed in
-Sections~\ref{sec:trigger,sec:CMS}, respectively, the amount recorded
+Sections~\ref{sec:trigger} and \ref{sec:CMS}, respectively, the amount recorded
 is slightly less than the delivered. In 2012, the total recorded luminosity was $21.8$~fb~$^{-1}$.
 
 \begin{figure}[ht]
@@ -153,12 +154,11 @@ other SM processes, this analysis of diHiggs production pertains principally to 
 
 \begin{figure}[ht]
  \begin{center}
-    \includegraphics[width=0.90\textwidth]{figures/experiment/int_lumi_cumulative_pp_1.png}
+    \includegraphics[width=0.90\textwidth]{figures/experiment/int_lumi_cumulative_pp_1.pdf}
       \end{center}
 \caption{The integrated luminosity of $pp$ collisions in CMS from 2010 to 2012~\cite{CMS:lumi}.}
 \label{fig:intlumi101112}
 \end{figure}
-
 
 %Design lumi $\mathcal{L} = \pow{10,34}$~cm$-2$s$-1$. 
 
@@ -194,23 +194,70 @@ of the cylinder. The field strength in this region is a uniform 2 T.
 CMS is described in detail in \cite{Chatrchyan:2008zzk} and \cite{Bayatian:922757}.
 Here an overview of each of the subsystems
 is provided, starting from the closest to the main interation point (IP) and proceeding
-radially outward.
+radially outward. Figure~\ref{fig:CMS_side} gives relative position and sizes of each of the
+subsystems.
 Subsection~\ref{subsec:tracker} covers the silicon tracker. Subsection~\ref{subsec:ecal} covers the
 electromagnetic calorimeter (ECAL). Subsection~\ref{subsec:hcal} covers the hadronic calorimeter
 (HCAL). After the HCAL is the solenoidal magnet, which, although not directly contributing to the
 description of an event, is necessary for measuring the energy of charged particles through
 the reconstruction of their tracks. Subsection~\ref{subsec:muonsystem} covers the muon system.
 
+\begin{figure}[ht]
+ \begin{center}
+   \includegraphics[width=0.90\textwidth]{figures/experiment/cms_complete_labelled.pdf}
+      \end{center}
+\caption{The CMS detector, with two people to give a sense of scale~\cite{Collaboration:1433717}.}
+\label{fig:CMS_side}
+\end{figure}
+
 \subsection{Silicon Tracker\label{subsec:tracker}}
-Within the field volume are a silicon pixel and strip tracker,
+
+The silicon tracker is responsible for measuring the positions of charged particles as they propogate
+from the IP. The goal is reconstruct the paths of these charged particles by recording their position
+in successive layers of silicon. When coupled with the strong magnetic field provided by the solenoid
+magnet, the charged particles have a curled trajectory, the radius of which is related directly
+to the particles transverse momentum $p_{\rm T}$. A stronger field means better momentum resolution.
+
+The choice of silicon technology is imperative to achieve this goal.When a charged particle passes throught the material, electrons are liberated from the atoms of the semiconductor, and a bias voltage
+allows for the collection of this free electron and electon hole. If the charged collected during
+a time window exceeds a certain value, a hit is registered, and the hits from successive layers
+are reconstructed offline for particle identification and momentum measurements.
+Section~\ref{ch:objects} discusses the Particle Flow algorithm used for performing this identification.
+
+The tracker itself occupies a volume
+of length 5.4~m and radius 1.1~m and can cover detection up to $|\eta| < 2.5$. It is divided into
+the pixel detector and strip detector, both of which are divided into barrel regions, or those
+where the layers are parallel to the $z$-axis, and endcap regions, or those where the layers
+are parallel to the transverse plane.
+
+The pixel detector has three layers in the barrel region
+and two layers on either end in the endcap region, in total making up 66 million channels of size
+$100 \mu m \times 150 \mu m$. The strip detector surrounds the pixel detector and adds an additional
+10 layers in the barrel and 12 layers in each endcap. The silicon strips vary in size from
+$10 cm \times 80 \mu m$ to $25 cm \times 180 \mu m$ and in orientation, either parallel or perpendicular
+to the $z$-axis.
 
 \subsection{Electromagnetic Calorimeter\label{subsec:ecal}}
-a crystal electromagnetic calorimeter (ECAL), 
-The ECAL is made up of lead tungstate crystals
-These calorimeters provide coverage in pseudo-rapidity up to $|\eta| < 3.0$.
 
+The ECAL is a calorimeter that focuses on measuring the energy of electromatic showers.
+It, like the tracker, is divided into barrel and endcap regions, and provides coverage up to
+$|\eta| < 3.0$.
+It accomplishes this by employing 75 thousand lead tungstate crystals of size
+$25 mm \times 25 mm \times 230 mm$ in the barrel or $30 mm \times 30 mm \times 220 mm$ in the endcap.
+The ECAL is 25 radiation lengths long, a relatively large number that is exploited in
+particle identification. Electrons and photons are stopped by having their energy dissipated
+through many cascades, electrons through bremsstrahlung and photons through pair production.
+Hadrons and muons, also interacting electromagnetically, deposit some energy
+but are able to pass through to the HCAL due to, in part, their larger masses. The energy resolution
+provided by the ECAL is
+
+\begin{equation}
+\frac{\sigma(E)}{E} = \frac{0.028}{\sqrt{E/\textrm{GeV}}} \oplus \frac{0.12}{E/\textrm{GeV}} \oplus 0.3\% .
+\end{equation}
 
 \subsection{Hadronic Calorimeter\label{subsec:hcal}}
+
+
 and a brass-scintillator hadron calorimeter (HCAL).
 , while the HCAL is made up of layers of
 plates of brass and plastic scintillator.
