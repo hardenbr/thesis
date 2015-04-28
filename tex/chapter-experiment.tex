@@ -7,8 +7,34 @@ covers the Compact Muon Solenoid (CMS), the detector which this analysis uses to
 
 
 \section{CERN\label{sec:CERN}}
-overview of facilities, experiments, history
-reference from ch:experiment
+
+CERN was established in 1954 by 12 countries in Western Europe~\cite{cern:public}. Notable
+achievements in particle physics and computer science made through experiments at CERN include
+
+\begin{itemize}
+\item the discovery of neutral currents in 1973,
+\item the discovery of the W/Z bosons in 1984,
+\item the creation of the first website in 1991,
+\item the first creation of antihydrogen in 1995,
+\item and the discovery of the Higgs boson in 2012, as discussed in Section~\ref{sec:discovery}.
+\end{itemize}
+
+Today, CERN has grown to include 21 member states with plans to expand further. Many other states
+over the world participate in the experiments to varying degrees. Figure~\ref{fig:cernmembers}
+shows a world map detailing each country's level of participation. 
+
+\begin{figure}[ht]
+ \begin{center}
+    \includegraphics[width=0.70\textwidth]{figures/experiment/CERN_international_relations_map.pdf}
+      \end{center}
+\caption{Map of the international relations each country has with CERN~\cite{cern:map}.
+Member states are in blue. States for who accession is in progress are in green.
+States who have declared intent to join are in yellow. Observers are in red. States with
+cooperation agreements are in orange. States with scientific contacts are in pink.
+}
+\label{fig:cernmembers}
+\end{figure}
+
 
 \section{LHC\label{sec:LHC}}
 \subsection{Overview}
@@ -215,7 +241,7 @@ the reconstruction of their tracks. Subsection~\ref{subsec:muonsystem} covers th
 
 \subsection{Silicon Tracker\label{subsec:tracker}}
 
-The silicon tracker~\cite{Karimäki:368412} is responsible for measuring the positions of charged particles as they propogate from the IP.
+The silicon tracker~\cite{Karimaki:368412} is responsible for measuring the positions of charged particles as they propogate from the IP.
 The goal is reconstruct the paths of these charged particles by recording their position
 in successive layers of silicon. When coupled with the strong magnetic field provided by the solenoid
 magnet, the charged particles have a curled trajectory, the radius of which is related directly
@@ -293,7 +319,7 @@ the magnet.
 \caption{A schematic of one quarter of the inner CMS subsystems~\cite{ecaltdr}.
 All components of the tracker are in red. The ECAL barrel (EB) and ECAL endcap (EE) are in blue.
 The HCAL barrel (HB) and HCAL endcap (HE) are in green. Coil refers to the superconducting solenoid.
-Dimensions and line of constant $\eta$ from the IP are superimposed.}
+Dimensions and lines of constant $\eta$ from the IP are superimposed.}
 \label{fig:subsystems_inner}
 \end{figure}
 
@@ -302,12 +328,28 @@ Dimensions and line of constant $\eta$ from the IP are superimposed.}
 
 The muon system~\cite{muontdr} is the subsystem furthest from the IP and measures the positions
 of muons through detection planes exploiting three different technologies:
-drift tubes, cathode strip chambers, and resistive plate chambers.
+drift tubes (DT), resistive plate chambers (RPC), and cathode strip chambers (CSC).
+Together these components provide muon coverage up to $|\eta|< 2.4$.
+The DTs, located in the barrel, are gas tubes with a wires for collecting electrons liberated
+by a transvering muon. The RPCs, partially coveraging both barrel and endcap regions, consist
+of two parallel plates of opposite bias separated by a gas medium. The CSCs, covering the endcap region,
+consist of layers of anode, separated by layers of cathode wires oriented perpendicularly, all
+within a gas volume. Figure~\ref{fig:muonsystem} shows the relative position of these three components with respect to eachother and the subsystems inside the solenoid.
+
+The hits of the muon system are matched with hits from the tracker to form a single track and
+improve momentum resolution. Unlike other charged particles, which register significant activity in
+one or both calorimeters, the energy measurement of muons is based purely on their tracks. This means
+that the resolution worsens for higher energy muons as their tracks are less and less curled by
+the magnetic field.
 
 
-
-
-The muons are measured in the pseudo-rapidity range $|\eta|< 2.4$,
-
+\begin{figure}[ht]
+ \begin{center}
+   \includegraphics[width=0.90\textwidth]{figures/experiment/muons.pdf}
+      \end{center}
+\caption{A schematic of one quarter of the muon systems~\cite{Chatrchyan:2008zzk}.
+Lines of constant $\eta$ from the IP are superimposed.}
+\label{fig:muonsystem}
+\end{figure}
 
 
