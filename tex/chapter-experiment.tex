@@ -12,11 +12,11 @@ reference from ch:experiment
 
 \section{LHC\label{sec:LHC}}
 \subsection{Overview}
-The LHC is a $pp$ accelerator that straddles the border between France and Switzerland~\cite{cern-jinst-lhc}. It was installed in a 27 km tunnel with diameter 3.7 m at an average depth of 100 m underground.
+The LHC~\cite{cern-jinst-lhc} is a $pp$ accelerator that straddles the border between France and Switzerland. It was installed in a 27 km tunnel with diameter 3.7 m at an average depth of 100 m underground.
 The position of this tunnel with respect to nearby political and geographical points of interest is 
 shown in Figures~\ref{fig:lhc_mapwithcities} and \ref{fig:lhc_map_tuna}.
 The tunnel was previously
-used by the Large Electron-Positron Collider (LEP) from 1989 to 2000 for electron-positron collisions~\cite{LEP_DR1979}.
+used by the Large Electron-Positron Collider (LEP)~\cite{LEP_DR1979} from 1989 to 2000 for electron-positron collisions.
 
 \begin{figure}[ht]
  \begin{center}
@@ -34,7 +34,7 @@ used by the Large Electron-Positron Collider (LEP) from 1989 to 2000 for electro
 \label{fig:lhc_map_tuna}
 \end{figure}
 
-The LHC is designed to accelerate protons or ions in two circular beam pipes, orbiting in opposite directions. The pre-accelerators are described in Subsection~\ref{subsec:accelerators}, while the LHC
+The LHC is designed to accelerate protons or ions in two circular beam pipes, orbiting in opposite directions~\cite{cern-accelerators}. The pre-accelerators are described in Subsection~\ref{subsec:accelerators}, while the LHC
 itself is described in Subsection~\ref{subsec:machine}
 These beams are made to cross in four designated points of the accelerator and create collisions between
 pairs of particles in opposite beams.
@@ -87,13 +87,16 @@ collimation systems. Point 6 contains beam dump systems for removing the beams f
 
 \subsection{Detectors on the LHC\label{subsec:detectors}}
 
-The general purpose detectors on the LHC are A Toroidal LHC Apparatus (ATLAS) and CMS, located at opposite sides of the ring at points 1 and 5, respectively. The physics
+The general purpose detectors on the LHC are A Toroidal LHC Apparatus (ATLAS)~\cite{cern-jinst-atlas}
+and CMS, located at opposite sides of the ring at points 1 and 5, respectively. The physics
 goals of these two experiements are generally the same: to search for and study the Higgs boson,
 to study and improve our understanding of SM processes, and to search for BSM physics such as
 SUSY or WED.
 
-The Large Hadron Collider beauty detector (LHCb) is located at point 8 and is used
-to study processes related to the bottom quark. A Large Ion Collider Experiment (ALICE) is located
+The Large Hadron Collider beauty detector (LHCb)~\cite{cern-jinst-lhcb}
+is located at point 8 and is used
+to study processes related to the bottom quark. A Large Ion Collider Experiment
+(ALICE)~\cite{cern-jinst-alice} is located
 at point 2 and is used to solely to study collisions when one or both beams contain lead ions. This
 mode of operation of the LHC lasts about one to two months per year.
 
@@ -212,8 +215,8 @@ the reconstruction of their tracks. Subsection~\ref{subsec:muonsystem} covers th
 
 \subsection{Silicon Tracker\label{subsec:tracker}}
 
-The silicon tracker is responsible for measuring the positions of charged particles as they propogate
-from the IP. The goal is reconstruct the paths of these charged particles by recording their position
+The silicon tracker~\cite{Karimäki:368412} is responsible for measuring the positions of charged particles as they propogate from the IP.
+The goal is reconstruct the paths of these charged particles by recording their position
 in successive layers of silicon. When coupled with the strong magnetic field provided by the solenoid
 magnet, the charged particles have a curled trajectory, the radius of which is related directly
 to the particles transverse momentum $p_{\rm T}$. A stronger field means better momentum resolution.
@@ -222,7 +225,7 @@ The choice of silicon technology is imperative to achieve this goal.When a charg
 allows for the collection of this free electron and electon hole. If the charged collected during
 a time window exceeds a certain value, a hit is registered, and the hits from successive layers
 are reconstructed offline for particle identification and momentum measurements.
-Section~\ref{ch:objects} discusses the Particle Flow algorithm used for performing this identification.
+Section~\ref{sec:PF} discusses the Particle Flow algorithm used for performing this identification.
 
 The tracker itself occupies a volume
 of length 5.4~m and radius 1.1~m and can cover detection up to $|\eta| < 2.5$. It is divided into
@@ -239,7 +242,7 @@ to the $z$-axis.
 
 \subsection{Electromagnetic Calorimeter\label{subsec:ecal}}
 
-The ECAL is a calorimeter that focuses on measuring the energy of electromatic showers.
+The ECAL~\cite{ecaltdr} is a calorimeter that focuses on measuring the energy of electromatic showers.
 It, like the tracker, is divided into barrel and endcap regions, and provides coverage up to
 $|\eta| < 3.0$.
 It accomplishes this by employing 75 thousand lead tungstate crystals of size
@@ -257,17 +260,54 @@ provided by the ECAL is
 
 \subsection{Hadronic Calorimeter\label{subsec:hcal}}
 
+The last subsystem within the volume of the solenoid magnet is HCAL~\cite{hcaltdr}.
+The subsystem has barrel and endcap divisions similar to ECAL which covers up to $|\eta| < 3.0$.
+These components are made of plastic scintillator and brass absorber which form 3700 towers. The
+towers vary in coverage based on their placement, where the most central towers span
+$\Delta\eta \times \Delta\phi = 0.087 \times 0.087$. The purpose of this subsystem is to
+measure the energy of hadrons, which usually appear in columnated sprays called jets. In addition
+to energy and position measurement, nearly all hadrons are stopped and absorbed due to the
+high density of large material budget of brass. There is an additional component of the HCAL
+in the barrel region immediately outside of the magnet whose purpose is to serve as another
+layer of absorbtion for any hadrons that make it through preceeding layers.
 
-and a brass-scintillator hadron calorimeter (HCAL).
-, while the HCAL is made up of layers of
-plates of brass and plastic scintillator.
-An iron and quartz-fibre \v{C}erenkov hadron calorimeter (HF) covers pseudo-rapidities
-$3.0 < |\eta|< 5.0$.
+A final component covers pseudorapidities $3.0 < |\eta|< 5.0$. In this region, the damage from
+radiation is especially high, so here a stell and quartz-fibre \v{C}erenkov calorimeter is used.
+This region provides 860 such towers.
+
+The energy resolution is improved from the incorporation of information from other subsystems via
+the Particle Flow algorithm, discussed in Section~\ref{sec:PF}.
+The resolution is about 15\% for jets of interest to this analysis, those which are central and
+have sufficient high $p_{\rm T}$. Section~\ref{sec:jets} discusses these requirements.
+
+Figure~\ref{fig:subsystems_inner} shows a quadrant of the inner subsystems of CMS. This gives
+a scale of the relative positions and sizes of the tracker, ECAL,
+and most of HCAL with respect to eachother and the IP. Missing from the HCAL are the 
+HCAL Forward (HF) in the very forward region and the HCAL outer barrel (HO) just to the outside of
+the magnet.
+
+\begin{figure}[ht]
+ \begin{center}
+   \includegraphics[width=0.90\textwidth]{figures/experiment/subsystems_inner.pdf}
+      \end{center}
+\caption{A schematic of one quarter of the inner CMS subsystems~\cite{ecaltdr}.
+All components of the tracker are in red. The ECAL barrel (EB) and ECAL endcap (EE) are in blue.
+The HCAL barrel (HB) and HCAL endcap (HE) are in green. Coil refers to the superconducting solenoid.
+Dimensions and line of constant $\eta$ from the IP are superimposed.}
+\label{fig:subsystems_inner}
+\end{figure}
+
 
 \subsection{Muon System\label{subsec:muonsystem}}
+
+The muon system~\cite{muontdr} is the subsystem furthest from the IP and measures the positions
+of muons through detection planes exploiting three different technologies:
+drift tubes, cathode strip chambers, and resistive plate chambers.
+
+
+
+
 The muons are measured in the pseudo-rapidity range $|\eta|< 2.4$,
-with detection planes made using three technologies: drift tubes, cathode strip chambers, and
-resistive plate chambers.
 
 
 
