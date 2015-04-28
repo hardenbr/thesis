@@ -26,7 +26,7 @@ page = 293
 }
 
 @ARTICLE{1988PhST...22..102D,
-   author = {H. {Dehmelt}},
+   author = {H. Dehmelt},
     title = "{A Single Atomic Particle Forever Floating at Rest in Free Space: New Value for Electron Radius}",
   journal = {Physica Scripta Volume T},
      year = 1988,
@@ -51,7 +51,21 @@ page = 293
   adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
 
+@misc{cern:public,
+ author  = "CERN",
+ title   = "{About CERN}",
+ year    = "2015",
+ urlseen = "28-04-2015",
+ howpublished = {\url{http://home.web.cern.ch/about}}
+}
 
+@misc{cern:map,
+ author  = "Wikimedia Commons",
+ title   = "CERN International Relations Map",
+ year    = "2012",
+ urlseen = "28-04-2015",
+ howpublished = {\url{http://en.wikipedia.org/wiki/File:CERN_international_relations_map.svg}}
+}
 
 @article{cern-jinst-lhc,
          author         = "L. Evans and P. Bryant",
@@ -78,7 +92,7 @@ page = 293
       month         = "Jul",
       year          = "1997",
       reportNumber  = "LHC-PHO-1997-169",
-      url           = "http://cds.cern.ch/record/842399",
+      howpublished   = {\url{http://cds.cern.ch/record/842399}},
       note          = "AC Collection. Legacy of AC. Pictures from 1992 to 2002.",
 }
 
@@ -94,7 +108,7 @@ page = 293
       title         = "The Accelerator Complex",
       institution   = "CERN",
       address       = "Geneva",
-      howpublished  = "\href{http://home.web.cern.ch/about/accelerators}{home.web.cern.ch/about/accelerators}",
+      howpublished  = {\url{http://home.web.cern.ch/about/accelerators}},
       year          = "2015",
 }
 
@@ -106,7 +120,7 @@ page = 293
       month         = "Jun",
       year          = "1991",
       reportNumber  = "LHC-PHO-1991-001",
-      url           = "http://cds.cern.ch/record/841493",
+     howpublished    = {\url{http://cds.cern.ch/record/841493}},
       note          = "AC Collection. Legacy of AC. Pictures from 1992 to 2002.",
 }
 
@@ -117,12 +131,13 @@ page = 293
       month         = "Jun",
       year          = "1999",
       reportNumber  = "CERN-DI-9906025",
-      url           = "http://cds.cern.ch/record/40524",
+      howpublished  = {\url{http://cds.cern.ch/record/40524}},
+      note = "nothing"
 }
 
 @article{cern-jinst-atlas,
-         collaboration  = "ATLAS",
-         title          = "The ATLAS Experiment at the CERN Large Hadron Collider",
+         author  = {ATLAS},
+         title          = "{The ATLAS Experiment at the CERN Large Hadron Collider}",
          journal        = "Journal of Instrumentation",
          volume         = "3",
          pages          = "S08003",
@@ -131,8 +146,8 @@ page = 293
 }
 
 @article{cern-jinst-lhcb,
-         collaboration  = "LHCb",
-         title          = "The LHCb Detector at the LHC",
+         author  = {LHCb},
+         title          = "{The LHCb Detector at the LHC}",
          journal        = "Journal of Instrumentation",
          volume         = "3",
          pages          = "S08005",
@@ -141,8 +156,8 @@ page = 293
 }
 
 @article{cern-jinst-alice,
-         collaboration  = "ALICE",
-         title          = "The ALICE experiment at the CERN LHC",
+         author  = {ALICE},
+         title          = "{The ALICE experiment at the CERN LHC}",
          journal        = "Journal of Instrumentation",
          volume         = "3",
          pages          = "S08002",
@@ -150,7 +165,7 @@ page = 293
          note           = "\href{http://jinst.sissa.it/LHC/}{jinst.sissa.it/LHC/}",
 }
 
-@electronic{CMS:lumi,
+@misc{CMS:lumi,
   title={{CMS Luminosity Public Results}},
   author={{CMS}},
   year={2014},
@@ -160,15 +175,15 @@ page = 293
 @book{cms:solenoid,
       title         = "{The CMS magnet project: Technical Design Report}",
       publisher     = "CERN",
-      collaboration = "CMS Collaboration",
+      author = {CMS Collaboration},
       address       = "Geneva",
       series        = "Technical Design Report CMS",
       year          = "1997",
-      url           = "https://cds.cern.ch/record/331056",
+      howpublished   = {\url{https://cds.cern.ch/record/331056}},
 }
 
 @Article{Chatrchyan:2008zzk,
-     author    = "S. Chatrchyan, \textit{et al.}",
+     author    = "S. Chatrchyan \textit{et al.}",
      collaboration = "CMS",
      title     = "The {CMS} experiment at the {CERN} {LHC}",
      journal   = "JINST",
@@ -188,7 +203,7 @@ page = 293
       address       = "Geneva",
       series        = "Technical Design Report CMS",
       year          = "2006",
-      url           = "http://cds.cern.ch/record/922757",
+      howpublished           = {\url{http://cds.cern.ch/record/922757}},
       note          = "There is an error on cover due to a technical problem for
                        some items",
 }
@@ -199,71 +214,51 @@ page = 293
       month         = "Mar",
       year          = "2012",
       reportNumber  = "CMS-PHO-GEN-2012-002",
-      url           = "http://cds.cern.ch/record/1433717",
+      howpublished  = {\url{http://cds.cern.ch/record/1433717}},
       note          = "CMS Collection.",
 }
 
-@book{Karimäki:368412,
-      author        = "V. Karimäki, M. Mannelli, P. Siegrist, H. Breuker,
-                       A. Caner, R. Castaldi, K. Freudenreich,
-                       G. Hall, R. Horisberger, M. Huhtinen, and A. Cattai",
+@book{Karimaki:368412,
+      author        = "V. Karim{\"a}ki and M. Mannelli and P. Siegrist and H. Breuker and
+                       A. Caner and R. Castaldi and K. Freudenreich and G. Hall and
+                       R. Horisberger and M. Huhtinen and A. Cattai",
       title         = "{The CMS tracker system project: Technical Design Report}",
       publisher     = "CERN",
       collaboration = "CMS Collaboration",
       address       = "Geneva",
       series        = "Technical Design Report CMS",
       year          = "1997",
-      url           = "https://cds.cern.ch/record/368412",
+      howpublished           = {\url{https://cds.cern.ch/record/368412}},
 }
 
 @book{ecaltdr,
       title         = "{The CMS electromagnetic calorimeter project: Technical
                        Design Report}",
       publisher     = "CERN",
-      collaboration = "CMS Collaboration",
+      author = {CMS Collaboration},
       address       = "Geneva",
       series        = "Technical Design Report CMS",
       year          = "1997",
-      url           = "https://cds.cern.ch/record/349375",
+      howpublished   = {\url{https://cds.cern.ch/record/349375}},
 }
 
 @book{hcaltdr,
       title         = "{The CMS hadron calorimeter project: Technical Design
                        Report}",
       publisher     = "CERN",
-      collaboration = "CMS Collaboration",
+      author = {CMS Collaboration},
       address       = "Geneva",
       series        = "Technical Design Report CMS",
       year          = "1997",
-      url           = "https://cds.cern.ch/record/357153",
-      note          = "The following files are from
-<a href="http://uscms.fnal.gov/pub/hcal_tdr/">http://uscms.fnal.gov/pub/hcal_tdr/</a>
-                       and may not be the version as printed, please check the
-                       printed version to be sure",
+      howpublished  = {\url{https://cds.cern.ch/record/357153}},
 }
 
 @book{muontdr,
       title         = "{The CMS muon project: Technical Design Report}",
       publisher     = "CERN",
-      collaboration = "CMS Collaboration",
+      author = {CMS Collaboration},
       address       = "Geneva",
       series        = "Technical Design Report CMS",
       year          = "1997",
-      url           = "https://cds.cern.ch/record/343814",
+      howpublished     = {\url{https://cds.cern.ch/record/343814}},
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
