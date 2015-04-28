@@ -2,6 +2,8 @@
 \ProvidesClass{puthesis}
          [2008/05/02 v1.4 Princeton University Thesis class]
 \RequirePackage{setspace}
+% Prevent citations in list of figures from messing up order in bibliography
+\RequirePackage{notoccite}
 \newcounter{subyear}
 \setcounter{subyear}{\number\year}
 \def\submitted#1{\gdef\@submitted{#1}}
