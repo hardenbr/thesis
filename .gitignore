@@ -17,3 +17,6 @@
 
 ## from emacs (doesn't work though)
 tex/*.tex~ 
+
+## other
+*.run.xml
