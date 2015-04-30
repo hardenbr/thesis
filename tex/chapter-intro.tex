@@ -24,8 +24,8 @@ Today we have the Standard Model, the theoretical framework that best describes 
 experimentally oberserved phenomena of the fundamental particles and their interactions. The theory
 is not perfect, and it remains an overarching theme of particle physics to unify physical processes
 at all energy scales under one single framework, if such a thing can be done at all.
-The SM, its successes, and its shortcomings are described in
-Sections~\ref{sec:SM}, \ref{sec:SMsuccess}, and \ref{sec:SMshortcomings}.
+The SM and its shortcomings are described in
+Sections~\ref{sec:SM} and \ref{sec:SMshortcomings}.
 
 Recently in 2012, the last piece to the SM was put into place with the discovery of the Higgs boson.
 This discovery, described in Section~\ref{sec:discovery}, is the foundation for the work based on
@@ -100,12 +100,57 @@ The Higgs field $\phi$ is a doublet of ${\rm SU(2)}_L$, and its potential takes 
 V(\phi^\dagger\phi) = -\mu\phi^\dagger\phi + \lambda(\phi^\dagger\phi)^2 ,
 \end{equation}
 
-where $\mu,\lambda > 0$.
+where $\mu,\lambda > 0$. The ground state of this potential is nonzero and degenerate. With the
+choose of a convient gauge, the ground state can be expressed as
+
+\begin{equation}
+\left\langle \phi \right\rangle =
+\left\langle \frac{1}{\sqrt{2}} {\phi^0+i\phi^1 \choose \phi^2+i\phi^3} \right\rangle =
+{\mu / \sqrt{\lambda} \choose 0} ,
+\end{equation}
+
+where $\phi^1, \phi^2, \phi^3$ are massless Goldstone
+bosons~\cite{1961.Goldstone,1962.Goldstone-Salam-Weinberg.Broken-Symmetries} and the remaining
+degree of freedom represents fluctuations about this ground state,
+associated with the massive scalar Higgs boson $H$.
+
+Recalling that the Higgs field is a doublet of ${\rm SU(2)}_L$, its covariant derivative in the
+Langrangian is
+
+\begin{equation}
+D_\mu = \partial_\mu - i g_1 T^a W^a_\mu - i \frac{g_2}{2} B_\mu ,
+\end{equation}
+
+where $g_1$ ($g_2$) and $W^a_\mu$ ($B_\mu$) are the gauge couplings and three (one) gauge bosons
+associated with ${\rm SU(2)}_L$ (${\rm U(1)}_Y$), respectively, and $T^a$ are the generators of
+${\rm SU(2)}_L$. The ground state of the Higgs field then gives mass terms to some of the gauge bosons.
+The mass eigenstates, in terms of the $W^a_\mu$ and $B_\mu$, are the $W^\pm$, $Z$, and photon with
+masses
+
+\begin{subequations}
+m_{W^\pm} &= \frac{g_1\mu}{2\sqrt{\lambda}}
+m_Z &= \frac{\sqrt{g_1^2+g_2^2}\mu}{2\sqrt{lambda}}
+m_\gamma &= 0 .
+\end{subequations}
+
+Thus, the gauge bosons acquire mass, and the symmetry of ${\rm SU(2)}_L \times {\rm U(1)}_Y$ is
+broken to ${\rm U(1)}_{EM}$ with gauge field being the photon.  
+
+Masses for the fermions are generated through this symmetry breaking through the introduction of
+gauge-invariant interactions with the Higgs field into the Lagrangian. These take the form
+
+\begin{equation}
+\mathcal{L}_{\text{Yukawa}} = -g \bar{\psi}\phi\psi
+\end{equation}
+
+where $g$ is the strength of the interaction. Here, the symmetry breaking caused by
+$\phi \rightarrow \left\langle \phi \right\rangle + H$ gives a mass term of the form
+$g \left\langle \phi \right\rangle$ and an interaction with the Higgs boson. Interactions with the
+other bosons arise from change in the covariant derivative of each fermion field due to the
+symmetry breaking.
 
 \section{Higgs Discovery\label{sec:discovery}}
 reference by sec:CMS
-
-\section{Successes of the SM\label{sec:SMsuccess}}
 
 \section{Shortcomings of the SM\label{sec:SMshortcomings}}
 reference by sec:CMS
