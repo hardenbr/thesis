@@ -95,20 +95,16 @@ the generation of particle masses is accomplished through the partial breaking o
 symmetry group by the addition of the Higgs field and potential, after which gauge-invariant
 Yukawa interactions between fermions and the Higgs field naturally give fermion masses.
 The Higgs field $\phi$ is a doublet of ${\rm SU(2)}_L$, and its potential takes the form
-
 \begin{equation}
-V(\phi^\dagger\phi) = -\mu\phi^\dagger\phi + \lambda(\phi^\dagger\phi)^2 ,
+V(\phi^\dagger\phi) = -\mu\phi^\dagger\phi + \lambda(\phi^\dagger\phi)^2 \,,
 \end{equation}
-
 where $\mu,\lambda > 0$. The ground state of this potential is nonzero and degenerate. With the
 choose of a convient gauge, the ground state can be expressed as
-
 \begin{equation}
 \left\langle \phi \right\rangle =
 \left\langle \frac{1}{\sqrt{2}} {\phi^0+i\phi^1 \choose \phi^2+i\phi^3} \right\rangle =
-{\mu / \sqrt{\lambda} \choose 0} ,
+{\mu / \sqrt{\lambda} \choose 0} \,,
 \end{equation}
-
 where $\phi^1, \phi^2, \phi^3$ are massless Goldstone
 bosons~\cite{1961.Goldstone,1962.Goldstone-Salam-Weinberg.Broken-Symmetries} and the remaining
 degree of freedom represents fluctuations about this ground state,
@@ -116,33 +112,33 @@ associated with the massive scalar Higgs boson $H$.
 
 Recalling that the Higgs field is a doublet of ${\rm SU(2)}_L$, its covariant derivative in the
 Langrangian is
-
 \begin{equation}
-D_\mu = \partial_\mu - i g_1 T^a W^a_\mu - i \frac{g_2}{2} B_\mu ,
+D_\mu = \partial_\mu - i g_1 T^a W^a_\mu - i \frac{g_2}{2} B_\mu \,,
 \end{equation}
-
 where $g_1$ ($g_2$) and $W^a_\mu$ ($B_\mu$) are the gauge couplings and three (one) gauge bosons
 associated with ${\rm SU(2)}_L$ (${\rm U(1)}_Y$), respectively, and $T^a$ are the generators of
 ${\rm SU(2)}_L$. The ground state of the Higgs field then gives mass terms to some of the gauge bosons.
 The mass eigenstates, in terms of the $W^a_\mu$ and $B_\mu$, are the $W^\pm$, $Z$, and photon with
 masses
-
 \begin{subequations}
-m_{W^\pm} &= \frac{g_1\mu}{2\sqrt{\lambda}}
-m_Z &= \frac{\sqrt{g_1^2+g_2^2}\mu}{2\sqrt{lambda}}
-m_\gamma &= 0 .
+\begin{equation}
+m_{W^\pm} = \frac{g_1}{2}\frac{\mu}{\sqrt{\lambda}}
+\end{equation}
+\begin{equation}
+m_Z = \frac{\sqrt{g_1^2+g_2^2}}{2}\frac{\mu}{\sqrt{\lambda}}
+\end{equation}
+\begin{equation}
+m_\gamma = 0 \,.
+\end{equation}
 \end{subequations}
-
 Thus, the gauge bosons acquire mass, and the symmetry of ${\rm SU(2)}_L \times {\rm U(1)}_Y$ is
 broken to ${\rm U(1)}_{EM}$ with gauge field being the photon.  
 
 Masses for the fermions are generated through this symmetry breaking through the introduction of
 gauge-invariant interactions with the Higgs field into the Lagrangian. These take the form
-
 \begin{equation}
-\mathcal{L}_{\text{Yukawa}} = -g \bar{\psi}\phi\psi
+\mathcal{L}_{\text{Yukawa}} = -g \bar{\psi}\phi\psi \,,
 \end{equation}
-
 where $g$ is the strength of the interaction. Here, the symmetry breaking caused by
 $\phi \rightarrow \left\langle \phi \right\rangle + H$ gives a mass term of the form
 $g \left\langle \phi \right\rangle$ and an interaction with the Higgs boson. Interactions with the
@@ -157,7 +153,7 @@ experimentally-measurable cross sections.
 
 \begin{figure}[ht]
  \begin{center}
-    \includegraphics[width=0.90\textwidth]{figures/intro/Standard_Model_Feynman_Diagram_Vertices.pdf}
+    \includegraphics[width=0.70\textwidth]{figures/intro/Standard_Model_Feynman_Diagram_Vertices.pdf}
       \end{center}
 \caption{Interactions of the SM in which the Higgs in not involved~\cite{SMinteractions_nonhiggs}.}
 \label{fig:nonhiggsint}
@@ -165,11 +161,41 @@ experimentally-measurable cross sections.
 
 \section{Higgs Discovery\label{sec:discovery}}
 
+While each particle has its own story of discovery, as hinted briefly by Figure~\ref{fig:discoveries},
+this section will focus on that of the Higgs. What makes the search especially difficult is the
+small couplings that the Higgs has with other particles, as shown in Figure~\ref{fig:crosssections}.
+However, up until 2012, the mass of the Higgs boson was unknown, so big experimental searches
+had to accommodate a wide range of possible values. 
 
+\begin{figure}[ht]
+ \begin{center}
+    \includegraphics[width=0.90\textwidth]{figures/intro/crosssections2012_v5.pdf}
+      \end{center}
+\caption{Production cross sections for various processes in the SM versus center-of-mass energy.
+The lower energies correspond to $p\bar{p}$ collisions from the Tevatron~\cite{Group:1984bk}, whereas
+the higher energies correspond to $pp$ collisions from the LHC~\cite{cern-jinst-lhc}.}
+\label{fig:crosssections}
+\end{figure}
+
+continue here!!!
 
 
 \section{Shortcomings of the SM\label{sec:SMshortcomings}}
-reference by sec:CMS
+
+There are both experimental and theoretical reasons for why the SM is not a complete theory of
+particle physics. In some cases, the SM provides an ad-hoc description, and in other cases, there
+is no description at all. For the optimist, these provide compelling reasons to continue
+pushing the boundaries of our knowledge. Examples of such compelling questions concern gravity,
+dark matter, dark energy, and neutrinos, as detailed in Subsections~\ref{subsec:grav},
+\ref{subsec:dark}, and \ref{subsec:neu}, but this is not to omit other questions concerning
+matter-antimatter asymmetry, hierarchy, and generations of fermions.
+
+\subsection{Gravity\label{subsec:grav}}
+
+\subsection{Dark Matter and Dark Energy\label{subsec:dark}}
+
+\subsection{Neutrinos\label{subsec:neu}}
+
 
 
 \section{diHiggs as a probe of SM and New Physics\label{sec:diHiggs}}
