@@ -14,7 +14,7 @@ to have internal structure or decay, with upper (lower) bounds on the radius (li
 
 \begin{figure}[ht]
  \begin{center}
-    \includegraphics[width=0.90\textwidth]{figures/intro/Four_elements_representation.png}
+    \includegraphics[width=0.50\textwidth]{figures/intro/Four_elements_representation.png}
       \end{center}
 \caption{The four roots how they relate to the sensible quantities.}
 \label{fig:aristotle}
@@ -69,7 +69,7 @@ The particle content of the SM is summarized in Figure~\ref{fig:SMtable}.
 
 \begin{figure}[ht]
  \begin{center}
-    \includegraphics[width=0.90\textwidth]{figures/intro/Standard_Model_of_Elementary_Particles_modified_version.pdf}
+    \includegraphics[width=0.80\textwidth]{figures/intro/Standard_Model_of_Elementary_Particles_modified_version.pdf}
       \end{center}
 \caption{A diagram of the particle content of the SM~\cite{SMdiagram}.
 The mass, electric charge, and spin is given for each, and the background color indicates how each
@@ -153,7 +153,7 @@ experimentally-measurable cross sections.
 
 \begin{figure}[ht]
  \begin{center}
-    \includegraphics[width=0.70\textwidth]{figures/intro/Standard_Model_Feynman_Diagram_Vertices.pdf}
+    \includegraphics[width=0.80\textwidth]{figures/intro/Standard_Model_Feynman_Diagram_Vertices.pdf}
       \end{center}
 \caption{Interactions of the SM in which the Higgs in not involved~\cite{SMinteractions_nonhiggs}.}
 \label{fig:nonhiggsint}
@@ -162,14 +162,15 @@ experimentally-measurable cross sections.
 \section{Higgs Discovery\label{sec:discovery}}
 
 While each particle has its own story of discovery, as hinted briefly by Figure~\ref{fig:discoveries},
-this section will focus on that of the Higgs. What makes the search especially difficult is the
+this section will focus on the technical details related to that of the Higgs.
+What makes the search especially difficult is the
 small couplings that the Higgs has with other particles, as shown in Figure~\ref{fig:crosssections}.
 However, up until 2012, the mass of the Higgs boson was unknown, so big experimental searches
 had to accommodate a wide range of possible values.
 
 \begin{figure}[ht]
  \begin{center}
-    \includegraphics[width=0.80\textwidth]{figures/intro/crosssections2012_v5.pdf}
+    \includegraphics[width=0.70\textwidth]{figures/intro/crosssections2012_v5.pdf}
       \end{center}
 \caption{Production cross sections for various processes in the SM versus center-of-mass energy.
 The lower energies correspond to $p\bar{p}$ collisions from the Tevatron~\cite{Group:1984bk}, whereas
@@ -178,9 +179,10 @@ the higher energies correspond to $pp$ collisions from the LHC~\cite{cern-jinst-
 \end{figure}
 
 The search for the Higgs can be broken down into production mechanism and decay mode. For $pp$
-collisions at $\sqrt{s} = 8$~TeV, as realized at the LHC, Figure~\ref{fig:higgsprod} shows the
+collisions at $\sqrt{s} = 8$~TeV, as realized at the LHC (see Section~\ref{sec:LHC}),
+Figure~\ref{fig:higgsprod} shows the
 dominant production mechanisms and corresponding cross sections. The branching ratios for several
-of the dominant decay modes are given in Table~\ref{table:BR_SMhiggs}. continue here!!!!
+of the dominant decay modes are given in Table~\ref{table:BR_SMhiggs}.
 
 \begin{figure}[ht]
  \begin{center}
@@ -192,6 +194,15 @@ $pp$ collisions at $\sqrt{s} = 8$~TeV.}
 \label{fig:crosssections}
 \end{figure}
 
+Since the announcement of discovery of a new Higgs-like particle
+in 2012~\ref{higgsdiscoveryAtlas,Chatrchyan:2012ufa}, the properties of the Higgs have been narrowed
+through the accumulation of more data and more refined analyses~\cite{Hdiscovery}. The general
+conclusion of all these analyses is that the Higgs boson is, up to the sensitivity that the present
+dataset allows, consistent with that predicted by the SM. Figures~\ref{fig:measuredxsec_prod} and
+\ref{fig:measuredxsec_decay} provide two of these highlights in $\mu$ for each of the
+production cross sections and decay modes, respectively, where $\mu$ is the
+ratio of the measured cross section to that predicted by the SM.
+
 \begin{table}[bp]
   \centering
   \renewcommand{\arraystretch}{1.4}
@@ -200,6 +211,41 @@ $pp$ collisions at $\sqrt{s} = 8$~TeV.}
   \label{table:BR_SMhiggs}
 \end{table}
 
+\begin{figure}[ht]
+ \begin{center}
+    \includegraphics[width=0.55\textwidth]{figures/intro/sqr_mlz_ccc_mH125_prod.pdf}
+      \end{center}
+\caption{Values of the best-fit $\mu$ for the combination (solid vertical line) and for
+subcombinations by analysis tags targeting individual production mechanisms~\cite{Khachatryan:1979247}.
+The vertical band shows the overall $\mu$ uncertainty. The $\mu$ ratio denotes the production cross section times the relevant branching fractions, relative to the SM expectation. The horizontal bars indicate the $\pm 1$ standard deviation uncertainties in the best-fit $\mu$ values for the individual modes; they include both statistical and systematic uncertainties.}
+\label{fig:measuredxsec_prod}
+\end{figure}
+
+\begin{figure}[ht]
+ \begin{center}
+    \includegraphics[width=0.55\textwidth]{figures/intro/sqr_mlz_ccc_mH125_decay.pdf}
+      \end{center}
+\caption{Values of the best-fit $\mu$ for the combination (solid vertical line) and for subcombinations by predominant decay mode~\cite{Khachatryan:1979247}. The vertical band shows the overall $\mu$ uncertainty. The $\mu$ ratio denotes the production cross section times the relevant branching fractions, relative to the SM expectation. The horizontal bars indicate the ±1 standard deviation uncertainties in the best-fit $\mu$ values for the individual modes; they include both statistical and systematic uncertainties.}
+\label{fig:measuredxsec_decay}
+\end{figure}
+
+Perhaps the most important measurement from the discovery is that of the Higgs boson mass.
+Figure~\ref{measuredmass} provides experimental evidence for the precision measurement of this
+value by considering only high-resolution channels for Higgs boson production and decay.
+The measured value is around 125 GeV. This provides a means to probe other features of the SM
+or to search for signatures of physics not predicted by the SM. One of those processes, which
+is the major topic of interest for this thesis, are searches in which two Higgs bosons are produced,
+or diHiggs production. The theoretical grounds for such processes are discuessed in
+Section~\ref{sec:diHiggs}.
+
+
+\begin{figure}[ht]
+ \begin{center}
+    \includegraphics[width=0.55\textwidth]{figures/intro/sqr_mass_all.pdf}
+      \end{center}
+\caption{Scan of the test statistic $q(m_H)=−2\Delta\log{L}$ versus the mass of the boson $m_H$ for the $H\rightarrow\gamma\gamma$ and $H\rightarrow ZZ\rightarrow 4\ell$ final states separately and for their combination~\cite{Khachatryan:1979247}. Three independent signal strengths, (ggH,ttH)$\rightarrow\gamma\gamma$, (VBF,VH)$\rightarrow\gamma\gamma$, and $pp\rightarrow H\rightarrow ZZ\rightarrow 4\ell$, are profiled together with all other nuisance parameters. The solid curve is obtained by profiling all nuisance parameters and thus includes both statistical and systematic uncertainties. The dashed curve is obtained by fixing all nuisance parameters to their best-fit values, except for those related to the $H\rightarrow\gamma\gamma$ background description, thus including only statistical uncertainties. The crossings with the thick (thin) horizontal lines define the 68\% (95\%) CL interval for the measured mass. }
+\label{fig:measuredmass}
+\end{figure}
 
 
 
@@ -242,5 +288,6 @@ unclear if their origin is from the same mechanism that provides the other fermi
 masses.
 
 \section{diHiggs as a probe of SM and New Physics\label{sec:diHiggs}}
+
 
 
