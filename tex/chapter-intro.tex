@@ -191,11 +191,11 @@ of the dominant decay modes are given in Table~\ref{table:BR_SMhiggs}.
 \caption{Production mechanisms and cross sections of the Higgs boson
 for the leading processes in the SM~\cite{Tuna:thesis}. The cross sections correspond to
 $pp$ collisions at $\sqrt{s} = 8$~TeV.}
-\label{fig:crosssections}
+\label{fig:higgsprod}
 \end{figure}
 
 Since the announcement of discovery of a new Higgs-like particle
-in 2012~\ref{higgsdiscoveryAtlas,Chatrchyan:2012ufa}, the properties of the Higgs have been narrowed
+in 2012~\cite{higgsdiscoveryAtlas,Chatrchyan:2012ufa}, the properties of the Higgs have been narrowed
 through the accumulation of more data and more refined analyses~\cite{Hdiscovery}. The general
 conclusion of all these analyses is that the Higgs boson is, up to the sensitivity that the present
 dataset allows, consistent with that predicted by the SM. Figures~\ref{fig:measuredxsec_prod} and
@@ -203,7 +203,7 @@ dataset allows, consistent with that predicted by the SM. Figures~\ref{fig:measu
 production cross sections and decay modes, respectively, where $\mu$ is the
 ratio of the measured cross section to that predicted by the SM.
 
-\begin{table}[bp]
+\begin{table}[ht]
   \centering
   \renewcommand{\arraystretch}{1.4}
   \caption{Branching ratios for the Higgs boson~\cite{LHC:SMHiggsBR}.}
@@ -217,7 +217,7 @@ ratio of the measured cross section to that predicted by the SM.
       \end{center}
 \caption{Values of the best-fit $\mu$ for the combination (solid vertical line) and for
 subcombinations by analysis tags targeting individual production mechanisms~\cite{Khachatryan:1979247}.
-The vertical band shows the overall $\mu$ uncertainty. The $\mu$ ratio denotes the production cross section times the relevant branching fractions, relative to the SM expectation. The horizontal bars indicate the $\pm 1$ standard deviation uncertainties in the best-fit $\mu$ values for the individual modes; they include both statistical and systematic uncertainties.}
+The vertical band shows the overall $\mu$ uncertainty. The $\mu$ ratio denotes the production cross section times the relevant branching ratios, relative to the SM expectation. The horizontal bars indicate the $\pm 1$ standard deviation uncertainties in the best-fit $\mu$ values for the individual modes; they include both statistical and systematic uncertainties.}
 \label{fig:measuredxsec_prod}
 \end{figure}
 
@@ -225,12 +225,12 @@ The vertical band shows the overall $\mu$ uncertainty. The $\mu$ ratio denotes t
  \begin{center}
     \includegraphics[width=0.55\textwidth]{figures/intro/sqr_mlz_ccc_mH125_decay.pdf}
       \end{center}
-\caption{Values of the best-fit $\mu$ for the combination (solid vertical line) and for subcombinations by predominant decay mode~\cite{Khachatryan:1979247}. The vertical band shows the overall $\mu$ uncertainty. The $\mu$ ratio denotes the production cross section times the relevant branching fractions, relative to the SM expectation. The horizontal bars indicate the ±1 standard deviation uncertainties in the best-fit $\mu$ values for the individual modes; they include both statistical and systematic uncertainties.}
+\caption{Values of the best-fit $\mu$ for the combination (solid vertical line) and for subcombinations by predominant decay mode~\cite{Khachatryan:1979247}. The vertical band shows the overall $\mu$ uncertainty. The $\mu$ ratio denotes the production cross section times the relevant branching ratios, relative to the SM expectation. The horizontal bars indicate the ±1 standard deviation uncertainties in the best-fit $\mu$ values for the individual modes; they include both statistical and systematic uncertainties.}
 \label{fig:measuredxsec_decay}
 \end{figure}
 
 Perhaps the most important measurement from the discovery is that of the Higgs boson mass.
-Figure~\ref{measuredmass} provides experimental evidence for the precision measurement of this
+Figure~\ref{fig:measuredmass} provides experimental evidence for the precision measurement of this
 value by considering only high-resolution channels for Higgs boson production and decay.
 The measured value is around 125 GeV. This provides a means to probe other features of the SM
 or to search for signatures of physics beyond the SM (BSM). One of those processes, which
@@ -293,14 +293,14 @@ masses.
 With the mass of the Higgs known, searches involving the production of two Higgs bosons may
 be performed. The principle motivation for searching for such a process is two-fold.
 It provides a means for searching for an interaction predicted by the SM but not yet observed, that
-of the Higgs tri-linear coupling, which provides further understanding of the Higgs potential.
+of the Higgs trilinear coupling, which provides further understanding of the Higgs potential.
 While searching for this rare SM process, similar topologies involving BSM physics may
 be sought. The goal of the latter would be to either find a deviation from what the SM predicts
 or to place limits on the extent to which new theories may be excluded.
 
 Double Higgs production at hadron colliders in the SM has been studied
 theoretically~\cite{Baglio:2012np,Plehn:1996wb}, and the cross section for $pp$ collisions at 8 TeV
-is 9.96 fb level (including NLO corrections). This is unfortunately out of reach of current
+is 9.96 fb level (including NNLO corrections). This is unfortunately out of reach of current
 experiments, and it is due, in part, to the destructive interference exhibited between contributions
 from the the Higgs self-coupling and from a top-loop with two Higgs, as shown in
 Figure~\ref{fig:diHiggs_diagrams}.
@@ -313,7 +313,7 @@ of the SM couplings that could arise from the simpler composite Higgs case are
 already very constrained~\cite{Ellis:2013ywa,Ellis:2013lra}.
 However, under more general assumptions, higher order
 operators could in principle lead to sizeable effects~\cite{Belyaev:1999mx,Dib:2005re,Oliveira:2010uv}.
-This possiblilty is discussed briefly in Subsection~\ref{subsec:nonres_th}.
+This possiblilty is discussed in Subsection~\ref{subsec:nonres_th}.
 
 \begin{figure}
 \begin{center}
@@ -340,25 +340,208 @@ Subsection~\ref{subsec:res_th}.
 
 \subsection{Nonresonant Double Higgs Production from BSM\label{subsec:nonres_th}}
 
+In this thesis, nonresonant double Higgs prodcution is parametrized by the Higgs trilinear
+self-coupling $\lambda$, the Yukawa top coupling $y_t$, and an anomalous $t\bar{t}HH$ coupling $c_2$.
+The potential of the Higgs and its interactions with the top quark can be written as
+
+\begin{equation}
+\begin{split}
+\Delta L_{H,t;y_t,c_2}= 
+\partial_{\mu}\, H \partial^{\mu} H - m_H H^2 +
+\kappa_{\lambda}\, \lambda_{SM} v\, H^3 \\
+- \frac{\sqrt{2} m_t}{v}(v+  \kapt\,   H  +  \frac{ \sqrt{2}\, c_2}{v} H  H ) \,( \bar{t_L}t_R + h.c.)  \,,
+\end{split}
+\label{eq:Hpot}
+\end{equation}
+where $v = 246 \mbox{ GeV}$, $\lambda_{SM} \equiv \frac{m_H^2}{2 v^2} = 0.129$, and
+$y_{t,SM} = \frac{\sqrt{2} m_t}{v} = 0.995$. Possible contact interactions between the
+Higgs and gluons that could arise from heavy coloured scalars are neglected.
+Only dimension-6 operators are relevant to BSM physics. The parameters $c_2$ and $y_t$ are
+analytically related by the coefficients of two dimension six operators, one being the
+derivative of the interaction among four Higgs doublets with coefficient $c_H$
+and the other involving the interactions between the Higgs doublet and top quarks
+with coefficient $c_t$.
+
+For the interpretation of the BSM nonresonant search, the LO cross section for double Higgs production
+is expressed in a semi-analytical form~\cite{Contino:2012xk}
+%, In this reference the coeficients in Equation \ref{eq:coefnonres} are calculated by numerical integration of the matrix element developed by the authors. In our work however we prefer to re-
+%The result of our parameters fit is found in Equation \ref{eq:coefnonres}.
+\begin{equation}
+\begin{split}
+\sigma (pp\to HH) = \bar{\sigma} [  \ctwo^2 + (\alpha \kapt^2)^2 +  (\beta\, \kapt \,\kapl)^2 + A_1 c_2 (\alpha\, \kapt)^2 \\
+ + A_2 (\alpha\, \kapt) (\beta\, \kapt\, \kapl) + A_3\, c_2 (\beta\, \kapt\, \kapl) ] \,,
+\end{split}
+\label{eq:nonrescx2}
+\end{equation}
+where $\kapl = \frac{\lambda}{\lambda_{SM}}$, $\kapt = \frac{y_t}{y_{t,SM}}$, $\bar{\sigma}_{NNLO} = 97.12 \mbox{ fb}$, $\alpha = 0.475$, $\beta = 0.185$, $A_1 = -1.89$,
+$A_2 = -1.79$, and $A_3 = -1.70$.
+%We normalize the coefitients of Equation \ref{eq:nonrescx2} based in the same {\sc MadGraph5} used for the signal simulation. We use CTEQ6l PDF as set and assume $m_H = 125$ GeV.
+Over the range that $\kapl$ and $\kapt$ are varied, as discussed in Section~\ref{sec:sim},
+the behavior of this cross section is in agreement with MC calculations used in this analysis.
+The cross section is normalized by $\bar{\sigma}_{NNLO}$, which is set such that the value
+at $\kapt = 1, \kapl = 1$ and $\ctwo = 0$ is equal to the SM prediction at NNLO.
+This approach is valid within the large $m_t$ approximation, were the QCD corrections are dominated
+by soft emission which does not depend on the electroweak couplings.
+In addition, on the range of interest for $\kapl$ and $\kapt$, the k-factors do not vary by
+more than 0.06\%~\cite{deFlorian:2013jea}, so Equation~\ref{eq:nonrescx2} may be scaled to NNLO
+by applying the SM k-factor.
+%And it thus assumes a BSM model without a large enhancement of the bbh coupling (which invalidates the large mt approximation).  %~\cite{deFlorian:2013jea,Baglio:2012np}.  Copied from Magdalena + de florian 
+
+%\begin{table}[ht]
+%  \centering
+%  \renewcommand{\arraystretch}{1.4}
+%  \caption{Standard Model predictions for the cross section of $gg\rightarrow HH$~\cite{LHC:SMHiggsBR}.}
+%  \input{tables/dihiggsxsec}
+%  \label{table:ggHH_SM_XS}
+%\end{table}
+%\url{https://indico.cern.ch/event/353146/contribution/13/material/slides/0.pdf}, still unpublished.
+
+The results are interpreted in a scenario where only dimension-6 operators involving one Higgs doublet
+are relevant for nonresonant BSM physics.  The dimension-6 operators relevant to double Higgs
+production are~\cite{Goertz:2014qta}
+\begin{equation}
+\begin{split}
+\Delta L_{H,t;6D}= \frac{c_H}{2 \Lambda^2} \partial_{\mu}(\phi^{\dagger}\phi)\partial^{\mu}(\phi^{\dagger}\phi)
++ \mu_H \phi^{\dagger}\phi -\lambda_6 \, \phi^{\dagger}\phi\, (1+\frac{c_6}{\Lambda^2}\, \phi^{\dagger}\phi) \\
+-  c_t ( 1+ \frac{c_t}{\Lambda^2} \phi^{\dagger}\phi) (\bar{Q_L}\phi^{\dagger}t_R + h.c.)  \,.
+\end{split}
+\label{eq:Hpot6}
+\end{equation}
+
+Together with the cut-off scale $\Lambda$, only $c_6$ and $c_t$ parameters define double Higgs
+production. The coefficients of Equation~\ref{eq:Hpot} are related to the coefficients of the
+dimension-6 operators of Equation~\ref{eq:Hpot6} through
+\begin{subequations}
+\begin{equation}
+\kapt  = \frac{v}{m_t \sqrt{2}}  (1 -\frac{1}{2} \frac{v^2}{\Lambda^2} c_H + \frac{v^2}{\Lambda^2} c_t )
+\end{equation}
+\begin{equation}
+c_2  =  \frac{v^2}{\sqrt{2}\Lambda^2} ( c_t -\frac{1}{2} c_H) \,.
+\end{equation}
+\end{subequations}
+The bare top quark mass and Higgs mass are
+\begin{subequations}
+\begin{equation}
+m_t = y_{t}\, v (1+c_t \, \frac{v^2}{\Lambda^2})
+\end{equation}
+\begin{equation}
+m_H^2  = 2 \lambda_6\, v^2 (1+c_6 \frac{v^2}{\Lambda^2}) \,.
+\end{equation}
+\end{subequations}
+
+
 
 
 \subsection{Resonant Double Higgs Production from BSM\label{subsec:res_th}}
 
+Double Higgs production can also used as a means to probe the existence of a heavy resonance
+of spin 0 or 2. In this thesis, this resonance is assumed to have negligible width compared
+with the experimental resolution and to be predominantly produced by gluon fusion.
+The selection was designed to limit the sensitivity to the angular distribution of the two Higgs bosons
+in order to keep the analysis spin-independent.
 
+Theories with warped extra dimensions (WED) approach Planck scales allowing gravity 
+to propagate in a compact extra dimension with a warp factor.
+Scenarios for the most simple choice of the warp function are known as Randall-Sundrum models
+(RS)~\cite{Randall:1999ee}, in which the metric for the case of single extra dimension is given by
+
+\begin{equation}
+ds^2 =  e^{- 2 k y}  \eta_{\mu\nu} dx^\mu dx^\nu - dy^2 \,,
+\label{expky}
+\end{equation}
+
+where $y$ refers to the coordinate in the fifth dimension and $k$ is related to its curvature.
+The so-called ultraviolet (UV) and infrared (IR) branes are introduced at $y=0$ and $y=L$,
+respectively.
+Perturbations project in the four-dimensional effective theory
+as the Graviton field. The massless zero mode of this field corresponds to the Graviton.
+
+More realistic descriptions of WED picture requires a suitable mechanism to stabilize the
+distance between TeV and IR branes.
+The stabilization of the extra dimension size in RS scenarios can be achieved introducing a bulk scalar
+with a specific potential~\cite{Goldberger:1999uk}.
+%{\bf ..... more? ..... describe better, talk about vev .... ?}. 
+The four-dimension projection of this scalar field is known as Radion, 
+and its mass is dependent on the format of the stabilization potential. %In simple versions Radion is expected to be lightest signature of WED models.% {\bf what to cite ???? who said that????}. 
+Allowing matter fields to propagate in this extra dimension modifies its interactions between the gravity mediators~\cite{Gherghetta:2010cj}. 
+%Also this makes the theory phenomenologically rich: the matter fields are projected on our four dimensional world, producing for each field a tower of excited particles, called kaluza-klein (kk) states.  
+%One finds a consistent structure for the new resonances couplings and 
+%masses (for a good review see ~\cite{Gherghetta:2010cj}). If we do not consider the possibility brane terms relations between couplings and masses of kk states are completely fixed by geometry.
+Couplings between the gravity mediators and the matter fields occur by means of the
+energy momentum tensor, which gives rise to the Lagrangian~\cite{Giudice:1998ck,Csaki:2000zn}
+\begin{eqnarray}
+L = - \frac{c_i}{\Lambda_G}  G^{\mu\nu(1)} T_{\mu\nu}
+- \frac{d_i}{\Lambda_{R}}  \Phi T_{\mu\nu} \,,
+\end{eqnarray}
+where $G^{\mu\nu(1)}$ is for the KK-graviton field, $\Phi$ is for the Radion field,
+$c_i$ and $d_i$ are constants which depend on the behavior of the matter fields on the bulk, and
+the scales $\Lambda_G$ and $\Lambda_\Phi$ are the ultraviolet mass scale and Radion vacuum expectation,
+respectively. Both the scales can be interpreted as cut-off of the theory.
+%to be on TeV range. %, they scales are related {\bf ..... more ..... }. 
+
+%In bulk scenarios the ultraviolet mass scale of the theory $\Lambda_G$ is also directly related with the first kk Graviton mass by $m_G =  \frac{k}{\overline{M}_{P}}  x_1 \Lambda_G$ , where $x_1 = 3.83$ is the first zero of the Bessel function $J_1$.
+%
+%In minimal RS, the mass of the kk Graviton is directly proportional to the Radion vacuum expectation value, 
+%suppressing Radion couplings. It was recently argued that modifications on the action term for the gravity 
+%can decouple these parameters ~\cite{Maitra:2013cta}.  
+%For our phenomenological point of view we are going to treat all the relevant parameters as independent.
+
+Another way for BSM physics to manifest double Higgs production is through the existence of
+a second Higgs doublet from minimal supersymmetry (MSSM) and next to minimal composite
+scenarios~\cite{Barbieri:2013nka,2hdmextensions}.
+Possible manifestations of two Higgs doublet models (2HDM) can be based on the structure
+of its couplings to fermions~\cite{Branco:2011iw}. Such models can have interactions in which
+\begin{itemize}
+\item all fermions couple to only one doublet (type I).
+\item up and down type quarks couple to different doublets (type II).
+\item fermions and quarks couple to different doublets (type III).
+\item up and down type quarks couple to different doublets while leptons couple to the doublet that couples to up quarks (type IV).
+\end{itemize}
+The most conventional parametrization of the potential is in terms of
+\begin{itemize}
+  \item $\beta$, which is related with the ratio between the vacuum expectation values of the two doublets. 
+  \item $\alpha$, which is the angle of the mass mixing of the neutral states.%It is normally determined by the dynamics of EWSB.
+  \item the five physical masses of the spectrum: two neutral scalars, one neutral pseudoscalar and two charged scalars.
+  \item the coupling constants defining the allowed terms for the quartic potential.
+\end{itemize} 
+
+The Higgs sector of the MSSM consists in a 2HDM type II. 
+With the identification of the lightest neutral scalar with the SM Higgs boson and with
+reasonable assumptions about the potential, the parameter space for the search of a heavy neutral Higgs
+decaying to two SM Higgs bosons
+is reduced to the mass of the heavy Higgs and
+$\tan \beta$~\cite{Branco:2011iw,Craig:2012vn,Craig:2013hca,Djouadi:2005gj}.%,Martin:1997ns}).
+%The Higgses potential is fixed by the loop corrections of the super-particles, and special attention
+%is needed for the s-top corrections.
+
+%In the next to minimal realization we have more freedom to the Higgs sector with one more scalar superfield. 
+%Its potential and interactions are model dependent since it is hard to incorporate in a model independent way the known measurements of the Higgs properties.
+%The references ~\cite{Agashe:2012zq,Barbieri:2013hxa} try to avoid as much as possible the usage of benchmark points and scatter plots and try to use meaningful approximations to get limits in a sort of simplified model for the scalar sector. Despite the name "simplified", for the case of the Higgs sector it is difficult to have a simple yet faithful parametrization without relying on an explicit model.
 
 
 \section{Double Higgs Decays}
 
+In the search for double Higgs production, the analysis presented here concerns the final state
+where one Higgs decays to two photons ($\Hgg$) and the other decays to two b-quarks ($\Hbb$).
+The advantage of this final state from the experimental side is that the $\Hgg$ decay
+offers a high-resolution way to tag one of the Higgs, while the $\Hbb$ decay offers a high branching
+ratio. This disadvantages are that the $\Hgg$ has a low branching ratio and the
+$\Hbb$ has poor resolution.
 
-In this analysis, the production of a pair of Higgses with the CMS detector. We base
-ourselves on the discovery of a Higgs-like object with mass around 125 GeV by both CMS and
-ATLAS.We focus on resonant double Higgs (125 GeV) final states and we neglect the Standard
-Model double Higgs contributions.
-A clear and fully reconstructible channel to probe the double SM Higgs production is the one
-where one of the Higgses decays into two photons, and the other one into b-quarks. Assuming
-the same branching ratio as in the Standard Model, this channel represents 0.26% of the total
-decay branching ratio of the HH system, as shown in the table 1. The fact that we are looking
-for the case when one of the Higgses decays into two photons does not allow us to exploit fully
-boosted scenarios. However, adding substructure studies for the hadronic Higgs would allow
-us to extend the range of the resonant search to higher masses [10].
+Table~\ref{table:dihiggs_BR} gives the branching ratios for several of the top double Higgs
+final states. Although the $\ggbb$ final state has a relatively low contribution at 0.26\%,
+the excellent
+diphoton mass resolution makes it among one of the most sensitive final states in the search for
+nonresonant and low-mass resonant double Higgs production, as discussed in Chapter~\ref{ch:results}.
+On the other hand, the $b\bar{b} b\bar{b}$ has large QCD background that hurts its sensitivity
+in the low-mass regime. Branching ratio is not the only part to the story, as explored in rest of
+this thesis.
+
+\begin{table}[ht]
+  \centering
+  \renewcommand{\arraystretch}{1.4}
+  \caption{Branching ratios for decays of two Higgs bosons~\cite{LHC:SMHiggsBR}.}
+  \input{tables/dihiggsBR}
+  \label{table:dihiggs_BR}
+\end{table}
 
