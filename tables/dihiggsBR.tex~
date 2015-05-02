@@ -1,0 +1,30 @@
+w\begin{tabular}{c|c}
+Channel & Freq. (\%) \\
+\hline
+$H(b\bar{b},c\bar{c},gg)H(b\bar{b},c\bar{c},gg)$ & 47.86 \\
+\hline
+$H(b\bar{b})H(b\bar{b})$ & 33.30 \\
+\hline
+$H(b\bar{b},c\bar{c},gg)H(VV^{*})$ & 33.40 \\
+\hline
+$H(b\bar{b},c\bar{c},gg)H(\tau^{+}\tau^{-})$ & 8.77    \\
+\hline
+$H(b\bar{b})H(\tau^{+}\tau^{-})$ & 7.29    \\
+\hline
+$H(VV^*)H(VV^{*})$ & 5.83  \\
+\hline
+$H(l^{+}l^{-})H(VV^{*})$ & 3.06   \\
+\hline
+$H(\tau^{+}\tau^{-})H(\tau^{+}\tau^{-})$ & 0.40 \\
+\hline
+%$H(l^{+}l^{-})H(l^{+}l^{-})$ & 0.40   \\
+%\hline
+$H(b\bar{b},c\bar{c},gg)H(\gamma\gamma)$ & 0.32   \\
+\hline
+$H(b\bar{b})H(\gamma\gamma)$ & 0.26   \\
+\hline
+$H(b\bar{b},c\bar{c},gg)H(\mu^{+}\mu^{-})$ & 0.03   \\
+\hline
+$H(l^{+}l^{-})H(\gamma\gamma)$ & 0.03   \\
+\hline
+\end{tabular}
