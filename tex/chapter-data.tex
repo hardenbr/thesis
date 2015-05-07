@@ -129,6 +129,79 @@ Subsection~\ref{subsec:bkg_samples}.
 
 \subsection{Signal Simulation\label{subsec:sig_samples}}
 
+The resonant search is focused on a new resonance from a massive particle $X$ with mass $m_X$ between
+260 GeV and 1.1 TeV. The lower bound is set by twice the Higgs mass since the search looks for decays
+$X\rightarrow HH$. The upper bound is set by the ability to reconstruct the $\ggbb$ final state: for
+very high resonance hypotheses, the decay production become very boosted, causing photons of the
+$\Hgg$ decay fail being properly identified and causing the jets of the $\Hbb$ decay to overlap.
+These reconstruction methods are discussed in Chapter~\ref{ch:objects}. For the nonresonant
+search, there is no concern for the final state being too boosted.
+
+In the resonant search, the benchmark model is that of the Radion, which is simulated with
+MadGraph5~\cite{Madgraph_Alwall:2011uj} and hadronized with Pythia6~\cite{Pythia6-0}. The events are
+generated from the gluon-fusion production of an on-shell Radion where the decay width of the radion
+is 10 MeV, much less than the experimental resolution of the final state products. There are roughly
+20k events generated per mass point, with twice the amount at three points.
+This is summarized in Table~\ref{table:radion_mc} with corresponding cross sections given in terms
+of parameters described in Chapter~\ref{ch:intro}.
+
+\begin{table}[ht]
+  \centering
+  \renewcommand{\arraystretch}{1.4}
+  \caption{Radion simulation samples.}
+  \input{tables/radion_mc}
+  \label{table:radion_mc}
+\end{table}
+
+In order to verify the model-independence of the result, two additional signal samples are generated.
+The spin-2 Graviton is considered as the angular distribution of the final state differs from a
+spin-0 scenerio. However, due to the expected sensitivity of the analysis, as shown in
+Chapter~\ref{ch:results}, the analysis is not expected to be able to differentiate between
+these two scenerios. This will be explicitely checked in Chapter~\ref{ch:results} as well.
+These samples were generated with a decay width of 1 GeV and 10 GeV,
+which also allow for the accessment of the
+dependence of the width-dependence on the final result. The production mechanism is through
+gluon fusion, generated with MadGraph5 and hadronized with Pythia6. The sample generation
+is summarized in Table~\ref{table:graviton_mc} with corresponding cross sections given in terms of
+parameters described in Chapter~\ref{ch:intro}. Here, the RS1 KK-graviton refers to a scenerio
+where $c_i = 1$ in Equation~\ref{eq:wed_lagrangian}, whereas the bulk KK-graviton refers to a scenerio
+in which the couplings between light quarks and the graviton are suppressed, leading to the
+production cross section of the bulk KK-graviton to be lowered by a factor of 0.02. The cross sections
+are given in Table~\ref{table:graviton_xsec}.
+
+\begin{table}[ht]
+  \centering
+  \renewcommand{\arraystretch}{1.4}
+  \caption{Graviton simulation samples.}
+  \input{tables/graviton_mc}
+  \label{table:graviton_mc}
+\end{table}
+
+\begin{table}[ht]
+  \centering
+  \renewcommand{\arraystretch}{1.4}
+  \caption{Graviton cross sections. Note that there is assumes the maximal
+braching ratio of 25\% for the KK-graviton to two Higgs for all masses. The cross section is the
+same for the 1 GeV and 10 GeV width because the specific values of fermion localization leave some
+freedom in the partial width of the KK-graviton to two top quarks~\cite{Agashe:2007zd}.}
+  \input{tables/graviton_xsec}
+  \label{table:graviton_xsec}
+\end{table}
+
+A second alternative signal scenerio to the Radion benchmark is the spin-0 heavy neutral Higgs from
+the MSSM. These samples are generated and showered with Pythia6. For this scenerio, only low-mass
+resonance hyptheses are generated since, once the heavy Higgs mass rises above twice that of the top
+mass, it will overwhelming decay through that channel. The sample generation for the MSSM heavy
+Higgs is summarized in Table~\ref{table:mssm_mc}.
+
+\begin{table}[ht]
+  \centering
+  \renewcommand{\arraystretch}{1.4}
+  \caption{MSSM heavy Higgs simulation samples.}
+  \input{tables/mssm_mc}
+  \label{table:mssm_mc}
+\end{table}
+
 \subsection{Background Simulation\label{subsec:bkg_samples}}
 
 
