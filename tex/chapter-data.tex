@@ -220,17 +220,20 @@ For the resonant background, six (five) processes are considered for the resonan
 Four of the processes are SM single Higgs production with the $\Hgg$ decay: gluon-gluon fusion, vector
 boson fusion, associated production with a vector boson, and associated production with a pair of
 t-quarks, as shown in Figure~\ref{fig:higgsprod}. Gluon-gluon fusion mimicks the final state when two
-jets are reconstructed from initial state or final state radionation or from the underlying event.
+jets are reconstructed from initial state or final state radiation (ISR or FSR)
+or from interactions from the underlying event (UE).
 The other production mechanisms produce two jets directly,
 noting that in associated production with a vector boson the vector boson can decay to two jets, and
 that in associated production with a pair of t-quarks each t-quarks always decays to $bW$.
-These four processes were generated and hadronized with Pythia6.
+The first two were generated with PowHeg~\cite{POWHEG_Frixione:2007vw},
+while the latter two were generated with Pythia6.
+All four were hadronized with Pythia6.
 In addition, a fifth mechanism, associated production with a pair of b-quarks, is considered for
-both searches and was generated with MadGraph5.
+both searches and was generated with MadGraph5 and hadronized with Pythia6.
 For the resonant search, a final resonant background is considered, that of the
 SM double Higgs production (i.e. the signal process for the nonresonant search).
 This is summarized in Table~\ref{table:smhiggs_mc}, and its corresponding effect on the analysis
-sensitivity is given in Chapter~\ref{chapter:results}.
+sensitivity is given in Chapter~\ref{ch:results}.
 
 \begin{table}[ht]
   \centering
@@ -240,3 +243,34 @@ sensitivity is given in Chapter~\ref{chapter:results}.
   \label{table:smhiggs_mc}
 \end{table}
 
+The composition of the nonresonant background is dominated by the QCD production of two
+reconstructed photons, which can be characterized as prompt, corresponding to real photons,
+or as fake, for example from light neutral mesons mimicking the signature of a photon. The QCD component
+is therefore broken down into fake-fake, prompt-fake, and prompt-prompt. The first two are simulated
+QCD or photon-jet (QCD process requiring one photon) processes, generated and hadronized with Pythia6.
+The last is simulated with a diphoton-jet process, generated and hadronized
+with Sherpa~\cite{Gleisberg:2008ta}. In these three QCD processes,
+a fake photon can still be selected over a prompt one, so for the analysis, the QCD processes are
+broken down in terms of number of prompt photons, as will be shown in Chapter~\ref{ch:selection}.
+
+The nonresonant background has a small but non-zero contribution from processes involving
+vector bosons and top quarks. The vector boson contribution is simulated from processes
+involving a $Z$ boson or off-shell photon $\gamma^*$ decaying to a pair of leptons (Drell-Yan process)
+or involving a $W$ boson decaying leptonically with photon ISR or FSR. The top-quark contribution is
+simulated from processes involving the production of a top-quark pair with the addition of a
+photon-jet or diphoton pair or involving the production of a single top quark with a diphoton pair.
+
+The nonresonant background samples used in the analysis and their corresponding 
+cross sections are summarized in Table~\ref{table:nonres_mc}.
+Their effect on the sensitivity is studied in Chapters~\ref{ch:selection} and \ref{ch:results}.
+
+\begin{table}[ht]
+  \centering
+  \renewcommand{\arraystretch}{1.4}
+  \caption{Nonresonant background simulation samples and their corresponding cross sections
+In the QCD and photon-jet samples, the number denotes the scale on which the parton
+distribution function of the proton as QCD diverges as the scale goes to zero~\cite{Martin:2009iq}.
+For example, 30-40 denotes a scale of 30 to 40 GeV, while 40 denotes a scale of 40 GeV and above.}
+  \input{tables/nonres_mc}
+  \label{table:nonres_mc}
+\end{table}
