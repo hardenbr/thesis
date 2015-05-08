@@ -2,13 +2,15 @@
 \chapter{Experimental Facility\label{ch:experiment}}
 
 This chapter describes the experimental facility used to search for double Higgs production and other phenomena. Section~\ref{sec:CERN} covers European Organization for Nuclear Research (CERN), the organization
-that hosts the experimental facilities. Section~\ref{sec:LHC} covers the Large Hadron Collider (LHC), the accelerator complex responsible for delivering $pp$ collisions to each experiment. Section~ref{sec:CMS}
+that hosts the experimental facilities. Section~\ref{sec:LHC} covers the Large Hadron Collider (LHC), the accelerator complex responsible for delivering $pp$ collisions to each experiment.
+Section~\ref{sec:CMS}
 covers the Compact Muon Solenoid (CMS), the detector which this analysis uses to study the $pp$ collisions and search for double Higgs production.
 
 
 \section{CERN\label{sec:CERN}}
 
-CERN was established in 1954 by 12 countries in Western Europe~\cite{cern:public}. Notable
+CERN was established in 1954 by 12 countries in Western Europe with a mandate to establish a
+world-class research organisation in funamental physics~\cite{cern:public}. Notable
 achievements in particle physics and computer science made through experiments at CERN include
 
 \begin{itemize}
@@ -25,7 +27,7 @@ shows a world map detailing each country's affiliation with CERN.
 
 \begin{figure}[ht]
  \begin{center}
-    \includegraphics[width=0.70\textwidth]{figures/experiment/CERN_international_relations_map.pdf}
+    \includegraphics[width=0.90\textwidth]{figures/experiment/CERN_international_relations_map.pdf}
       \end{center}
 \caption{Map of the international relations each country has with CERN~\cite{cern:map}.
 Member states are in blue. States for who accession is in progress are in green.
@@ -64,13 +66,14 @@ The LHC is designed to accelerate protons or ions in two circular beam pipes, or
 itself is described in Subsection~\ref{subsec:machine}
 These beams are made to cross in four designated points of the accelerator and create collisions between
 pairs of particles in opposite beams.
-Each of these points is home to a large detector which measures the
-products of these collisions, which are described in Subsection~\ref{subsec:detectors}.
+Each of these points is home to a large detecto, described in Subsection~\ref{subsec:detectors},
+for measuring the products of these collisions.
 
 \subsection{Accelerator Complex\label{subsec:accelerators}}
 
 The path that a proton takes before entering a collision in the middle of CMS is shown in
-Figure~\ref{fig:cern_accelerators}. Hydrogen gas is stripped of its electron and accelerated in
+Figure~\ref{fig:cern_accelerators}. To start, hydrogen gas is
+stripped of its electron and accelerated in
 Linac2, a linear accelerator, to 50 MeV. Next are a series of three circular pre-accelerators that
 increase the kinetic energy of the protons as well as collect the protons into discrete bunches.
 These accelerators are the Proton Synchrotron Booster (PSB), the Proton Synchrotron (PS), and the
@@ -85,7 +88,8 @@ respectively.
 \label{fig:cern_accelerators}
 \end{figure}
 
-After the SPS, the protons are injected into the LHC, where they are accelerated to up to 7 TeV.
+After the SPS, the protons are injected into the LHC, where they are accelerated up to 7 TeV, the
+designed energy of operation.
 The bunch structure is maintained during injection into the LHC, which is important for the timing
 of the collisions inside the detectors. 
 
@@ -96,7 +100,7 @@ of a dipole is shown in Figure~\ref{fig:lhc_dipole}. The purpose of the
 dipoles, each of which has two holes for each beam, is to direct the proton beams on their circular
 path. To keep these high energy particles on their path, each dipole produces a magnetic field
 of 8.3 T using a superconductor cooled with liquid helium to 1.9 K, which allows for a current
-of 12 kA. The length and mass of a dipole is 14 m and 35 tons, respectively.
+of 12 kA. The length and mass of a dipole are 14 m and 35 tons, respectively.
 
 \begin{figure}[ht]
  \begin{center}
@@ -107,17 +111,17 @@ of 12 kA. The length and mass of a dipole is 14 m and 35 tons, respectively.
 \end{figure}
 
 Each insertion point serves a different purpose. Points 1, 2, 5, and 8 are the interaction points, where
-the beams overlap to produce collisions. Point 4 contains the radio frequency cavity systems, which
-provide acceleration to the particles in the direction of their motion. Points 3 and 7 contain beam
-collimation systems. Point 6 contains beam dump systems for removing the beams from the LHC.
+the beams overlap to produce collisions. Point 4 contains the radio frequency cavity system, which
+provides acceleration to the protons in the direction of their motion. Points 3 and 7 contain beam
+collimation systems. Point 6 contains the beam dump system for removing the beams from the LHC.
 
 \subsection{Detectors on the LHC\label{subsec:detectors}}
 
-The general purpose detectors on the LHC are A Toroidal LHC Apparatus (ATLAS)~\cite{cern-jinst-atlas}
+The general-purpose detectors on the LHC are A Toroidal LHC Apparatus (ATLAS)~\cite{cern-jinst-atlas}
 and CMS, located at opposite sides of the ring at points 1 and 5, respectively. The physics
 goals of these two experiments are generally the same: to search for and study the Higgs boson,
-to study and improve our understanding of SM processes, and to search for BSM physics such as
-SUSY or WED.
+to study and improve our understanding of SM processes, and to search for signs of BSM physics such as
+WED or SUSY.
 
 The Large Hadron Collider beauty detector (LHCb)~\cite{cern-jinst-lhcb}
 is located at point 8 and is used
@@ -128,7 +132,8 @@ mode of operation of the LHC lasts about one to two months per year.
 
 The relative positions of these four detectors on the LHC is shown in Figure~\ref{fig:lhc_detectors}.
 Although the figure makes it appear that all the experiments are at the same depth, the LHC tunnel is
-actually sloped at 1.5 degrees toward Lac Léman, causing the tunnel depth to vary between 50 and 150 m.
+actually sloped at 1.5 degrees toward Lac L\'{e}man,
+causing the tunnel depth to vary between 50 and 150 m.
 
 \begin{figure}[ht]
  \begin{center}
@@ -138,7 +143,7 @@ actually sloped at 1.5 degrees toward Lac Léman, causing the tunnel depth to va
 \label{fig:lhc_detectors}
 \end{figure}
 
-\subsection{2012 Running}
+\subsection{LHC Operation in 2012}
 
 The principle physics result described in this work is an analysis of the data taken with the
 CMS detector during the operation of the LHC in 2012. During this time, the center-of-mass energy
@@ -153,7 +158,7 @@ average was 21.
 
 \begin{figure}[ht]
  \begin{center}
-    \includegraphics[width=0.90\textwidth]{figures/experiment/pileup_pp_2012.pdf}
+    \includegraphics[width=0.70\textwidth]{figures/experiment/pileup_pp_2012.pdf}
       \end{center}
 \caption{The average pileup in CMS during 2012~\cite{CMS:lumi}.}
 \label{fig:pileup2012}
@@ -169,7 +174,7 @@ is slightly less than the delivered. In 2012, the total recorded luminosity was 
 
 \begin{figure}[ht]
  \begin{center}
-    \includegraphics[width=0.90\textwidth]{figures/experiment/int_lumi_per_day_cumulative_pp_2012.pdf}
+    \includegraphics[width=0.70\textwidth]{figures/experiment/int_lumi_per_day_cumulative_pp_2012.pdf}
       \end{center}
 \caption{The integrated luminosity of $pp$ collisions in CMS during 2012~\cite{CMS:lumi}.}
 \label{fig:integratedlumi2012}
@@ -178,12 +183,13 @@ is slightly less than the delivered. In 2012, the total recorded luminosity was 
 The LHC delivered $pp$ collisions in 2010 and 2011 at $\sqrt{s} = 7$~TeV,
 and these were also recorded by CMS.
 Figure~\ref{fig:intlumi101112} shows the total luminosity delivered to CMS in each of these years.
-Although the $6.1$~fb~$^{-1}$ of 2011 data is used in many measurements of the Higgs boson and
+Although the $6.1$~fb~$^{-1}$ of 2011 data is analyzed in the context of
+many measurements for the Higgs boson and
 other SM processes, this analysis of double Higgs production pertains principally to 8~TeV data.
 
 \begin{figure}[ht]
  \begin{center}
-    \includegraphics[width=0.90\textwidth]{figures/experiment/int_lumi_cumulative_pp_1.pdf}
+    \includegraphics[width=0.95\textwidth]{figures/experiment/int_lumi_cumulative_pp_1.pdf}
       \end{center}
 \caption{The integrated luminosity of $pp$ collisions in CMS from 2010 to 2012~\cite{CMS:lumi}.}
 \label{fig:intlumi101112}
