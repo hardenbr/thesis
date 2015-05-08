@@ -148,7 +148,7 @@ of parameters described in Chapter~\ref{ch:intro}.
 \begin{table}[ht]
   \centering
   \renewcommand{\arraystretch}{1.4}
-  \caption{Radion simulation samples.}
+  \caption{Radion simulation samples and their corresponding cross sections.}
   \input{tables/radion_mc}
   \label{table:radion_mc}
 \end{table}
@@ -211,5 +211,32 @@ With these values, 124 scenerios are generated, each having about 20k events.
 \subsection{Background Simulation\label{subsec:bkg_samples}}
 
 The backgrounds processes for the search of double Higgs production are divided in resonant and
-nonresonant groups.
+nonresonant groups. The resonant backgrounds consist of SM Higgs production with $\Hgg$, meaning
+that for the diphoton mass, one of the most powerful discriminators between signal and background,
+these processes have the exact same distribution as the signal being sought. The nonresonant backgrounds
+consist of SM processes which have final state objects reconstructed as $\ggbb$.
+
+For the resonant background, six (five) processes are considered for the resonant (nonresonant) search.
+Four of the processes are SM single Higgs production with the $\Hgg$ decay: gluon-gluon fusion, vector
+boson fusion, associated production with a vector boson, and associated production with a pair of
+t-quarks, as shown in Figure~\ref{fig:higgsprod}. Gluon-gluon fusion mimicks the final state when two
+jets are reconstructed from initial state or final state radionation or from the underlying event.
+The other production mechanisms produce two jets directly,
+noting that in associated production with a vector boson the vector boson can decay to two jets, and
+that in associated production with a pair of t-quarks each t-quarks always decays to $bW$.
+These four processes were generated and hadronized with Pythia6.
+In addition, a fifth mechanism, associated production with a pair of b-quarks, is considered for
+both searches and was generated with MadGraph5.
+For the resonant search, a final resonant background is considered, that of the
+SM double Higgs production (i.e. the signal process for the nonresonant search).
+This is summarized in Table~\ref{table:smhiggs_mc}, and its corresponding effect on the analysis
+sensitivity is given in Chapter~\ref{chapter:results}.
+
+\begin{table}[ht]
+  \centering
+  \renewcommand{\arraystretch}{1.4}
+  \caption{Resonant background simulation samples and their corresponding cross sections.}
+  \input{tables/smhiggs_mc}
+  \label{table:smhiggs_mc}
+\end{table}
 
