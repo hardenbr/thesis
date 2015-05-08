@@ -20,3 +20,4 @@ tex/*.tex~
 
 ## other
 *.run.xml
+*.bak
