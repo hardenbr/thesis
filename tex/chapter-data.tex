@@ -6,7 +6,7 @@ which are the most relevant for the physics processes of interest. This task is 
 through the trigger system, which is discussed in Section~\ref{sec:trigger} both in general and
 in the context of this analysis. The events selected by the trigger system compose the datasets
 used by all CMS analyses. The worldwide computing grid for storage and processing of both datasets
-and simulation samples is disussed in Section~\ref{sec:storage}. Finally, the simulation samples
+and simulation samples is discussed in Section~\ref{sec:storage}. Finally, the simulation samples
 employed by this analysis are discussed in Section~\ref{sec:sim}.
 
 
@@ -14,7 +14,7 @@ employed by this analysis are discussed in Section~\ref{sec:sim}.
 
 The gap in time between successive bunch crossings by the LHC is 25 ns, which is equivalent to
 a frequency of 40 MHz. This large rate is reduced by selecting only the most interesting events
-in a two-level trigger system. The first level, Level 1 (L1), is hardward-based and reduceds the
+in a two-level trigger system. The first level, Level 1 (L1), is hardware-based and reduces the
 total event rate from 40 MHz to 100 kHz~\cite{Bayatyan:706847}, whereas the second level,
 the High Level Trigger (HLT) is software-based and reduces the total event rate from 100 kHz to
 100 Hz~\cite{Virdee:1043242}. From here, the events are processed further and stored
@@ -59,7 +59,7 @@ The trigger thresholds on the photon $E_{\rm T}$ are 26 (18) GeV and 36 (22) GeV
 The path with the 26 (18) GeV thresholds is initiated by the L1 path with 13 (7) GeV thresholds, while
 the path with 36 (22) GeV thresholds is initiated by the L1 path with a single 22 GeV threshold.
 
-In addition to keeping the trigger rate within its limits, it is also neccessary to set thresholds
+In addition to keeping the trigger rate within its limits, it is also necessary to set thresholds
 low enough such that the selection of signal events remains as high as possible. This trigger efficiency
 is studied on Monte Carlo (MC) signal samples as well as on $Z\rightarrow e^+ e^-$ data.
 For the study on MC, the efficiency is above 99.5\% for all conditions of 2012 data taking.
@@ -118,7 +118,7 @@ MC samples generated and stored.
 
 MC simulation samples are employed to study signal and background processes in more detail
 than would be offered by data alone. In a search for some new signal process, there is a trade-off
-between optimizing an analysis for one particular new physics scenerio and the ability to
+between optimizing an analysis for one particular new physics scenario and the ability to
 generalize a result to other signal processes. This analysis generally searches for a double Higgs final
 state by optimizing strategies separately between the resonant and nonresonant production mechanisms.
 The signal MC samples are discussed in Subsection~\ref{subsec:sig_samples}.
@@ -139,7 +139,7 @@ search, there is no concern for the final state being too boosted.
 
 In the resonant search, the benchmark model is that of the Radion, which is simulated with
 MadGraph5~\cite{Madgraph_Alwall:2011uj} and hadronized with Pythia6~\cite{Pythia6-0}. The events are
-generated from the gluon-fusion production of an on-shell Radion where the decay width of the radion
+generated from the gluon-fusion production of an on-shell Radion where the decay width of the Radion
 is 10 MeV, much less than the experimental resolution of the final state products. There are roughly
 20k events generated per mass point, with twice the amount at three points.
 This is summarized in Table~\ref{table:radion_mc} with the corresponding cross sections given in terms
@@ -154,17 +154,17 @@ of parameters described in Chapter~\ref{ch:intro}.
 \end{table}
 
 In order to verify the model-independence of the result, two additional signal samples are generated.
-The spin-2 Graviton is considered as the angular distribution of the final state differs from a
-spin-0 scenerio. However, due to the expected sensitivity of the analysis, as shown in
+The spin-2 graviton is considered as the angular distribution of the final state differs from a
+spin-0 scenario. However, due to the expected sensitivity of the analysis, as shown in
 Chapter~\ref{ch:results}, the analysis is not expected to be able to differentiate between
-these two scenerios. This will be explicitely checked in Chapter~\ref{ch:results} as well.
+these two scenarios. This will be explicitly checked in Chapter~\ref{ch:results} as well.
 These samples were generated with a decay width of 1 GeV and 10 GeV,
-which also allow for the accessment of the
+which also allow for the assessment of the
 dependence of the width-dependence on the final result. The production mechanism is through
 gluon fusion, generated with MadGraph5 and hadronized with Pythia6. The sample generation
 is summarized in Table~\ref{table:graviton_mc} with corresponding cross sections given in terms of
-parameters described in Chapter~\ref{ch:intro}. Here, the RS1 KK-graviton refers to a scenerio
-where $c_i = 1$ in Equation~\ref{eq:wed_lagrangian}, whereas the bulk KK-graviton refers to a scenerio
+parameters described in Chapter~\ref{ch:intro}. Here, the RS1 KK-graviton refers to a scenario
+where $c_i = 1$ in Equation~\ref{eq:wed_lagrangian}, whereas the bulk KK-graviton refers to a scenario
 in which the couplings between light quarks and the graviton are suppressed, leading to the
 production cross section of the bulk KK-graviton to be lowered by a factor of 0.02. The cross sections
 are given in Table~\ref{table:graviton_xsec}.
@@ -181,16 +181,16 @@ are given in Table~\ref{table:graviton_xsec}.
   \centering
   \renewcommand{\arraystretch}{1.4}
   \caption{Graviton cross sections. Note that there is assumes the maximal
-braching ratio of 25\% for the KK-graviton to two Higgs for all masses. The cross section is the
+branching ratio of 25\% for the KK-graviton to two Higgs for all masses. The cross section is the
 same for the 1 GeV and 10 GeV width because the specific values of fermion localization leave some
 freedom in the partial width of the KK-graviton to two top quarks~\cite{Agashe:2007zd}.}
   \input{tables/graviton_xsec}
   \label{table:graviton_xsec}
 \end{table}
 
-A second alternative signal scenerio to the Radion benchmark is the spin-0 heavy neutral Higgs from
-the MSSM. These samples are generated and showered with Pythia6. For this scenerio, only low-mass
-resonance hyptheses are generated since, once the heavy Higgs mass rises above twice that of the top
+A second alternative signal scenario to the Radion benchmark is the spin-0 heavy neutral Higgs from
+the MSSM. These samples are generated and showered with Pythia6. For this scenario, only low-mass
+resonance hypotheses are generated since, once the heavy Higgs mass rises above twice that of the top
 mass, it will overwhelming decay through that channel. The sample generation for the MSSM heavy
 Higgs is summarized in Table~\ref{table:mssm_mc}.
 
@@ -206,7 +206,7 @@ In the search for nonresonant HH production, the three parameters $\kapl$, $\kap
 may be varied as discussed in Subsection~\ref{subsec:nonres_th}. These samples are generated
 with MadGraph5 using suitable ranges for the parameters about their corresponding SM values. The
 values considered for $\kapl$ are -20, -15, -10, 0, 1, 2, 3, 5, 10, 15, and 20; for $\kapt$ 0.75, 1, and 1.25; and for $\ctwo$ -3, -2, 0, 2, and 3.
-With these values, 124 scenerios are generated, each having about 20k events.
+With these values, 124 scenarios are generated, each having about 20k events.
 
 \subsection{Background Simulation\label{subsec:bkg_samples}}
 
@@ -219,7 +219,7 @@ consist of SM processes which have final state objects reconstructed as $\ggbb$.
 For the resonant background, six (five) processes are considered for the resonant (nonresonant) search.
 Four of the processes are SM single Higgs production with the $\Hgg$ decay: gluon-gluon fusion, vector
 boson fusion, associated production with a vector boson, and associated production with a pair of
-t-quarks, as shown in Figure~\ref{fig:higgsprod}. Gluon-gluon fusion mimicks the final state when two
+t-quarks, as shown in Figure~\ref{fig:higgsprod}. Gluon-gluon fusion mimics the final state when two
 jets are reconstructed from initial state or final state radiation (ISR or FSR)
 or from interactions from the underlying event (UE).
 The other production mechanisms produce two jets directly,
