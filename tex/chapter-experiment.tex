@@ -200,8 +200,9 @@ other SM processes, this analysis of double Higgs production pertains principall
 \section{CMS\label{sec:CMS}}
 
 CMS is one of the two general purpose detectors on the LHC. It was built in part
-to search for the Higgs boson on the range of masses not already excluded by previous experiments
-and by theory, as already discussed in Section~\ref{sec:discovery}. Other physics goals include
+to search for the Higgs boson on the range of masses that had not already been excluded
+at the time by previous experiments
+and by theory. Other physics goals include
 the study of aspects of the SM, such as the top quark mass, and the search for BSM physics, such
 as supersymmetry, extra dimensions, and dark matter, as already discussed in
 Section~\ref{sec:SMshortcomings}.
@@ -222,14 +223,19 @@ The central feature of CMS is its superconducting solenoid magnet~\cite{cms:sole
 At 12.5~m long and with an internal diameter of 6~m, it is the world's largest superconducting magnet.
 The superconducting material is niobium-titanium, which is cooled to 4~K and provided with a current
 of 18~kA.
-It is centered on the IP and provides a uniform magnetic field inside its volume of 3.8~T.
+This current provides a uniform magnetic field of 3.8~T inside the solenoid volume, which is refered
+to as the inner barrel.
 Outside of the solenoid, an iron return yoke returns the magnetic field which escapes the ends
-of the cylinder. The field strength in this region is a uniform 2 T.
+of the cylinder. The region radially outward from the cylinder, called the outer barrel, experiences
+a uniform field strength of 2 T due to this return yoke. The region beyond either end, called
+the endcap region, also has part of the return yoke, but the field strength
+and direction is quite complex here. The return yoke contributes 12.5 kton of the detector's 15 kton.
 
 CMS is described in detail in \cite{Chatrchyan:2008zzk} and \cite{Bayatian:922757}.
 Here an overview of each of the subsystems
-is provided, starting from the closest to the main interaction point (IP) and proceeding
-radially outward. Figure~\ref{fig:CMS_side} gives relative position and sizes of each of the
+is provided, starting from the closest to the main interaction point (IP), where the proton beams
+are made to collide, and proceeding
+radially outward. Figure~\ref{fig:CMS_side} gives the relative position and sizes of each of the
 subsystems.
 Subsection~\ref{subsec:tracker} covers the silicon tracker. Subsection~\ref{subsec:ecal} covers the
 electromagnetic calorimeter (ECAL). Subsection~\ref{subsec:hcal} covers the hadronic calorimeter
@@ -248,14 +254,17 @@ the reconstruction of their tracks. Subsection~\ref{subsec:muonsystem} covers th
 \subsection{Silicon Tracker\label{subsec:tracker}}
 
 The silicon tracker~\cite{Karimaki:368412} is responsible for measuring the positions of charged particles as they propagate from the IP.
-The goal is reconstruct the paths of these charged particles by recording their position
-in successive layers of silicon. When coupled with the strong magnetic field provided by the solenoid
-magnet, the charged particles have a curled trajectory, the radius of which is related directly
-to the particles transverse momentum $p_{\rm T}$. A stronger field means better momentum resolution.
+Its goal is to reconstruct the paths of these charged particles by recording their position
+in successive layers of silicon planes.
+When coupled with the strong magnetic field provided by the solenoid
+magnet, a charged particle has a curved trajectory, the radius of which is related directly
+to the particle's transverse momentum $p_{\rm T}$. A stronger field allows for
+better momentum resolution.
 
-The choice of silicon technology is imperative to achieve this goal.When a charged particle passes through the material, electrons are liberated from the atoms of the semiconductor, and a bias voltage
-allows for the collection of this free electron and electron hole. If the charged collected during
-a time window exceeds a certain value, a hit is registered, and the hits from successive layers
+The choice of silicon technology is imperative to achieve this goal. When a charged particle passes through the material, electrons are liberated from the atoms of the semiconductor, and a bias voltage
+allows for the collection of the liberated electron and corresponding electron hole.
+If the charged collected during
+a certain time window exceeds a specified threshold, a hit is registered, and the hits from successive layers
 are reconstructed offline for particle identification and momentum measurements.
 Section~\ref{sec:PF} discusses the Particle Flow algorithm used for performing this identification.
 
@@ -267,9 +276,9 @@ are parallel to the transverse plane.
 
 The pixel detector has three layers in the barrel region
 and two layers on either end in the endcap region, in total making up 66 million channels of size
-$100 \mu m \times 150 \mu m$. The strip detector surrounds the pixel detector and adds an additional
+$100~\mu m \times 150~\mu m$. The strip detector surrounds the pixel detector and adds an additional
 10 layers in the barrel and 12 layers in each endcap. The silicon strips vary in size from
-$10 cm \times 80 \mu m$ to $25 cm \times 180 \mu m$ and in orientation, either parallel or perpendicular
+$10~cm \times 80~\mu m$ to $25~cm \times 180~\mu m$ and in orientation, either parallel or perpendicular
 to the $z$-axis.
 
 \subsection{Electromagnetic Calorimeter\label{subsec:ecal}}
@@ -277,14 +286,14 @@ to the $z$-axis.
 The ECAL~\cite{ecaltdr} is a calorimeter that focuses on measuring the energy of electromagnetic showers.
 It, like the tracker, is divided into barrel and endcap regions, and provides coverage up to
 $|\eta| < 3.0$.
-It accomplishes this by employing 75 thousand lead tungstate crystals of size
-$25 mm \times 25 mm \times 230 mm$ in the barrel or $30 mm \times 30 mm \times 220 mm$ in the endcap.
+It accomplishes this by employing 75,000 lead tungstate crystals of size
+$25~mm \times 25~mm \times 230~mm$ in the barrel or $30~mm \times 30~mm \times 220~mm$ in the endcap.
 The ECAL is 25 radiation lengths long, a relatively large number that is exploited in
 particle identification. Electrons and photons are stopped by having their energy dissipated
 through many cascades, electrons through bremsstrahlung and photons through pair production.
 Hadrons and muons, also interacting electromagnetically, deposit some energy
 but are able to pass through to the HCAL due to, in part, their larger masses. The energy resolution
-provided by the ECAL is
+provided by the ECAL, as measured from electron test beams, is
 
 \begin{equation}
 \frac{\sigma(E)}{E} = \frac{0.028}{\sqrt{E/\textrm{GeV}}} \oplus \frac{0.12}{E/\textrm{GeV}} \oplus 0.3\% .
@@ -293,29 +302,32 @@ provided by the ECAL is
 \subsection{Hadronic Calorimeter\label{subsec:hcal}}
 
 The last subsystem within the volume of the solenoid magnet is HCAL~\cite{hcaltdr}.
-The subsystem has barrel and endcap divisions similar to ECAL which covers up to $|\eta| < 3.0$.
+The subsystem has barrel and endcap divisions (HB and HE, respectively) similar to ECAL which
+covers up to $|\eta|~<~3.0$,
 These components are made of plastic scintillator and brass absorber which form 3700 towers. The
 towers vary in coverage based on their placement, where the most central towers span
 $\Delta\eta \times \Delta\phi = 0.087 \times 0.087$. The purpose of this subsystem is to
-measure the energy of hadrons, which usually appear in columnated sprays called jets $j$. In addition
+measure the energy of hadrons, which usually appear in columnated sprays called jets~$j$. In addition
 to energy and position measurement, nearly all hadrons are stopped and absorbed due to the
-high density of large material budget of brass. There is an additional component of the HCAL
-in the barrel region immediately outside of the magnet whose purpose is to serve as another
-layer of absorption for any hadrons that make it through preceding layers.
+high density and large material budget of brass. There is an additional component of HCAL
+in the barrel region immediately outside of the magnet (HO) whose purpose is to serve as another
+layer of absorption for any hadrons that make it through the preceding layers.
 
-A final component covers pseudorapidities $3.0 < |\eta|< 5.0$. In this region, the damage from
-radiation is especially high, so here a steel and quartz-fibre \v{C}erenkov calorimeter is used.
-This region provides 860 such towers.
+A final component of HCAL in the forward region of the detector (HF)
+covers pseudorapidities $3.0 < |\eta|< 5.0$. In this region, the damage from
+radiation is especially high, so a steel and quartz-fibre \v{C}erenkov calorimeter is used instead.
+This component provides 860 such towers.
 
 The energy resolution is improved from the incorporation of information from other subsystems via
 the Particle Flow algorithm, discussed in Section~\ref{sec:PF}.
-The resolution is about 15\% for jets of interest to this analysis, those which are central and
-have sufficient high $p_{\rm T}$. Section~\ref{sec:jets} discusses these requirements.
+The resolution is about 15\% for the jets of interest to this analysis, those which are central 
+in the detector with
+sufficiently high $p_{\rm T}$. Section~\ref{sec:jets} discusses these requirements.
 
 Figure~\ref{fig:subsystems_inner} shows a quadrant of the inner subsystems of CMS. This gives
 a scale of the relative positions and sizes of the tracker, ECAL,
-and most of HCAL with respect to each other and the IP. Missing from the HCAL are the 
-HCAL Forward (HF) in the very forward region and the HCAL outer barrel (HO) just to the outside of
+and most of HCAL with respect to each other and the IP. Missing from figure are the HF
+in the very forward region and the HO just to the outside of
 the magnet.
 
 \begin{figure}[ht]
@@ -345,7 +357,7 @@ within a gas volume. Figure~\ref{fig:muonsystem} shows the relative position of 
 The hits of the muon system are matched with hits from the tracker to form a single track and
 improve momentum resolution. Unlike other charged particles, which register significant activity in
 one or both calorimeters, the energy measurement of muons is based purely on their tracks. This means
-that the resolution worsens for higher energy muons as their tracks are less and less curled by
+that the resolution worsens for higher energy muons as their tracks are less and less curved by
 the magnetic field.
 
 
