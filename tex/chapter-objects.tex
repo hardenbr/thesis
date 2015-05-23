@@ -97,92 +97,83 @@ of jets from PF candidates is discussed in more detail in Section~\ref{sec:jets}
 
 \section{Photons\label{sec:photons}}
 
-Resume here!!!
+PF photon cadidiates are reconstructed from clustering individual units in the ECAL
+and checking consistency with tracks.
+The calorimeter signal are calibrated for several detector effects~\cite{CMS-PAS-EGM-10-005,ECALpaper},
+providing the best energy resolution possible.
+The energy scale is corrected in both data and simulation, while the photon energy is smeared in
+simulation in order to reproduce the same energy resolution that is observed in data.
 
-Photon candidates are reconstructed from clusters of energy in the ECAL using the default
-CMS algorithms [23].  In order to obtain the best energy resolution the calorimeter signals are
-calibrated and corrected for several detector effects [24].   A multi-step procedure is used to
-correct the energy scale in data and to determine Gaussian smearings which are applied to
-the simulated photons to reproduce the same energy resolution in simulation as observed in
-data.
+With the PF photon candidates in hand, additional requirements are imposed in order to further
+separate prompt photons from fake photons originating from misidentified electrons or from jets.
+These additional requirements include an electron veto, an upper threshold on the energy deposited
+in HCAL in the region about the candidate, isolation, and the shower shape. The electron veto 
+removes photons if there is an electron candidate matching the photon ECAL cluster with no missing
+hits in the tracker and with no matching reconstructed conversion.
+Isolation requirements place
+thresholds on the amount of ECAL energy deposited in a region about the cluster; these are both
+detector based and PF based. Requirements on the electromagnetic shower shape include the
+width of the shower in terms of ECAL detector units and
+ratio of the amount of energy in a 3x3 unit box around the cluster seed to that around a 5x5 unit box.
 
-Once the photon candidates are built, a selection to identify isolated photons is applied to
-separate prompt photons from objects reconstructed as a photon which come from jets or from
-misidentified electrons.  This selection consists of an electron veto, a selection on the hadronic
-leakage of the shower and some requirements based on the electromagnetic shower shape and
-on isolation variables.
+After the quality cuts, the two photons candidates are requested to satisfy the sliding asymmetric cuts
+\begin{subequations}
+\begin{equation}
+p_{{\rm T},\gamma_1} > \frac{\Mgg}{3}
+\end{equation}
+\begin{equation}
+p_{{\rm T},\gamma_2} > \frac{\Mgg}{4} \, ,
+\end{equation}
+\end{subequations}
+where $p_{{\rm T},\gamma_1}$ and $p_{{\rm T},\gamma_2}$ are the transverse momenta of the
+leading and subleading photons, respectively.
+The fact that these requirements on the transverse momentum are scaled by the diphoton invariant mass
+prevents turn-on effects which could distort the shape of the $\Mgg$ spectrum for low values of $\Mgg$.
+Both photons have the requirement that their position be within the ECAL acceptance of
+$\right|\eta\left| < 2.5$ with an exclusion on the ECAL gap between the barrel and endcaps
+In the case that there are more than two photons passing the identification and kinematic requirements,
+the two with the largest $p_{\rm T}$ are choosen. After this choice, the diphoton mass is required to
+be between 100 and 180 GeV.
 
-The two photons are requested to satisfy the asymmetric cut
-p
-T
-,
-g
-1
-/
-m
-gg
->
-1/3 and
-p
-T
-,
-g
-2
-/
-m
-gg
->
-1/4, where
-p
-T
-,
-g
-1
-and
-p
-T
-,
-g
-2
-are the transverse momenta of the leading and sub-leading photons.
-The use of transverse momentum thresholds scaled by the diphoton invariant mass prevents
-turn-on effects which may distort the shape of the low mass end of the
-m
-gg
-spectrum.  Both
-photons are required to be within the ECAL acceptance
-j
-h
-g
-j
-<
-2.5 and the transition region
-between the ECAL barrel and the ECAL endcaps is excluded.  If more than two photons are
-reconstructed which pass the above requirements, the two with highest transverse momentum
-are selected for the analysis.  A pre-selection 100
-<
-m
-gg
-<
-180 GeV is applied.  The resulting
-simulated signal mass shape of the Higgs decaying into two photons is shown on the Figure 1
-(top-left), and compared to the sum of all standard model production mechanisms of a single
-Higgs decaying to two photons.  The trigger efficiency for the above-mentionned selection is
-measured to be larger than 99%.
-The typical resolution in the diphoton mass spectrum for the signal is 1 GeV. It is driven by
-the photon energy resolution and the knowledge about the direction of the photons, which is
-in turn dominated by the knowledge of the vertex from which they originate.  The presence
-of a second Higgs decaying to jets allows us to efficiently identify the event vertex as the one
-with the largest value of
-Â
-p
-2
-T
-, where the sum runs over all the tracks associated to the vertex.
-The relative contribution from the vertex assignment to the diphoton mass resolution becomes
-negligible with respect to the photon energy resolution when the distance between the chosen
-vertex and the true one is below 1 cm. Considering this tolerance the vertex finding efficiency
-exceeds 99 %.
+Figure~\ref{fig:mgg_onlyhiggs} shows the resulting simulated distributions for the diphoton mass 
+of the resonant signal and resonant backgrounds.
+In the case of the resonant background, the sum
+of all SM $\Hgg$ production mechanisms is shown as a single contribution.
+Figure~\ref{fig:mgg_controlplot} shows the same
+distribution for data and the sum of background. (Note that these figures include requirements
+on jets, discussed in Section~\ref{sec:jets}.)
+The resolution of the diphoton mass spectrum for the signal is a few GeV.
+The two primary drivers in this resolution are the energy resolution of the individual photons
+and the direction of the photons from their origin, which is synonymous with the identification
+of the vertex from which they were produced. Due to the presense of the $\Hbb$ decay in the search,
+the tracks from the jets allow for the efficient identification of the correct vertex since photons
+do not leave tracks unless they convert in the tracker.
+The criterion for the vertex choice is that which has the maximimum $\sum_i p_{{\rm T},i}$, where
+the sum is over all of the tracks associated to a particlar vertex. With this criterion,
+the relative contribution to the diphoton mass resolution due to the vertex choice is
+negligible with respect to the energy resolution for individual photons.
+
+\begin{figure}[ht]
+ \begin{center}
+    \includegraphics[width=0.70\textwidth]{figures/objects/DiPhotonMass_OnlyHiggs.pdf}
+      \end{center}
+\caption{Simulated diphoton mass spectrum for the signal and the sum of all production mechanisms of the
+SM Higgs boson after basic selections on photons and requesting at least one loose b--tagged jet.
+The spectra is normalized to one.}
+\label{fig:mgg_onlyhiggs}
+\end{figure}
+
+\begin{figure}[ht]
+ \begin{center}
+   \subfigure{\includegraphics[width=0.70\textwidth]{figures/objects/DiPhotonMass_ShapeNormalized_sys.pdf}}\\
+   \subfigure{\includegraphics[width=0.70\textwidth]{figures/objects/DiPhotonMass_ShapeNormalized_Log_sys.pdf}}
+      \end{center}
+\caption{Control plots for the diphoton mass spectrum after basic photon and jet selections
+and requiring at least one loose b--tagged jet. The simulation is normalized to data and
+the statistical uncertainty on the number of simulated events is shown in dashed overlay.
+The top (bottom) figure is in linear (log) scale.}
+\label{fig:mgg_controlplot}
+\end{figure}
 
 \section{Jets\label{sec:jets}}
 
