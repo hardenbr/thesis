@@ -130,7 +130,7 @@ leading and subleading photons, respectively.
 The fact that these requirements on the transverse momentum are scaled by the diphoton invariant mass
 prevents turn-on effects which could distort the shape of the $\Mgg$ spectrum for low values of $\Mgg$.
 Both photons have the requirement that their position be within the ECAL acceptance of
-$\right|\eta\left| < 2.5$ with an exclusion on the ECAL gap between the barrel and endcaps
+$\left|\eta\right| < 2.5$ with an exclusion on the ECAL gap between the barrel and endcaps
 In the case that there are more than two photons passing the identification and kinematic requirements,
 the two with the largest $p_{\rm T}$ are choosen. After this choice, the diphoton mass is required to
 be between 100 and 180 GeV.
@@ -156,7 +156,7 @@ negligible with respect to the energy resolution for individual photons.
 \begin{figure}[ht]
  \begin{center}
     \includegraphics[width=0.70\textwidth]{figures/objects/DiPhotonMass_OnlyHiggs.pdf}
-      \end{center}
+ \end{center}
 \caption{Simulated diphoton mass spectrum for the signal and the sum of all production mechanisms of the
 SM Higgs boson after basic selections on photons and requesting at least one loose b--tagged jet.
 The spectra is normalized to one.}
@@ -165,9 +165,9 @@ The spectra is normalized to one.}
 
 \begin{figure}[ht]
  \begin{center}
-   \subfigure{\includegraphics[width=0.70\textwidth]{figures/objects/DiPhotonMass_ShapeNormalized_sys.pdf}}\\
-   \subfigure{\includegraphics[width=0.70\textwidth]{figures/objects/DiPhotonMass_ShapeNormalized_Log_sys.pdf}}
-      \end{center}
+   \includegraphics[width=0.70\textwidth]{figures/objects/DiPhotonMass_ShapeNormalized_sys.pdf}
+   \includegraphics[width=0.70\textwidth]{figures/objects/DiPhotonMass_ShapeNormalized_Log_sys.pdf}
+ \end{center}
 \caption{Control plots for the diphoton mass spectrum after basic photon and jet selections
 and requiring at least one loose b--tagged jet. The simulation is normalized to data and
 the statistical uncertainty on the number of simulated events is shown in dashed overlay.
@@ -177,5 +177,58 @@ The top (bottom) figure is in linear (log) scale.}
 
 \section{Jets\label{sec:jets}}
 
+PF jet reconstruction involves the clustering of all PF candidates except the two photons selected
+as the $\Hgg$ candidate~\cite{PFPAS2009,CMS-PAS-PFT-10-001}.
+The anti-$k_{\rm T}$ algorithm~\cite{Cacciari:2008gp} with a distance parameter of $R = 0.5$ is
+used to cluster the PF candidates into jets as an approximate attempt to reverse engineer the
+processes of hadronization and fragmentation after a b-quark was produced in the interaction.
+In this greedy algorithm, a list of particles and pseudojets is maintained, and at each iteration
+elements $i$ and $j$ are combined into one pseudojet if that pair has the minimum distance measure
+in the list, where the distance measure $d_{ij}$ is defined as
+\begin{equation}
+d_{i,j} = \min \left(\frac{1}{k_{{\rm T},i}^2},\frac{1}{k_{{\rm T},j}^2}\right)\frac{\Delta R_{i,j}^2}{R^2} \, ,
+\end{equation}
+where $k_{{\rm T},i}$ is the transverse momentum of $i$ and $\Delta R_{i,j} = \sqrt{(\eta_i-\eta_j)^2+(\phi_i-\phi_j)^2}$ is the angular separation between $i$ and $j$. If, on a particular iteration,
+$d_{i,B}$ is the minimum, defined as
+\begin{equation}
+d_{i,B} = \frac{1}{k_{{\rm T},i}^2} \, ,
+\end{equation}
+then element $i$ is considered a jet and is removed from the list. The algorithm continues until the
+list is empty.
+The advantages of this clustering algorithm is that harder jets tend to be reconstructed as circles
+in the $\eta\phi$-plane and that the clustering is not sensitive to hadronization from pileup and the
+underlying event.
+
+After the jet reconstruction, the energy is corrected for pileup contributions from both the same
+bunch crossing and neighboring bunch crossings. This is accomplished with the the
+jet area technique~\cite{Cacciari:2007fd} carried out by the FastJet package~\cite{Cacciari:2011ma}
+in which the jet $p_{\rm T}$ is corrected per unit area based on an event-by-event estimation of pileup
+activity.
+Jet energy is further corrected as a function of the jet $p_{\rm T}$ and $\eta$~\cite{JINST6}
+due to potential mismeasurement and the presence of neutrinos.
+
+Additional requirements are imposed to reject jets that originate from detector noise or from the
+clustering of particles from pileup from those that originate from a parton in the
+primary interaction~cite{CMS-PAS-JME-13-005}. The two criteria used are based on the fraction
+of charged PF candidates attached to the primary vertex $\beta^*$ and the jet width
+$\langle\Delta R^2\rangle$, defined as
+\begin{subequations|
+\begin{equation}
+\beta^* = \frac{\sum_{i\in \text{other PV}} p_{{\rm T},i}}{\sum_{i \text{charged}} p_{{\rm T},i}}
+\end{equation}
+\begin{equation}
+\langle\Delta R^2\rangle = \frac{\sum_i \Delta R_i^2 p_{{\rm T},i}^2}{\sum_i p_{{\rm T},i}^2} \, ,
+\end{equation}
+\end{subequations}
+where ``other PV'' refers to the PF charged candidates associated to another primary vertex, the sum
+on $i$ in the denominator of $\beta^*$ is over the charged candidates in the jet, the sums
+on $i$ in $\langle\Delta R^2\rangle$ are over all constituents in the jet, and $\Delta R_i$ is the
+angular distance between constituent $i$ and the jet axis. Upper thresholds are imposed on these
+quantities, and in the case of $\beta^*$ the threshold is a function of the number of reconstructed
+vertices.
+
+The efficiency of the jet identification from the above criteria exceeds 95\%. Additional kinematic
+requirements on the jets include $p_{\rm T} \gt 25$~GeV and $|\eta| < 2.5$ (within the tracker
+acceptance).
 
 
