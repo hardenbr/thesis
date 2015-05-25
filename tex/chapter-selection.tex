@@ -62,9 +62,49 @@ This was also shown visually in Figure~\ref{fig:mjj_onlyhiggs}.
 
 \section{Resonance Reconstruction and Kinematic Fit\label{sec:Xreconstruction}}
 
+For the resonant and nonresonant searches, the double Higgs system is constructed
+by combining the $\Hgg$ and $\Hbb$ candidates.
+In order to improve the resolution on the $\Mggjj$ distribution, an additional contraint is imposed
+requiring the dijet mass to be consistent with the Higgs mass. This constaint, called the
+kinematic fit~\cite{Chatrchyan:2013yoa}, is performed by varying the jet four-momentum
+with respect to their
+respective energy and position resolution in order to fix $\Mjj = 125$~GeV.
+The resulting distribution is denoted as $\Mggjjk$. Distributions before (\Mggjj) and after (\Mggjjk)
+the kinematic fit
+are shown in Figure~\ref{fig:mggjj_onlyhiggs} for the resonant signal and resonant backgrounds
+and in Figure~\ref{fig:mggjj_controlplot} for data and the sum of backgrounds.
 
+\begin{figure}[ht]
+ \begin{center}
+   \includegraphics[width=0.70\textwidth]{figures/selection/TotalMass_OnlyHiggs.pdf}
+   \includegraphics[width=0.70\textwidth]{figures/selection/TotalMassKinFit_OnlyHiggs.pdf}
+ \end{center}
+\caption{Simulated four-body mass spectrum for the resonant signal and the sum of all production
+mechanisms of the
+SM Higgs boson after basic selections on photons and jets and requesting at least
+one loose b-tagged jet. Before (after) the kinematic fit is shown in the top (bottom) figure.
+The spectra is normalized to one.}
+\label{fig:mggjj_onlyhiggs}
+\end{figure}
+
+\begin{figure}[ht]
+ \begin{center}
+   \includegraphics[width=0.45\textwidth]{figures/selection/TotalMass_ShapeNormalized_sys.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/selection/TotalMassKinFit_ShapeNormalized_sys.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/selection/TotalMass_ShapeNormalized_Log_sys.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/selection/TotalMassKinFit_ShapeNormalized_Log_sys.pdf}
+ \end{center}
+\caption{Control plots for the four-body mass spectrum after basic photon and jet selections
+and requiring at least one loose b-tagged jet. The simulation is normalized to data and
+the statistical uncertainty on the number of simulated events is shown in dashed overlay.
+The left (right) figures are before (after) the kinematic fit is imposed, and
+the top (bottom) figures are shown in linear (log) scale.}
+\label{fig:mggjj_controlplot}
+\end{figure}
 
 \section{Data Control Sample\label{sec:dataCS}}
+
+resume here!!!
 
 \section{Optimization Studies\label{sec:optim}}
 Separate resonant and nonresonant here
