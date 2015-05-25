@@ -9,8 +9,8 @@ Section~\ref{sec:higgsreconstruction} discusses how the photons and jets passing
 requirements are assembled into Higgs candidates. For the resonant search $X\rightarrow HH$,
 Section~\ref{sec:Xreconstruction} discusses how the two Higgs come together to construct a resonant
 candidate. Finally, the construction of a data control
-sample, discussed in Section~\ref{sec:dataCS}, allows for the study of additional event-wide
-requirements for improving sensitivity, discussed in Section~\ref{sec:optim}.
+sample, discussed in Section~\ref{subsec:dataCS}, allows for the study of additional event-wide
+requirements for improving sensitivity, discussed in Section~\ref{sec:extraction}.
 
 \section{Event Classification\label{sec:classification}}
 
@@ -102,11 +102,39 @@ the top (bottom) figures are shown in linear (log) scale.}
 \label{fig:mggjj_controlplot}
 \end{figure}
 
-\section{Data Control Sample\label{sec:dataCS}}
+\section{Signal Extraction\label{sec:extraction}}
 
-resume here!!!
+The strategy for extracting a measurement of the signal yield centers on the fact that there
+are three spectra, \Mgg, \Mjj, and \Mggjjk, from which an excess can be measured.
+For the resonant search, an excess would appear as a localized bump on the
+\Mggjjk spectrum which would give a direct handle on $m_X$,
+but, recalling from Figure~\ref{fig:mggjj_controlplot}, there is a kinematic peak in the background
+around 300 GeV. In order to avoid looking for a peak on top of a peak, the resonant search is
+divided into two regimes:
+\begin{itemize}
+\item the high-mass analysis searches for an excess on the \Mggjjk spectrum for $m_X \ge 400$~GeV, and
+\item the low-mass analysis searches for an excess on the \Mgg spectrum for $m_X \in [260, 400]$~GeV.
+In both cases, there is more discrimination to be gained by imposing requirements on the two spectra
+not being fit, which is described in Section~\ref{subsec:add_discrimination}.
 
-\section{Optimization Studies\label{sec:optim}}
-Separate resonant and nonresonant here
+The nonresonant search can be viewed as a special case of the low-mass resonant search in which
+the \Mggjjk spectrum has no local peak. Here, excess is sought on the $\Mgg \times \Mjj$ plane,
+with requirements imposed on the \Mggjj and the angle between the two Higgs candidates
+$\cos(\theta^*_\text{CS})$. 
+
+\subsection{Data Control Sample\label{subsec:dataCS}}
+
+In optimize the kinematic cuts imposed after preselection, a data control sample is constructed.
+The events for the sample are selected with the same preselection as data except for
+the inversion of one of the photon's identification and isolation requirements. This sample
+is dominated by the contribution of \gjjj rather than the \ggjj of the signal region.
+The main kinematic variables related to the photon have a different shape with respect to the
+signal region, so reweighting of the sample is needed to ensure that the distributions
+match those in the signal region. The event weights are derived by matching the shape
+of the control sample to data in the $p_{{\rm T},\gamma_1} \times p_{{\rm T},\gamma_1}$ plane,
+with a veto on signal region in the range $\Mgg \in [115, 135]$~GeV. Afterwards,
+the normalization of the sample is fixed to the normalization of data.
+
+\subsection{Additional Discrimination\label{subsec:add_discrimination}}
 
 
