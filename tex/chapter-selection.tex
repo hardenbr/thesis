@@ -121,7 +121,7 @@ not being fit, which is described in Section~\ref{subsec:add_discrimination}.
 The nonresonant search can be viewed as a special case of the low-mass resonant search in which
 the \Mggjjk spectrum has no local peak. Here, excess is sought on the $\Mgg \times \Mjj$ plane,
 with requirements imposed on the \Mggjj and the angle between the two Higgs candidates
-$\cos(\theta^*_\text{CS})$. 
+\acosthetastar.
 
 \subsection{Data Control Sample\label{subsec:dataCS}}
 
@@ -139,9 +139,9 @@ shows the effect of the reweighting on the three spectra of interest.
 
 \begin{figure}[ht]
  \begin{center}
-   \includegraphics[width=0.70\textwidth]{figures/selection/mggSpectrum.pdf}
-   \includegraphics[width=0.70\textwidth]{figures/selection/mjjSpectrum.pdf}
-   \includegraphics[width=0.70\textwidth]{figures/selection/mggjjSpectrum.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/selection/mggSpectrum.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/selection/mjjSpectrum.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/selection/mggjjSpectrum.pdf}
  \end{center}
 \caption{The effect of reweighting the \gjjj control sample to match the kinematic distributions of the
 signal region. Double $\gamma$ refers to the signal region, blinded on \Mgg or \Mjj. Single $\gamma$
@@ -153,4 +153,35 @@ for all three spectra.}
 
 \subsection{Additional Discrimination\label{subsec:add_discrimination}}
 
+When searching for a high-mass resonance through the \Mggjjk spectrum, the spectra not under
+consideration, namely the \Mgg and \Mjj spectra, add additional discrimination as the double Higgs
+signal produces resonances on both corresponding to the decays \Hgg and \Hbb. In both
+the 1-tag and 2-tag categories, the requirements $\Mgg \in [120, 130]$~GeV and $\Mjj \in [90, 165]$~GeV
+are imposed through optimization of the expected sensitivity with the data control sample.
 
+In the search for a low-mass resonance through the \Mgg spectrum, the \Mjj and \Mggjj spectra
+provide additional discrimination with a similar optimization. The requirement imposed
+on the \Mjj spectrum is the same for all resonance hypotheses, $\Mjj \in [85,155]$~GeV, while the
+requirement on the \Mggjj spectrum varies with respect to the resonance mass hypothesis
+under consideration.
+Table~\ref{table:lowmasscuts} shows how the \Mggjj mass window shifts with resonance mass hypothesis,
+in general the requirement is a small window about the $m_X$ under consideration.
+
+\begin{table}[ht]
+  \centering
+  \renewcommand{\arraystretch}{1.4}
+  \caption{\Mggjj and \Mjj requirements imposed in addition to the preselection in order to extract
+the signal on the range $m_X \in [260, 400]$~GeV.}
+  \input{tables/lowmasscuts}
+  \label{table:lowmasscuts}
+\end{table}
+
+For the SM nonresonant signal, excess is sought on the $\Mgg \times \Mjj$ plane, and additional
+requirements are imposed on \Mggjjk and \acosthetastar. For the former, the signal
+exhibits no narrow resonance but rather a fairly wide peaking structure about 400 GeV. It is important
+to note that the shape of this distibution varies widely among nonresonant scenerios based on
+the amount of interference between the box and tree diagrams in Figure~\ref{fig:diHiggs_diagrams}.
+The optimal requirement for the SM nonresonant search is $\Mggjjk > 350$~GeV for both categories.
+When considering a range of scenerios, this requirement ought to be adjusted accordingly.
+The optimal requirement on \acosthetastar is found to be category dependent, where the selection
+imposes $\acosthetastar < 0.90$ ($\acosthetastar < 0.65$) in the high-purity (medium-purity) category.
