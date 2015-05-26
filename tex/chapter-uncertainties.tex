@@ -6,67 +6,61 @@ Corrections imposed here are related to the photon and jet reconstruction and id
 and related to b-tagging.
 The uncertainties associated with these corrections are applied to the reconstructed objects in
 the simulation through scaling and smearing the observables of interest.
-For the recorded luminosity, the normaization uncertainty is 2.6\%~\cite{CMS-PAS-LUM-13-001}.
+For the recorded luminosity, the normalization uncertainty is 2.6\%~\cite{CMS-PAS-LUM-13-001}.
 The other sources are separated in terms of uncertainties related to photons, jets, and theory,
-which are coverd in Sections~\ref{sec:photonunc}, \ref{sec:jetunc}, and ~\ref{theoryunc},
+which are covered in Sections~\ref{sec:photonunc}, \ref{sec:jetunc}, and ~\ref{theoryunc},
 respectively.
 
 \section{Photon Uncertainties\label{sec:photonunc}}
 
-continue here!!!!
+The photon-related uncertainties consist of those pertaining to the photon energy resolution (PER)
+and the photon energy scale (PES)~\cite{CMS-PAS-HIG-13-001}. As a function of the
+electromagnetic shower shape and $\eta_\gamma$,
+an uncertainty between 0.23 and 0.93\% is imposed on the PER,
+and an uncertainty between 0.12 and 0.88\% on the PES. For hard photons, namely those with
+$p_{{\rm T},\gamma} > 100$~GeV, the uncertainty on PES is increased to 1\%.
+%These uncertainties are propogated through to the spectra of interest. For the $\Mgg$ spectrum,
+%they give  uncertainties on the position and spread of the signal shape. For the
+%$\Mggjjk$ spectrum, they give uncertainties on both the position and spread of the signal shape
+%and on the normalization.
 
-The photon-related uncertainties are taken from [22].  An uncertainty between 0.23 and 0.93%
-is considered on the energy resolution (PER) and between 0.12 and 0.88% on the energy scale
-(PES),  depending  on
-h
-g
-and  the  electromagnetic  shower  shape.   When
-p
-T
-g
->
-100  GeV  the
-uncertainty of the energy scale is conservatively increased up to 1%.  A 1% normalization un-
-certainty is assumed on the offline photon selection efficiency and on the trigger efficiency. An
-additional conservative normalization uncertainty of 5% is assumed for the high mass region
-to account for the differences in the p
-T
-spectrum of the signal photons and of the electrons from
-Z
-!
-ee used to estimate the quoted uncertainties.
+The photon preselection efficiency contributes a 1\% normalization uncertainty to the $\Mgg$
+spectrum. The diphoton trigger efficiency contributes a 1\% normalization
+uncertainty to all spectra.
+An additional normalization uncertainty of 5\% is imposed in the high-mass resonant search
+to account for the differences in the $p_{\rm T}$ spectrum between photons of the signal
+and the electrons from $Z\rightarrow e^+ e^-$ used to estimate the PES and PER and their
+corresponding uncertainties.
 
 \section{Jet Uncertainties\label{sec:jetunc}}
 
-The jet energy scale uncertainty (JES) is accounted for by varying the jet response by 1-2%,
-depending on the kinematics [31], while the jet energy resolution uncertainty (JER) by varying
-the jet resolution by 10%. An additional 1% uncertainty on the 4-body mass response accounts
-for effects in the high-mass region related to the partial overlap between the two b-jets coming
-from the Higgs decay. The uncertainty on the b-tagging efficiency is estimated by varying the b-
-tagging scale factor by one standard deviation in each category [33], and the related systematics
-were shown to be anti-correlated between the two categories.
-
-%\section{Other Experimental Sources\label{sec:otherunc}}
+The jet energy scale (JES) uncertainty is found by varying the jet $p_{\rm T}$ by 1--2\%,
+depending on the jet $p_{\rm T}$ and $\eta$~\cite{JINST6}.
+The jet energy resolution (JER) uncertainty is found by varying the jet resolution by 10\%.
+In the high-mass search, the jets tend to have a higher boost and be closer together,
+and effects related to their partial overlap are accounted for with an additional uncertainty of 1\%.
+For the b-tagging efficiency uncertainty, the b-tagging scale factors are varied by one standard
+deviation in each category~\cite{BTV}. 
+The uncertainty for the b-tagging efficiency between the two categories
+was found to have negative correlation.
 
 \section{Theory Uncertainties\label{sec:theoryunc}}
 
-Theory systematics are considered for the SM single Higgs contribution including scale depen-
-dence to account for the missing order effects and the dependency on proton parton density
-functions [37, 38]. On the other hand, no theory systematics are assumed on the signal. Finally
-an additional systematic uncertainty is assigned to the Higgs mass, both for the signal and for
-the SM Higgs background.   It is taken to be 0.45 GeV and corresponds to the experimental
-uncertainty from the Higgs mass measurement in the
-H
-!
-ZZ
-channel [15].
+No theory uncertainties are imposed for the resonant or nonresonant signal.
+For the resonant background, theory uncertainties are imposed on the SM Higgs contribution. These
+include contributions from missing order effects and the dependency on proton parton density
+functions~\cite{Dittmaier:2011ti,Heinemeyer:2013tqa}.
+A systematic uncertainty is imposed on the Higgs mass for both for the resonant or nonresonant signal
+and for the resonant background.
+This uncertainty of 0.45 GeV is taken from the Higgs mass measurement performed at CMS in the
+$H\rightarrow ZZ \rightarrow 4\ell$ channel~\cite{Chatrchyan:2013mxa}.
 
 \section{Summary and Impact on Analysis\label{sec:uncimpact}}
 
 The impact of the quoted systematic uncertainties on the result is summarized in
 Table~\ref{table:systematics}.
 The analysis is statistics limited, and the systematic uncertainties worsen the expected limits
-by 1.7% at most. (3.8 for nonres)
+by at most 1.7\% (3.8\%) in the resonant (nonresonant) search.
 
 \begin{table}[ht]
   \centering
