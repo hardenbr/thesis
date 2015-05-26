@@ -14,7 +14,7 @@ requirements for improving sensitivity, discussed in Section~\ref{sec:extraction
 
 \section{Event Classification\label{sec:classification}}
 
-B-tagging, presented in Section~\ref{subsec:btag}, is used at the preselection level through
+B-tagging, presented in Section~\ref{subsec:btag}, is used at the preselection level by
 requiring 1 CSVL b-tagged jet. To further improve the sensitivity, the working point used for
 signal extraction is the medium one (CSVM), which corresponds to an efficiency of around 60--70\%
 and a mistag rate 1--2\%, depending on the jet $p_{\rm T}$.
@@ -23,8 +23,9 @@ which corresponds to a mistag rate of 0.1\%.
 With the CSVM working point, events are classified into three categories
 based on the number of CSVM b-tagged jets. Events with two or more b-tags, called high purity,
 drive the sensitivity of the search. Events with one b-tag, called medium purity,
-bring low contribution but allow for increased signal acceptance. Events without any b-tags,
-called low purity, are only used for cross-checks and are rejected from the main analysis.
+bring low contribution to the sensitivity
+but allow for increased signal acceptance. Events without any b-tags,
+called low purity, are used only for cross-checks and are rejected from the main analysis.
 The preselection cuts and event categorization
 are summarized in Table~\ref{table:gencut}.
 
@@ -42,33 +43,35 @@ From the lists of photons and jets passing the identification and kinematic requ
 candidates are constructed. When there are more than two photon or jet candidates, a choice
 must be made as to which pair is consistent with the decay of a Higgs. In the case
 of choosing the diphoton candidate, the two photons with the highest $p_{\rm T}$ are chosen
-as jets faking photons tend to dominate for softer photon candidates.
+as jets faking photons tend to be softer than prompt photons.
 
-In the case of the dijet candidate, four choices were considered after b-tagging:
+In the case of chosing the jets for the dijet candidate, four choices were considered after b-tagging:
 \begin{itemize}
 \item the two jets with the highest $p_{\rm T}$,
 \item the pair of jets that maximizes $p_{{\rm T},jj}$,
 \item the pair of jets that maximizes $\frac{p_{{\rm T},jj}}{\Mjj}$, and
 \item the pair of jets which minimizes $|\Mjj-\Mgg|$.
 \end{itemize}
-In the 2-tag category, the choice is among all b-tagged jets, while in the 1-tag category, the
-choice is among all non-tagged jets to pair to the b-tagged one.
-The criterion used in the analysis is the one that maximizes $p_{{\rm T},jj}$. 
+In the high-purity category, the choice is among all b-tagged jets,
+while in the medium-purity category, the
+choice is among all non-tagged jets to pair with the b-tagged one.
+The criterion used in this analysis is the one that maximizes $p_{{\rm T},jj}$. 
 This choice selects the correct jets roughly 87\% of the time, and it does not produce any local peaking
 structure in the background. For the resonant search
 in the high-purity (medium-purity) category, the resolution, defined as the half-width at half-maximum,
 decreases from 20 (25) GeV to 15 (15) GeV as the resonance mass increases from 300 GeV to 1 TeV.
-This was also shown visually in Figure~\ref{fig:mjj_onlyhiggs}.
+This is also shown visually in Figure~\ref{fig:mjj_onlyhiggs}.
 
 \section{Resonance Reconstruction and Kinematic Fit\label{sec:Xreconstruction}}
 
-For the resonant and nonresonant searches, the double Higgs system is constructed
-by combining the $\Hgg$ and $\Hbb$ candidates.
+For the resonant, the double Higgs system is constructed
+by combining the $\Hgg$ and $\Hbb$ candidates. (This is also used in the nonresonant search
+where the resulting mass distribution does not correspond to a local peak.)
 In order to improve the resolution on the $\Mggjj$ distribution, an additional constraint is imposed
 requiring the dijet mass to be consistent with the Higgs mass. This constraint, called the
 kinematic fit~\cite{Chatrchyan:2013yoa}, is performed by varying the jet four-momentum
 with respect to their
-respective energy and position resolution in order to fix $\Mjj = 125$~GeV.
+respective energy and position resolutions in order to fix $\Mjj = 125$~GeV.
 The resulting distribution is denoted as $\Mggjjk$. Distributions before (\Mggjj) and after (\Mggjjk)
 the kinematic fit
 are shown in Figure~\ref{fig:mggjj_onlyhiggs} for the resonant signal and resonant backgrounds
@@ -83,7 +86,7 @@ and in Figure~\ref{fig:mggjj_controlplot} for data and the sum of backgrounds.
 mechanisms of the
 SM Higgs boson after basic selections on photons and jets and requesting at least
 one loose b-tagged jet. Before (after) the kinematic fit is shown in the top (bottom) figure.
-The spectra is normalized to one.}
+The spectra are normalized to one.}
 \label{fig:mggjj_onlyhiggs}
 \end{figure}
 
@@ -105,36 +108,39 @@ the top (bottom) figures are shown in linear (log) scale.}
 \section{Signal Extraction\label{sec:extraction}}
 
 The strategy for extracting a measurement of the signal yield centers on the fact that there
-are three spectra, \Mgg, \Mjj, and \Mggjjk, from which an excess can be measured.
+are three spectra, $\Mgg$, $\Mjj$, and $\Mggjjk$, from which an excess can be measured.
 For the resonant search, an excess would appear as a localized bump on the
-\Mggjjk spectrum which would give a direct handle on $m_X$,
+$\Mggjjk$ spectrum giving a direct handle on $m_X$,
 but, recalling from Figure~\ref{fig:mggjj_controlplot}, there is a kinematic peak in the background
 around 300 GeV. In order to avoid looking for a peak on top of a peak, the resonant search is
 divided into two regimes:
 \begin{itemize}
-\item the high-mass analysis searches for an excess on the \Mggjjk spectrum for $m_X \ge 400$~GeV, and
-\item the low-mass analysis searches for an excess on the \Mgg spectrum for $m_X \in [260, 400]$~GeV.
+\item the high-mass analysis searches for an excess on the $\Mggjjk$ spectrum for $m_X \ge 400$~GeV, and
+\item the low-mass analysis searches for an excess on the $\Mgg$ spectrum for $m_X \in [260, 400]$~GeV.
+\end{itemize}
 In both cases, there is more discrimination to be gained by imposing requirements on the two spectra
 not being fit, which is described in Section~\ref{subsec:add_discrimination}.
-\end{itemize}
 
 The nonresonant search can be viewed as a special case of the low-mass resonant search in which
-the \Mggjjk spectrum has no local peak. Here, excess is sought on the $\Mgg \times \Mjj$ plane,
-with requirements imposed on the \Mggjj and the angle between the two Higgs candidates
-\acosthetastar.
+the $\Mggjjk$ spectrum has no local peak. Here, excess is sought on the $\Mgg \times \Mjj$ plane,
+with additional requirements imposed on the $\Mggjj$ and the angle between the two Higgs candidates
+$\acosthetastar$.
 
 \subsection{Data Control Sample\label{subsec:dataCS}}
 
 In optimize the kinematic cuts imposed after preselection, a data control sample is constructed.
 The events for the sample are selected with the same preselection as data except for
-the inversion of one of the photon's identification and isolation requirements. This sample
-is dominated by the contribution of \gjjj rather than the \ggjj of the signal region.
-The main kinematic variables related to the photon have a different shape with respect to the
-signal region, so reweighting of the sample is needed to ensure that the distributions
+the inversion of one of the photon's identification and isolation requirements, giving a sample
+dominated by the contribution of $\gjjj$ rather than the $\ggjj$ of the signal region.
+
+The main kinematic variables related to the photons have a different shape
+between the control sample and the
+signal region, so reweighting of the control sample is needed to ensure that the distributions
 match those in the signal region. The event weights are derived by matching the shape
 of the control sample to data in the $p_{{\rm T},\gamma_1} \times p_{{\rm T},\gamma_1}$ plane,
-with a veto on signal region in the range $\Mgg \in [115, 135]$~GeV. Afterwards,
-the normalization of the sample is fixed to the normalization of data. Figure~\ref{fig:datacs}
+with a veto in signal region on the range $\Mgg \in [115, 135]$~GeV. Afterwards,
+the normalization of the control sample is fixed to the normalization of the signal
+region. Figure~\ref{fig:datacs}
 shows the effect of the reweighting on the three spectra of interest.
 
 \begin{figure}[ht]
@@ -143,45 +149,50 @@ shows the effect of the reweighting on the three spectra of interest.
    \includegraphics[width=0.45\textwidth]{figures/selection/mjjSpectrum.pdf}
    \includegraphics[width=0.45\textwidth]{figures/selection/mggjjSpectrum.pdf}
  \end{center}
-\caption{The effect of reweighting the \gjjj control sample to match the kinematic distributions of the
-signal region. Double $\gamma$ refers to the signal region, blinded on \Mgg or \Mjj. Single $\gamma$
-refers to the \gjjj sample before the weighting, and Single $\gamma$ corr. refers to the reweighted
-\gjjj sample. The shape of the reweighted \gjjj sample is reasonably consistent with that of data
+\caption{The effect of reweighting the $\gjjj$ control sample
+to match the kinematic distributions of the
+signal region. Double $\gamma$ refers to the signal region, with a veto in $\Mgg$ or $\Mjj$
+on a range about the Higgs mass. Single $\gamma$
+refers to the $\gjjj$ sample before the weighting, and Single $\gamma$ corr. refers to the reweighted
+$\gjjj$ sample. The shape of the reweighted $\gjjj$ sample is reasonably consistent with that of data
 for all three spectra.}
 \label{fig:datacs}
 \end{figure}
 
 \subsection{Additional Discrimination\label{subsec:add_discrimination}}
 
-When searching for a high-mass resonance through the \Mggjjk spectrum, the spectra not under
-consideration, namely the \Mgg and \Mjj spectra, add additional discrimination as the double Higgs
-signal produces resonances on both corresponding to the decays \Hgg and \Hbb. In both
-the 1-tag and 2-tag categories, the requirements $\Mgg \in [120, 130]$~GeV and $\Mjj \in [90, 165]$~GeV
-are imposed through optimization of the expected sensitivity with the data control sample.
+When searching for a high-mass resonance through the $\Mggjjk$ spectrum, the spectra not under
+consideration, namely the $\Mgg$ and $\Mjj$ spectra, add additional discrimination as the double Higgs
+signal produces resonances on both corresponding to the decays $\Hgg$ and $\Hbb$. In both
+the medium and high-purity categories,
+the requirements $\Mgg \in [120, 130]$~GeV and $\Mjj \in [90, 165]$~GeV
+are imposed.
+These ranges were found through optimization of the expected sensitivity with the data control sample.
 
-In the search for a low-mass resonance through the \Mgg spectrum, the \Mjj and \Mggjj spectra
-provide additional discrimination with a similar optimization. The requirement imposed
-on the \Mjj spectrum is the same for all resonance hypotheses, $\Mjj \in [85,155]$~GeV, while the
-requirement on the \Mggjj spectrum varies with respect to the resonance mass hypothesis
+In the search for a low-mass resonance through the $\Mgg$ spectrum, the $\Mjj$ and $\Mggjj$ spectra
+provide additional discrimination through a similar optimization. The requirement imposed
+on the $\Mjj$ spectrum is the same for all resonance hypotheses, $\Mjj \in [85,155]$~GeV, while the
+requirement on the $\Mggjj$ spectrum varies with respect to the resonance mass hypothesis
 under consideration.
-Table~\ref{table:lowmasscuts} shows how the \Mggjj mass window shifts with resonance mass hypothesis,
-in general the requirement is a small window about the $m_X$ under consideration.
+Table~\ref{table:lowmasscuts} shows how the $\Mggjj$ mass window shifts with resonance mass hypothesis.
+In general the requirement is a small window about the $m_X$ under consideration.
 
 \begin{table}[ht]
   \centering
   \renewcommand{\arraystretch}{1.4}
-  \caption{\Mggjj and \Mjj requirements imposed in addition to the preselection in order to extract
+  \caption{$\Mggjj$ and $\Mjj$ requirements imposed in addition to the preselection in order to extract
 the signal on the range $m_X \in [260, 400]$~GeV.}
   \input{tables/lowmasscuts}
   \label{table:lowmasscuts}
 \end{table}
 
 For the SM nonresonant signal, excess is sought on the $\Mgg \times \Mjj$ plane, and additional
-requirements are imposed on \Mggjjk and \acosthetastar. For the former, the signal
+requirements are imposed on $\Mggjjk$ and $\acosthetastar$. For the former, the signal
 exhibits no narrow resonance but rather a fairly wide peaking structure about 400 GeV. It is important
 to note that the shape of this distribution varies widely among nonresonant scenarios based on
 the amount of interference between the box and tree diagrams in Figure~\ref{fig:diHiggs_diagrams}.
 The optimal requirement for the SM nonresonant search is $\Mggjjk > 350$~GeV for both categories.
-When considering a range of scenarios, this requirement ought to be adjusted accordingly.
-The optimal requirement on \acosthetastar is found to be category dependent, where the selection
-imposes $\acosthetastar < 0.90$ ($\acosthetastar < 0.65$) in the high-purity (medium-purity) category.
+When considering a range of scenarios, this requirement ought to be adjusted accordingly,
+possibly with the addition of event categories.
+The optimal range on $\acosthetastar$ is found to be category dependent, where the selection imposed
+is $\acosthetastar < 0.90$ ($\acosthetastar < 0.65$) in the high-purity (medium-purity) category.
