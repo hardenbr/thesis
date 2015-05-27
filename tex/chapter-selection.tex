@@ -20,7 +20,7 @@ signal extraction is the medium one (CSVM), which corresponds to an efficiency o
 and a mistag rate 1--2\%, depending on the jet $p_{\rm T}$.
 There is also a tight working point (CSVT) not used in this analysis,
 which corresponds to a mistag rate of 0.1\%.
-With the CSVM working point, events are classified into three categories
+With the CSVM working point, events are classified into three categories for the resonant search
 based on the number of CSVM b-tagged jets. Events with two or more b-tags, called high purity,
 drive the sensitivity of the search. Events with one b-tag, called medium purity,
 bring low contribution to the sensitivity
@@ -28,11 +28,14 @@ but allow for increased signal acceptance. Events without any b-tags,
 called low purity, are used only for cross-checks and are rejected from the main analysis.
 The preselection cuts and event categorization
 are summarized in Table~\ref{table:gencut}.
+For the nonresonant search, the high and medium purity categories will be further divided based
+on the four-body mass spectrum, discussed in Section~\ref{sec:}
 
 \begin{table}[ht]
   \centering
   \renewcommand{\arraystretch}{1.4}
-  \caption{Summary of the selection applied to photons and jets and the event classification.}
+  \caption{Summary of the selection applied to photons and jets and the event classification
+for the resonant search.}
   \input{tables/gencut}
   \label{table:gencut}
 \end{table}
@@ -192,7 +195,20 @@ exhibits no narrow resonance but rather a fairly wide peaking structure about 40
 to note that the shape of this distribution varies widely among nonresonant scenarios based on
 the amount of interference between the box and tree diagrams in Figure~\ref{fig:diHiggs_diagrams}.
 The optimal requirement for the SM nonresonant search is $\Mggjjk > 350$~GeV for both categories.
-When considering a range of scenarios, this requirement ought to be adjusted accordingly,
-possibly with the addition of event categories.
+For the sake of considering a range of scenarios, this requirement is rather implemented as a border
+between event categories, where both the high and medium purity categories are themselves divided into
+high-$\Mggjjk$ and low-$\Mggjjk$ subcategories.
 The optimal range on $\acosthetastar$ is found to be category dependent, where the selection imposed
 is $\acosthetastar < 0.90$ ($\acosthetastar < 0.65$) in the high-purity (medium-purity) category.
+Table~\ref{table:nonres_addcuts} summarizes these requirements for the nonresonant search.
+
+\begin{table}[ht]
+  \centering
+  \renewcommand{\arraystretch}{1.4}
+  \caption{Additional discrimination for the nonresonant search beyond the preselection requirements
+in Table~\ref{table:gencut}. Four event categories are formed from the number of b-tags and value of
+$\Mggjjk$.}
+  \input{tables/nonres_addcuts}
+  \label{table:nonres_addcuts}
+\end{table}
+
