@@ -89,8 +89,8 @@ category. Figure~\ref{fig:sigfit_300} shows an example of the signal fit for a s
 
 \begin{figure}[ht]
  \begin{center}
-   \includegraphics[width=0.70\textwidth]{figures/results/figures/results/sigmodel_cat0_300.pdf}
-   \includegraphics[width=0.70\textwidth]{figures/results/figures/results/sigmodel_cat1_300.pdf}
+   \includegraphics[width=0.70\textwidth]{figures/results/sigmodel_cat0_300.pdf}
+   \includegraphics[width=0.70\textwidth]{figures/results/sigmodel_cat1_300.pdf}
  \end{center}
 \caption{Simulated signal shape in the $\Mgg$ spectrum for the high-purity (top) and medium-purity
 (bottom) categories for the Radion with mass 300 GeV. The open squares and corresponding
@@ -100,63 +100,70 @@ and the red dashed line represent the two components of the model.}
 \label{fig:sigfit_300}
 \end{figure}
 
-he  background  is  obtained  by  fitting  the
-m
-gg
-distribution  for  each  category  in  the  10
-0
-m
-g
-g
-180 GeV range.  In this fully data-driven procedure, it is important that the choice of
-function  does  not  bias  in  a  non-negligible  way  the  estimate  of  the  signal  strength  obtained
-from the limit setting procedure.  The bias is estimated by considering a set of truth models
-which are expected to describe the background.  For each truth model a large set of pseudo-
-data  is  generated.   Each  set  is  then  fitted  by  the  sum  of  the  candidate  background  model
-and the signal model.   The bias is defined as the ratio of the extracted signal strength
-m
-di-
-vided  by  the  associated  statistical  uncertainty
-s
-m
-.   The  bias  is  then  considered  negligible  if
-j
-m
-mediam
-/
-s
-m
-,median
-j
-<
-14%. This procedure was previously applied in [22]. For both categories,
-more than one unbiased function was identified:  a power law is used in the low-mass region
-as shown in Figure 4.
+The background estimation is done by fitting the same distribution in each category on the interval
+$[100, 180]$~GeV. This procedure is completely data-driven procedure, and as such it is important
+that the choice of the function does not bias in a non-negligible way the estimate of the signal
+strength obtained from the model conbining signal and background components.
+The bias is estimated by considering a set of truth models which approximately describe the background.
+For each truth model a large set of pseudo-data is generated and fitted by the sum of a candidate
+background model and the signal model. The bias is defined as the ratio of the extracted signal strength
+$\mu$ divided by the associated statistical uncertainty $\sigma_\mu$.
+The bias is considered negligible if
+\begin{equation}
+\left|\text{median}\left(\frac{\mu}{\sigma_\mu}\right)\right| < 14\% \,.
+\end{equation}
+For both categories, more than one unbiased function was identified. For the limit extraction,
+a power law is used for both categories. Figure~\ref{fig:datafit_300} shows these fits to the
+data for four mass hypotheses.
 
-he background fit mainly accounts for the non-resonant background arising from diphoton
-production.  The contribution from standard model single Higgs production, with
-H
-!
-gg
-,
-could create a peak in the
-m
-gg
-distribution exactly like the signal.  This resonant background
-contribution is therefore explicitly added in the limit-setting procedure.   Since the expected
-contamination from Higgs events is small, the effect on the final result is found to be negligible.
+\begin{figure}[ht]
+ \begin{center}
+   \includegraphics[width=0.45\textwidth]{figures/results/databkgoversig_cat0_260GeV.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/results/databkgoversig_cat1_260GeV.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/results/databkgoversig_cat0_270GeV.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/results/databkgoversig_cat1_270GeV.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/results/databkgoversig_cat0_300GeV.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/results/databkgoversig_cat1_300GeV.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/results/databkgoversig_cat0_350GeV.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/results/databkgoversig_cat1_350GeV.pdf}
+ \end{center}
+\caption{Events in the $\Mgg$ spectrum in the high-purity (left column) and medium-purity
+(right column) categories for the resonance mass hypotheses 260, 270, 300, and 350 GeV
+(from top row down.) The nonresonant component of the background is shown in black
+with 1$\sigma$ and 2$\sigma$ bands on the background estimation.}
+\label{fig:datafit_300}
+\end{figure}
 
-The  95\% CL
-expected and observed median upper limits are shown in Figure 8.  A zoom in the low mass
-region only is shown on the Figure 9 (left) while the Figure 9 (right) shows the exclusion lim-
-its for the high-purity category only.  This latest result is provided to simplify the comparison
-with new physics models where the Higgs branching fraction to the photons and b quarks
-can be modified with respect to the SM. The green and yellow bands represent the 1
-s
-and 2
-s
-confidence intervals around the expected limit.  In the Figure 8 the vertical dashed line indi
+The background fit estimates only the nonresonant contribution arising from diphoton
+production. The contribution from SM Higgs production with $\Hgg$ could create a peak in the
+spectrum that mimics the signal process. This resonant background
+contribution is therefore added in the fit and accounted for in the limits.
+The expected contribution of the resonant background is small, and the
+effect on the final result is found to be at most 2\%.
 
+There is no excess above the expectation observed, so the analysis proceeds to calculating
+upper limits on the signal cross section.
+The 95\% CL for expected and observed median upper limits are shown in
+Figure~\ref{fig:limits_lowmassres} for both categories and for the high-purity category only.
+The latter result is provided to simplify the comparison with new physics models where
+the Higgs branching ratios for the $\Hgg$ and $\Hbb$ decays can be modified from the SM.
+The green and yellow bands represent the 1$\sigma$ and 2$\sigma$
+confidence intervals around the expected limit. Theory expectations for Radion, RS1 KK-graviton, and 
+bulk KK-graviton are shown, where the Radion expectation assumes $\text{BR}(R\rightarrow HH) =$~25\%
+for all Radion masses above 300 GeV.
+
+\begin{figure}[ht]
+ \begin{center}
+   \includegraphics[width=0.7\textwidth]{figures/results/WP4_cutbased_low_all.pdf}
+   \includegraphics[width=0.7\textwidth]{figures/results/WP4_cutbased_low_base_onecat.pdf}
+ \end{center}
+\caption{Expected 95\% CL upper limits on the cross section times branching ratios
+$\sigma(pp\rightarrow X) \times \text{BR}( X \rightarrow HH \rightarrow \gamma\gamma b\bar{b})$.
+Theory lines corresponding to WED models with Radion, RS1 KK-graviton, and bulk KK-graviton are
+overlaid. Expected limits from both categories (top) and high-purity category only (bottom) are shown.
+The results are obtained using the asymptotic $\text{CL}_s$ approach.}
+\label{fig:limits_lowmassres}
+\end{figure}
 
 \subsection{High-mass Resonant Results}
 
