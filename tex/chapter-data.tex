@@ -1,8 +1,7 @@
 \chapter{Big Data\label{ch:data}}
 
-The LHC delivers $pp$ collisions at a very high rate, much higher than CMS can read out or store
-offline. From all these collisions, CMS selects a subset of events many orders of magnitude smaller
-in size
+The LHC delivers $pp$ collisions at a high rate that is much higher than CMS can read out or store
+offline. From all these collisions, CMS selects a small fraction of events
 which are the most relevant for the physics processes of interest. This task is accomplished
 through the trigger system, which is discussed in Section~\ref{sec:trigger} both in general and
 in the context of this analysis. The events selected by the trigger system compose the datasets
@@ -23,8 +22,8 @@ for the physics analyses.
 
 The L1 trigger attempts to identify basic physics objects based on coarse energy deposits in
 ECAL or HCAL or
-based on collections of hits in the muon chambers. By scanning the energy deposited in the calorimeters,
-quantities derived from the sum of energy deposited, such as the missing transverse energy $\met$,
+based on collections of hits in the muon chambers.
+Quantities derived from the sum of energy deposited, such as the missing transverse energy $\met$,
 provide other quantities on which to characterize events.
 The Level 1 global trigger (GT) combines these object candidates and derived quantities in order
 to select events to pass the the HLT with a processing time of $3~\mu$s.
@@ -35,24 +34,24 @@ a better description of the event. At the HLT level, tracker information is used
 the full granularity of ECAL and HCAL. Information at this level is based on the presence of one or
 more candidate objects satisfying requirements based on their transverse momentum or energy and relative
 or absolute positions in the detector. With this added complexity and fewer events to process,
-the average processing time is 40 ms.
+the average processing time is 40 ms per processor.
 
 \subsection{The Trigger for $\ggbb$}
 
-In the search for the $\ggbb$ final state, the analysis can be viewed as an extension of the
+The search for the $\ggbb$ final state can be viewed as an extension of the
 SM $\Hgg$ search~\cite{HggCMSpaper}. The excellent diphoton mass
-resolution is the primary driver in the sensitivity since it allows for low background contamination
+resolution is the primary driver in the sensitivity, since it allows for low background contamination
 in the signal region, as will be shown in Chapter~\ref{ch:results}.
 Therefore, the trigger strategy centers on the ability to find two high-quality photon candidates.
 
 During 2012 data taking, the LHC luminosity increased over time, and the triggers at both L1 and HLT
-had their thresholds increased in order to keep the event rates within the limits of the two levels.
+had their thresholds increased in order to keep the event rates within limits.
 The requirement at L1 is for two $e/\gamma$ candidates with $E_{\rm T}$ requirements of 13 (7) GeV
-for the leading (subleading) candidate or for one $e/\gamma$ candidate with an $E_{\rm T}$ requirement of
-22 GeV. Note that at this level, there is no distiction between electron and photon candidates as
+for the leading (subleading) candidate or for one $e/\gamma$ candidate with an $E_{\rm T}$ requirement
+of 22 GeV. Note that at this level, there is no distinction between electron and photon candidates as
 the tracker information is not yet used.
 
-At HLT events are selected through diphoton triggers with asymmetric $E_{\rm T}$ thresholds
+Events are selected in the HLT through diphoton triggers with asymmetric $E_{\rm T}$ thresholds
 and complementary photon selections. One trigger selection requires a loose calorimetric
 identification based on the shape of the electromagnetic shower and loose isolation requirements
 on the photon candidates, while the other requires that the photon electromagnetic shower
@@ -66,7 +65,7 @@ In addition to keeping the trigger rate within its limits, it is also necessary 
 low enough such that the selection of signal events, or trigger efficiency,
 remains as high as possible. The trigger efficiency
 is studied on Monte Carlo (MC) signal samples as well as on $Z\rightarrow e^+ e^-$ data.
-For the study on MC, the efficiency is above 99.5\% for all conditions of 2012 data taking.
+According to the MC study, the efficiency is above 99.5\% for all conditions of 2012 data taking.
 
 Figures~\ref{fig:ZeeTriggerPt} and \ref{fig:ZeeTriggerNvtx}
 show how the trigger efficiency varies on data with respect to the
@@ -99,7 +98,7 @@ measured in $Z\rightarrow e^+ e^-$ events~\cite{HggCMSpaper}.}
 
 All the data from the LHC and its experiments, including CMS, is processed, stored, and analyzed
 in a distributed global collaboration of computing centers~\cite{Eck:840543}. The Worldwide
-LHC Computing Grid (WLCG) is the world's largest computing grid, composing of over 170 centers
+LHC Computing Grid (WLCG) is the world's largest computing grid, comprising over 170 centers
 arranged in a structure of tiers. Part of this tier structure is shown in Figure~\ref{fig:cerncomputing}
 
 \begin{figure}[ht]
@@ -111,11 +110,11 @@ arranged in a structure of tiers. Part of this tier structure is shown in Figure
 \end{figure}
 
 Tier 0 is the CERN Data Center, through which all LHC data passes for initial processing and
-reconstruction. For CMS, this comprises of the events that pass the HLT.
+reconstruction. For CMS, this comprises the events that pass the HLT.
 The raw and processed data from Tier 0 is pushed to one of the 13 Tier 1 sites, where
 later reprocessing and storage can be done. From here, the Tier 1 sites push the reconstructed
 datasets to Tier 2 sites for storage and processing by analysts. This system handles the approximately
-30 Petabytes of data generated per year by the LHC experiments in addition to the large amount of
+30 Petabytes of data generated per year by the LHC experiments in addition to the large number of
 MC samples generated and stored.
 
 \section{Simulation Samples\label{sec:sim}}
@@ -129,7 +128,7 @@ generalize a result to other signal processes. This analysis generally searches 
 state by optimizing strategies separately between the resonant and nonresonant production mechanisms.
 The signal MC samples are discussed in Section~\ref{subsec:sig_samples}.
 In addition, good agreement between data
-and background MC serves as a validation that the major backgrounds are understood and that
+and background MC confirms that the major backgrounds are understood and that
 the data is behaving as expected. The background MC samples are discussed in
 Section~\ref{subsec:bkg_samples}.
 
@@ -138,16 +137,16 @@ Section~\ref{subsec:bkg_samples}.
 The resonant search is focused on a new resonance from a massive particle $X$ with mass $m_X$ between
 260 GeV and 1.1 TeV. The lower bound is set by twice the Higgs mass since the search looks for decays
 $X\rightarrow HH$. The upper bound is set by the ability to reconstruct the $\ggbb$ final state: for
-very high resonance hypotheses, the decay production become very boosted, causing photons of the
-$\Hgg$ decay fail being properly identified and causing the jets of the $\Hbb$ decay to overlap.
+very high resonance hypotheses, the decay products are highly boosted, causing the photons of the
+$\Hgg$ decay to fail identification and causing the jets of the $\Hbb$ decay to overlap.
 These reconstruction methods are discussed in Chapter~\ref{ch:objects}. For the nonresonant
-search, there is no concern for the final state being too boosted.
+search, the final state is not sufficiently boosted to cause problems.
 
 In the resonant search, the benchmark model is that of the Radion, which is simulated with
 MadGraph5~\cite{Madgraph_Alwall:2011uj} and hadronized with Pythia6~\cite{Pythia6-0}. The events are
 generated from the gluon-fusion production of an on-shell Radion where the decay width of the Radion
-is 10 MeV, much less than the experimental resolution of the final state products. There are roughly
-20k events generated per mass point, with twice the amount at three points.
+is 10 MeV, much less than the experimental resolution. There are roughly
+20k events generated per mass point, with twice the number at three points.
 This is summarized in Table~\ref{table:radion_mc} with the corresponding cross sections given in terms
 of parameters described in Chapter~\ref{ch:intro}.
 
@@ -164,9 +163,9 @@ are generated.
 The spin-two graviton is considered as the angular distribution of the final state differs from a
 spin-zero scenario. However, due to the expected sensitivity of the analysis, as shown in
 Chapter~\ref{ch:results}, the analysis is not expected to be able to differentiate between
-these two scenarios. This will be explicitly checked in Chapter~\ref{ch:results} as well.
+these two scenarios. This will be explicitly checked in Chapter~\ref{ch:results}.
 These samples were generated with a decay width of 1 GeV and 10 GeV,
-which also allows for the assessment of the
+which allows for the assessment of the
 dependence of the decay width on the final result. The production mechanism is through
 gluon-gluon fusion, generated with MadGraph5 and hadronized with Pythia6. The sample generation
 is summarized in Table~\ref{table:graviton_mc} with corresponding cross sections given in terms of
@@ -187,8 +186,8 @@ RS1 KK-graviton. The cross sections are given in Table~\ref{table:graviton_xsec}
 \begin{table}[ht]
   \centering
   \renewcommand{\arraystretch}{1.4}
-  \caption{Graviton cross sections. Note that there is assumes the maximal
-branching ratio of 25\% for the KK-graviton to two Higgs for all masses. The cross section is the
+  \caption{Graviton cross sections. It is assumed that the maximal
+branching ratio is 25\% for the KK-graviton to two Higgs for all masses. The cross section is the
 same for the 1 GeV and 10 GeV width because the specific values of fermion localization leave some
 freedom in the partial width of the KK-graviton to two top quarks~\cite{Agashe:2007zd}.}
   \input{tables/graviton_xsec}
@@ -219,9 +218,10 @@ With these values, 124 scenarios are generated, each having about 20k events.
 
 The backgrounds processes for the search of double Higgs production are divided in resonant and
 nonresonant groups. The resonant backgrounds consist of SM Higgs production with $\Hgg$, meaning
-that for the diphoton mass, one of the most powerful discriminators between signal and background,
-these processes have the exact same distribution as the signal being sought. The nonresonant backgrounds
-consist of SM processes which have final state objects reconstructed as $\ggbb$ but with no resonance
+that for the diphoton mass,
+which is one of the most powerful discriminators between signal and background,
+these processes have the same distribution as the signal being sought. The nonresonant backgrounds
+consist of SM processes, which have final state objects reconstructed as $\ggbb$ but with no resonance
 in the region the signal processes have.
 
 For the resonant background, six (five) processes are considered for the resonant (nonresonant) search.
@@ -231,8 +231,8 @@ t-quarks, as shown in Figure~\ref{fig:higgsprod}. Gluon-gluon fusion mimics the 
 jets are reconstructed from initial state or final state radiation (ISR or FSR)
 or from interactions from the underlying event (UE).
 The other production mechanisms produce two jets directly,
-noting that in associated production with a vector boson the vector boson can decay to two jets, and
-that in associated production with a pair of t-quarks each t-quark always decays to $bW$.
+whereby in associated production with a vector boson the vector boson can decay to two jets, and
+in associated production with a pair of t-quarks each t-quark always decays to $bW$.
 The first two prodcution mechanisms were generated with PowHeg~\cite{POWHEG_Frixione:2007vw},
 while the latter two were generated with Pythia6.
 All four were hadronized with Pythia6.
@@ -261,7 +261,7 @@ with Sherpa~\cite{Gleisberg:2008ta}. In these three QCD processes,
 a fake photon can still be selected over a prompt one, so for the analysis, the QCD processes are
 broken down in terms of number of prompt photons, as will be shown in Chapter~\ref{ch:selection}.
 
-The nonresonant background has a small but non-zero contribution from processes involving
+The nonresonant background has a small contribution from processes involving
 vector bosons and top quarks. The vector boson contribution is simulated from processes
 involving a $Z$ boson or off-shell photon $\gamma^*$ decaying to a pair of leptons (Drell-Yan process)
 or involving a $W$ boson decaying leptonically with photon ISR or FSR. The top-quark contribution is
