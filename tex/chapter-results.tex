@@ -161,7 +161,9 @@ the Higgs branching ratios for the $\Hgg$ and $\Hbb$ decays can be modified from
 The green and yellow bands represent the 1$\sigma$ and 2$\sigma$
 confidence intervals around the expected limit. Theory expectations for Radion, RS1 KK-graviton, and 
 bulk KK-graviton are shown, where the Radion expectation assumes $\text{BR}(R\rightarrow HH) =$~25\%
-for all Radion masses above 300 GeV.
+for all Radion masses above 300 GeV. Through comparison with the Graviton simulation,
+the search is verified to be spin-independent, so theory expectations for both spin-0 and spin-2
+hypotheses may be overlaid together.
 
 \begin{figure}[ht]
  \begin{center}
@@ -182,7 +184,8 @@ For the high-mass resonant search, the signal yield is extracted by fitting the 
 in a procedure similar to the one for the low-mass resonant search. The signal model is built
 for each mass hypothesis by fitting the $\Mggjjk$ peak in the simulation sample separately for the
 two categories. The functional form used is the sum of a Crystal Ball and Gaussian with the means
-constrained to be the same. The position of the peak follows the closely the respective $m_X$ hypothesis,
+constrained to be the same. The position of the peak follows the closely the respective $m_X$
+hypothesis,
 and the resolution in the peak improves as $m_X$ increases. Figure~\ref{fig:sigfit_500_1000}
 shows examples of the signal fit for mass hypotheses of 500 GeV and 1 TeV.
 
@@ -224,10 +227,12 @@ with 1$\sigma$ and 2$\sigma$ bands on the background estimation.}
 
 There is no excess above the expection observed, so the analysis proceeds to calulating
 upper limits on the signal cross section. The 95\% CL for expected and observed limits is
-shown in Figure~\ref{} for both categories and both mass regimes. The break at 400 GeV corresponds
+shown in Figure~\ref{fig:limits_allres}
+for both categories and both mass regimes. The break at 400 GeV corresponds
 to the border between both methods for signal extraction.
 As in the low-mass regime, the theory expectations for the Radion assumes
-$\text{BR}(R\rightarrow HH) =$~25\% for all Radion masses above 300 GeV.
+$\text{BR}(R\rightarrow HH) =$~25\% for all Radion masses above 300 GeV. The result is again
+spin-independent, allowing for both spin-0 and spin-2 theory expections to be overlaid together.
 
 \begin{figure}[ht]
  \begin{center}
@@ -239,13 +244,32 @@ $\sigma(pp\rightarrow X) \times \text{BR}( X \rightarrow HH \rightarrow \gamma\g
 and $\sigma(pp\rightarrow X) \times \text{BR}( X \rightarrow HH )$ (bottom).
 Theory lines corresponding to WED models with Radion, RS1 KK-graviton, and bulk KK-graviton are
 overlaid. The results are obtained using the asymptotic $\text{CL}_s$ approach.}
-\label{fig:limits_lowmassres}
+\label{fig:limits_allres}
 \end{figure}
 
+Figure~\ref{fig:limit_comp} provides a comparison of the observed and expected limits obtained
+among several final states in both the CMS and ATLAS Collaborations. The final states compared here
+are $\gamma \gamma b\bar{b}$, $b\bar{b}b\bar{b}$, $\tau\tau b\bar{b}$, and multileptons and photons.
+The comparison reveals that the $\gamma \gamma b\bar{b}$ is most sensitive to resonant double
+Higgs production for $m_X < 400$~GeV, while the $b\bar{b}b\bar{b}$ final state is the most sensitive
+for $m_X > 400$~GeV.
 
 
+\begin{figure}[ht]
+ \begin{center}
+   \includegraphics[width=0.8\textwidth]{figures/results/limit_comparison_all.pdf}
+ \end{center}
+\caption{The expected and observed upper limit of $X_\text{spin-0} \rightarrow HH$ production
+at 95\% CL provided by combining the searches performed by the CMS and ATLAS experiments
+looking at the $\gamma \gamma b\bar{b}$~\cite{CMS-PAS-HIG-13-032,Aad:2014yja},
+$b\bar{b}b\bar{b}$~\cite{Khachatryan:2015yea,ATLAS-CONF-2014-005},
+$\tau\tau b\bar{b}$~\cite{CMS-PAS-HIG-14-034}, and
+multileptons and photons~\cite{PhysRevD.90.112013}
+final states. As the CMS $b\bar{b}b\bar{b}$ result is dependent on the
+resonance spin, the spin-0 result for that analysis is used.}
+\label{fig:limit_comp}
+\end{figure}
 
-include comparison limit plot
 
 \section{Nonresonant Results\label{sec:nonresresults}}
 
