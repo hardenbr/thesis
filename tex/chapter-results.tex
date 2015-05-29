@@ -81,11 +81,12 @@ or two hard photons.}
 \subsection{Low-mass Resonant Results}
 
 For the low-mass resonant search, the signal yield is extracted by fitting the $\Mgg$ spectrum.
-The signal model is built for each mass hypthesis by fitting the $\Mgg$ peak in the simulation
-separately for the two categories. This functional form used is the sum of a Crystal Ball and
-Gaussian, where the former models the core of the distribution and the latter models the
+The signal model is built for each mass hypthesis by fitting the $\Mgg$ peak in the simulation sample
+separately for the two categories. The functional form used is the sum of a Crystal Ball and
+Gaussian with the means constrained to be the same,
+where the former models the core of the distribution and the latter models the
 tails. The position of the peak and the spread having no dependence on the resonant mass and the
-category. Figure~\ref{fig:sigfit_300} shows an example of the signal fit for a signal of mass 300 GeV.
+category. Figure~\ref{fig:sigfit_300} shows an example of the signal fit for a mass hypothesis 300 GeV.
 
 \begin{figure}[ht]
  \begin{center}
@@ -113,8 +114,8 @@ The bias is considered negligible if
 \left|\text{median}\left(\frac{\mu}{\sigma_\mu}\right)\right| < 14\% \,.
 \end{equation}
 For both categories, more than one unbiased function was identified. For the limit extraction,
-a power law is used for both categories. Figure~\ref{fig:datafit_300} shows these fits to the
-data for four mass hypotheses.
+a power law is used for both categories. Figures~\ref{fig:datafit_260} and \ref{fig:datafit_300}
+shows these fits to the data for four mass hypotheses.
 
 \begin{figure}[ht]
  \begin{center}
@@ -122,14 +123,24 @@ data for four mass hypotheses.
    \includegraphics[width=0.45\textwidth]{figures/results/databkgoversig_cat1_260GeV.pdf}
    \includegraphics[width=0.45\textwidth]{figures/results/databkgoversig_cat0_270GeV.pdf}
    \includegraphics[width=0.45\textwidth]{figures/results/databkgoversig_cat1_270GeV.pdf}
+ \end{center}
+\caption{Events in the $\Mgg$ spectrum in the high-purity (left column) and medium-purity
+(right column) categories for the resonance mass hypotheses 260 GeV (top row) and 270 GeV (bottom row).
+The nonresonant component of the background is shown in blue
+with 1$\sigma$ and 2$\sigma$ bands on the background estimation.}
+\label{fig:datafit_260}
+\end{figure}
+
+\begin{figure}[ht]
+ \begin{center}
    \includegraphics[width=0.45\textwidth]{figures/results/databkgoversig_cat0_300GeV.pdf}
    \includegraphics[width=0.45\textwidth]{figures/results/databkgoversig_cat1_300GeV.pdf}
    \includegraphics[width=0.45\textwidth]{figures/results/databkgoversig_cat0_350GeV.pdf}
    \includegraphics[width=0.45\textwidth]{figures/results/databkgoversig_cat1_350GeV.pdf}
  \end{center}
 \caption{Events in the $\Mgg$ spectrum in the high-purity (left column) and medium-purity
-(right column) categories for the resonance mass hypotheses 260, 270, 300, and 350 GeV
-(from top row down.) The nonresonant component of the background is shown in black
+(right column) categories for the resonance mass hypotheses 300 GeV (top row) and 350 GeV (bottom row)
+The nonresonant component of the background is shown in blue
 with 1$\sigma$ and 2$\sigma$ bands on the background estimation.}
 \label{fig:datafit_300}
 \end{figure}
@@ -143,7 +154,7 @@ effect on the final result is found to be at most 2\%.
 
 There is no excess above the expectation observed, so the analysis proceeds to calculating
 upper limits on the signal cross section.
-The 95\% CL for expected and observed median upper limits are shown in
+The 95\% CL for expected and observed median upper limits is shown in
 Figure~\ref{fig:limits_lowmassres} for both categories and for the high-purity category only.
 The latter result is provided to simplify the comparison with new physics models where
 the Higgs branching ratios for the $\Hgg$ and $\Hbb$ decays can be modified from the SM.
@@ -160,96 +171,105 @@ for all Radion masses above 300 GeV.
 \caption{Expected 95\% CL upper limits on the cross section times branching ratios
 $\sigma(pp\rightarrow X) \times \text{BR}( X \rightarrow HH \rightarrow \gamma\gamma b\bar{b})$.
 Theory lines corresponding to WED models with Radion, RS1 KK-graviton, and bulk KK-graviton are
-overlaid. Expected limits from both categories (top) and high-purity category only (bottom) are shown.
+overlaid. Limits from both categories (top) and high-purity category only (bottom) are shown.
 The results are obtained using the asymptotic $\text{CL}_s$ approach.}
 \label{fig:limits_lowmassres}
 \end{figure}
 
 \subsection{High-mass Resonant Results}
 
-The signal is  extracted from a fit  to the
-m
-kin
-gg
-jj
-spectrum with a  procedure similar to the  one
-for  the  low-mass  region.   On  top  of  the  pre-selection  in  Table  1,  the  requirements  12
-0
-m
-g
-g
-130 GeV and 9
-0
-m
-j
-j
-165 GeV are applied, the latter being optimized against
-the expected limits.
-The signal model is built for each mass hypothesis by fitting the
-m
-kin
-gg
-jj
-distribution in Monte
-Carlo separately for the two categories.  A sum of a Crystal Ball and a Gaussian distribution
-is used.  The peak position follows the
-m
-X
-evolution while the peak resolution improves for
-higher masses,  corresponding to higher momenta of the jets.  The signal fit examples at 500
-GeV and 1 TeV are shown on Figure 5.
-The background is obtained fitting the
-m
-kin
-gg
-jj
-distribution for each category in the region defined
-by 32
-0
-m
-kin
-gg
-j
-j
-1200 GeV. The lower edge is chosen to avoid the kinematic turn-on while still
-ensuring full containment of the signal for mass hypotheses
-m
-X
+For the high-mass resonant search, the signal yield is extracted by fitting the $\Mggjjk$ spectrum.
+in a procedure similar to the one for the low-mass resonant search. The signal model is built
+for each mass hypothesis by fitting the $\Mggjjk$ peak in the simulation sample separately for the
+two categories. The functional form used is the sum of a Crystal Ball and Gaussian with the means
+constrained to be the same. The position of the peak follows the closely the respective $m_X$ hypothesis,
+and the resolution in the peak improves as $m_X$ increases. Figure~\ref{fig:sigfit_500_1000}
+shows examples of the signal fit for mass hypotheses of 500 GeV and 1 TeV.
+
+\begin{figure}[ht]
+ \begin{center}
+   \includegraphics[width=0.45\textwidth]{figures/results/sigmodel_cat0_500GeV.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/results/sigmodel_cat1_500GeV.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/results/sigmodel_cat0_1000GeV.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/results/sigmodel_cat1_1000GeV.pdf}
+ \end{center}
+\caption{Simulated signal shape in the $\Mggjjk$ spectrum for the high-purity (left column)
+and medium-purity (right column) categories for the Radion with mass 500 GeV (top row) and
+1 TeV (bottom row). The open squares and corresponding
+statistical uncertainties represent the simulation.
+The blue line represents the model fitted to the simulation, while the green dashed line
+and the red dashed line represent the two components of the model.}
+\label{fig:sigfit_500_1000}
+\end{figure}
 
 
+The background estimation is done by fitting the same distribution in each category on the interval
+$[320, 1200]$~GeV. The lower edge is chosen to avoid the kinematic turn-on of the background
+while still ensuring full containment for the 400 GeV signal. The same bias estimation procedure
+described for the low-mass resonant search is applied here. The chosen background function is a power
+law for both categories, shown in Figure~\ref{fig:datafit_4body}. Note that in this regime,
+the SM Higgs background does not have a resonance on the $\Mggjjk$ spectrum, so
+there is no signal contamination from a background process.
+
+\begin{figure}[ht]
+ \begin{center}
+   \includegraphics[width=0.70\textwidth]{figures/results/databkgoversig_cat0_4body.pdf}
+   \includegraphics[width=0.70\textwidth]{figures/results/databkgoversig_cat1_4body.pdf}
+ \end{center}
+\caption{Events in the $\Mggjjk$ spectrum in the high-purity (top) and medium-purity (bottom)
+categories. The background fit is shown in blue
+with 1$\sigma$ and 2$\sigma$ bands on the background estimation.}
+\label{fig:datafit_4body}
+\end{figure}
+
+There is no excess above the expection observed, so the analysis proceeds to calulating
+upper limits on the signal cross section. The 95\% CL for expected and observed limits is
+shown in Figure~\ref{} for both categories and both mass regimes. The break at 400 GeV corresponds
+to the border between both methods for signal extraction.
+As in the low-mass regime, the theory expectations for the Radion assumes
+$\text{BR}(R\rightarrow HH) =$~25\% for all Radion masses above 300 GeV.
+
+\begin{figure}[ht]
+ \begin{center}
+   \includegraphics[width=0.7\textwidth]{figures/results/WP4_cutbased_all.pdf}
+   \includegraphics[width=0.7\textwidth]{figures/results/WP4_cutbased_HH.pdf}
+ \end{center}
+\caption{Expected 95\% CL upper limits on the cross section times branching ratios
+$\sigma(pp\rightarrow X) \times \text{BR}( X \rightarrow HH \rightarrow \gamma\gamma b\bar{b})$ (top)
+and $\sigma(pp\rightarrow X) \times \text{BR}( X \rightarrow HH )$ (bottom).
+Theory lines corresponding to WED models with Radion, RS1 KK-graviton, and bulk KK-graviton are
+overlaid. The results are obtained using the asymptotic $\text{CL}_s$ approach.}
+\label{fig:limits_lowmassres}
+\end{figure}
 
 
-400 GeV. The same bias esti-
-mation procedure described for the low
-m
-X
-region is applied here and the chosen background
-fitting function is a power law as shown on Figure 6
 
 
 include comparison limit plot
 
 \section{Nonresonant Results\label{sec:nonresresults}}
 
-316 The statistical approach used to estimate the significance of a potential excess over the back317
-ground and to set the 95% CL expected and observed median upper limits is identical to the
-318 resonant search.
-319 For the SM-like search waiting unblinding significant excess is observed over the background.
-320 The observed (expected) upper limit on the SM-like HH ! ggbb production is waiting un321
-blinding (1.54 fb) and waiting unblinding (0.592 pb) for HH production assuming the SM
-322 Higgs branching fraction. Using the SMsignal strengthmodificator we also obtain an observed
-323 (expected) limit of waiting unblinding (mHH = 61.4), where the uncertainty on the SM cross
-324 section prediction was marginalised over.
-325 For the interpretation of the BSM-like search we use the LO cross section for di-Higgs produc326
-tion expressed in a semi-analytical form as equation 1 [17].
-s(pp ! HH) = ¯s
-c22
-+ (ak2
-t )2 + (b kt kl)2 + A1c2(a kt)2 + A2(a k2
-t )(b kt kl) + A3 c2(b kt kl)
+For the SM nonresonant search, the signal yield is extracted by fitting the 2D plane
+$\Mgg \times \Mjj$. The signal model is built by fitting simultaneous both dimensions separately
+for the four categories. The functional form used in both dimensions is the sum of a Crystal Ball and
+Gaussian with the means constrained to be the same. The background estimation is done by fitting
+the same plane in each category on the interval $[100, 180]$~GeV for $\Mgg$ and $[60, 180]$~GeV
+for $\Mjj$. The same bias estimation procedure
+described for the low-mass resonant search is applied here. The chosen background function is a power
+law for both dimensions in all four categories. The SM Higgs production is treated as a resonant
+background, and its contribution on the final result is a few percent.
 
-
-
+There is no excess above the expectation observed, so the analysis proceeds to calculating an
+upper limit on the signal cross section. The 95\% CL is found using the same approach as both
+regimes of the resonant search. The observed (expected) upper limit on SM
+$pp \rightarrow HH \rightarrow \ggbb$ production cross section is 1.91 fb (1.59 fb).
+Assuming SM Higgs branching ratios, the observed (expected) upper limit on SM $pp \rightarrow HH$
+prodcution is 726 fb (604 fb). In terms of the SM signal strength modificator $\mu_{HH}$, defined as
+\begin{equation}
+\mu = \frac{\sigma}{\sigma_\text{SM}} \, ,
+\end{equation}
+the observed (expected) limit is 72.9 (60.7). These calculations accounted for the theoretical
+uncertainty associated with the SM NNLO cross section.
 
 %\section{The Future\label{sec:future}}
 
