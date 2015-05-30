@@ -8,9 +8,11 @@ events are defined for extracting signal separately.
 Section~\ref{sec:higgsreconstruction} discusses how the photons and jets passing the preselection
 requirements are assembled into Higgs candidates. For the resonant search $X\rightarrow HH$,
 Section~\ref{sec:Xreconstruction} discusses how the two Higgs come together to construct a resonant
-candidate. Finally, the construction of a data control
+candidate. The construction of a data control
 sample, discussed in Section~\ref{subsec:dataCS}, allows for the study of additional event-wide
 requirements for improving sensitivity, discussed in Section~\ref{sec:extraction}.
+Finally, with all the event requirements in place, two event displays in Section~\ref{sec:displays}
+give a sense of what candidate events look like in the detector.
 
 \section{Event Classification\label{sec:classification}}
 
@@ -29,7 +31,7 @@ called low purity, are used only for cross-checks and are rejected from the main
 The preselection cuts and event categorization
 are summarized in Table~\ref{table:gencut}.
 For the nonresonant search, the high and medium purity categories will be further divided based
-on the four-body mass spectrum, discussed in Section~\ref{sec:}
+on the four-body mass spectrum, discussed in Section~\ref{subsec:add_discrimination}
 
 \begin{table}[ht]
   \centering
@@ -212,4 +214,30 @@ $\Mggjjk$.}
   \input{tables/nonres_addcuts}
   \label{table:nonres_addcuts}
 \end{table}
+
+\section{Event Displays\label{sec:displays}}
+
+Figures~\ref{fig:display_lowmass} and \ref{fig:display_highmass} show event displays of two events
+passing the identification and selection requirements for the resonant search at 300 GeV and the
+high-mass resonant search, respectively. These displays show the reconstructed tracks and calorimeter
+deposits. As the photon shower have a much more narrow width, one ECAL cell contains more energy
+than the maximum HCAL unit corresponding to a jet, whose showers tend to be more uniform inside
+the jet cone. The transverse plane is shown which highlights the secondary vertex corresponding to
+the decay of a B meson inside a b-jet.
+
+\begin{figure}[ht]
+ \begin{center}
+   \includegraphics[width=0.9\textwidth]{figures/selection/display_evt300.pdf}
+ \end{center}
+\caption{Event display for an event selected in the low-mass resonant search at 300 GeV.}
+\label{fig:display_lowmass}
+\end{figure}
+
+\begin{figure}[ht]
+ \begin{center}
+   \includegraphics[width=0.9\textwidth]{figures/selection/display_evtHighMass.pdf}
+ \end{center}
+\caption{Event display for an event selected in the high-mass resonant search.}
+\label{fig:display_highmass}
+\end{figure}
 
