@@ -1,31 +1,31 @@
 \chapter{Results\label{ch:results}}
 
-After applying the preselection, event classification, and mass windows, signal efficiency
-and event yields are examined. This is detailed in Section~\ref{sec:yields}. Then, signal yield
+After applying the preselection, event classification, and mass windows, the signal efficiency
+and event yields are examined, discussed in Section~\ref{sec:yields}. Then the signal yield
 in data is evaluated through the calculation of the confidence level (CL)
-for exclusion or for discovery of double Higgs production is evaluated from a simultaneous fit
-to the $\Mgg$, $\Mggjjk$, or $\Mgg \times \Mjj$ specta for the low-mass resonant, high-mass resonant,
-or nonresonant searches, respectively.
+for discovery or exclusion of double Higgs production. This is evaluated from a simultaneous fit
+to the $\Mgg$, $\Mggjjk$, and $\Mgg \times \Mjj$ spectra for the low-mass resonant, high-mass resonant,
+and nonresonant searches, respectively.
 To compute the upper limits on the production cross section, the modified frequentist approach
-$\text{CL}_s$ is used with an asymptotic approximation, taking thee profile likelihood as a test
-statistic~\cite{CLS1,CLS2}. This calculation is discussed in Sections~\ref{sec:resresults} for the
+$\text{CL}_s$ is used with an asymptotic approximation, taking the profile likelihood as a test
+statistic~\cite{CLS1,CLS2}. This calculation is discussed in Section~\ref{sec:resresults} for the
 resonant search and in Section~\ref{sec:nonresresults} for the SM nonresonant search.
 
 \section{Signal Efficiencies and Yields\label{sec:yields}}
 
-The signal effiency as a function of $m_X$ for the resonant search is summarized in
+The signal efficiency as a function of $m_X$ for the resonant search is summarized in
 Figure~\ref{fig:eff_res}. The signal efficiency increases from 260 GeV to 900 GeV
-from better photon and jet reconstruction efficiencies. The signal efficiency
+due to improved photon and jet reconstruction efficiencies. The signal efficiency
 peaks at and drops after 900 GeV due to the merging of the two jets from the decay $\Hbb$ into
 a single jet. For future consideration in extending the search above 1.1 TeV,
-through jet substructure techniques would be necessary to resolve the jet merging~\cite{Ellis:2009su}.
+jet substructure techniques would be necessary to resolve the two jets merging~\cite{Ellis:2009su}.
 Both categories contribute approximately equally to the overall efficiency.
 
 \begin{figure}[ht!]
  \begin{center}
     \includegraphics[width=0.55\textwidth]{figures/results/eff_all.pdf}
       \end{center}
-\caption{Signal efficiency for the resonant search for final selection.}
+\caption{Signal efficiency for the resonant search for the final selection.}
 \label{fig:eff_res}
 \end{figure}
 
@@ -33,9 +33,10 @@ The yields for the low-mass resonant search at $m_X = 300$~GeV are summarized in
 Table~\ref{table:yield_lowmass_res}. Note that there is a normalization disagreement in the
 $\gamma\gamma j$ and $\gamma j$ contributions as the simulation has limitations in modeling
 QCD with one or two hard photons. As a result, the backgrounds are not added; the purpose is to
-highlight relative contributions. The yields for the high-mass resonant search are summarized in
+highlight relative contributions to the nonresonant background.
+The yields for the high-mass resonant search are summarized in
 Table~\ref{table:yield_highmass_res}. For this search, the requirements are independent of
-the mass hypothesis, so a several signal hypotheses can be shown together.
+the mass hypothesis, so several signal hypotheses are be shown together.
 
 \begin{table}[ht!]
   \centering
@@ -60,8 +61,8 @@ or two hard photons.}
 \end{table}
 
 The yields for the nonresonant search are summarized in Table~\ref{table:yield_nonres}.
-The yields are higher in the nonresonant search because the $\Mggjjk$ spectrum is much less
-disciminating than in the low-mass resonant search and because the $\Mjj$ is fit rather than
+They are greater in the nonresonant search because the $\Mggjjk$ spectrum is less
+discriminating than in the low-mass resonant search and because the $\Mjj$ spectrum is fit rather than
 selected.
 
 \begin{table}[ht!]
@@ -81,12 +82,13 @@ or two hard photons.}
 \subsection{Low-mass Resonant Results}
 
 For the low-mass resonant search, the signal yield is extracted by fitting the $\Mgg$ spectrum.
-The signal model is built for each mass hypthesis by fitting the $\Mgg$ peak in the simulation sample
+The signal model is built for each mass hypothesis by fitting the $\Mgg$ peak in the simulation sample
 separately for the two categories. The functional form used is the sum of a Crystal Ball and
-Gaussian with the means constrained to be the same,
+Gaussian with each mean constrained to be the same,
 where the former models the core of the distribution and the latter models the
-tails. The position of the peak and the spread having no dependence on the resonant mass and the
-category. Figure~\ref{fig:sigfit_300} shows an example of the signal fit for a mass hypothesis 300 GeV.
+tails. The position of the peak and the spread are independent of the resonant mass and the
+category. Figure~\ref{fig:sigfit_300} shows an example of the signal fit for a mass hypothesis of
+300 GeV.
 
 \begin{figure}[ht!]
  \begin{center}
@@ -96,15 +98,16 @@ category. Figure~\ref{fig:sigfit_300} shows an example of the signal fit for a m
 \caption{Simulated signal shape in the $\Mgg$ spectrum for the high-purity (left) and medium-purity
 (right) categories for the Radion with mass 300 GeV. The open squares and corresponding
 statistical uncertainties represent the simulation.
-The blue line represents the model fitted to the simulation, while the green dashed line
-and the red dashed line represent the two components of the model.}
+The blue line represents the signal model fitted to the simulation, while the green dashed line
+and the red dashed line represent the two components of the signal model.}
 \label{fig:sigfit_300}
 \end{figure}
 
-The background estimation is done by fitting the same distribution in each category on the interval
-$[100, 180]$~GeV. This procedure is completely data-driven procedure, and as such it is important
-that the choice of the function does not bias in a non-negligible way the estimate of the signal
-strength obtained from the model conbining signal and background components.
+The background estimation is performed by fitting the same distribution in each category on the interval
+$[100, 180]$~GeV. This procedure is completely data-driven, and as such it is important
+to verify that the choice of the function does not bias in a non-negligible way the
+estimate of the signal
+strength obtained from the model with both signal and background components.
 The bias is estimated by considering a set of truth models which approximately describe the background.
 For each truth model a large set of pseudo-data is generated and fitted by the sum of a candidate
 background model and the signal model. The bias is defined as the ratio of the extracted signal strength
@@ -113,9 +116,10 @@ The bias is considered negligible if
 \begin{equation}
 \left|\text{median}\left(\frac{\mu}{\sigma_\mu}\right)\right| < 14\% \,.
 \end{equation}
-For both categories, more than one unbiased function was identified. For the limit extraction,
-a power law is used for both categories. Figures~\ref{fig:datafit_260} and \ref{fig:datafit_300}
-shows these fits to the data for four mass hypotheses.
+For both categories, more than one unbiased background candidate function is identified.
+For the limit extraction,
+a power law is chosen for both categories. Figures~\ref{fig:datafit_260} and \ref{fig:datafit_300}
+shows the background fits to the data for four mass hypotheses.
 
 \begin{figure}[ht!]
  \begin{center}
@@ -126,8 +130,8 @@ shows these fits to the data for four mass hypotheses.
  \end{center}
 \caption{Events in the $\Mgg$ spectrum in the high-purity (left column) and medium-purity
 (right column) categories for the resonance mass hypotheses 260 GeV (top row) and 270 GeV (bottom row).
-The nonresonant component of the background is shown in blue
-with 1$\sigma$ and 2$\sigma$ bands on the background estimation.}
+The nonresonant component of the background fit is shown in blue
+with its corresponding 1$\sigma$ and 2$\sigma$ confidence intervals.}
 \label{fig:datafit_260}
 \end{figure}
 
@@ -140,25 +144,25 @@ with 1$\sigma$ and 2$\sigma$ bands on the background estimation.}
  \end{center}
 \caption{Events in the $\Mgg$ spectrum in the high-purity (left column) and medium-purity
 (right column) categories for the resonance mass hypotheses 300 GeV (top row) and 350 GeV (bottom row)
-The nonresonant component of the background is shown in blue
-with 1$\sigma$ and 2$\sigma$ bands on the background estimation.}
+The nonresonant component of the background fit is shown in blue
+with its corresponding 1$\sigma$ and 2$\sigma$ confidence intervals.}
 \label{fig:datafit_300}
 \end{figure}
 
 The background fit estimates only the nonresonant contribution arising from diphoton
-production. The contribution from SM Higgs production with $\Hgg$ could create a peak in the
+production. The contribution from SM Higgs production with $\Hgg$ creates a resonance in the
 spectrum that mimics the signal process. This resonant background
 contribution is therefore added in the fit and accounted for in the limits.
 The expected contribution of the resonant background is small, and the
-effect on the final result is found to be at most 2\%.
+effect on the final result is found to be at most 2\% for all low-mass resonant hypotheses.
 
-There is no excess above the expectation observed, so the analysis proceeds to calculating
-upper limits on the signal cross section.
-The 95\% CL for expected and observed median upper limits is shown in
+No excess above the expectation is observed, so upper limits on the signal cross section are calculated.
+The 95\% CL for observed and expected upper limits is shown in
 Table~\ref{table:limits_lowmass} and Figure~\ref{fig:limits_lowmassres}
 for both categories and for the high-purity category only.
 The latter result is provided to simplify the comparison with new physics models where
-the Higgs branching ratios for the $\Hgg$ and $\Hbb$ decays can be modified from the SM.
+the Higgs branching ratios for the $\Hgg$ and $\Hbb$ decays can be modified with respect to their
+values in the SM.
 The green and yellow bands represent the 1$\sigma$ and 2$\sigma$
 confidence intervals around the expected limit. Theory expectations for Radion, RS1 KK-graviton, and 
 bulk KK-graviton are shown, where the Radion expectation assumes $\text{BR}(R\rightarrow HH) =$~25\%
@@ -179,7 +183,7 @@ hypotheses may be overlaid together.
    \includegraphics[width=0.7\textwidth]{figures/results/WP4_cutbased_low_all.pdf}
    \includegraphics[width=0.7\textwidth]{figures/results/WP4_cutbased_low_base_onecat.pdf}
  \end{center}
-\caption{Expected 95\% CL upper limits on the cross section times branching ratios
+\caption{Expected 95\% CL upper limits on the cross section times branching ratio
 $\sigma(pp\rightarrow X) \times \text{BR}( X \rightarrow HH \rightarrow \gamma\gamma b\bar{b})$.
 Theory lines corresponding to WED models with Radion, RS1 KK-graviton, and bulk KK-graviton are
 overlaid. Limits from both categories (top) and high-purity category only (bottom) are shown.
@@ -189,12 +193,12 @@ The results are obtained using the asymptotic $\text{CL}_s$ approach.}
 
 \subsection{High-mass Resonant Results}
 
-For the high-mass resonant search, the signal yield is extracted by fitting the $\Mggjjk$ spectrum.
+For the high-mass resonant search, the signal yield is extracted by fitting the $\Mggjjk$ spectrum
 in a procedure similar to the one for the low-mass resonant search. The signal model is built
 for each mass hypothesis by fitting the $\Mggjjk$ peak in the simulation sample separately for the
-two categories. The functional form used is the sum of a Crystal Ball and Gaussian with the means
-constrained to be the same. The position of the peak follows the closely the respective $m_X$
-hypothesis,
+two categories. The functional form used is the sum of a Crystal Ball and Gaussian with each mean
+constrained to be the same. The position of the peak follows the corresponding $m_X$
+hypothesis closely,
 and the resolution in the peak improves as $m_X$ increases. Figure~\ref{fig:sigfit_500_1000}
 shows examples of the signal fit for mass hypotheses of 500 GeV and 1 TeV.
 
@@ -209,8 +213,8 @@ shows examples of the signal fit for mass hypotheses of 500 GeV and 1 TeV.
 and medium-purity (right column) categories for the Radion with mass 500 GeV (top row) and
 1 TeV (bottom row). The open squares and corresponding
 statistical uncertainties represent the simulation.
-The blue line represents the model fitted to the simulation, while the green dashed line
-and the red dashed line represent the two components of the model.}
+The blue line represents the signal model fitted to the simulation, while the green dashed line
+and the red dashed line represent the two components of the signal model.}
 \label{fig:sigfit_500_1000}
 \end{figure}
 
@@ -221,7 +225,7 @@ while still ensuring full containment for the 400 GeV signal. The same bias esti
 described for the low-mass resonant search is applied here. The chosen background function is a power
 law for both categories, shown in Figure~\ref{fig:datafit_4body}. Note that in this regime,
 the SM Higgs background does not have a resonance on the $\Mggjjk$ spectrum, so
-there is no signal contamination from a background process.
+there is no resonant contamination from the background.
 
 \begin{figure}[ht!]
  \begin{center}
@@ -230,18 +234,26 @@ there is no signal contamination from a background process.
  \end{center}
 \caption{Events in the $\Mggjjk$ spectrum in the high-purity (left) and medium-purity (right)
 categories. The background fit is shown in blue
-with 1$\sigma$ and 2$\sigma$ bands on the background estimation.}
+with its corresponding 1$\sigma$ and 2$\sigma$ confidence intervals.}
 \label{fig:datafit_4body}
 \end{figure}
 
-There is no excess above the expection observed, so the analysis proceeds to calulating
-upper limits on the signal cross section. The 95\% CL for expected and observed limits is
-shown in Figure~\ref{fig:limits_allres}
-for both categories and both mass regimes. The break at 400 GeV corresponds
-to the border between both methods for signal extraction.
+No excess above the expectation is observed, so upper limits on the signal cross section are calculated.
+The 95\% CL for expected and observed limits is
+shown in Table~\ref{table:limits_highmass} and Figure~\ref{fig:limits_allres}.
+The break at 400 GeV corresponds
+to the border between the two methods for signal extraction.
 As in the low-mass regime, the theory expectations for the Radion assumes
 $\text{BR}(R\rightarrow HH) =$~25\% for all Radion masses above 300 GeV. The result is again
-spin-independent, allowing for both spin-0 and spin-2 theory expections to be overlaid together.
+spin-independent, allowing for both spin-0 and spin-2 theory expectations to be overlaid together.
+
+\begin{table}[ht!]
+  \centering
+  \renewcommand{\arraystretch}{1.4}
+  \caption{Observed and median expected 95\% CL upper limits for $m_X \ge 400$~GeV.}
+  \input{tables/limits_highmass}
+  \label{table:limits_highmass}
+\end{table}
 
 \begin{figure}[ht!]
  \begin{center}
@@ -256,28 +268,19 @@ overlaid. The results are obtained using the asymptotic $\text{CL}_s$ approach.}
 \label{fig:limits_allres}
 \end{figure}
 
-Table~\ref{table:limits_highmass} and Figure~\ref{fig:limit_comp}
-provide a comparison of the observed and expected limits obtained
+Figure~\ref{fig:limit_comp} provides a comparison of the observed and expected limits obtained
 among several final states in both the CMS and ATLAS Collaborations. The final states compared here
 are $\gamma \gamma b\bar{b}$, $b\bar{b}b\bar{b}$, $\tau\tau b\bar{b}$, and multileptons and photons.
 The comparison reveals that the $\gamma \gamma b\bar{b}$ is most sensitive to resonant double
 Higgs production for $m_X < 400$~GeV, while the $b\bar{b}b\bar{b}$ final state is the most sensitive
 for $m_X > 400$~GeV.
 
-\begin{table}[ht!]
-  \centering
-  \renewcommand{\arraystretch}{1.4}
-  \caption{Observed and median expected 95\% CL upper limits for $m_X \ge 400$~GeV.}
-  \input{tables/limits_highmass}
-  \label{table:limits_highmass}
-\end{table}
-
 \begin{figure}[ht!]
  \begin{center}
    \includegraphics[width=0.8\textwidth]{figures/results/limit_comparison_all.pdf}
  \end{center}
-\caption{The expected and observed upper limit of $X_\text{spin-0} \rightarrow HH$ production
-at 95\% CL provided by combining the searches performed by the CMS and ATLAS experiments
+\caption{The observed and expected upper limits of $X_\text{spin-0} \rightarrow HH$ production
+at 95\% CL are compared over various searches performed by the CMS and ATLAS Collaborations
 looking at the $\gamma \gamma b\bar{b}$~\cite{CMS-PAS-HIG-13-032,Aad:2014yja},
 $b\bar{b}b\bar{b}$~\cite{Khachatryan:2015yea,ATLAS-CONF-2014-005},
 $\tau\tau b\bar{b}$~\cite{CMS-PAS-HIG-14-034}, and
@@ -291,21 +294,22 @@ resonance spin, the spin-0 result for that analysis is used.}
 \section{Nonresonant Results\label{sec:nonresresults}}
 
 For the SM nonresonant search, the signal yield is extracted by fitting the 2D plane
-$\Mgg \times \Mjj$. The signal model is built by fitting simultaneous both dimensions separately
-for the four categories. The functional form used in both dimensions is the sum of a Crystal Ball and
-Gaussian with the means constrained to be the same. The background estimation is done by fitting
+$\Mgg \times \Mjj$. The signal model is built by simultaneously fitting both dimensions
+for each of the four categories separately. The functional form used in both dimensions is the sum of a Crystal Ball and
+Gaussian with each mean constrained to be the same. The background estimation is done by fitting
 the same plane in each category on the interval $[100, 180]$~GeV for $\Mgg$ and $[60, 180]$~GeV
 for $\Mjj$. The same bias estimation procedure
 described for the low-mass resonant search is applied here. The chosen background function is a power
 law for both dimensions in all four categories. The SM Higgs production is treated as a resonant
 background, and its contribution on the final result is a few percent.
 
-There is no excess above the expectation observed, so the analysis proceeds to calculating an
-upper limit on the signal cross section. The 95\% CL is found using the same approach as both
+No excess above the expectation is observed, so an upper limit on the signal cross section is
+calculated. The 95\% CL is found using the same approach as in both
 regimes of the resonant search. The observed (expected) upper limit on SM
 $pp \rightarrow HH \rightarrow \ggbb$ production cross section is 1.91 fb (1.59 fb).
 Assuming SM Higgs branching ratios, the observed (expected) upper limit on SM $pp \rightarrow HH$
-prodcution is 726 fb (604 fb). In terms of the SM signal strength modificator $\mu_{HH}$, defined as
+production is 726 fb (604 fb). In terms of the SM signal strength modificator $\mu_{HH}$, defined
+generally as
 \begin{equation}
 \mu = \frac{\sigma}{\sigma_\text{SM}} \, ,
 \end{equation}
