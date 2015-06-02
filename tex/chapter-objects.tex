@@ -7,11 +7,11 @@ in most analyses, which is described in Section~\ref{sec:PF}.
 As this search for double Higgs production centers around the identification of
 events with both $\Hgg$ and $\Hbb$ decays, the
 identification and reconstruction of photons and jets are the first steps taken after the
-trigger selects potentially-interesting events,
+trigger selects potentially interesting events,
 and this chapter discusses the treatments needed at this stage for both data and MC samples.
 Recalling that the sensitivity in the separation between signal and background comes from the
 excellent diphoton mass resolution, the identification of two high quality photons is the starting point
-and discussed in Section~\ref{sec:photons}. The following step is the identification of two jets
+and discussed in Section~\ref{sec:photons}. The next step is the identification of two jets
 coming from the hadronization of b-quarks and is discussed in Section~\ref{sec:jets}.
 
 
@@ -31,7 +31,7 @@ Section~\ref{subsec:groupid}.
  \begin{center}
     \includegraphics[width=0.95\textwidth]{figures/objects/pf.pdf}
       \end{center}
-\caption{A schematic of a slice of the CMS detector in the plane transverse to the beam line.
+\caption{A slice of the CMS detector in the plane transverse to the beam line.
 The trajectories of an electron, photon, charged hadron, neutral hadron, and muon are superimposed
 with the interactions that each of these particles has with the various subsystems.}
 \label{fig:PF}
@@ -40,7 +40,7 @@ with the interactions that each of these particles has with the various subsyste
 \subsection{Detector Objects\label{subsec:detobj}}
 
 The first step of the PF algorithm is to assemble detector objects created separately from
-individual subsystems. In the tracker, hits in pixels or strips are associated into a track candidate
+individual subsystems. In the tracker, pixel and strip hits are associated into a track candidate
 through the iterative Combinatorial Track Finder algorithm~\cite{PFPAS2009}. In the muon chambers,
 standalone muon tracks (to distinguish from tracks formed by tracker hits)
 are assembled from hits in the three muon detectors, accounting
@@ -118,9 +118,9 @@ hits in the tracker and with no matching reconstructed conversion.
 Isolation requirements place
 thresholds on the amount of ECAL energy deposited in a region about the cluster; these are both
 detector based and PF based. Requirements on the electromagnetic shower shape include the
-width of the shower in terms of ECAL detector units and
-ratio of the amount of energy in a 3$\times$3 unit box around the cluster seed to that
-around a 5$\times$5 unit box.
+width of the shower in terms of ECAL detector units and the
+ratio of the amount of energy in a $3 \times 3$ box around the cluster seed to that
+of a $5 \times 5$ box around the same seed.
 
 After the quality cuts, the two photons candidates are requested to satisfy the sliding asymmetric cuts
 \begin{subequations}
@@ -133,17 +133,18 @@ p_{{\rm T},\gamma_2} > \frac{\Mgg}{4} \, ,
 \end{subequations}
 where $p_{{\rm T},\gamma_1}$ and $p_{{\rm T},\gamma_2}$ are the transverse momenta of the
 leading and subleading photons, respectively.
-The fact that these requirements on the transverse momentum are scaled by the diphoton invariant mass
-prevents turn-on effects which could distort the shape of the $\Mgg$ spectrum for low values of $\Mgg$.
-Both photons have the requirement that their position be within the ECAL acceptance of
+These requirements on the transverse momentum are scaled by the diphoton invariant mass
+in order to prevent
+turn-on effects which could distort the shape of the $\Mgg$ spectrum for low values of $\Mgg$.
+The position of photons is required to be within the ECAL acceptance of
 $\left|\eta\right| < 2.5$ with an exclusion on the ECAL gap between the barrel and endcaps.
-In the case that there are more than two photons passing the identification and kinematic requirements,
+If there are more than two photons passing the identification and kinematic requirements,
 the two with the largest $p_{\rm T}$ are chosen. After this choice, the diphoton mass is required to
 be between 100 and 180 GeV.
 
 Figure~\ref{fig:mgg_onlyhiggs} shows the resulting simulated distributions for the diphoton mass 
 of the resonant signal and resonant backgrounds.
-In the case of the resonant background, the sum
+For the resonant background, the sum
 of all SM $\Hgg$ production mechanisms is shown as a single contribution.
 Figure~\ref{fig:mgg_controlplot} shows the same
 distribution for data and the sum of backgrounds. (Note that these figures include requirements
@@ -157,7 +158,7 @@ of the vertex from which they were produced. Due to the presence of the $\Hbb$ d
 the tracks from the jets allow for the efficient identification of the correct vertex since photons
 do not have tracks unless they undergo pair-conversion in the tracker.
 The criterion for the vertex choice is that which has the largest $\sum_i p_{{\rm T},i}$, where
-the sum is over all of the tracks associated to a particular vertex. With this criterion,
+the sum is over all of the tracks associated with a particular vertex. With this criterion,
 the relative contribution to the diphoton mass resolution due to the vertex choice is
 negligible with respect to the energy resolution for individual photons.
 
@@ -205,7 +206,7 @@ d_{i,B} = \frac{1}{k_{{\rm T},i}^2} \, ,
 \end{equation}
 then element $i$ is considered a jet and is removed from the list. The algorithm continues until the
 list is empty.
-The advantages of this clustering algorithm is that harder jets tend to be reconstructed as circles
+The advantages of this clustering algorithm are that harder jets tend to be reconstructed as circles
 in the $\eta\times\phi$ plane and that the clustering is not sensitive to
 hadronization from pileup and the underlying event.
 
@@ -215,7 +216,7 @@ jet area technique~\cite{Cacciari:2007fd} carried out by the FastJet package~\ci
 in which the jet $p_{\rm T}$ is corrected per unit area based on an event-by-event estimation of pileup
 activity.
 Jet energy is further corrected as a function of the jet $p_{\rm T}$ and $\eta$~\cite{JINST6}
-due to potential mismeasurement and the presence of neutrinos.
+for the effects of potential mismeasurement and the presence of neutrinos.
 
 Additional requirements are imposed to reject jets that originate from detector noise or from the
 clustering of particles due to pileup in favor of those that originate from a parton in the
@@ -230,7 +231,7 @@ $\langle\Delta R^2\rangle$, defined as
 \langle\Delta R^2\rangle = \frac{\sum_i \Delta R_i^2 p_{{\rm T},i}^2}{\sum_i p_{{\rm T},i}^2} \, ,
 \end{equation}
 \end{subequations}
-where ``other PV'' refers to the PF charged candidates associated to another primary vertex, the sum
+where ``other PV'' refers to the PF charged candidates associated with another primary vertex, the sum
 in the denominator of $\beta^*$ is over the charged candidates in the jet, the sums
 in $\langle\Delta R^2\rangle$ are over all constituents in the jet, and $\Delta R_i$ is the
 angular distance between constituent $i$ and the jet axis. Upper thresholds are imposed on these
@@ -239,8 +240,8 @@ vertices.
 
 The efficiency of the jet identification from the above criteria exceeds 95\%. Additional kinematic
 requirements on the jets include $p_{\rm T} > 25$~GeV and $|\eta| < 2.5$ (within the tracker
-acceptance). In the case that more than two jets pass identification and kinematic selections, the
-two jets with the highest $p_{{\rm T},jj}$ are chosen to make the dijet candidate, which will
+acceptance). If more than two jets pass identification and kinematic selections, the
+two jets with the highest $p_{{\rm T},jj}$ are chosen to make the dijet candidate, as will
 be discussed in more detail in Section~\ref{sec:higgsreconstruction}.
 Figure~\ref{fig:mjj_onlyhiggs} shows the resulting simulated distributions for the
 dijet mass of the resonant signal and resonant backgrounds.
@@ -284,12 +285,12 @@ The Combined Secondary Vertex (CSV) b-tagger~\cite{BTV} combines
 information from track impact parameters and secondary vertices within a given jet, and
 provides a continuous output which provides discrimination between jets coming from the
 hadronization of a b-quark against light-flavor and gluon jets.
-The efficiency to tag b-jets and the rate of misidentification depends on the chosen threshold
+The b-jet tagging efficiency and the rate of misidentification depend on the threshold
 of the CSV output and are measured in data samples enriched in b-jets, for example in $t\bar{t}$ events.
 The simulation samples are corrected by applying event weights to account for the
 differences between data and simulation with respect to the b-tag efficiency.
-At preselection level, one loose b-tagged jet (CSVL) is required in the event, which corresponds to
-a mistag rate of 10\%.
+At preselection level, one loose b-tagged jet (CSV loose, or CSVL)
+is required in the event, which corresponds to a mistag rate of 10\%.
 
 \subsection{Jet Energy Regression}
 
@@ -332,7 +333,7 @@ The input variables are
 \item the jet PF photon energy fraction,
 \item the jet PF neutral hadron energy fraction,
 \item the number of PF jet constituents (both charged and neutral),
-\item the lead track $p_T$ associated to the jet,
+\item the lead track $p_T$ associated with the jet,
 \item the jet secondary vertex flight distance error (if there is a secondary vertex),
 \item the jet secondary vertex mass (if there is a secondary vertex),
 \item the soft lepton $p_T$ (if there is a soft lepton in the jet),
@@ -390,7 +391,7 @@ any local peaking structure.
 In addition, comparison between data and the sum of MC backgrounds was performed for the $p_{\rm T}$
 balance between the dijet and diphoton candidates before and after regression.
 As shown in Figure~\ref{fig:regression_validation_datavsmc}, the ratio
-$\frac{p_{{\rm T},jj}}{p_{{\rm T},\gamma\gamma}}$ has peak a more narrow and shifted closer
+$\frac{p_{{\rm T},jj}}{p_{{\rm T},\gamma\gamma}}$ has a more narrow peak shifted closer
 to 1 after the regression is applied. Although the effect indicates the regression is doing its job,
 the data and background processes exhibit a slight overcorrection.
 
