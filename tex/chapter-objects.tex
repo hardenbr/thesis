@@ -74,7 +74,9 @@ containing a track and an ECAL cluster where the track and energy cluster satisf
 consistent with the signature of an electron. Next photons and hadrons are identified from blocks
 containing a track and a cluster from either ECAL or HCAL. If the calibrated energy in the clusters is
 greater than the sum of the momentum of the associated tracks, PF photons or PF neutrons are created
-from the difference. If the difference is less than the energy in the ECAL clusters, a PF photon is
+from the difference. If the difference between the calibrated energy in the clusters of the block and
+the sum of the momentum from the tracks associated to the clusters
+is less than the energy in the ECAL clusters, a PF photon is
 created from the block; if the difference is greater than the energy in the ECAL clusters,
 a PF photon and a PF neutral hadron are made from the excesses ECAL and HCAL energy, respectively.
 Finally, if the calibrated energy in the clusters is less than the sum of the momentum of the associated
@@ -155,8 +157,7 @@ The two primary drivers in the diphoton mass resolution are the energy resolutio
 of the individual photons
 and the direction of the photons from their origin, which is synonymous with the identification
 of the vertex from which they were produced. Due to the presence of the $\Hbb$ decay in the search,
-the tracks from the jets allow for the efficient identification of the correct vertex since photons
-do not have tracks unless they undergo pair-conversion in the tracker.
+the tracks from the jets allow for the efficient identification of the correct vertex.
 The criterion for the vertex choice is that which has the largest $\sum_i p_{{\rm T},i}$, where
 the sum is over all of the tracks associated with a particular vertex. With this criterion,
 the relative contribution to the diphoton mass resolution due to the vertex choice is
@@ -206,8 +207,9 @@ d_{i,B} = \frac{1}{k_{{\rm T},i}^2} \, ,
 \end{equation}
 then element $i$ is considered a jet and is removed from the list. The algorithm continues until the
 list is empty.
-The advantages of this clustering algorithm are that harder jets tend to be reconstructed as circles
-in the $\eta\times\phi$ plane and that the clustering is not sensitive to
+The advantages of this clustering algorithm are that clusters tend to be around hard energy deposits
+%harder jets tend to be reconstructed as circles in the $\eta\times\phi$ plane
+and that the clustering is not sensitive to
 hadronization from pileup and the underlying event.
 
 After the jet reconstruction, the energy is corrected for pileup contributions from both the same
@@ -294,9 +296,10 @@ is required in the event, which corresponds to a mistag rate of 10\%.
 
 \subsection{Jet Energy Regression}
 
-The jet energy corrections are performed globally on average for all jets, whereas the jets in
-the signal of interest originate from the hadronization of b-quarks. Therefore, the correction
-can be improved by exploiting the properties of these jets, which will in turn improve the resolution
+The jet energy corrections are applied to all types of jets, whether originating from a gluon,
+a light-flavor quark, or a b-quark, whereas the jets in
+the signal of interest originate solely from the hadronization of b-quarks. Therefore, the correction
+can be improved by exploiting the properties unique to b-jets, which will in turn improve the resolution
 of the dijet mass. A motivation for implementing an additional correction is to improve separation
 between signal and background, particularly against
 the resonance background $Z(b\bar{b})H(\gamma\gamma)$,
@@ -307,7 +310,7 @@ specific jet properties of the signal. It is not used in the final analysis, but
 as a 10--20\% improvement in sensitivity of the low-mass resonant signal
 for future iterations of the analysis.
 
-The correction comes from training a Boosted Decision Tree (BDT) regression simultaneously
+The correction comes from training a Boosted Decision Tree (BDT)~\cite{cart93} regression simultaneously
 on half of the MSSM signal
 samples at resonant masses of 260, 300, and 350 GeV; these samples were previously
 discussed in Section~\ref{subsec:sig_samples}.
@@ -324,7 +327,8 @@ generator-level jet).
 \end{itemize}                                                                                           
 The $p_T$ threshold is increased to 25 GeV for testing and implementation.
 
-The BDT algorithm is implemented from the TMVA package~\cite{TMVA2007} using gradient boost.
+The BDT algorithm is implemented from the TMVA package~\cite{TMVA2007}
+using gradient boost~\cite{Friedman00greedyfunction,Friedman:2002:SGB:635939.635941}.
 The input variables are
 \begin{itemize}
 \item the jet transverse momentum $p_T$,
@@ -344,12 +348,16 @@ The input variables are
 \end{itemize}
 The secondary vertex refers to that of the B-meson decay, if such a vertex was identified.
 The soft lepton refers to an electron or muon resonstructed inside the cone of the jet.
+The target of the training is the generator-level jet $p_{\rm T}$, including energy from any
+neutrinos in the jet.
 
 The figure of merit to quantify the effect of the regression is the resolution improvements
 measured in the dijet and four-body ($\ggjj$) mass spectra of the signal sample.
-Possible overtraining has been studied and considered negligible.
-The resolution improvements in the \Mjj\, and \Mggjj\, spectra are quoted through a
-fit to each using the sum of a Crystal Ball and third-order polynomial for events
+Possible overtraining, in which a model has poor predictive performance due to its tendency to treat
+noise in the training dataset as part of the relationship between the inputs and the output,
+has been studied and considered negligible.
+The resolution improvements in the \Mjj\, and \Mggjj\, spectra are estimated by fitting
+each spectrum with the sum of a Crystal Ball and third-order polynomial for events
 in both the medium and high-purity categories, which will be discussed in Section~\ref{sec:classification}.
 The parameters of the Crystal Ball give estimates
 of the spread and central value of the distribution, and the ratio of these two gives the resolution.
