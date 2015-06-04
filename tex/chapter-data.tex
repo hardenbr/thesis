@@ -134,6 +134,24 @@ and background MC confirms that the major backgrounds are understood and that
 the data is behaving as expected. The background MC samples are discussed in
 Section~\ref{subsec:bkg_samples}.
 
+Event generation begins with sampling a probability distribution
+estimated from the matrix element of the hard subprocess of interest
+(for example, $gg\rightarrow HH\rightarrow \ggbb$). The matrix element
+might have many contributions at tree level and, at higher orders, integrals involving loops, rendering
+an exact calculation of the probability distribution computationally infeasible.
+From the hard subprocess, additional effects are added so that the simulation corresponds with
+the final state observed in the detector. These effects include the initial state radiation (ISR)
+and final state radiation (FSR) of a gluon or photon to the hard subprocess, multi-parton
+interactions (MPI) from other partons interactions in the proton-proton collision with their
+associated ISR and FSR, and beam remnants from the outgoing protons. 
+continue hrrr!!!
+
+everything connected by color confinement
+
+fragmentation to produce primary hadrons
+hadrons decay further
+\cite{Dobbs:2004qw}
+
 \subsection{Signal Simulation\label{subsec:sig_samples}}
 
 The resonant search is focused on a new resonance from a massive particle $X$ with mass $m_X$ between
@@ -145,8 +163,6 @@ These reconstruction methods are discussed in Chapter~\ref{ch:objects}. For the 
 search, the final state is not sufficiently boosted to cause problems. The lack of boost can be
 inferred from Figure~\ref{fig:diHiggs_diagrams}: there is no heavy object causing the two Higgs
 to recoil against each other in the transverse plane.
-
-Event generation begins with the process of interest, blah blah.
 
 In the resonant search, the benchmark model is that of the Radion, which is simulated with
 MadGraph5~\cite{Madgraph_Alwall:2011uj} and hadronized with Pythia6~\cite{Pythia6-0}. The events are
