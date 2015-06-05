@@ -1,7 +1,7 @@
 \chapter{Results\label{ch:results}}
 
 After applying the preselection, event classification, and mass windows, the signal efficiency
-and event yields are examined, discussed in Section~\ref{sec:yields}. Then the signal yield
+and event yields are examined, as discussed in Section~\ref{sec:yields}. Then the signal yield
 in data is evaluated through the calculation of the confidence level (CL)
 for discovery or exclusion of double Higgs production. This is evaluated from a simultaneous fit
 to the $\Mgg$, $\Mggjjk$, and $\Mgg \times \Mjj$ spectra for the low-mass resonant, high-mass resonant,
@@ -15,10 +15,11 @@ resonant search and in Section~\ref{sec:nonresresults} for the SM nonresonant se
 
 The signal efficiency as a function of $m_X$ for the resonant search is summarized in
 Figure~\ref{fig:eff_res}. The signal efficiency increases from 260 GeV to 900 GeV
-due to improved photon and jet reconstruction efficiencies. The signal efficiency
+due to improved photon and jet reconstruction. The signal efficiency
 peaks at and drops after 900 GeV due to the merging of the two jets from the decay $\Hbb$ into
 a single jet. For future consideration in extending the search above 1.1 TeV,
-jet substructure techniques would be necessary to resolve the two jets merging~\cite{Ellis:2009su}.
+jet substructure techniques would be necessary to resolve the merging of the two
+jets~\cite{Ellis:2009su}.
 Both categories contribute approximately equally to the overall efficiency.
 
 \begin{figure}[ht!]
@@ -36,7 +37,7 @@ QCD with one or two hard photons. As a result, the backgrounds are not added; th
 highlight relative contributions to the nonresonant background.
 The yields for the high-mass resonant search are summarized in
 Table~\ref{table:yield_highmass_res}. For this search, the requirements are independent of
-the mass hypothesis, so several signal hypotheses are be shown together.
+the mass hypothesis, so several signal hypotheses can be shown together.
 
 \begin{table}[ht!]
   \centering
@@ -62,8 +63,8 @@ or two hard photons.}
 
 The yields for the nonresonant search are summarized in Table~\ref{table:yield_nonres}.
 They are greater in the nonresonant search because the $\Mggjjk$ spectrum is less
-discriminating than in the low-mass resonant search and because the $\Mjj$ spectrum is fit rather than
-selected.
+discriminating than in the low-mass resonant search and because the $\Mjj$ spectrum is
+modeled on the range $\Mjj \in [60,180]$~GeV rather than selected on a narrower window.
 
 \begin{table}[ht!]
   \centering
@@ -82,7 +83,8 @@ or two hard photons.}
 \subsection{Low-mass Resonant Results}
 
 For the low-mass resonant search, the signal yield is extracted by fitting the $\Mgg$ spectrum.
-The signal model is built for each mass hypothesis by fitting the $\Mgg$ peak in the simulation sample
+The signal model is built for each mass hypothesis by fitting the $\Mgg$ spectrum
+in the simulation sample
 separately for the two categories. The functional form used is the sum of a Crystal Ball and
 Gaussian with each mean constrained to be the same,
 where the former models the core of the distribution and the latter models the
@@ -107,12 +109,12 @@ The background estimation is performed by fitting the same distribution in each 
 $[100, 180]$~GeV. This procedure is completely data-driven, and as such it is important
 to verify that the choice of the function does not bias in a non-negligible way the
 estimate of the signal
-strength obtained from the model with both signal and background components.
+strength obtained from the fit to data with the sum of signal and background components.
 The bias is estimated by considering a set of truth models which approximately describe the background.
 For each truth model a large set of pseudo-data is generated and fitted by the sum of a candidate
 background model and the signal model. The bias is defined as the ratio of the extracted signal strength
-$\mu$ divided by the associated statistical uncertainty $\sigma_\mu$.
-The bias is considered negligible if
+$\mu$ divided by the associated statistical uncertainty $\sigma_\mu$ and
+is considered negligible if
 \begin{equation}
 \left|\text{median}\left(\frac{\mu}{\sigma_\mu}\right)\right| < 14\% \,.
 \end{equation}
@@ -221,7 +223,7 @@ and the red dashed line represent the two components of the signal model.}
 
 The background estimation is done by fitting the same distribution in each category on the interval
 $[320, 1200]$~GeV. The lower edge is chosen to avoid the kinematic turn-on of the background
-while still ensuring full containment for the 400 GeV signal. The same bias estimation procedure
+while ensuring full containment of the 400 GeV signal. The same bias estimation procedure
 described for the low-mass resonant search is applied here. The chosen background function is a power
 law for both categories, shown in Figure~\ref{fig:datafit_4body}. Note that in this regime,
 the SM Higgs background does not have a resonance on the $\Mggjjk$ spectrum, so
@@ -305,7 +307,7 @@ background, and its contribution on the final result is a few percent.
 
 No excess above the expectation is observed, so an upper limit on the signal cross section is
 calculated. The 95\% CL is found using the same approach as in both
-regimes of the resonant search. The observed (expected) upper limit on SM
+regimes of the resonant search. The observed (expected) upper limit on the SM
 $pp \rightarrow HH \rightarrow \ggbb$ production cross section is 1.91 fb (1.59 fb).
 Assuming SM Higgs branching ratios, the observed (expected) upper limit on SM $pp \rightarrow HH$
 production is 726 fb (604 fb). In terms of the SM signal strength modificator $\mu_{HH}$, defined
@@ -313,7 +315,7 @@ generally as
 \begin{equation}
 \mu = \frac{\sigma}{\sigma_\text{SM}} \, ,
 \end{equation}
-the observed (expected) limit is 72.9 (60.7). These calculations accounted for the theoretical
+the observed (expected) limit is 72.9 (60.7). These calculations account for the theoretical
 uncertainty associated with the SM NNLO cross section.
 
 %\section{The Future\label{sec:future}}
