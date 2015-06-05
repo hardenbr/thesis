@@ -46,37 +46,37 @@ for the resonant search.}
 
 From the lists of photons and jets passing the identification and kinematic requirements, Higgs
 candidates are constructed. When there are more than two photon or jet candidates, a choice
-must be made as to which pair is consistent with the decay of a Higgs. In the case
-of choosing the diphoton candidate, the two photons with the highest $p_{\rm T}$ are chosen
-as jets faking photons tend to be softer than prompt photons.
+must be made as to which pair is consistent with the decay of a Higgs. When
+choosing the diphoton candidate, the two photons with the highest $p_{\rm T}$ are chosen, since
+jets faking photons tend to be softer than prompt photons.
 
-In the case of choosing the jets for the dijet candidate, four choices were considered after b-tagging:
+When choosing the jets for the dijet candidate, four choices were considered after b-tagging:
 \begin{itemize}
 \item the two jets with the highest $p_{\rm T}$,
 \item the pair of jets that maximizes $p_{{\rm T},jj}$,
 \item the pair of jets that maximizes $\frac{p_{{\rm T},jj}}{\Mjj}$, and
-\item the pair of jets which minimizes $|\Mjj-\Mgg|$.
+\item the pair of jets that minimizes $|\Mjj-\Mgg|$.
 \end{itemize}
-In the high-purity category, the choice is among all b-tagged jets,
-while in the medium-purity category, the
-choice is among all non-tagged jets to pair with the b-tagged one.
-The criterion used in this analysis is the one that maximizes $p_{{\rm T},jj}$. 
-This choice selects the correct jets roughly 87\% of the time, and it does not produce any local peaking
+In the high-purity category, the dijet candidate is selected from all b-tagged jets,
+while in the medium-purity category, the candidate is selected from the pairing of the b-tagged jet
+with one of the non-tagged jets.
+The criterion used for this selection is to take the pair that maximizes $p_{{\rm T},jj}$. 
+This choice selects the correct jets roughly 87\% of the time, without producing any local peaking
 structure in the background. For the resonant search
-in the high-purity (medium-purity) category, the resolution, defined as the half-width at half-maximum,
-decreases from 20 (25) GeV to 15 (15) GeV as the resonance mass increases from 300 GeV to 1 TeV.
+in the high-purity (medium-purity) category, the resolution, defined as the full-width at half-maximum,
+decreases from 40 (50) GeV to 30 (30) GeV as the resonance mass increases from 300 GeV to 1 TeV.
 This is also shown visually in Figure~\ref{fig:mjj_onlyhiggs}.
 
 \section{Resonance Reconstruction and Kinematic Fit\label{sec:Xreconstruction}}
 
-For the resonant, the double Higgs system is constructed
+For the resonant search, the double Higgs system is constructed
 by combining the $\Hgg$ and $\Hbb$ candidates. (This is also used in the nonresonant search
 where the resulting mass distribution does not correspond to a local peak.)
-In order to improve the resolution on the $\Mggjj$ distribution, an additional constraint is imposed
-requiring the dijet mass to be consistent with the Higgs mass. This constraint, called the
-kinematic fit~\cite{Chatrchyan:2013yoa}, is performed by varying the jet four-momentum
-with respect to their
-respective energy and position resolutions in order to fix $\Mjj = 125$~GeV.
+In order to improve the resolution on the $\Mggjj$ distribution, an additional constraint
+is applied on the two selected jets.
+This constraint, called the kinematic fit~\cite{Chatrchyan:2013yoa},
+is performed by varying the four-momentum of each jet with respect to its energy and position
+resolutions in order to fix the dijet mass to the Higgs mass, i.e., $\Mjj = 125$~GeV.
 The resulting distribution is denoted as $\Mggjjk$. Distributions before (\Mggjj) and after (\Mggjjk)
 the kinematic fit
 are shown in Figure~\ref{fig:mggjj_onlyhiggs} for the resonant signal and resonant backgrounds
@@ -124,16 +124,16 @@ divided into two regimes:
 \item the low-mass analysis searches for an excess on the $\Mgg$ spectrum for $m_X \in [260, 400]$~GeV.
 \end{itemize}
 In both cases, there is more discrimination to be gained by imposing requirements on the two spectra
-not being fit, which is described in Section~\ref{subsec:add_discrimination}.
+not being fit, as is described in Section~\ref{subsec:add_discrimination}.
 
 The nonresonant search can be viewed as a special case of the low-mass resonant search in which
 the $\Mggjjk$ spectrum has no local peak. Here, excess is sought on the $\Mgg \times \Mjj$ plane,
-with additional requirements imposed on the $\Mggjj$ and the angle between the two Higgs candidates
+with additional requirements imposed on $\Mggjj$ and the angle between the two Higgs candidates
 $\acosthetastar$.
 
 \subsection{Data Control Sample\label{subsec:dataCS}}
 
-In optimize the kinematic cuts imposed after preselection, a data control sample is constructed.
+In optimizing the kinematic cuts imposed after preselection, a data control sample is constructed.
 The events for the sample are selected with the same preselection as data except for
 the inversion of one of the photon's identification and isolation requirements, giving a sample
 dominated by the contribution of $\gjjj$ rather than the $\ggjj$ of the signal region.
@@ -167,7 +167,7 @@ for all three spectra.}
 \subsection{Additional Discrimination\label{subsec:add_discrimination}}
 
 When searching for a high-mass resonance through the $\Mggjjk$ spectrum, the spectra not under
-consideration, namely the $\Mgg$ and $\Mjj$ spectra, add additional discrimination as the double Higgs
+consideration, namely the $\Mgg$ and $\Mjj$ spectra, add discrimination as the double Higgs
 signal produces resonances on both corresponding to the decays $\Hgg$ and $\Hbb$. In both
 the medium and high-purity categories,
 the requirements $\Mgg \in [120, 130]$~GeV and $\Mjj \in [90, 165]$~GeV
@@ -220,7 +220,7 @@ $\Mggjjk$.}
 Figures~\ref{fig:display_lowmass} and \ref{fig:display_highmass} show event displays of two events
 passing the identification and selection requirements for the resonant search at 300 GeV and the
 high-mass resonant search, respectively. These displays show the reconstructed tracks and calorimeter
-deposits. As the photon shower have a much more narrow width, one ECAL cell contains more energy
+deposits. As the photon showers are much narrower, one ECAL cell contains more energy
 than the maximum HCAL unit corresponding to a jet, whose showers tend to be more uniform inside
 the jet cone. The transverse plane is shown to highlight the secondary vertices corresponding to
 the decay of a B meson inside a b-jet.
