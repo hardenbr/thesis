@@ -134,23 +134,21 @@ and background MC confirms that the major backgrounds are understood and that
 the data is behaving as expected. The background MC samples are discussed in
 Section~\ref{subsec:bkg_samples}.
 
-Event generation begins with sampling a probability distribution
+Event generation begins with sampling the probability distribution
 estimated from the matrix element of the hard subprocess of interest
 (for example, $gg\rightarrow HH\rightarrow \ggbb$). The matrix element
 might have many contributions at tree level and, at higher orders, integrals involving loops, rendering
-an exact calculation of the probability distribution computationally infeasible.
+an exact calculation computationally infeasible.
 From the hard subprocess, additional effects are added so that the simulation corresponds with
 the final state observed in the detector. These effects include the initial state radiation (ISR)
 and final state radiation (FSR) of a gluon or photon to the hard subprocess, multi-parton
-interactions (MPI) from other partons interactions in the proton-proton collision with their
-associated ISR and FSR, and beam remnants from the outgoing protons. 
-continue hrrr!!!
-
-everything connected by color confinement
-
-fragmentation to produce primary hadrons
-hadrons decay further
-\cite{Dobbs:2004qw}
+interactions (MPI) from other parton interactions in the proton-proton collision with their
+associated ISR and FSR, and beam remnants from the outgoing protons. Due to color confinement,
+the partons cannot exist individually, and hadrons are formed from the bare partons in
+a process called hadronization. Unstable hadrons decay further until more stable hadrons are
+produced. The clustering of the stable hadrons observed in the detector give an inference of the
+momentum of the parton produced in the hard subprocess.
+More detail on the generation of simulation samples is provided in \cite{Dobbs:2004qw,Bartalini:2011jp}.
 
 \subsection{Signal Simulation\label{subsec:sig_samples}}
 
