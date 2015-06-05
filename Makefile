@@ -34,3 +34,5 @@ nopages:
 	acroread ${THESIS}.pdf &
 	git status
 
+clean:
+	rm -f tex/*aux tex/*bak thesis.blg thesis.bbl thesis.aux thesis.toc thesis.out thesis.lot thesis.lof thesis.log
