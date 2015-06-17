@@ -65,8 +65,8 @@
 
    Int_t ci;   // for color index setting
    ci = TColor::GetColor("#000099");
-   h0->SetLineColor(ci);
-   h0->GetXaxis()->SetTitle("M_{#gamma#gamma jj} (GeV)");
+   h0->SetLineColor(1);
+   h0->GetXaxis()->SetTitle("M_{#gamma#gammajj} (GeV)");
    h0->GetYaxis()->SetTitle("Fraction of events / 14 GeV");
    h0->GetYaxis()->SetTitleOffset(1.5);
    //h0->GetXaxis()->SetLabelFont(42);
