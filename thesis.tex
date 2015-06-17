@@ -132,7 +132,10 @@ at the CMS Detector}
 % options:
 %   colorlinks makes links by coloring the text instead of putting a rectangle around the text.
 \usepackage{hyperref}
-\hypersetup{colorlinks,bookmarksnumbered}
+%\hypersetup{colorlinks,bookmarksnumbered}
+\usepackage{color}
+\definecolor{customlinkcolor}{rgb}{0.05, 0.05, 0.5}
+\hypersetup{colorlinks=true,allcolors = {customlinkcolor}}
 
 % copy the already-set title and author to use in the pdf properties
 \makeatletter
