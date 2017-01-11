@@ -1,0 +1,155 @@
+\chapter{Theory}
+
+\section{Standard Model of Particle Physics}
+
+\subsection{Quantum Field Theory}
+
+In classical lagrangian kinematics, the time evolution of some coordinate $q$ is determined via the principle of minimal action. 
+\begin{equation}
+S[q(t)] = \int_{t_1}^{t_2} L(q,\frac{dq}{dt},t) dt
+\end{equation}
+where $S$ is a functional of the time dependent coordinate $q(t)$. 
+
+\subsection{Symmetries in the Standard Model}
+
+The fundamental forces and their interactions arise from the symmetries preserved by the standard model lagrangian. 
+
+\subsection{Fundamental Fields of the Standard Model Lagrangian}
+
+
+
+\subsection{Sectors of the Standard Model Lagrangian}
+
+The Standard Model of particle physics consists of a quantum field theory lagrangian with four sectors:
+
+\begin{equation}
+\mathcal{L}_{SM} = \mathcal{L}_{Gauge} + \mathcal{L}_{Fermion} + \mathcal{L}_{Higgs} + \mathcal{L}_{Yukawa}
+\end{equation}
+
+and three gauge group symmetries: $U(1)_Y$ hypercharge, 
+$SU(2)_L$ left chiral and $SU(3)_c$ color. All standard model particles transform as a multiplet of
+ $SU(3) \times SU(2)_L \times U(1)_Y$.
+
+The gauge sector consists of the field stress energy tensor of the 3 corresponding types of gauge bosons:
+ $G^i$ (gluons of the color force), $W^i$ ($W$'s of the weak force) and $B$ ($B$'s of the weak hypercharge). 
+Here the index $i$ enumerates their multiplicity. There are 8 gluons, 3 $W$'s and a single B. 
+
+\begin{equation}
+\mathcal{L}_{Gauge} = - \frac{1}{4} F_{\mu\nu}^{i} F^{\mu\nu i} =  - \frac{1}{4} G_{\mu\nu}^{i} G^{\mu\nu i} - \frac{1}{4} W^{i}_{\mu\nu} W^{\mu\nu i} - \frac{1}{4} B_{\mu\nu}B^{\mu\nu} 
+\end{equation}
+
+where the double scripts correspond to the antisymmetric commutator, that is:
+
+\begin{equation}
+X_{\mu\nu}^i = [ D_{[\mu} X_{\nu]}^i  = D_\mu X_\nu^i - D_\nu X_\mu^i - g f_{ijk} X_\mu^j X_\nu^k
+\end{equation}
+where the $D_\mu$ terms correspond to the covariant derivative and the $f_{ijk}$ are the corresponding structure constants for the algebra. and $g$
+the coupling constant. In full, the field stress tensor terms are:
+
+\begin{align*}
+G_{\mu\nu}^i &=  D_\mu G_\nu^i - D_\nu G_\mu^i - g_s f_{ijk} G_\mu^j G_\nu^k\\ 
+W_{\mu\nu}^i &=   D_\mu W_\nu^i - D_\nu W_\mu^i - g \epsilon_{ijk} W_\mu^j W_\nu^k\\ 
+B_{\mu\nu}^i &=  D_\mu B_\nu^i - D_\nu B_\mu^i
+\end{align*}
+
+The fermion sector consists of the kinetic energy terms for each quark (up and down types) and leptons (lepton, neutrinos) in the standard model.
+The left handed quarks transform as an SU(2) doublet:
+
+\begin{equation}
+q^0_{mL\alpha} = \left( \begin{array}{c} u_{m\alpha}^0  \\ d_{m\alpha}^0 \end{array} \right)_L 
+\end{equation}
+
+where the subscript $m$ denotes the family (1st, 2nd and 3rd generation) and $\alpha$ denotes the color charge (red, green, and blue).
+
+\begin{equation}
+l_{mL} = \left( \begin{array}{c} \nu_{m}^0  \\ e^{-,0}_{m} \end{array} \right)_L 
+\end{equation}
+
+As the $SU(2)_L$ symmetry only acts on the left handed fermions we further separate the fermion sector into left and right components:
+
+\begin{equation}
+\mathcal{L}_{fermion,L} = \bar{q}^0_{mL} i \gamma^\mu D_\mu q^0_{mL} + \bar{l}^0_{mL} i \gamma^\mu D_\mu l^0_{mL}  \\
+\end{equation}
+
+\begin{equation}
+\mathcal{L}_{fermion,R} =  \bar{u}^0_{mR} i \gamma^\mu D_\mu u^0_{mR} 
++ \bar{d}^0_{mR} i \gamma^\mu D_\mu d^0_{mR} + \bar{e}^0_{mR} i \gamma^\mu D_\mu e^0_{mR} + \bar{\nu}^0_{mR} i \gamma^\mu D_\mu \nu^0_{mR}
+\end{equation}
+
+The higgs sector consists of terms related to the single scalar field $\phi$
+
+\subsection{Electroweak Symmetry Breaking}
+
+\subsection{The Narrow Width Approximation}
+
+\section{Supersymmetry}
+
+\subsection{Electroweak Symmetry Breaking in Supersymmetric Theories}
+
+% neutralinos, charginos, gauginos, 
+
+\section{Origins of Long-lived Signatures}
+
+\subsection{Standard Model Particles with Long Lifetimes}
+
+The standard model already includes a variety of particles that can generate displaced vertices (Table \ref{tab:mesons} Table \ref{tab:baryons}). 
+For example, $B^0 \rightarrow J/\psi K^{*0}$ with $K^{*0} \rightarrow K^+\pi^-$ generates a 4 track vertex. Such a vertex is commonly utilized 
+in b-tagging. Of particular interest to single displaced jet identification outside of the b-tagging regime are charge neutral SM particles
+decaying to charged particles with a few centimeter lifetime: $\Lambda^0$, $K_S^0$. Such particles would have no track
+leading to the primary vertex and vertices far outside the b lifetime. The most relevant of processes being:
+
+\begin{enumerate}
+\item $K_s^0 \rightarrow \pi^+\pi^-$ 69\% of all $K_s^0$ decays 
+\item $\Lambda^0 \rightarrow p \pi^-$ 64\% of all $\Lambda^0$ decays 
+\end{enumerate}
+
+Jets containing prompt and non-prompt $K_s$ and $\Lambda^0$ will contain tracks with large impact parameters, 
+and large impact parameter significance. When a vertex is fit to the matched tracks we expect small track multiplicity relative 
+to the GeV to TeV   long-lived particles this identification targets. It is important to separate this contribution from
+the detector effects like nuclear interactions.
+
+\input{tables/table-sm_longlived}
+
+Particles of a characteristic lifetime $\tau$ decay with a falling exponential. For reference, 
+a table describing the percent of decays that will occur at various distances is shown in Table
+ \ref{tab:lifetime}. Even lifetimes 10 and 100 times the size of the tracker, we would still expect
+~10\% and 1\% respectively to occur within the tracker. For particles  of lifetime $\lambda$ we
+expect 0.6\% to decay beyond $5\lambda$. 
+
+\input{tables/table-ctau0_dist}
+
+\subsection{Split-Susy and Naturalness at the LHC}
+
+The expectation of discovering supersymmetry (SUSY) at the TeV scale has been largely motivated
+ by arguments based on naturalness. 
+Since the mass of the Standard Model Higgs boson is sensitive to the high energy scale where SUSY
+ is broken ($m_{SUSY}$), its mass, of order the electroweak scale, $(m_h \approx m_{EW} \ll m_{SUSY})$
+ would need to be tuned to order $m_{EW}^2/m_{SUSY}^2$. 
+To avoid fine-tuning, we would like  $m_h^2 \approx m_{SUSY}^2 \implies m_{SUSY} \leq$ 1 TeV. 
+More specifically, knowing $m_H \approx 125$ GeV we expect light SUSY partners (in particular, light stops)
+ near $< 1$ TeV to stabilize the quadratic divergences of 1 loop corrections to the Higgs mass
+ [citation:$light_stops$]. 
+Unfortunately these scalar partners have yet to be discovered.
+
+It is important to note that the stability of the Higgs boson mass is not the only
+ fine-tuning problem in particle physics. 
+When the same argument is made for the cosmological constant we arrive at $\Lambda \geq m_{SUSY}^4$, 
+where experimentally $\Lambda = 10^{-59}$ TeV$^4$.   
+If we use the same SUSY scale as we did for the Higgs mass,
+ $m_{SUSY} = 1$ TeV we have a new fine tuning problem of $10^{60}$.
+
+As addressed by Arkani-Hamed and Dimopoulos [citation:$nima_lhc$], many theoretical approaches  have been
+ motivated by a natural explanation for the Higgs mass while separately seeking an  explanation
+ of the cosmological constant through some other mechanism.
+Arkani-Hamed and Dimopoulos propose a reconsideration of naturalness, entertaining the idea that 
+fine tuning could have a role to play in beyond the Standard Model physics.
+Conceivably, both $\Lambda$ and $m_h$ fine tuning could be resolved by the same mechanism.  
+This un-natural model was  further investigated by Giudice and Romanino [citation:$split_susy$]
+and dubbed ``split supersymmetry". 
+
+Split SUSY assumes a much higher SUSY scale $m_{SUSY}^2 \gg 1$ TeV where all scalars (excluding the Higgs) 
+become very heavy $O(m_{SUSY})$ and the lightest sparticles (Higgsinos and gluinos) are kept at the TeV scale by requiring the lightest neutralino to be a good dark matter candidate. 
+
+Because the scalars are so much heavier, the decay of gluinos through squarks is suppressed.
+The characteristic signature of split supersymmetry is thus long-lived gluinos; such processes 
+with long lifetimes are rare in the SM.

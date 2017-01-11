@@ -1,0 +1,533 @@
+\chapter{Displaced Jet Analysis \label{ch:analysis}}
+
+\section{Introduction}
+
+The study of physics beyond the standard model (BSM) is one of the main
+objectives of the ATLAS and CMS experiments at the CERN LHC. With no
+signal observed so far, the ATLAS and CMS results put severe bounds on
+BSM theories.
+
+The majority of these searches focus on prompt particles with
+lifetimes $c\tau_0<1$mm and contain requirements on the
+physics objects that reject longer lived particle
+decays. This leaves open the possibility that light long-lived particles
+could exist and still remain undetected.  In this paper, we present an
+inclusive search for long-lived particles decaying to various
+combinations of jets and leptons. The analysis exploits the
+information originating from the CMS calorimeters to reconstruct jets
+and measure their energies. The information from reconstructed tracks,
+in particular the transverse impact parameters, is used to
+discriminate the displaced-jets signal from the background of ordinary
+multijet events.  The analysis is performed on data collected with the
+CMS detector at a center-of-mass energy $\sqrt{s}=13$~TeV in 2015. The
+data set corresponds to an integrated luminosity of
+2.7fb$^{-1}$. Results for similar signatures have been reported by
+ATLAS~\cite{PhysRevD.92.012010,Aad:2015rba} and
+CMS~\cite{CMS:2014wda}, using data collected at $\sqrt{s}=8$~TeV.
+
+\section{Datasets} 
+
+\section{Coordinate Conventions}
+
+\framebox{Pseudorapidity $\eta$} As the detector has cylindrical symmetry, the coordinate system used most commonly is two dimensional $(\eta, \phi)$. The pseudo-rapidity, $\eta$ is an approximation to rapidity, $y$, that is exact in the $\beta = 1$ limit:
+\begin{align*}
+y = \frac{1}{2}\log \frac{E - p_z}{E+p_z}\hspace{.75in} \eta = - \log \left( \tan\left (\frac{\theta}{2} \right ) \right)  
+\end{align*}
+where $\theta$ is the angle from the positive beam axis. This variable is useful for a number of reasons. Firstly, differences in rapidity are invariant under longitudinal lorrentz boosts along the beam axis. Also, for the energies being probed the particles in the decay products are of negligible mass and the approximation $\eta \approx y$ is nearly exact. Given this relation, pseudorapidity provides an intuitive geometric interpretation. Near full solid angle coverage is provided within $|\eta| < 5$
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.6\textwidth]{figures/exp_proj/pseudorapidity}
+\end{center}
+\caption{Lines of constant pseudorapidity in the z-y plane}
+\label{fig:pseudorapidity}
+\end{figure}
+
+\framebox{$\Delta R$} Given our coordinate system, $\Delta R$ is our longitudinally boost invariant notion of distance:
+\begin{align*}
+\Delta R = \sqrt{ (\Delta \phi)^2 + (\Delta \eta)^2}
+\end{align*}
+Fixed values of $\Delta R$ form a solid angle ``cone'' extending from the interaction point outward. This can be seen by using our definition of $\eta$ to convert from cylindrical coordinates to $(x,y,z)$ and consider the distance relative to the point $(\eta_0,\phi_0)$
+\begin{align*}
+\Delta R = \sqrt{ \left( \phi_0 - \tan^{-1} (y/x) \right )^2 + \left ( \eta_0 + \log \left( \tan \frac{\cos^{-1} (z/\sqrt{x^2+y^2})}{2} \right) \right)^2 }
+\end{align*}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.3\textwidth]{figures/exp_proj/deltaR_cone}
+\includegraphics[width=.3\textwidth]{figures/exp_proj/deltaR_cone_eta0p4}
+\includegraphics[width=.3\textwidth]{figures/exp_proj/deltaR_cone_eta1p0}
+\end{center}
+\caption{Contours of constant $\Delta R$ from the $\eta_),\phi_0 = 0,0$}
+\label{fig:deltaRcones}
+\end{figure}
+
+\section{An inclusive displaced-jet tagger}
+
+\section{Event selection}
+
+
+A signal is searched for by applying the selection described in
+section~\ref{sec:tagger} and counting the number of tagged displaced
+jets, $N_{\textrm{tags}}$.  In addition to the online and offline
+requirements described in section~\ref{sec:samples}, the analysis
+signal region requires $N_{\textrm{tags}} \geq 2$.  Efficiencies are
+reported for all interpreted models as a function of the lifetime with
+fixed mass (Table \ref{tab:cutflow_300gev} and
+\ref{tab:cutflow_BR_lifetime}) as well as a function of mass with
+fixed lifetime (Table \ref{tab:cutflow_30mm} and
+\ref{tab:cutflow_BR_mass}).
+
+The two classes of events: (i) events passing the inclusive trigger
+algorithm and with $H_{\textrm{T}}>650$~GeV; (ii) events passing the
+exclusive trigger algorithm and with $H_{\textrm{T}}>450$~GeV are
+treated as a single class.  
+
+\input{tables/table-cutflow_anal}
+
+\section{Datasets and simulated samples}
+\label{sec:samples}
+
+Events are collected from two dedicated online selection algorithms,
+designed to identify events with displaced jets.  The algorithms
+consider jets clustered from energy deposits in the calorimeters,
+using the FASTJET~\cite{fastjet} implementation of the
+anti-\textit{k}$_{\textit{t}}$ algorithm~\cite{Cacciari:2008gp}, with
+size parameter $0.4$. Jets with transverse momentum $p_{t}<60~$~GeV or
+$|\eta|>2.0$ are discarded.  An inclusive trigger algorithm accepts
+events when the scalar sum of the jet $p_{t}$'s, $H_{\textrm{T}}$, is
+greater than $500$~GeV and at least two jets with $|\eta|<2.0$ and at
+most two prompt tracks are found. Tracks are classified as prompt if
+their transverse impact parameter relative to the beam line,
+$IP^{\textrm{2D}}$, is less than $1$mm.  Another trigger
+algorithm is used, which requires $H_{\textrm{T}}>350~$~GeV and asks
+that there be two displaced jets each having at least one track with
+transverse impact parameter
+$IP^{\textrm{2D}}>5\sigma_{IP^{\textrm{2D}}}$,
+where $\sigma_{IP^{\textrm{2D}}}$ is the uncertainty on
+$IP^{\textrm{2D}}$. Samples with large $H_{\textrm{T}}$ are used to
+study the performance of the online selection algorithms. 
+
+Events are selected offline requiring at least two jets with
+$p_{t}>60~$~GeV and $|\eta|<2.0$. As for the online selection, the
+offline jet reconstruction is performed clustering energy deposits in
+the calorimeters with the anti-\textit{k}$_{\textit{t}}$ algorithm,
+with jet size parameter of $0.4$. Two classes of events are
+considered: (i) events passing the inclusive trigger algorithm and
+with $H_{\textrm{T}}>650~$~GeV and (ii) events passing the exclusive
+trigger algorithm and with $H_{\textrm{T}}>450~$~GeV. The two classes 
+of events sum to 786,002 unique events passing the event selection.  
+
+The main source of background events originates from multijet
+production. The properties of this background process are studied
+using a simulated multijet sample, generated with
+PYTHIA 8~\cite{Sjostrand:2007gs}. The NNPDF 2.3~\cite{NNPDF23}
+parton distribution functions (PDFs) are used to model the parton
+momentum distribution inside the colliding protons. The event
+simulation includes the effect of multiple proton-proton collisions in
+the same bunch crossing and in bunch crossing nearby in time, referred
+to as pileup. Simulated samples are reweighted to match the pileup
+profile observed in data.
+
+The analysis is interpreted with a set of benchmark signal models.
+The \textbf{Jet-Jet} model predicts pair-produced long-lived
+scalar neutral particles $X^{0}$ \cite{ScalarX}, each decaying to two light quarks u,d,s,c, and b
+with equal probability. The resonance
+mass $m_X$ and proper lifetime $c\tau_0$ are scanned between
+50~and~1500~GeV and between 1~and~2000mm, respectively. The
+trigger efficiencies for a fixed  $m_X=300$ GeV and 
+$c\tau_0 = 1, 30,$ and $1000$ mm are 30\%, 81\%, and 42\%  
+ respectively. The trigger efficiencies for a fixed  $c\tau_0=30$
+ mm and $m_{X} = 50, 100,$ and $1000$ GeV
+ are 2\%, 14\%, and 92\%  respectively.
+
+The \textbf{B-Lepton} model contains pair-produced long-lived top squarks
+in R-parity violating models of Supersymmetry~\cite{DisplacedSUSY}. Each top squark decays
+to one b quark and a lepton. The branching fractions of the
+decay to the three lepton flavors are equal. The
+resonance mass $m_{\tilde{t}}$ and proper lifetime $c\tau_0$ are
+scanned between 300~and~1000GeV and between 1~and~1000mm,
+respectively. The trigger efficiencies for a fixed mass 
+$m_{\tilde{t}}=300$ GeV and $c\tau_0 = 1, 30,$ and $1000$ mm
+ are 15\%, 41\%, and 23\%  respectively.
+The trigger efficiencies for  $m_{\tilde{t}} = 500, 700,$ and $1000$ GeV and fixed  $c\tau_0=30$ mm are 64\%, 71\%, and 74\% respectively.
+
+These models are also investigated with modified
+branching fractions.  The \textbf{Light-Light} model is the Jet-Jet
+model excluding decays to b quarks (equal decays to lighter quarks)
+and the \textbf{B-Mu}, \textbf{B-Ele}, and \textbf{B-Tau} models are
+derived from the B-Lepton model with 100\% branching fraction to
+muons, electrons, and taus, respectively.  Leptonic tau decays are included 
+in the \textbf{B-Tau} interpretation. All signal samples are
+generated with PYTHIA, with the setup described above for the
+multijet sample. 
+
+
+\section{Background prediction}
+\label{sec:bkg}
+
+As typical multijets contain only a sub dominant fraction of real displaced tracks,
+jets with a small multiplicity of tracks represent the dominant background.
+As the tagging criteria utilize averages of all tracks matched to the jet, the likelihood of tagging a fake decreases exponentially with $N_\textrm{tracks}$. 
+
+ Figure~\ref{fig:fake_rate} shows the fraction of jets that are tagged as displaced 
+jets in data as a function of the number of tracks associated with the jet $N_\textrm{tracks}$.  
+ This function is the misidentification rate of tagging a prompt jet as displaced (up to possible
+ signal contamination)  and is interpreted as the probability  $p(N_\text{tracks})$ of being tagged. This
+ parameterization allows for a representative estimation, event by event, of the probability of
+ tagging multiple fake displaced jets. That is to say, an event with two high track multiplicity jets is much
+ less probable than two single track jets to have 2 fake displaced-jet tags. 
+
+To maintain the statistical independence of the events
+that are used to perform the prediction and the events in the signal
+region, the probabilities are measured in the full control sample of events
+with $N_{\textrm{tags}}\leq 1$, while the final signal region requires
+$N_{\textrm{tags}} \geq 2$. Additionally, this limits signal contamination in the probability measurement.
+The control sample of $N_{\textrm{tags}}=1$ includes 1391 events. 
+
+The size of the bias introduced by only measuring the misidentification rate in  
+events with $N_\textrm{tags}\leq 1$ is quantifiable. For the nominal tag the size
+of the effect of removing these events on the predicted number of
+two tag events is negligible (0.4\%)
+compared to the statistical uncertainty of the prediction.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.6\textwidth]{figures/pas//ANALYSIS/76x_pu/DJET_fakeRate.pdf}
+\caption{The fraction of jets passing the displaced-jet tagging criteria as a function of the number tracks associated with the jet $N_{\textrm{tracks}}$. 
+The results are from data events with $N_{\textrm{tags}} \leq 1$ collected with the displaced-jet triggers and passing the offline selection criteria. \label{fig:fake_rate}}
+\end{center}
+\end{figure}
+
+The mistagging rate is used to predict the probability for an event to
+have $N_\text{tags}$ tagged jets, $P(N_{\textrm{tags}})$. For instance, for an event $m$
+with three jets $j_1, ~j_2$,~and~$ j_3$, there is one configuration with no tags,
+with a probability:
+\begin{align*} 
+P^m(N_{\textrm{tags}}=0) = (1-p_1)(1-p_2)(1-p_3)~,
+\end{align*} 
+where $p_i = p(N_{\textrm{tracks}}(j_i))$.  Similarly, there are three
+possibilities for this same event to have $N_{\textrm{tags}}=1$:
+\begin{align*}
+P^m(N_{\textrm{tags}}=1) = p_1(1-p_2)(1-p_3)
++  (1-p_1)p_2(1-p_3)
++  (1-p_1)(1-p_2)p_3~.
+\end{align*}
+The probability of finding $N_{\textrm{tags}}$  tags in the $m$ event is:
+\begin{equation}
+P^m(N_{\textrm{tags}}) = \sum_{\textrm{jet-configs}}~\prod_{i\in
+  \textrm{tagged}} p_i \prod_{k \in \textrm{not-tagged}} (1-p_k)~.
+\label{eq:ntag_prob}
+\end{equation}
+Tagged jets enter the product as $p_i$ and non-tagged jets enter as
+$(1-p_i)$. Equation~(\ref{eq:ntag_prob}) is used to compute the
+probability of observing $N_{\textrm{tags}}$, under the assumption
+that the sample does not contain any signal. The number of events
+expected for a given value of $N_{\textrm{tags}}$ is then computed as
+\begin{equation}
+N_{\textrm{events}}(N_{\textrm{tags}}) = \sum_{m} P^m(N_{\textrm{tags}})~,
+\end{equation}
+where $m$ runs only over events with fewer than two tagged jets.  The prediction is then compared
+to the observed $N_{\textrm{tags}}$ multiplicity in events with two or
+more tagged jets, to assess the presence of a signal. 
+
+We validate this procedure in the absence (background-only test) and
+presence (signal-injection test) of a signal, using simulated events.
+
+The background-only test is performed predicting the tag multiplicity
+on the simulated multijet sample, taking as input the misidentification rate
+distribution. In order to populate the large-$N_{\textrm{tags}}$
+region of the distribution, a looser version of the displaced-jet
+tagger is employed in this test. The full sample of events passing the
+event selection is divided into multiple independent samples and the background
+prediction validated. The predicted background of $N_{\textrm{tags}}$ events
+in simulated multijet events is found to be consistent within statistical uncertainty. 
+
+\input{signal_injection}
+\input{cross_validation}
+
+\section{Systematic uncertainties}
+\label{sec:sys}
+
+\subsection{Background systematic uncertainties}
+\label{sec:bkgsys}
+
+A background systematic uncertainty is quoted for the data-driven background prediction
+method. This uncertainty is estimated by repeating the
+background-prediction procedure on data with a looser version of the
+displaced-jet tagging algorithm as outlined in section \ref{sec:bkg}.  The
+background estimation uncertainty of 7.5\% is the required adjustment
+to the prediction to remove the bias observed in the Gaussian fit.  For three or more tags, the systematic uncertainty for the
+method is kept fixed.
+
+The statistical uncertainty on the measured misidentification rate as a
+function of $N_{\textrm{tracks}}$ is propagated to the predicted
+$N_{\textrm{tags}}$ distribution as a systematic uncertainty. This systematic uncertainty 
+is calculated for each tag multiplicity bin individually. The uncertainty for the 2 tag
+bin is ${-}12$/$+13$\%.
+
+In summary, for the background prediction in the two tag bin, a 7.5\% uncertainty is assigned to the
+background prediction method and ${-}12$/$+13$\% uncertainty is assigned to 
+the statistics of the misidentification rate. 
+
+\subsection{Signal systematic uncertainties}
+\label{sec:sigsys}
+A summary of the systematic uncertainties associated with the signal
+yields is given in Table~\ref{tab:sigSys}.  The uncertainty on the
+trigger emulation is measured by comparing the predicted efficiency
+for simulated multijet events and data collected by a loose
+$H_{\textrm{T}}$ trigger. The observed difference at threshold (5\%)
+is taken as an estimate of the uncertainty in the emulation of the
+online $H_{\textrm{T}}$ requirement.  Similarly, the uncertainty
+induced by the online versus offline jet acceptance is obtained from
+the shift in the trigger efficiency when the offline jet $p_{t}$
+requirement is increased from $p_{t}>60$ GeV to $p_{t}>80$ GeV (5\%).
+
+The systematic uncertainty on the luminosity is 2.7\% \cite{LUMI}.
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_pdf.pdf}
+\includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_pdf_dsusy.pdf}
+\caption{The PDF acceptance  systematics in the Jet-Jet (left)
+ and B-Lepton (right) signal model as a function of the mass $m_X$ 
+or $c\tau_0$ for the 2 tag bin. The systematic is reported two sided 
+for the two tag bin in the analysis. The error to fluctuate up is in
+ the upper half plane and the error to fluctuate down on the lower half plane.  \label{fig:pdf_sys}}
+\end{center}
+\end{figure}
+
+The uncertainty arising from the PDFs for pair-produced masses in the
+range of 50--1500GeV is found to be 1--6\% Figure \ref{fig:pdf_sys}.  An ensemble of
+alternative PDF is sampled from the output of the NNPDF fit.  Events
+are reweighted according to the ratio between these alternative PDF
+sets and the nominal ones. The distribution of the signal prediction
+for these PDF ensemble is used to quantify the uncertainty.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_hlt.pdf}
+\includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_hlt_dsusy.pdf}
+\caption{The onling tracking related systematics in the Jet-jet (left ) and B-Lepton
+ (right )  model as a function of $c\tau_0$. (Top) The online track 2DIP and
+ 2DIP$_{sig}$ modeling in the 2 tag bin   \label{fig:online_tracking_sys}}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_tracking.pdf}
+\includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_tracking_dsusy.pdf}
+\caption{The two tracking related systematics in the Jet-Jet (left ) and B-Lepton
+ (right )  model as a function of $c\tau_0$.  The displaced jet tagging variable 
+systematic in the 2 tag bin. The systematic is reported two sided for the two tag
+ bin in the analysis. The error to fluctuate up is in the upper half plane and the
+ error to fluctuate down on the lower half plane.  \label{fig:offline_tracking_sys}}
+\end{center}
+\end{figure}
+
+The systematic uncertainty on the modeling of the jet tagging
+variables in signal MC samples is estimated from the displaced track
+modeling in multi-jet events in data and MC. The mismodeling of the
+measured value of $\Theta_{\textrm{2D}}$ and $IP_{\textrm{sig}}^{\textrm{2D}}$ for
+single tracks is propagated to the final tag distribution by varying
+the individual measured values in MC by the difference in the measured
+value relative to data (3--10\%). The tagging variables are then
+re-calculated.  The $N_{\textrm{tags}}$ distribution is recalculated
+with the new values. The systematic uncertainty is assigned as the
+relative change in events, bin by bin in $N_{\textrm{tags}}$. For the
+two tag bin, this varies from 1 to 30\% depending on the mass and
+lifetime Figure \ref{fig:offline_tracking_sys}. The mismodeling of
+ $\alpha_{\textrm{max}}$ is found to have a negligible effect on the
+ signal efficiency as the requirement is relatively loose.
+
+The systematic uncertainty on the modeling of the online tracking
+efficiency is obtained by studying the online regional track
+reconstruction in data and MC. The online values of $IP^{\textrm{2D}}$
+and $IP^{\textrm{2D}}_{\textrm{sig}}$ are varied by the magnitude of
+the mismodeling found in events collected in control triggers.  The
+new values are used to determine if the event would still pass at
+least one of the trigger paths and its associated offline
+$H_{\textrm{T}}$ requirement. The $N_{\textrm{tags}}$ distribution is
+recalculated with the values varied up and down. The relative change
+in the number of events per bin is taken as the systematic
+uncertainty. For the two tag bin, this uncertainty varies from
+1 to 35\%.
+
+All signal systematic uncertainties are calculated individually for
+each model for all individual mass and lifetime points, and for each
+value of $N_\text{tags}$ in the signal region.
+
+
+
+\begin{table}[tb]
+  \caption{Summary of the systematic uncertainties. 
+    When the uncertainty depends on the specific features of the models
+    (mass, lifetime and decay mode of the long-lived particle) a
+    range is quoted, which refers to the computed uncertainty for $N_{\textrm{tags}}=2$ events.~\label{tab:sigSys}}
+\begin{center}
+\begin{tabular}{cc}
+\textbf{Signal systematic uncertainty} & \textbf{Effect on yield} \\
+\hline
+$H_{\textrm{T}}$ trigger inefficiency &  5.0\% \\
+Jet $p_{t}$ trigger inefficiency  & 5.0\% \\
+Trigger online tracking modeling & 1.0--35.0\% \\
+Luminosity & 2.7\% \\
+Acceptance due to PDF & 1.0--6.0\% \\
+Displaced-jet tag variable modeling & 1.0--30.0\% \\
+\end{tabular}
+\end{center}
+\end{table}
+
+\section{Results and interpretation}
+\label{sec:results}
+
+\begin{table}[tb]
+  \caption{The predicted and observed number of events as a function
+    of $N_{\textrm{tags}}$. The prediction is based on the
+    mistagging probability derived from events with fewer than two tags. 
+    The full event selection is applied. The quoted uncertainty
+    corresponds to the total background systematic uncertainty.\label{tab:result}}
+\begin{center}
+\begin{tabular}{ccc}
+\textbf{$N_{\textrm{tags}}$} & \textbf{Expected} & \textbf{Observed} \\
+\hline
+2 & $1.09^{+0.16}_{-0.15}$ & 1  \\
+$\geq~3$ & $(4.9 \pm 1.0) \times 10^{-4}$ & 0 \\
+\end{tabular}
+\end{center}
+\end{table}
+
+The numerical values for the expected and observed yields are
+summarized in Table ~\ref{tab:result}.  The observed yields are found to
+be consistent with the predicted background, within the statistical
+and systematic uncertainties. No evidence for a signal at large values
+of $N_{\textrm{tags}}$ is observed. 
+
+Exclusions for each model are obtained from the predicted and observed
+event yields in Table~\ref{tab:result} and the signal efficiencies in
+Tables~\ref{tab:cutflow_30mm}--\ref{tab:cutflow_BR_mass}.  All bounds
+are derived at 95\% confidence-level (CL) according to the CL$_{s}$
+prescription~\cite{CLs1,CLs2,LHCCLs} in the asymptotic approximation.
+For each limit derivation, we consider events with $N_{\textrm{tags}}\geq 2$ 
+using independent bins for $N_{\textrm{tags}}=2$ and
+$N_{\textrm{tags}}\geq 3$. Finer binning of the tag multiplicity for $N_{\textrm{tags}}>3$
+is found to have a negligible affect on the expected limits. 
+Cross section upper limits are
+ presented as a function of the
+mass and lifetime of the parent particle.  The analysis sensitivity is
+maximal for $(10 < c\tau_0 < 1000)$mm. Mass exclusion bounds at
+fixed lifetime are also derived, comparing the excluded cross section
+with the values predicted for the benchmark models described in
+section~\ref{sec:samples}. In the case of SUSY models, the
+next-to-leading order (NLO) and next-to-leading-logs (NLL)
+$\tilde{t}\tilde{t}$ production cross section is used as reference,
+computed in the large-mass limit for all the other SUSY
+particles~\cite{NLONLL1,NLONLL2,NLONLL3,NLONLL4,NLONLL5,NLONLLerr}.
+
+Figures~\ref{fig:xx4j_limit}~and~\ref{fig:light_limit} show the
+excluded pair-production cross section for the Jet-Jet and Light-Light
+models, respectively. Cross sections as small as 1.2 fb are excluded
+for $c\tau_0=50$mm for both models. 
+Exclusion limits are also derived for resonances decaying to $b\ell$
+final states, as shown in Fig.~\ref{fig:dsusy_limit_lepton}. The
+sensitivity is similar to what is observed for the Jet-Jet model,
+although less stringent as additional jets give higher efficiency than
+additional leptons from both the tagging and triggering
+perspectives. Cross sections larger than 2.47 fb are excluded at 95\%
+CL, for $c\tau_0$ in the range $70$--$100$~mm excluding a
+parent mass value of 1135~GeV.  
+
+Figures~\ref{fig:dsusy_limit_tau}~and~\ref{fig:dsusy_limit_ele} show
+the exclusions on the B-Tau and B-Ele models, respectively. The two
+models have similar performance at high mass  with slightly stronger limits 
+for the B-Ele model at lower
+mass $m_{\tilde{t}}=300$~GeV and lifetimes $c\tau_0>10$mm. The
+highest mass excluded in the B-Ele (B-Tau) model occurs at
+$m_{\tilde{t}}=1150$ (1155)GeV and $c\tau_0=70$ (70)mm at an
+observed cross section upper limit of 2.25 (2.17) fb at 95\% CL.
+
+In contrast, Fig.~\ref{fig:dsusy_limit_mu} shows the exclusion for the
+B-Mu model. Since the analysis uses jets reconstructed from
+calorimetric deposits while the two muons have small or no associated
+calorimeter deposit, the signal reconstruction efficiency and
+displaced-jet multiplicity are smaller in this case. This results in a
+weaker exclusion bound.  The highest mass excluded in the B-Mu model
+occurs at $m_{\tilde{t}}=1090$~GeV and $c\tau_0=70$mm at an
+observed cross section upper limit of 3.36 fb at 95\% CL.
+
+\begin{figure}[tb]
+\begin{center}
+
+\includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/Jet-Jet2D.pdf}
+\includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/Jet-Jet.pdf}
+\caption{The excluded cross section at 95\% CL for the Jet-Jet model
+  as a function of the mass and lifetime of the parent particle $X^0$
+  (top) and as a function of the lifetime for four values of the mass
+  (bottom).\label{fig:xx4j_limit}}
+\end{center}
+\end{figure}
+
+\begin{figure}[tb]
+\begin{center}
+\includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/Light-Light2D.pdf}
+\includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/Light-Light.pdf}
+\caption{The excluded cross section at 95\% CL for the Light-Light
+  model as a function of the mass and lifetime of the parent particle
+  $X^0$ (top) and as a function of the lifetime for four values of the
+  mass (bottom).\label{fig:light_limit}}
+\end{center}
+\end{figure}
+
+\begin{figure}[tb]
+\begin{center}
+\includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Lepton2D.pdf}
+\includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Lepton.pdf}
+\caption{The excluded cross section at 95\% CL for the B-Lepton model
+  as a function of the mass and lifetime of the parent particle
+  $\tilde{t}$ (top) and as a function of the lifetime for two values
+  of the mass (bottom).  The bottom plot also shows the expected upper
+  limits with one standard deviation
+  uncertainties.\label{fig:dsusy_limit_lepton}}
+\end{center}
+\end{figure}
+
+\begin{figure}[tb]
+\begin{center}
+\includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Tau2D.pdf}
+\includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Tau.pdf}
+\caption{The excluded cross section at 95\% CL for the B-Tau model as
+  a function of the mass and lifetime of the parent particle
+  $\tilde{t}$ (top) and as a function of the lifetime for two values
+  of the mass (bottom).  The bottom plot also shows the expected upper
+  limits with one standard deviation
+  uncertainties.\label{fig:dsusy_limit_tau}}
+\end{center}
+\end{figure}
+
+\begin{figure}[tb]
+\begin{center}
+\includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Ele2D.pdf}
+\includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Ele.pdf}
+\caption{ The excluded cross section at 95\% CL for the B-Ele model as
+  a function of the mass and lifetime of the parent particle
+  $\tilde{t}$ (top) and as a function of the lifetime for four values
+  of the mass (bottom).  The bottom plot also shows the expected upper
+  limits with one standard deviation
+  uncertainties.\label{fig:dsusy_limit_ele}}
+\end{center}
+\end{figure}
+
+\begin{figure}[tb]
+\begin{center}
+\includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Mu2D.pdf}
+\includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Mu.pdf}
+\caption{ The excluded cross section at 95\% CL for the B-Mu model as
+  a function of the mass and lifetime of the parent particle
+  $\tilde{t}$ (top) and as a function of the lifetime for four values
+  of the mass (bottom).  The bottom plot also shows the expected upper
+  limits with one standard deviation
+  uncertainties.\label{fig:dsusy_limit_mu}}
+\end{center}
+\end{figure}
