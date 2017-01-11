@@ -4,10 +4,11 @@
 
 \subsection{Quantum Field Theory}
 
-In classical lagrangian kinematics, the time evolution of some coordinate $q$ is determined via the principle of minimal action. 
-\begin{equation}
-S[q(t)] = \int_{t_1}^{t_2} L(q,\frac{dq}{dt},t) dt
-\end{equation}
+In classical lagrangian mechanics, the time evolution of some coordinate $q$ is determined via the principle of minimal action. 
+\begin{align*}
+S[q(t)] &= \int_{t_1}^{t_2} L(q,\frac{dq}{dt},t) dt\\
+\delta S[q(t)] &= 0 
+\end{align*}
 where $S$ is a functional of the time dependent coordinate $q(t)$. 
 
 \subsection{Symmetries in the Standard Model}
@@ -19,7 +20,7 @@ The fundamental forces and their interactions arise from the symmetries preserve
 
 
 \subsection{Sectors of the Standard Model Lagrangian}
-
+{
 The Standard Model of particle physics consists of a quantum field theory lagrangian with four sectors:
 
 \begin{equation}
@@ -41,14 +42,14 @@ Here the index $i$ enumerates their multiplicity. There are 8 gluons, 3 $W$'s an
 where the double scripts correspond to the antisymmetric commutator, that is:
 
 \begin{equation}
-X_{\mu\nu}^i = [ D_{[\mu} X_{\nu]}^i  = D_\mu X_\nu^i - D_\nu X_\mu^i - g f_{ijk} X_\mu^j X_\nu^k
+X_{\mu\nu}^i = D_{[\mu} X_{\nu]}^i  = D_\mu X_\nu^i - D_\nu X_\mu^i - g f_{ijk} X_\mu^j X_\nu^k
 \end{equation}
-where the $D_\mu$ terms correspond to the covariant derivative and the $f_{ijk}$ are the corresponding structure constants for the algebra. and $g$
-the coupling constant. In full, the field stress tensor terms are:
+where the $D_\mu$ terms correspond to the covariant derivative and the $f_{ijk}$ are the corresponding structure constants for 
+non-abelian algebrsa. and $g$ the coupling constant. In full, the field stress tensor terms are:
 
 \begin{align*}
 G_{\mu\nu}^i &=  D_\mu G_\nu^i - D_\nu G_\mu^i - g_s f_{ijk} G_\mu^j G_\nu^k\\ 
-W_{\mu\nu}^i &=   D_\mu W_\nu^i - D_\nu W_\mu^i - g \epsilon_{ijk} W_\mu^j W_\nu^k\\ 
+W_{\mu\nu}^i &=  D_\mu W_\nu^i - D_\nu W_\mu^i - g \epsilon_{ijk} W_\mu^j W_\nu^k\\ 
 B_{\mu\nu}^i &=  D_\mu B_\nu^i - D_\nu B_\mu^i
 \end{align*}
 

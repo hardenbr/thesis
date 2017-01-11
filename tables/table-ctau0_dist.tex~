@@ -1,0 +1,23 @@
+
+\begin{table}
+\begin{center}
+\begin{tabular}{ccc}
+\hline
+Distance ($\lambda$) &  Probability of Decay  \\
+\hline
+0.01               & 1\%                        \\
+0.1                & 9.5\%                      \\              
+0.25               & 22\%                       \\            
+0.5                & 39\%                       \\          
+0.75               & 52\%                       \\        
+1                  & 63\%                       \\      
+1.5                & 77\%                       \\    
+2                  & 86\%                       \\  
+3                  & 95\%                       \\
+5                  & 99.3\%                     \\
+\end{tabular}
+\end{center}
+\caption{ A reference table for the cumulative probability for a particle of lifetime $\lambda$ to have decayed after a given
+distance. Distance is in multiples of lambda.}
+\label{tab:lifetime}
+\end{table}
