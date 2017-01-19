@@ -231,6 +231,19 @@ where $m$ runs only over events with fewer than two tagged jets.  The prediction
 to the observed $N_{\textrm{tags}}$ multiplicity in events with two or
 more tagged jets, to assess the presence of a signal. 
 
+Let $q_i$ be the misidentification rate corresponding to a jet with $i$ tracks and
+ $N_{tracks}$ the maximum number of tracks for any jet in the analysis.
+ The statistical error $\sigma_{q_i}$ in the misidentification rate is propagated to 
+an error on the number of tagged events with $N_{tags} = 1,2,3,\ldots$
+\begin{align*}
+\sigma_{N_{n-tags}^{events}}^2 &=  \sum_{i = 1}^{N_{tracks}} \left (\frac{\partial N_{n-tags}^{events}}{\partial q_i}  \sigma_{q_i} \right)^{2} \\
+ &=  \sum_{i = 1}^{N_{tracks}} \left ( \left (\sum_{m\in N_{events}} \frac{\partial P^m(N_{tags}=n)}{\partial q_i} \right) \sigma_{q_i} \right)^{2} 
+\label{eq:ntag_prob_error}
+\end{align*}
+
+The probability is determined for each event for $N_{tags} \leq N_{jets}$. The predicted number of events with
+$N_{tags}$ is calculated as the sum over all events Eq. \ref{eq:ntag_calc}. 
+
 We validate this procedure in the absence (background-only test) and
 presence (signal-injection test) of a signal, using simulated events.
 
@@ -315,6 +328,25 @@ for these PDF ensemble is used to quantify the uncertainty.
 \end{center}
 \end{figure}
 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/76x_pu/SYS_offline_theta.pdf}
+\includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/76x_pu/SYS_offline_2dipsig.pdf}
+\caption{Comparison of the offline $\theta$ and 2DIP$_{sig}$ for individual tracks associated to jets passing $p_{T} > 60$ GeV and $|\eta| <2.0$ as collected by  \texttt{HLT\_HT425}.   \label{fig:variable_modeling}} 
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/REGIONAL_SYSTEMATIC/2dipsig_regional_systematic.pdf}
+\includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/REGIONAL_SYSTEMATIC/2dip_regional_systematic.pdf}
+\caption{Comparison of the online 2DIP and 2DIP$_{sig}$ for individual tracks associated to jets passing $p_{T} > 60$ GeV and $|\eta| <2.0$ as collected by  \texttt{HLT\_HT425}. For each variable $x$ the value is scaled as $x(1\pm\Delta)$ with positive in red and the negative in blue. A re-scaling of $+10/-45$ and $+20/-50$ for
+2DIP$_{sig}$ and 2DIP respectively provide an envelope for the DATA/MC differences  \label{fig:regional_modeling}}
+\end{center}
+\end{figure}
+
+
 \begin{figure}
 \begin{center}
 \includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_tracking.pdf}
@@ -358,8 +390,6 @@ uncertainty. For the two tag bin, this uncertainty varies from
 All signal systematic uncertainties are calculated individually for
 each model for all individual mass and lifetime points, and for each
 value of $N_\text{tags}$ in the signal region.
-
-
 
 \begin{table}[tb]
   \caption{Summary of the systematic uncertainties. 
