@@ -27,42 +27,193 @@ CMS~\cite{CMS:2014wda}, using data collected at $\sqrt{s}=8$~TeV.
 
 \section{Datasets} 
 
-\section{Coordinate Conventions}
-
-\framebox{Pseudorapidity $\eta$} As the detector has cylindrical symmetry, the coordinate system used most commonly is two dimensional $(\eta, \phi)$. The pseudo-rapidity, $\eta$ is an approximation to rapidity, $y$, that is exact in the $\beta = 1$ limit:
-\begin{align*}
-y = \frac{1}{2}\log \frac{E - p_z}{E+p_z}\hspace{.75in} \eta = - \log \left( \tan\left (\frac{\theta}{2} \right ) \right)  
-\end{align*}
-where $\theta$ is the angle from the positive beam axis. This variable is useful for a number of reasons. Firstly, differences in rapidity are invariant under longitudinal lorrentz boosts along the beam axis. Also, for the energies being probed the particles in the decay products are of negligible mass and the approximation $\eta \approx y$ is nearly exact. Given this relation, pseudorapidity provides an intuitive geometric interpretation. Near full solid angle coverage is provided within $|\eta| < 5$
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=.6\textwidth]{figures/exp_proj/pseudorapidity}
-\end{center}
-\caption{Lines of constant pseudorapidity in the z-y plane}
-\label{fig:pseudorapidity}
-\end{figure}
-
-\framebox{$\Delta R$} Given our coordinate system, $\Delta R$ is our longitudinally boost invariant notion of distance:
-\begin{align*}
-\Delta R = \sqrt{ (\Delta \phi)^2 + (\Delta \eta)^2}
-\end{align*}
-Fixed values of $\Delta R$ form a solid angle ``cone'' extending from the interaction point outward. This can be seen by using our definition of $\eta$ to convert from cylindrical coordinates to $(x,y,z)$ and consider the distance relative to the point $(\eta_0,\phi_0)$
-\begin{align*}
-\Delta R = \sqrt{ \left( \phi_0 - \tan^{-1} (y/x) \right )^2 + \left ( \eta_0 + \log \left( \tan \frac{\cos^{-1} (z/\sqrt{x^2+y^2})}{2} \right) \right)^2 }
-\end{align*}
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=.3\textwidth]{figures/exp_proj/deltaR_cone}
-\includegraphics[width=.3\textwidth]{figures/exp_proj/deltaR_cone_eta0p4}
-\includegraphics[width=.3\textwidth]{figures/exp_proj/deltaR_cone_eta1p0}
-\end{center}
-\caption{Contours of constant $\Delta R$ from the $\eta_),\phi_0 = 0,0$}
-\label{fig:deltaRcones}
-\end{figure}
 
 \section{An inclusive displaced-jet tagger}
+
+
+The basic requirement for the displaced jet tagging criteria is at least a single track with $p_{t}>1$~GeV. 
+Besides the requirements implicitly enforced on the iterative tracking in the \texttt{generalTracks} collection, there are 
+no further requirements (no total and pixel hit requirements). All tracking related variables for tagging are computed
+with this collection of tracks i.e. \texttt{generalTracks} with $p_{t}>1$ GeV. 
+There are no energy composition requirements of the calorimeter deposit
+ and no requirements of a reconstructed secondary vertex, both of which can exclude sensitivity to long-lived decays
+to electrons and single prong taus. 
+
+All variables utilize 2D quantities. By excluding the longitudinal dimension we prevent large overestimation of displacement due to primary vertex mis-identification.
+When the signal model in question has a lifetime small on the scale of the longitudinal spread of pile up the primary vertex can still be accurately reconstructed. 
+In contrast, for a decay in the lab frame of a few centimeters the probability of selecting the correct primary vertex can be highly model dependent. In fact, with
+beam spot constraints applied and no initial state radiation it is possible the primary vertex would not be reconstructed at all. This is especially the case for relatively light particles produced with lifetimes longer than the beamspot radius. By utilizing the \texttt{offlineBeamSpotWithBS} collection to compute primary vertex 
+related quantities we limit the transverse spread relative to the z direction to approximately  0.001 cm. As the tag sensitivity becomes highly insensitive at distances smaller than 1 mm, the effect of choosing the wrong PV is negligible. 
+
+In contrast to previous analyses, a fitted secondary vertex is not utilized in the tag definition. This decision is deliberate to maintain sensitivity to
+electrons and single track taus while maintaining a single definition. Previous analyses had possible sensitivity by fitting a secondary vertex to pairs of jets containing a single track. Additionally, by not vertexing pairs of jets the displaced object allows for sensitivity to odd (non-even) multiplicities of displaced jets. For example, in the Jet-Jet interpretation there is sensitivity to 3 jets when the 4th is reconstructed outside of the tracker acceptance. 
+
+\subsubsection{The Primary Vertex Compatibility Variable Alpha Max}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.20\textwidth]{figures/pas/DIAGRAMS/alpha_diag.pdf}
+\includegraphics[width=.5\textwidth]{figures/pas/SELECTION/76x_pu/DJET_alphaMax.pdf}
+%\includegraphics[width=.38\textwidth]{figures/pas/SELECTION/76x/HT575/alpha_ht575_76x.pdf}\\
+\caption{Diagram (left) and data/MC comparison (right) for the displaced jet tagging variable $\alpha_{max}$. The left distribution  shows the data collected by the displaced jet triggers with kinematic cuts and $H_T$ trigger matching thresholds applied. Signal samples are taken from Jet-Jet interpretation with no generator matching for the signal jets, fixed $m_X=700$~GeV and varied proper lifetime $c\tau_0$ in the mother frame.  
+  \label{fig:alphaMax}}
+\end{center}
+\end{figure}
+
+The variable $\alpha_{max}$ characterizes the disassociation of the jet's tracks and all fitted primary vertices 
+in an event.
+Jets decaying displaced from the primary vertex are unlikely to contain tracks 
+included in the event's primary vertex fit.
+Background QCD jets, will contain a majority of tracks from either the true primary vertex or a pile up vertex.
+For a given jet $\alpha(PV)$ is calculated as the ratio of sums of $p_{t}$ taken over tracks matching in $\Delta R< 0.4$ between two
+collections of tracks: the tracks in the specified primary vertex and tracks from the \texttt{generalTracks} collection. 
+The sum is restricted to tracks with $p_{t}> 1.0$ ~GeV. 
+
+\begin{equation}
+\alpha_{jet}(PV) = \frac{\sum_{i\in PV,tracks} p_{t}^i}{ \sum_{j\in generalTracks} p_{t}^j }
+\end{equation}
+
+If a single PV is selected for all jets in the event, PU jets which are not from this vertex can have signal-like $\alpha \approx 0$. 
+To avoid this, we define $\alpha_{max}$ for each jet individually selecting the primary vertex with
+the largest contribution to the sum. The assumption is PU jets will have high $\alpha$ for at least one 
+of the vertices. Many jets with $\alpha = 0$ have $\alpha_{max} > 0$ as they originate
+from a sub-leading vertex in the \texttt{offlinePrimaryVerticiesWithBS} collection. As the variable is calculated relative to all primary
+vertices, there is no dependence on selecting a single vertex. 
+
+\subsubsection{The 2D Angle $\Theta_{2D}$}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.2\textwidth]{figures/pas/DIAGRAMS/theta_diag.pdf}
+\includegraphics[width=.5\textwidth]{figures/pas/SELECTION/76x_pu/DJET_medianCosTheta.pdf}
+%\includegraphics[width=.38\textwidth]{FIGS/SELECTION/76x/HT575/theta_ht575_76x.pdf}
+\caption{Diagram (left) and data/MC comparison (right) for the displaced jet tagging variable $\theta_{2D}$. The left distribution  shows the quantities collected by the displaced jet triggers with kinematic cuts and $H_T$ trigger matching thresholds applied. Signal samples are taken from Jet-Jet interpretation with no generator matching for the signal jets, fixed $m_X=700$~GeV and varied proper lifetime $c\tau_0$ in the mother frame.
+ \label{fig:theta}}
+\end{center}
+\end{figure}
+
+The variable $\Theta_{2D}$ is utilized to characterize the recoil angle
+of the tracks from the flight direction of the long lived particle. $\Theta_{2D}$ is defined as the angle between 1) the 2D ray extended from the primary vertex
+to the inner hit of the track and 2) the track 2D momentum vector at the inner hit of the track extended from the inner hit. The first vertex in the
+\texttt{offlinePrimaryVertexWithBS} collection is selected for all jets in the event.
+
+As Standard Model QCD jets do contain long lived particles and tracks associated to conversions,
+a typical jet has a  long tail in its distribution of $\Theta_{2D}$. To minimize the effect of this tail, the median value (2D) is used, $\hat{\Theta}_{2D}$ (for the same reasons as it is used for $2DIP_{sig}$). Additionally, as the range of $\Theta_{2D}$ spans many orders of magnitude near zero a logarithm is 
+applied constraining typical QCD jet values of $-2.5 <\log(\hat{\Theta}_{2D}) < -1$. 
+
+As mentioned previously, the smaller the boost of the particle, the more isotropic the decay angles. Thus, the decays of heavier long-lived particles
+ yield larger values of $\Theta_{2D}$. When the lifetime of the particle is small near $1$ mm it is more difficult to resolve this angle because the
+ray's extrapolation backward corresponds to a smaller and smaller distance from the primary vertex .
+ As the lifetime approaches a few centimeters the signal is up to 50\% efficient in a nearly background free regime. Background jets capable of passing
+tight $\Theta_{2D}$ requirements typically consist of a single track. 
+
+\subsubsection{Jet $2DIP_{sig}$}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.2\textwidth]{figures/pas/DIAGRAMS/ip_diag.pdf}
+\includegraphics[width=.5\textwidth]{figures/pas/SELECTION/76x_pu/DJET_ipsig2d.pdf}
+%\includegraphics[width=.38\textwidth]{FIGS/SELECTION/76x/HT575/ipsig_ht575_76x_linear.pdf}
+\caption{Diagram (left) and Data vs. Monte Carlo comparison (right) for the displaced jet tagging variable $2DIP_{sig}$. 
+The left distribution  shows the quantities collected by the displaced jet triggers with kinematic cuts and $H_T$ trigger
+ matching thresholds applied. Signal samples are taken from Jet-Jet interpretation with no generator matching for the signal
+ jets, fixed $m_X=700$~GeV and varied proper lifetime $c\tau_0$ in the mother frame. 
+ \label{fig:2dipsig}}
+\end{center}
+\end{figure}
+
+Variables leveraging the impact parameter information for a given jet are derived from the distribution of impact parameter significances derived
+from the tracks matched to the jet. As background QCD jets contain a long tail from the presence of real displaced tracks with large IP significance,
+the median $2DIP_{sig}$ is chosen: $\hat{IP}^{2D}_{sig}$. For jets originating from displaced decay, most tracks have a large impact parameter 
+preserving a high median value. 
+
+\begin{table}
+\begin{center}
+\caption{The baseline tag definition in terms of the three displaced jet tagging variables \label{tab:tag_def}}
+\begin{tabular}{|c|c|c|}
+\hline 
+\textbf{Tagging Variable} & \textbf{$log_{10}(x)$ Requirement} & \textbf{Linear Requirement}\\
+\hline 
+$\alpha_{max}$  & N/A &  $<5\%$ \\
+\hline 
+$\hat{IP}^{2D}_{sig}$  &  $>1.5$ & $>31.6$ \\
+\hline 
+$\hat{\Theta}_{2D}$  &  $>-1.6$ & $>0.025$\\
+\hline 
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}
+\caption{The loose tag definition in terms of the three displaced jet tagging variables. \label{tab:loose_tag_def}}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+\textbf{Tagging Variable} & \textbf{$log_{10}(x)$ Requirement} & \textbf{Linear Requirement}\\
+\hline 
+$\alpha_{max}$  &  N/A & $<50\%$\\
+\hline 
+$\hat{IP}^{2D}_{sig}$  &  $>0.434$ &  $>2.71$\\
+\hline 
+$\hat{\Theta}_{2D}$  &  $>-1.70$ & $>0.02$ \\
+\hline 
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}
+\caption{The integrated fake-rate is precisely $N_{tagged}/N_{jets}$ for all jets passing the jet selection in events
+passing the event selection in data collected by the displaced jet triggers. \label{tab:fake_rate_wp}}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+\textbf{Working Point} & Flat Fake-Rate / Probability \\
+\hline 
+Loose Tag & 2.5816\%\\
+\hline 
+Baseline Tag & 0.0496\%\\
+\hline 
+\end{tabular}
+
+\end{center}
+\end{table}
+
+
+\subsection{Tagging Variable Cut Optimization}
+
+The requirements included in the baseline tag definition are determined through a scan of the possible parameter space. The values
+of the tagging variables scanned can be found in Table \ref{tab:scan_space}. Firstly, a scan is performed to determine the optimal 
+selection relative to a figure of merit that is maximal labeled $fom_{max}(x)$ for a given sample $x\in X$ where $X$ is the set of training samples.
+The figure of merit for a given sample $x\in X$ and selection $s_{i} \in S$ is computed as $fom(x,s_i) = \bar{N}(s_i,x)/ \sqrt{\bar{N}(s_i,x) + \hat{N}_b(s_i)}$ where 
+$\bar{N}$ is the average number of jets tagged per event passing the event selection and $\hat{N}_{b}$ is an estimate number of background events
+ in the two tag bin. This estimation $\hat{N}_b$ is the  calculated as the total number of jets tagged in data times the fake rate $\hat{N}_{b}(s_i) = N^{data}_{jets-tagged} \times \frac{N_{jets-tagged}^{data}}{N_{jets}^{data}}$.  
+Once $fom_{max}$ is calculated for every sample and selection we choose the tagging requirements which minimize sum of the differences squared of the figure of merit
+$fom(s_i,x)$ relative to the maximal value $fom_{max}$  Eq. \ref{eq:fom_opt}.
+
+\begin{table}
+\caption{The values of the tagging variables included in the scan for selecting the baseline tag definition  \label{tab:scan_space}}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+\textbf{Tagging Variable} & \textbf{Begin Scan} & \textbf{End Scan} & \textbf{Step Size} & \textbf{N Points}\\
+\hline 
+$\alpha_{max}$  & 0 &  0.5 & 0.05 & 11\\
+\hline 
+$log_{10}(\hat{IP}^{2D}_{sig})$  & 0.0 & 2.5 & 0.1 & 26\\
+\hline 
+$log_{10}(\hat{\Theta}_{2D})$  &  -2.5 & -0.5 & 0.1 & 21 \\
+\hline 
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{equation}
+\chi^2(s_i)  =  \sum_{x\in X} \left (\frac{(fom(s_i,x) - fom_{max}(x))^{2}}{ fom_{max}(x)} \right)
+\label{eq:fom_opt}
+\end{equation}
+
+The training set is chosen as the set of all Jet-Jet samples with $c\tau_0=1,3$~mm. This set is chosen as it is the
+ most difficult region for the analysis with the largest upper limit on the excluded cross-section. 
 
 \section{Event selection}
 
@@ -301,8 +452,8 @@ The systematic uncertainty on the luminosity is 2.7\% \cite{LUMI}.
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_pdf.pdf}
-\includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_pdf_dsusy.pdf}
+\includegraphics[width=.70\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_pdf.pdf}
+\includegraphics[width=.70\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_pdf_dsusy.pdf}
 \caption{The PDF acceptance  systematics in the Jet-Jet (left)
  and B-Lepton (right) signal model as a function of the mass $m_X$ 
 or $c\tau_0$ for the 2 tag bin. The systematic is reported two sided 
@@ -320,10 +471,10 @@ for these PDF ensemble is used to quantify the uncertainty.
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_hlt.pdf}
-\includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_hlt_dsusy.pdf}
-\caption{The onling tracking related systematics in the Jet-jet (left ) and B-Lepton
- (right )  model as a function of $c\tau_0$. (Top) The online track 2DIP and
+\includegraphics[width=.70\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_hlt.pdf}
+\includegraphics[width=.70\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_hlt_dsusy.pdf}
+\caption{The onling tracking related systematics in the Jet-jet (top) and B-Lepton
+ (bottom)  model as a function of $c\tau_0$. (Top) The online track 2DIP and
  2DIP$_{sig}$ modeling in the 2 tag bin   \label{fig:online_tracking_sys}}
 \end{center}
 \end{figure}
@@ -346,13 +497,12 @@ for these PDF ensemble is used to quantify the uncertainty.
 \end{center}
 \end{figure}
 
-
 \begin{figure}
 \begin{center}
-\includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_tracking.pdf}
-\includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_tracking_dsusy.pdf}
-\caption{The two tracking related systematics in the Jet-Jet (left ) and B-Lepton
- (right )  model as a function of $c\tau_0$.  The displaced jet tagging variable 
+\includegraphics[width=.70\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_tracking.pdf}
+\includegraphics[width=.70\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_tracking_dsusy.pdf}
+\caption{The two tracking related systematics in the Jet-Jet (top) and B-Lepton
+ (bottom)  model as a function of $c\tau_0$.  The displaced jet tagging variable 
 systematic in the 2 tag bin. The systematic is reported two sided for the two tag
  bin in the analysis. The error to fluctuate up is in the upper half plane and the
  error to fluctuate down on the lower half plane.  \label{fig:offline_tracking_sys}}

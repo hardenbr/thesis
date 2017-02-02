@@ -1,15 +1,30 @@
 \chapter{Theory}
 
-\section{Standard Model of Particle Physics}
+\section{On Standard Model of Particle Physics}
 
-It is the goal of this section to succinctly (in a relative sense) derive the standard model of particle physics from 
-fundamental principals of minimal action, dimensional analysis, symmetry, renomalizability and energy.
+\textbf{Forward}
+
+It is the goal of this section to succinctly (in a relative sense) derive the 
+principal aspects of the  standard model of particle physics from fundamental principles. 
+The questions to be answered answered are: how do we build a complex framework consisting of 
+a variety of particles and interactions that  experimentally describes the univerise (neglecting
+ gravity) with startling accuracy? what are the guiding principles? and despite its success, why
+is the theory incomplete?
+
 First we will describe the lagrangian formulation of classical mechanics. From here we introduce, 
 classical field theory and the fundmantal quantization of quantum mechanics to arrive at quantum field
 theory (QFT). After a brief discussion of global and local lagrangian symmetries in a QFT, we discuss
 gauge theories and how local gauge symmetries give rise to the interactions mediating the 
 fundamental forces excluding gravity. Ultimately, we review spontaneous 
 electroweak symmetry breaking as the source of the gauge boson masses and the higgs field. 
+
+\begin{itemize}
+\item Energy and The Principle of Minimal Action: Here we will build up the concept
+\item Symmetry and Local Gauge Symmetry: What symmetries do we enforce upon the form of our theory
+and what are the consequences.
+\item Theory Renormalizability: What limits the type of terms we can include in our lagrangian as to preserve
+the ability to calculate the outcomes of simple scattering processes. 
+\end{itemize}
 
 \subsection{Getting to Quantum Field Theory}
 
@@ -56,11 +71,11 @@ We now consider the simple free lagrangian density for a real scalar field $\phi
 we have achieved a relativistically invariance for free as all indicies are contracted. To see this, consider a lorrentz transformation $\Lambda$ on the kinetic term. The transformation induces $\phi(x) \rightarrow \phi'(x) = \phi(\Lambda^{-1} x) = \phi (y)$. The transformation is $\Lambda$ as we actively
 rotate the coordinate system rather than rotating the field. 
 \begin{align*} 
-\partial_\mu \phi \partial^\mu \phi \rightarrow& ((\Lambda^{-1})^\mu_\rho \partial^\rho \phi)( (\Lambda^{-1})_\mu^\nu \partial_\nu \phi) \\
-&= \eta^{\rho\nu} \partial_\rho \phi \partial_\nu \phi \\
-&= \partial^\nu \phi \partial_\nu \phi 
+\partial_\mu \phi \partial^\mu \phi \rightarrow& ((\Lambda^{-1})^\mu_\rho \partial^\rho \phi)( (\Lambda^{-1})_\mu^\nu \partial_\nu \phi) 
+= \eta^{\rho\nu} \partial_\rho \phi \partial_\nu \phi 
+= \partial^\nu \phi \partial_\nu \phi 
 \end{align*}
-where we have used the fact that the the spacetime metric is invariant under a lorentz transformations.
+where we have used the fact that the the spacetime metric is invariant under lorentz transformations.
 \begin{align*}
 \Lambda^\mu_\rho \eta^{\rho \lambda} \Lambda_{\lambda}^\nu = \eta^{\mu\nu}
 \end{align*}
@@ -111,13 +126,11 @@ H = \frac{p^2}{2} + \frac{1}{2}\omega^2 q^2
 \end{align*}
 and postulate the existance of the creation ($a^\dagger$) and annihilation ($a$) operators:
 \begin{align*}
-a &= \sqrt{\frac{\omega}{2}}q + \frac{1}{\sqrt{2\omega}}p \\
-a^\dagger &= \sqrt{\frac{\omega}{2}}q - \frac{1}{\sqrt{2\omega}}p 
+a &= \sqrt{\frac{\omega}{2}}q + \frac{1}{\sqrt{2\omega}}p \text{  } a^\dagger &= \sqrt{\frac{\omega}{2}}q - \frac{1}{\sqrt{2\omega}}p 
 \end{align*}
 which corresponding give the 
 \begin{align*}
-q = \frac{1}{\sqrt{2\omega}} (a + a^\dagger)\\
-p = -i \frac{\omega}{2}( a - a^\dagger) 
+q = \frac{1}{\sqrt{2\omega}} (a + a^\dagger) \text{  } p = -i \frac{\omega}{2}( a - a^\dagger) 
 \end{align*}
  substituting into the hamiltonian we find a simple solution after applying
 the commutation relation $[p,q]=-i$ (where we have set $\hbar=1$):
@@ -162,7 +175,7 @@ this variation, or effectively $\delta \mathcal{L}$ up to surface terms in the a
 \end{align*}
 We futher require that the solution satisfying the euler-lagrange equations, and exchange the first term:
 \begin{align*}
-&= i\beta \left [ \partial_\mu \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi)}  \phi  + \frac{\partial \mathcal{L}}{\partial_\mu \phi} (\partial_\mu \phi) \right]\\ 
+&= i\beta \left [ \partial_\mu\left [ \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi)} \right ]  \phi  + \frac{\partial \mathcal{L}}{\partial_\mu \phi} (\partial_\mu \phi) \right]\\ 
 &= i\beta \left [ \partial_\mu  \left [  \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi)}   \phi  \right ] \right ]\\ 
 &= \partial_\mu \left [ \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi) }\right ] \\
 \partial_\mu j^\mu &= 0 
@@ -205,8 +218,8 @@ For instance, we can build rotations in 3 dimensional space
 using the dimension 2 representation by exponentiating the pauli spin matrices $\vec \sigma = (\sigma_1, \sigma_2, \sigma_3)$ 
 (note the conventional normalization) :
 \begin{align*}
-L_1 = \frac{\sigma_1}{2} = \frac{1}{2} \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \\
-L_2 = \frac{\sigma_2}{2} = \frac{1}{2} \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}\\
+L_1 = \frac{\sigma_1}{2} = \frac{1}{2} \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \text{  }
+L_2 = \frac{\sigma_2}{2} = \frac{1}{2} \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} \text{  } 
 L_3 = \frac{\sigma_3}{2} =  \frac{1}{2} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} 
 \end{align*}
 In fact, generically the lie algrebra of a group $G$ is defined by the commutation relations of its generators $T^i$, 
@@ -234,9 +247,7 @@ $L_{\mu\nu} = i(x_\mu \partial_\nu - x_\nu \partial_\mu)$ with the commutation r
 \end{align*}
 However, by decomposing the operators into rotations and boosts these relations become much simpler. Define:
 \begin{align*}
-J_i &= \frac{1}{2}\epsilon_{ijk} L_{jk}\\
-P_i &= i\partial_i\\
-K_i &= L_{0i}
+J_i = \frac{1}{2}\epsilon_{ijk} L_{jk} \text{     } P_i = i\partial_i \text{     } K_i = L_{0i}
 \end{align*}
 Where $J$ and $P$ are the familiar angular and linear momentum operators. 
 We obtain more familar commutations relations:
@@ -254,9 +265,9 @@ L_n^2 = C_2(L_n)I
 where $I$ is the identity. For example, for the group algebra for rotations $SU(2)$ we define $j$ as $n=2j+1$
 and consider the $j=0,1/2,$ and $1$ representations. For $j=0$ we have $n=1$ 
  in which case, the rotation is always
-trivial to the state. For $j=1/2$ we have $n=2$ with generators:
+trivial to the state. For $j=1/2$ we have $n=2$ with the traceless generators:
 \begin{align*}
-asdf
+L_1 = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & -i \\ 0 & i & 0 \end{pmatrix} \text{   } L_2 = \begin{pmatrix} 0 & 0 & i \\ 0 & 0 & 0 \\ -i & 0 & 0 \end{pmatrix} \text{   } L_3 = \begin{pmatrix} 0 & -i & 0 \\ i & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}
 \end{align*}
 
 The lorrentz group can futher be decomposed into  $SO(3,1) \cong SU(2) \times SU(2)$
@@ -264,7 +275,7 @@ where $SU(2)$ is the group of matrices with determinant $\pm 1$ where the invers
  the conjugate transpose: $g^{-1} = (g^{T})^*$. The fundamental fields in the SM
 lagrangian are characterized by the four corresponding combinations of $SU(2)$ representations. The (0,0) represnetation 
 of $SU(2) \times SU(2)$ corresponds to scalar spin 0 fields $\phi$. The two chiral representations (1/2,0) and (0,1/2)
-correspond to fermionic matter fields $\Psi$. The (1/2,1/2) representation corresponds to the fundamental 
+correspond to fermionic matter fields $\psi$. The (1/2,1/2) representation corresponds to the fundamental 
 vector boson fields $W_\mu, B_\mu, G_\mu$ and the fields after electroweak symmetry breaking. $W^{\pm}, Z^0, A_\mu$. 
 
 
@@ -285,11 +296,11 @@ expanding the exponentials we see that:
 \end{align*}
 Where $L^i$ is the concrete representation of $T^i$. applying $[T^i, \phi_a] = - L_{ab}^i \phi_b$ gives the field transformation law:
 \begin{align*}
-\phi_a' = \left (e^{i \vec \beta \cdot \vec T} \right)_{ab} \phi_b 
+\phi_a' = \left (e^{i \vec \beta \cdot \vec L} \right)_{ab} \phi_b 
 \end{align*}
 and similarlly the conjugate field $\phi^\dagger_a$ transforms in the adjoint represention:
 \begin{align*}
-\phi_a^\dagger = \left( e^{i \vec \beta \cdot \vec T} \right)_{ab} \phi^\dagger_b 
+\phi_a^\dagger = \left( e^{-i \vec \beta \cdot \vec L} \right)_{ab} \phi^\dagger_b 
 \end{align*}
 
 \textbf{Local Gauge Invariance and the Covariant Derivative} 
@@ -336,8 +347,7 @@ A_\mu(x) &=  \left [ -\frac{1}{n^\mu}\frac{1}{e}\partial_\mu \alpha(x) + A_\mu(x
 \end{align*}
 If we pick the axes such that $n^\mu = 1$ then we have the transformation law for the gauge field: $A_\mu(x) \rightarrow A_\mu(x) - \frac{1}{e} \partial_\mu \alpha(x)$.
 
-\subsection{Fundamental Fields and Free Parameters of the Standard Model}
-\input{tables/table-sm_parts.tex}
+
 
 \subsection{Sectors of the Standard Model Lagrangian}
 The Standard Model of particle physics consists of a quantum field theory lagrangian with four sectors. and three gauge group symmetries: $U(1)_Y$ hypercharge, 
@@ -360,15 +370,17 @@ symmetry is spontaneously broken and the scalar $\phi$ takes on a new vaccum sta
 \end{equation}
 where the double scripts correspond to the commutation relations for the gauge group algebra. 
 \begin{equation}
-X_{\mu\nu}^i   = D_\mu X_\nu^i - D_\nu X_\mu^i - g f_{ijk} X_\mu^j X_\nu^k
+X_{\mu\nu}^i   = [D_u X_\nu, D_\nu X_\mu] = \partial_\mu X_\nu^i - \partial_\nu X_\mu^i - g f_{ijk} X_\mu^j X_\nu^k
 \end{equation}
-where the $D_\mu$ terms correspond to the covariant derivative and the $f_{ijk}$ are the corresponding structure constants for 
-non-abelian groups(0 for abelian groups). and $g$ the coupling constant. In full, the field stress tensor terms are:
+where $g$ is the coupling constant, the $D_\mu$ terms correspond to the covariant derivative and the $f_{ijk}$ are the corresponding structure constants for the non-abelian groups that arise from the non commuting generators of the algebra when computing the commutator. In full, the field stress tensor terms are:
 \begin{align*}
-G_{\mu\nu}^i &=  D_\mu G_\nu^i - D_\nu G_\mu^i - g_s f_{ijk} G_\mu^j G_\nu^k\\ 
-W_{\mu\nu}^i &=  D_\mu W_\nu^i - D_\nu W_\mu^i - g \epsilon_{ijk} W_\mu^j W_\nu^k\\ 
-B_{\mu\nu} &=  D_\mu B_\nu - D_\nu B_\mu
+G_{\mu\nu}^i &=  \partial_\mu G_\nu^i - \partial_\nu G_\mu^i - g_s f_{ijk} G_\mu^j G_\nu^k\\ 
+W_{\mu\nu}^i &=  \partial_\mu W_\nu^i - \partial_\nu W_\mu^i - g \epsilon_{ijk} W_\mu^j W_\nu^k\\ 
+B_{\mu\nu} &=  \partial_\mu B_\nu - \partial_\nu B_\mu
 \end{align*}
+
+\textbf{Yukawa Sector}
+
 The fermion sector consists of the kinetic energy terms for each quark (up and down types) and leptons (lepton, neutrinos) in the standard model.
 The left handed quarks transform as an SU(2) doublet:
 \begin{equation}
@@ -384,11 +396,12 @@ As the $SU(2)_L$ symmetry only acts on the left handed fermions we further separ
 
 \textbf{Higgs Sector}
 
-The higgs sector consists of terms related to the single scalar field $\phi$
+The higgs sector consists of terms related to the single scalar field $\phi$:
+\begin{equation}
+\mathcal{L}_{higgs} = (D^\mu \phi)^\dagger(D_\mu \phi) + \mu^2 \phi^\dagger \phi + \lambda (\phi^\dagger \phi)^2 
+\end{equation}
 
-\textbf{Yukawa Sector}
-
-\subsection{Electroweak Symmetry Breaking}
+\subsection{Electroweak Symmetry Breaking (EWSB)}
 
 Expanding the kinetic term for the field phi about the vaccum $\langle \phi \rangle = \nu$ in the gauged theory we find:
 \begin{align*}
@@ -404,37 +417,74 @@ adding in the diagonal $B_\mu$ terms and taking the square:
 \end{align*}
 Now if we perform a redefinition of the gauge fields into mass eigenstates we arrive at a clean expression:
 \begin{align*}
-W_{\mu}^{\pm} &= \frac{1}{\sqrt{2}}( W_{\mu,1}  \pm i W_{\mu,2} ) \\
-A_{\mu} &= \frac{1}{\sqrt{g^2 + (g')^2}} (g' W_{\mu,3} + g B_\mu)\\
-Z_{\mu} &= \frac{1}{g^2 + (g')^2}( g' B_\mu - g W_{\mu,3}) 
+W_{\mu}^{\pm} &= \frac{1}{\sqrt{2}}( W_{\mu,1}  \pm i W_{\mu,2} )  \\
+A_{\mu} &= \frac{1}{\sqrt{g^2 + (g')^2}} (g' W_{\mu,3} + g B_\mu) = \sin \theta_W W^3_\mu + \cos \theta_W B_\mu \\
+Z_{\mu} &= \frac{1}{\sqrt{g^2 + (g')^2}}( g' B_\mu - g W_{\mu,3}) = \sin \theta_W B_\mu - \cos \theta_W W_\mu^3 
 \end{align*}
-With this substitution, w
+Here we have defined the electroweak mixing angle $\theta_W$ in terms of a right trangle with legs $g$ and $g'$. With this substitution,
 \begin{align*}
 (D^\mu \phi)^\dagger (D_\mu \phi) &= \frac{\nu^2 g^2}{4} W_{\mu}^{-} W_{\mu}^{+} + \frac{(g+g')\nu^2}{8} Z_\mu^2  + 0 \times A_\mu^2 \\ 
 &= \frac{1}{2} m_{W}^2 W_\mu^- W_\mu^+ + \frac{1}{2} m_Z^2 Z_\mu^2  + 0 \times A_\mu^2
 \end{align*}
-Electroweak symmetry breaking has generated the mass terms for the gauge bosons! $m_Z = \frac{\nu}{2}\sqrt{g+g'} = 91.1876$~[GeV] 
-$m_{W^{\pm}} = \frac{\nu g}{\sqrt{2}} = 90.385$~[GeV] and the massless photon $A_\mu$. 
+Electroweak symmetry breaking has generated the mass terms for the gauge bosons! 
+$m_{W^{\pm}} = \frac{\nu g}{\sqrt{2}} = 90.385$~[GeV],
+ $m_Z = \frac{\nu}{2}\sqrt{g+g'} = \frac{m_W}{\cos \theta_W} = 91.1876$~[GeV]  and the massless photon $A_\mu$. 
+
+
+\subsection{Divergences in the Standard Model} 
+
+To explain why we need a mechanism like EWSB to generate the masses for the gauge bosons, we need to understand how we
+have motivated the terms of the Standard Model Lagrangian. 
+
+\subsection{Fundamental Fields and Free Parameters of the Standard Model}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.45\textwidth]{pics/sm_model_particles}
+\includegraphics[width=.45\textwidth]{pics/principal_interactions}
+\caption{}
+\end{center}
+\end{figure}
+
+\input{tables/table-sm_parts.tex}
+\input{tables/table-sm_fields.tex}
+
 
 \subsection{Re-deriving Maxwell's Laws} 
 
-After, electroweak symmetry breaking we would like to see that we retain the fundamental laws of electromagnetism. 
+After, electroweak symmetry breaking we would like to perform a sanity check that we can revive the well estabilished equations of
+Maxwell governing electrodynamics. 
 Keeping only the terms that contain the field $A_\mu$:
 \begin{align*}
-\mathcal_{EM} &= -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}  - ie \bar \psi \gamma^\mu A_\mu \psi 
+\mathcal{L}_{EM} = -\frac{1}{4} F_{\mu\nu} F^{\mu\nu}  - ie \bar{\psi} \gamma^\mu A_\mu \psi \text{ for } F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu 
 \end{align*}
 where by definition $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$. Applying the left side of Euler-Lagrange we find:
 \begin{align*}
-\partial_\mu \left (\frac{\partial \mathcal L}{\partial(\partial_\mu A_\nu} \right) =  
--\frac{1}{2}\partial_\mu \left [ \left (\frac{\partial}{\partial(\partial_\mu A_\nu)} \right) F_{\mu\nu} \right ] 
+\partial_\mu \left (\frac{\partial \mathcal L}{\partial(\partial_\mu A_\nu} \right) &=  
+-\frac{1}{2}\partial_\mu \left [ \left (\frac{\partial}{\partial(\partial_\mu A_\nu)} F_{\mu\nu} \right) F^{\mu\nu} \right ] 
+= - \frac{1}{2} \partial_\mu \left [(1 - \delta^\mu_\nu) F^{\mu\nu} \right ]
+= - \frac{1}{2} \partial_\mu F^{\mu\nu}
 \end{align*}
-noting that:
-\begin{align*}
+The other term is simply $\frac{\partial \mathcal L}{\partial A_\mu} = -ie \bar \psi \gamma^\mu  \psi = J^\mu = (\rho, \vec J)$. Where $\rho$ is charge
+density and $\vec J$ is current. This yields our first equation:
+\begin{equation}
+\partial_\nu F^{\nu\mu} = J^\mu
+\end{equation}
+recognizing the field tress tensor is antisymmetric we can apply a partial derivative and contract with the indicies of the 4 dimensions anti-symmetric symbol
+to obtain:
+\begin{equation}
+\epsilon_{\theta\rho\mu\nu} \partial{\rho} F_{\mu\nu} = 0 
+\end{equation}
+Using these two laws and suggestively defining $E^i = F^{0i}$ and $\epsilon^{ijk}B^k = F^{jk}$  simple substitution 
 
-\end{align*}
+Don't forget that the assumptions to get here were simply the existence of energy terms for the field stress tensor 
+and the fermonic field $\psi$ (here the electron) and geometric arguments about the continutity in the derivative 
+under the $U(1)$ gauge symmetry in the Lagrangian. Everything we understood about about electromagnetism naturally 
+arises (including the gauge freedom of the field $\vec A$). Thats just awesome. 
 
 
-\subsection{The Narrow Width Approximation}
+
+
 
 \section{Beyond the Standard Model}
 
@@ -465,6 +515,7 @@ Jets containing prompt and non-prompt $K_s$ and $\Lambda^0$ will contain tracks 
 and large impact parameter significance. When a vertex is fit to the matched tracks we expect small track multiplicity relative 
 to the GeV to TeV   long-lived particles this identification targets. It is important to separate this contribution from
 the detector effects like nuclear interactions.
+
 
 \input{tables/table-sm_longlived}
 
