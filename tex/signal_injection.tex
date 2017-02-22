@@ -37,7 +37,7 @@ listed separately as $\sigma_{method},\sigma_{fake-rate}$. A summary of the obse
 \begin{center}
 \begin{tabular}{cccccc}
 \hline 
-\textbf{Injection} $\sigma\times\mathcal{L}$  & \textbf{1 Tag Pred} & \textbf{2 Tag Pred} & \textbf{3 Tag Pred} &\textbf{4 Tag Pred} \\
+\textbf{Injection} $\sigma\times\mathcal{L}$  & \textbf{1 Pred} & \textbf{2 Pred} & \textbf{3 Pred} &\textbf{4 Pred} \\
 \hline
 0 &$ 185^{+14,+17}_{-14,-13} $&$0.16^{+0.01,+0.03}_{-0.01,-0.02}$& -- &-- \\
 10 &$ 187^{+14,+17}_{-14,-13} $&$0.16^{+0.01,+0.03}_{-0.01,-0.02}$& -- &-- \\
@@ -46,7 +46,7 @@ listed separately as $\sigma_{method},\sigma_{fake-rate}$. A summary of the obse
 10000 &$ 2366^{+177,+53}_{-177,-49} $&$26.95^{+2.02,+1.19}_{-2.02,-1.10} $&$0.18^{+0.01,+0.01}_{-0.01,-0.01} $&-- \\
 \hline 
 \hline
-\textbf{Injection} $\sigma\times\mathcal{L}$ & \textbf{1 Tag Obs} & \textbf{2 Tag Obs} & \textbf{3 Tag Obs} & \textbf{4 Tag Obs}\\
+\textbf{Injection} $\sigma\times\mathcal{L}$ & \textbf{1 Obs} & \textbf{2 Obs} & \textbf{3 Obs} & \textbf{4 Obs}\\
 \hline
 0 & 185.00 & 0.00 & 0.00 & 0.00 \\
 10 & 186.94 & 2.40 & 1.99 & 1.20 \\ 
@@ -64,23 +64,22 @@ A summary of the 1,2,3, and 4 tag predictions as a function of the number of eve
 listed separately as $\sigma_{method},\sigma_{fake-rate}$.  A summary of the observed number of tags (bottom). 
 \label{tab:700_100_injection_summary}}
 \begin{center}
-\begin{tabular}{ccccccc}
+\begin{tabular}{cccccc}
 \hline 
-$\sigma\times\mathcal{L}$ & \textbf{Mass} [GeV] & $c\tau_0$ [mm]  & \textbf{1 Tag Pred} & \textbf{2 Tag Pred} & \textbf{3 Tag Pred} &\textbf{4 Tag Pred} \\
+$\sigma\times\mathcal{L}$ & $m_X$ [GeV] & $c\tau_0$ [mm]  & \textbf{1 Pred} & \textbf{2 Pred} & \textbf{3+4 Pred} \\
 \hline
-100 &$ 700 $&$ 10 $&$ 207^{+16,+18}_{-16,-14} $&$0.20^{+0.02,+0.04}_{-0.02,-0.03} $&--&-- \\
-100 &$ 700 $&$ 1000 $&$ 202^{+15,+18}_{-15,-14} $&$0.20^{+0.02,+0.03}_{-0.02,-0.03} $&--&--\\
-1000 &$ 100 $&$ 10 $&$222^{+17,+18}_{-17,-14} $&$0.23^{+0.02,+0.04}_{-0.02,-0.03} $&--&-- \\
-1000 &$ 100 $&$ 1000 $&$ 195^{+15,+17}_{-15,-13} $&$0.18^{+0.01,+0.03}_{-0.01,-0.02} $&--&-- \\ 
+100 &$ 700 $&$ 10 $&$ 207^{+16,+18}_{-16,-14} $&$0.20^{+0.02,+0.04}_{-0.02,-0.03} $&-- \\
+100 &$ 700 $&$ 1000 $&$ 202^{+15,+18}_{-15,-14} $&$0.20^{+0.02,+0.03}_{-0.02,-0.03} $&--\\
+1000 &$ 100 $&$ 10 $&$222^{+17,+18}_{-17,-14} $&$0.23^{+0.02,+0.04}_{-0.02,-0.03} $&--\\
+1000 &$ 100 $&$ 1000 $&$ 195^{+15,+17}_{-15,-13} $&$0.18^{+0.01,+0.03}_{-0.01,-0.02} $&--\\ 
 \hline 
 \hline 
-$\sigma\times\mathcal{L}$ & \textbf{Mass} [GeV] & $c\tau_0$ [mm]  & \textbf{1 Tag Obs} & \textbf{2 Tag Obs} & \textbf{3 Tag Obs} &\textbf{4 Tag Obs} \\
+$\sigma\times\mathcal{L}$ & \textbf{Mass} [GeV] & $c\tau_0$ [mm]  & \textbf{1 Obs} & \textbf{2 Obs} & \textbf{3+4 Obs}  \\
 \hline
-100 & 700 & 10 & 205.14 & 23.05 & 20.45 & 11.89\\
-100 & 700 & 1000 & 211.56 & 17.98 & 9.04 & 3.62 \\
-1000 & 100 & 10 & 403.57 & 74.33 & 20.97 & 5.13 \\
-1000 & 100 & 1000 & 320.64 & 22.92 & 3.60 & 0.39 \\
-\hline 
+100 & 700 & 10 & 205.14 & 23.05 & 32.34 \\
+100 & 700 & 1000 & 211.56 & 17.98 & 12.36  \\
+1000 & 100 & 10 & 403.57 & 74.33 & 26.10 \\
+1000 & 100 & 1000 & 320.64 & 22.92 & 3.99  \\
 \end{tabular} 
 \end{center}
 \end{table}
@@ -179,14 +178,13 @@ Now we attempt to predict the number of events with 2 tags using $\tilde{p}$ and
 \begin{align*}
 N_{pred}^{2tag} &= \sum_i \tilde{p}\tilde{p}\\ 
 &= \sum_i (p(1-\Delta) + \Delta\epsilon)^2\\ 
-&= \sum_i p^2 - p^2(2\Delta) + p^2\Delta^2 + 2p\Delta \epsilon - 2 p \Delta^2 \epsilon + \Delta^2 \epsilon^2\\
+&= \sum_i p^2 - p^2(2\Delta) + p^2\Delta^2 + 2p\Delta \epsilon - 2 p \Delta^2 \epsilon + \Delta^2 \epsilon^2
 \end{align*}
-
 We now split the events in the sum between QCD and Signal. 
 \begin{align*}
 N_{pred}^{2tag} &= \sum_i (QCD) + \sum_i (Signal)\\
 \sum_i (QCD) &= N_{QCD} ( p^2 - p^2(2\Delta) + p^2\Delta^2 + 2p\Delta \epsilon - 2 p \Delta^2 \epsilon + \Delta^2 \epsilon^2)\\
-&= N_{obs}^{QCD} - N_{sig}(p^2\Delta + \Delta \epsilon^2 - 2p^2 + 2p\epsilon - 2p\Delta \epsilon) \\
+&= N_{obs}^{QCD} - N_{sig}(p^2\Delta + \Delta \epsilon^2 - 2p^2 + 2p\epsilon - 2p\Delta \epsilon) 
 \end{align*}
 where we have used the fact that $\Delta N_{QCD} = N_{sig}$ and $\sum_i p^2 = N_{obs}^{QCD}$:
 \begin{align*}

@@ -8,7 +8,7 @@ the experiment. The goal of this section is to connect the matrix elements $\mat
 theoretic description  of the Standard Model to the Monte Carlo simulations used to test a given theory. 
 First, we will discuss the how
 we can compare the matrix amplitudes with the observations in a physical detector. After, we will the discuss the considerations 
-that must be made for the fact the LHC collides hadrons rather than fundamental particles. Finally, we will discuss the framework used to describe the particles actually observed in the detector after the hard scattering occurs where perturbative physics breaks down and  calculations from first principles cannot be performed. Generic principles for parton showering and hadronization mdoels will be examined. 
+that must be made for the fact the LHC collides hadrons rather than fundamental particles. Finally, we will discuss the framework used to describe the particles actually observed in the detector after the hard scattering occurs where perturbative physics breaks down and  calculations from first principles cannot be performed. Generic principles for parton showering and hadronization models will be examined. 
 
 \section{From Matrix Elements to Cross Sections} 
 
@@ -83,12 +83,12 @@ $\bar{k}_A^z$ and writing the barred energy terms in the momentums and masses:
 \begin{align*}
 \int d\bar{k}_A^z  \delta \left (\sqrt{\bar{k}_A^2 +m_A^2}  + \sqrt{\bar{k}_B^2 + m_B^2} - \sum E_f \right) 
 \end{align*}
-We now need to use the property that $\delta[f(x)] = \sum_i (\delta(x_i) / f'(x_i))$ where $x_i$ are the zeros of the fuction $f(x)$. Note that given our parmeterization from the first delta function $\partial_{\bar{k}_A^z}(\bar{k}_B^2) = - 2 \bar{k}_B^z$.
+We now need to use the property that $\delta[f(x)] = \sum_i (\delta(x_i) / |f'(x_i))|$ where $x_i$ are the zeros of the fuction $f(x)$. Note that given our parmeterization from the first delta function $\partial_{\bar{k}_A^z}(\bar{k}_B^2) = - 2 \bar{k}_B^z$.
 \begin{align*}
-&\int d\bar{k}_A^z  \left (\frac{1}{2} \frac{2\bar{k}_A}{\sqrt{\bar{k}_A^2 +m_A^2}}
+\int d\bar{k}_A^z & \left (\frac{1}{2} \frac{2\bar{k}_A}{\sqrt{\bar{k}_A^2 +m_A^2}}
  - \frac{1}{2} \frac{2\bar{k}_B}{\sqrt{\bar{k}_B^2 +m_B^2}} \right )^{-1}\delta(\bar{E}_A
  + \bar{E}_B - \sum E_f) \\
-= &\frac{1}{\frac{\bar{k}_A}{\bar{E}_A}- \frac{\bar{k}_B}{\bar{E}_B}}
+=& \int d\bar{k}_A^z \frac{1}{\frac{\bar{k}_A}{\bar{E}_A}- \frac{\bar{k}_B}{\bar{E}_B}}
  \delta(\bar{E}_A + \bar{E}_B - \sum E_f) = \frac{1}{\beta_A - \beta_B}
 \end{align*}
 The 6 remaining integrals in $k_A$ and $k_B$ remain:
@@ -125,17 +125,15 @@ here we use the same delta function identity to obtain:
 \end{align*}
 Combining the result for the final state integral with Equation \ref{eq:dsigma}:
 \begin{align*}
-\left (\frac{d\sigma}{d\Omega} \right)_{CM}  = \frac{1}{2E_A2E_B|\beta_A - \beta_B|}  \frac{p_1}{(16\pi^2 E_{cm}} |\mathcal{M}|^2
+\left (\frac{d\sigma}{d\Omega} \right)_{CM}  = \frac{1}{2E_A2E_B|\beta_A - \beta_B|}  \frac{p_1}{16\pi^2 E_{cm}} |\mathcal{M}|^2
 \end{align*}
 Now if we assume the masses of the four particles are the same (or negligble at the energies involved) 
 and substitute $\beta = p / E$:
 \begin{align*}
 \left (\frac{d\sigma}{d\Omega}\right)_{CM}  = \frac{|\mathcal{M}|^2}{64\pi^2E_{cm}^2} 
 \end{align*}
-This is the relation between the rate at which a detector will observed a $2\rightarrow 2$ process with the matrix element
-derived from the feynman diagrams governing the process. 
-
-
+This is the relation between the rate at which a detector will observe a $2\rightarrow 2$ process proportional to 
+the matrix element derived from the feynman diagrams governing the process. 
 
 \section{Luminosity}
 
@@ -212,19 +210,63 @@ some extra accounting for the parton types to avoid double counting:
 \tau\frac{dL_{ij}}{d\tau} = \frac{1}{1+\delta_{ij}} \int_0^1 dx_1 dx_2 \times \left [ (x_1 f_i(x_1,\mu^2) x_2 f_j(x_2,\mu^2)) + (1 \leftrightarrow 2)) \right ] \delta(\tau - x_1x_2) 
 \end{align*}
 
-\subsection{Kinematic Conventions for Collider Physics} 
+\section{Kinematic Conventions for Collider Physics} 
 
-\framebox{Pseudorapidity $\eta$} As the detector has cylindrical symmetry, the coordinate system used most
- commonly is two dimensional $(\eta, \phi)$. The pseudo-rapidity, $\eta$ is an approximation to rapidity, $y$, that is exact in the $\beta = 1$ limit:
+In experimental particle physics, due to cylindrical symmetry of our detectors it is preferrable to make a change
+from a cartesian energy and momentum parmaterization to  rotationally-symmetric parameteriztion about
+the collision access. Furthermore, since the center of mass frame between the two colliding particles is generally moving
+relative to the lab frame, we would like parameterization of our problem which is invariant under longitudinal boosts. First, 
+we will motivate using hyperbolic functions of rapidity to parameterize energy and momentum. Lets recall define the hyperbolic
+trigonometric functions:
 \begin{align*}
-y = \frac{1}{2}\log \frac{E - p_z}{E+p_z}\hspace{.75in} \eta = - \log \left( \tan\left (\frac{\theta}{2} \right ) \right)  
+\cosh(x) &= \frac{e^{x} + e^{-x}}{2} \texttt{ , } \sinh = \frac{e^{x} - e^{-x}}{2} \text{, and }\tanh^{-1}x = \ln \left( \sqrt{\frac{1+x}{1-x}} \right)
 \end{align*}
-where $\theta$ is the angle from the positive beam axis. This variable is useful for a number of reasons. 
-Firstly, differences in rapidity are invariant under longitudinal lorrentz boosts along the beam axis. Also, 
-for the energies being probed the particles in the decay products are of negligible mass and the approximation
- $\eta \approx y$ is nearly exact. Given this relation, pseudorapidity provides an intuitive geometric interpretation. 
-Near full solid angle coverage is provided within $|\eta| < 5$
-
+combining cosh and arctanh conveniently gives the relativistic $\gamma$ factor for $x=\beta$:
+\begin{align*}
+\cosh{(\tanh^{-1}{x})} &= \frac{1}{2} \left ( \sqrt{\frac{1+x}{1-x}} + \sqrt{\frac{1-x}{1+x}} \right ) = \frac{1}{2} \left( \frac{(1+x) + (1 -x)}{\sqrt{1-x^2}} \right)  = \frac{1}{\sqrt{1-x^2}}
+\end{align*}
+and similarlly dervied:
+\begin{align*}
+\sinh{(\tanh^{-1}{x})} = \frac{x}{\sqrt{1-x^2}} = x \gamma(x)
+\end{align*}
+If we define $w = \tanh^{-1}(\beta)$ we can conveniently write the energy and mommentum as:
+\begin{align*}
+E &= \gamma m = m \cosh{w} \\
+|p| &= \gamma m \beta  = m \sinh{w} 
+\end{align*}
+Now lets re-write a lorrentz boost $\gamma$ along the z-axis in terms of $w$:
+\begin{equation} \label{eq:boost}
+E' = \gamma (E - \beta p_z)   = E \cosh w - p_z \sinh w\\
+p_z' = \gamma (p_z - \beta E) = p_z \cosh - E \sinh w
+\end{equation}
+We now set $w = y = \tanh^{-1}(\beta_z^*)$ where $\beta_z^*$ is the boost required to reach the frame where the particle is
+moving only transversely to the beamline $p_\mu^*$. We can then reach the lab frame by performing
+ the transformation from the $*$ frame. First lets write the four vector in the $*$ frame
+\begin{align*}
+ p_\mu^* &= ( E , p_x, p_y, 0 ) = (\sqrt{p_T^2 + m^2}, p_T\sin \phi, p_T \cos \phi, 0)\\
+\rightarrow  p_\mu^{lab} &= (m_T \cosh y, p_T \sin \phi, p_T \cos \phi, m_T \sinh y)
+\end{align*}
+where $m_T = \sqrt{m^2 + p_T^2}$, $p_T = \sqrt{ p_x^2 + p_y^2}$, and $y$ is the definition of rapidity generally used in particle
+physics. In the limit of light masses relative to the  transverse energy of a collision, as is generally
+ the case for collisions at the Large Hadron Collider:
+\begin{align*}
+p^\mu = p_T(\cosh \eta , \sin \phi, \cos \phi, \sinh \eta)
+\end{align*}
+From the experimental perspective, what is most important about this definition is that there is a simple geometric relation
+between pseudorapditiy and the angle of the particle relative to the beam line. To see this, we go back to the definition
+of rapidity and take $\beta\rightarrow 1$ or equivalently $|p|=E$:
+\begin{align*}
+y = \tanh^{-1} ( \beta_z^* ) = \ln \left ( \sqrt{\frac{1+\beta_z^*}{1-\beta_z^*}  }\right ) \approx^{\beta\rightarrow\infty} \ln \left ( \sqrt{\frac{1+p_z/|p|}{1-p_z/|p|}  }\right )
+\end{align*}
+Now if we consider the angle with the beamline in the lab frame $\theta$ we use a half angle trigonometric identity.
+\begin{align*}
+1+ \cos \theta = 1 +\frac{p_z}{|p|} = 2 \cos^2 (\theta / 2) \\ 
+1- \cos \theta = 1 -\frac{p_z}{|p|} = 2 \sin^2 (\theta / 2)
+\end{align*}
+combining this with the approximation with massless limit of $y$ we obtain pseudorapidity $\eta$:
+\begin{align*}
+\eta = \ln \left ( \sqrt{\frac{\cos^2{(\theta/2})}{\sin^{2}{(\theta/2)} }}  \right) = - \ln \left ( \tan \frac{\theta}{2} \right )
+\end{align*}
 \begin{figure}
 \begin{center}
 \includegraphics[width=.6\textwidth]{figures/exp_proj/pseudorapidity}
@@ -232,8 +274,9 @@ Near full solid angle coverage is provided within $|\eta| < 5$
 \caption{Lines of constant pseudorapidity in the z-y plane}
 \label{fig:pseudorapidity}
 \end{figure}
-
-\framebox{$\Delta R$} Given our coordinate system, $\Delta R$ is our longitudinally boost invariant notion of distance:
+The energies of particles at the LHC are typically negligible in  mass relative to their energies and the approximation $\eta \approx y$ is accurate. This
+ has a number of useful applications. Firstly, differences in rapidity are invariant 
+under longitudinal lorrentz boosts along the beam axis which can be seen by applying the transformation in terms of $\gamma$ factors to $y_1 - y_2$  as found in Equation \ref{eq:boost}. Given this relation, pseudorapidity provides an intuitive geometric interpretation as the angle from the beam axis. The ray extending directly transverse from the collision point is $\eta=0$ with symmetric values $\pm|\eta|$ to either side of this ray along the z-axis Figure \ref{fig:pseudorapidity}. 
 \begin{align*}
 \Delta R = \sqrt{ (\Delta \phi)^2 + (\Delta \eta)^2}
 \end{align*}
@@ -253,17 +296,198 @@ Fixed values of $\Delta R$ form a solid angle ``cone'' extending from the intera
 \label{fig:deltaRcones}
 \end{figure}
 
+\section{Showering}
 
-\section{The Narrow Width Approximation}
+\begin{figure}
+\begin{center}
+\includegraphics[width=.45\textwidth]{pics/hadronization}
+\end{center}
+\caption{A graphic depiction of the showering and hadronization process. The incoming protons can be see as the two sets of three
+incoming arrows represting the proton quark content.}
+\label{fig:showering}
+\end{figure}
 
-\section{Event Simulation} 
 
-\subsection{Hard Process Modeling}
+After the intial hard process is simulated, even if performed at high orders in perturbation theory, we have not described the large multiplicity and variety of particles which result from the showering of free quarks (Fig.~\ref{fig:showering}). We 
+might even take for granted (as experimentalistics that is) that high energy proton 
+collisions yield collimated showers of hadrons we more commonly refer to as \textit{jets}. 
 
-\subsection{Parton Showering}
+As the collisions are made between hadrons, the dominant fraction
+of the total cross section is governed by the dynamics of QCD. The strength of QCD is set by the strong coupling $\alpha_S(q^2)$ where the $q^2$ dependence arises from loop corrections to the tree level feynman diagram vertices (cite-tully). 
+\begin{equation} \label{eq:running_qcd}
+\alpha_s(q^2) = \frac{12\pi}{(33-2n_f)\ln{(q^2 /\Lambda_{QCD}^2})}
+\end{equation}
+Here $n_f$ is the number of flavors of participating fermions in the interaction and $\Lambda_{QCD}=0.1-0.3$. Here we notice two important features. As $q^2$ becomes large, the interaction because asymptotically weak and the physics is perturbative. As $q^2\rightarrow \Lambda_{QCD}$ the theory is
+strongly coupled ($\alpha > 1$) and a perturbative approach leaves higher order terms that cannot be neglected 
+(cite-ellis-qcd). 
 
-\subsection{Hadronization} 
+We need a method to evolve the high energy states to some low energy cut off where the physics is clearly non-preturbative. 
+This scale is typically taken to be on the order of momentum transfer $t^2 = 1$ GeV$^2$.
+This consistutes a natural division of labor for generating physics events between the perturbabtive hard scattering, the approximately perturbative showering, and the non-preturbative physics of hadronization. The terms fragmentation and hadronization are often used interchageably to describe the non-preturbative of this divison. However, in certain contexts, hadronization can refer to the both the parton showering as well as hadron formation. 
 
-$\Lambda_{QCD} \approx 0.1-0.3$ GeV 
+In experimental high energy particle physics the term Monte Carlo (MC) is used as a short hand for simulated 
+physics samples, however the Monte Carlo method of generating
+these samples means something specific. Monte Carlo methods generally rely on using random numbers to simulate 
 
-top quark width is larger than lambda qcd and thus decays before hadronization. This allows for the study of a bare quark.
+%% A Monte Carlo algorithm sacrifices the accuracy of the result for a time complexity speed up.
+%% This is to be contrasted with a Las Vegas algorithm, which always returns correct results, but the run time is probalistic (and 
+%% finite). 
+ 
+(cite-ellis-qcd) The monte carlo method of generating parton branching is stated as: given some 
+virtual mass scale $t_1$ and momentum fraction $x_1$ generate
+ $(t_2, x_2)$ after one step in the branching evolution. To perform this step-wise evolution of the parton 
+branching we need shower evolution equations.
+
+(cite-mrenna-showering) Consider the branching of a particle $a$:  $a\rightarrow bc$ with a 
+momentum scale $Q^2$. We denote energy and momentum fraction imparted to particle $b$ as $z$
+ such that particle $c$ receives $1-z$. We introduce the momentum
+transfer variable motivated by Equation \ref{eq:running_qcd} $t = \ln (Q^2 / \Lambda^2)$ yielding 
+a differential element $dt = d\ln (Q^2) = dQ^2/Q^2$. The
+differential probability for the particle $a$ to branch is given:
+\begin{align*}
+d\mathcal{P} = \sum_{b,c} \frac{\alpha_{abc}}{2\pi} P_{a \rightarrow bc}(z) dt dz 
+\end{align*}
+where the sum is over all possible branchings and $\alpha$ is the appropriate 
+coupling $(\alpha_{EM},\alpha_{S})$  for the branching evaluated at the appropriate scale. We enumerate the kernels that map the momentum fraction from splitting
+ to the possible states after branching:
+\begin{align*}
+P_{q\rightarrow qg} (z) &= C_F\frac{1+z^2}{1-z}   &P_{q\rightarrow q\gamma} (z) &= e_q^2\frac{1+z^2}{1-z}\\
+P_{g\rightarrow gg} (z) &= N_C\frac{(1-z(1-z))^2}{z(1-z)} &P_{l\rightarrow l\gamma} (z) &= e_l^2\frac{1+z^2}{1-z} \\ 
+P_{g\rightarrow q\bar{q}} (z) &= T_R (z^2 + (1-z)^2)\\
+\end{align*}
+where $C_F=4/3$ is a color factor, $N_C$ is the number of colors in QCD, $T_R = n_f / 2$ is half the number 
+of allowed $q\bar{q}$ flavors. $e_i^2$ is the charge squared of the quark or lepton. 
+
+Lets define an integral over the probability distribution for some fixed $t$ between the
+minimally allowable momentum fraction $z_{-}$ and the maximum $z_{+}$ as:
+\begin{align*}
+\mathcal{I}_{a \rightarrow bc} (t) = \int_{z_{-}(t)}^{z_{+}(t)} dz \frac{\alpha_{abc}}{2\pi} P_{a\rightarrow bc} (z) 
+\end{align*}
+From this here we can find the total probability of branching as a sum over the
+possible branching states $p_{branch} = \sum_{bc} \mathcal{I}_{bc}(t)$. If we consider the probabiity of no branching occuring $(1-p_{branch})$ in some finite
+interval $(t,t_0)$ as the product of differential time steps $\delta t$, we obtain an exponential:
+\begin{align*}
+\mathcal{P}_{no-branch}(t_0,t) = \prod_{\delta t \in (t,t_0)} (1-p_{\text{branch}}) &\approx \lim_{N\rightarrow \infty} 
+\sum_{k=0}^{N} \frac{N!}{(N-k)!k!} 1^{N-k}(-p_{\text{branch}})^k  \\
+&= \sum_{k=0}^{\infty} \frac{1}{k!} (-p_{branch})^k = \exp{(-p_{branch})}
+\end{align*}
+Such that the total probability of not branching within a givern $t$ interval is given:
+\begin{align*}
+\mathcal{P}_{no-branch}(t_0,t) = 
+\exp { \left ( - \int_{t_0}^{t} dt' \sum_{b,c} \mathcal{I}_{a\rightarrow bc} (t')   \right )} = S_{a}(t)
+\end{align*}
+Where we have introduced the notation $S_a(t)$ for what is referred to as the Sudoakov form 
+factor (cite-sudakov). With this single parameterization we can write the probability of not branching as a ratio of $S_a(t)$ functions (since the ratio of exponentials will just alter the integral bounds):
+\begin{align*}
+\mathcal{P}(t_2, t_1) = \frac{S_a(t_{2})}{S_a(t_1)}
+\end{align*}
+Note here that $t$ is not time, but rather serves a proxy for time, where the
+final state showering occurs from an intial $t_{max}$ set by the hard scattering and progressively becomes smaller through the branching process.   
+
+The Monte Carlo process generates a random number $\mathcal{P}$ and solves for $t_2$ in terms
+of $t_1$. The process is then applied to the newly branched particles $b$ and $c$. If $t_2$ is smaller than the scale
+ set for hadronization, then the showering process terminates. Eventually from the monotonicity of $t_i$ the cascade
+terminates and the generation process is handed off to hadronization.
+
+\section{Hadronization} 
+
+When the quark model, the eight-fold way, was orignally introduced in 1961, it was a large simplification of the space of observed  particles. Each combination of possible light quarks was observed in nature (the third generation had not 
+yet been discovered). However, a  single ``bare'' quark had never been observed despite experimental efforts. Today
+we understand that it is the inherent nature of the strong force that prevents light quarks from being liberated from their 
+hadronic bound states. The discovery of the top quark, who's width is  larger than $\Lambda_{QCD}$, 
+will decay before hadronization takes place allowing for the study of a ``bare'' quark. In this section, we breifly discuss
+ the way  monte carlo simulation models the non-preturbative confinement of quarks.
+
+(cite-ellis) When we leave the showering process, we are left with a large number of virtual particles on the order of the cutoff $t_{min}$. Although this
+parameter is unrelated to the hadronization process, an ideal hadronization model would use the chosen value of $t_{min}$ to compensate for
+ effects of having a hard cutoff value for the showering. 
+ As $t_{min}$ is increased, there are fewer particles that are increasingly off-shell. These virtual particles should be
+ able to hadronize, however, the favored values of $t_{min}$ to begin the hadronization step tend to be a few times the
+ scale of hadronization $\Lambda_{QCD} \approx 0.1 - 0.3$ GeV. This is suggestive that the extensions of perturbation theory
+ are more reliable than models of hadronization.
+
+(cite-mc-review) It is important to state that there are only models of hadronization and no calculations from first principles. 
+Even lattice QCD calculations which are made on euclidean space times fail for processes which are inherently minkowskian 
+such as hadron formation. Two main categories of hadronization models exist. The string 
+model which transforms virtual particles directly into hadrons and the cluster model which uses in intermediate clustering step. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.45\textwidth]{pics/flux_tube}
+\includegraphics[width=.45\textwidth]{pics/string_stretch}
+\end{center}
+\caption{The flux between a quark and anti-quark (left) A simple model of quarks as the ends of a string. As an 
+attempt is made to separate the two quarks, the string breaks producing two new ends i.e. quarks (right) (cite-string-sretch) }
+\label{fig:flux_tube}
+\end{figure}
+
+The string model, the most well known of which is the Lund String Model (cite-lund-string), relies on an assumption of linear confinement. One expects
+a linear potential $V(r) = \kappa r$ at long distances, where the string constant $\kappa \approx 1$~ GeV/fm $\approx .2$ GeV$^2$. In general, 
+there is an additonial coulomb potential at shorter distances, but it is an assumption of the Lund model that this term is negligible. It is
+important to note that string model of hadronization should not be confused with the strings of string theory where strings serve as the fundamental .  The linear
+ confinement of QCD is best visuallized as a color flux tube being stretched between a quark and anti-quark (Figure. \ref{fig:flux_tube}). As the two
+quarks are increasingly separated in space, the flux tube is stretched maintaining constant energy per unit length $\kappa$. The lorrentz covariant and
+causal description of this energy flow uses a massless one dimensional string that parameterizes the axis of a cylindrically symmetric flux tube. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.65\textwidth]{pics/lund_model}
+\end{center}
+\caption{The 1+1 dimensional propogation of the hadronization process beginning form a quark anti-quark pair.  }
+\label{fig:lund}
+\end{figure}
+
+
+In the simple case of quark anti-quark production (Figure \ref{fig:lund), the two quarks separate from each other along the $z$ axis and the potential energy stored in the 
+string increases. When the potential energy is large enough, the string can break through the production of a new quark anti-quark pair. These breaks 
+typically occur between 1 and 5 fm in the rest frame of the pair, however in the lab frame these processes highly length contracted. After the break,
+widening regions of no flux arise. 
+
+The string model contains a large number of parameters related to flavor properties and must determined from data
+
+The cluster model is based on the precontainment properties of parton showers which lead to  color singlet clusters. The cluster hadronization begins with
+non-preturbative splitting of gluons into quark anti-quarks pairs. Clusters are formed from color-connected pairs. Most clusters under go two body phase-space decays, 
+with heavier clusters decaying first to lighter clusters. Cluster models tend to describe the data less accurately than 
+string models, but using fewer parameters.
+
+The incredibely dense and active enviroment of hadronic collisions could lead to significant collective eeffects which are not considered in current 
+hadronization models.
+
+
+
+\section{Hadron Decay} 
+
+\section{Jet Clustering}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.75\textwidth]{pics/antikt}
+\end{center}
+\caption{Comparisons made between varied clustering algorithms.}
+\label{fig:antikt}
+\end{figure}
+
+
+Once the showering and hadronization have constructed the final state particles we need a way of clustering the numerous deposits or
+particles in the final state simulation and data. While in simulation one can trace the
+ hadrons back through their branching tree to their mother particle from the hard interaction,
+data has no truth information. This problem necessitates a fast algorithm that takes as input energy deposits in the 
+detector and outputs clusters with kinematic properties representative of the hard scattering process quarks and gluons. 
+
+Any desirable clustering algorithm must satisfy collinear and infrared safety. An algorithm that is collinear safe, is insensitive to the 
+
+The most commonly utilized clustering algorithm is anti-kt (Figure \ref{fig:antikt}) which takes a size 
+parameter $R$ corresponding the $(\Delta R)^2 = (\Delta\eta)^2 + (\Delta \phi)^2$.  The resultant four momentum of
+the cluster is given by the four-momentum sum of the individual deposits. 
+
+Jets must be calibrated in data to account for energy lost. Common techniques include
+
+Additionally as luminosity increases and there are increasingly more 
+ineractions per event, jets must be corrected for additional clustered energy not related to the primary interaction. For this,
+an average energy density $\rho$ is calculated event by event and $\rho\times A$ is subtracted from the jet energy where $A$ is the
+jet area. 
+
+For 2015 data, at $\sqrt{s}=13$~TeV the size parameter for the displaced jets analysis was fixed at a cone size $R=0.4$. 
+Larger size parameters as well as different algorithms are utilized for boosted hadronic decays of bosons,
+
+

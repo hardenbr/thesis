@@ -1,11 +1,11 @@
 \chapter{Theory}
 
-\section{On Standard Model of Particle Physics}
+\section{The Standard Model of Particle Physics}
 
 \textbf{Forward}
 
-It is the goal of this section to succinctly (in a relative sense) derive the 
-principal aspects of the  standard model of particle physics from fundamental principles. 
+It is the goal of this section to succinctly (at least in a relative sense) derive the 
+principal aspects of the standard model of particle physics from fundamental principles. 
 The questions to be answered answered are: how do we build a complex framework consisting of 
 a variety of particles and interactions that  experimentally describes the univerise (neglecting
  gravity) with startling accuracy? what are the guiding principles? and despite its success, why
@@ -23,10 +23,12 @@ electroweak symmetry breaking as the source of the gauge boson masses and the hi
 \item Symmetry and Local Gauge Symmetry: What symmetries do we enforce upon the form of our theory
 and what are the consequences.
 \item Theory Renormalizability: What limits the type of terms we can include in our lagrangian as to preserve
-the ability to calculate the outcomes of simple scattering processes. 
+the ability to calculate the outcomes of  scattering processes. 
 \end{itemize}
 
-\subsection{Getting to Quantum Field Theory}
+
+
+\subsection{Quantum Field Theory}
 
 \subsubsection{Lagrangian Mechanics}
 
@@ -124,13 +126,13 @@ If we consider the quantum harmonic oscillator with hamiltonian:
 \begin{align*}
 H = \frac{p^2}{2} + \frac{1}{2}\omega^2 q^2
 \end{align*}
-and postulate the existance of the creation ($a^\dagger$) and annihilation ($a$) operators:
+and define the creation ($a^\dagger$) and annihilation ($a$) operators:
 \begin{align*}
-a &= \sqrt{\frac{\omega}{2}}q + \frac{1}{\sqrt{2\omega}}p \text{  } a^\dagger &= \sqrt{\frac{\omega}{2}}q - \frac{1}{\sqrt{2\omega}}p 
+a = \sqrt{\frac{\omega}{2}}q + \frac{1}{\sqrt{2\omega}}p \text{  } a^\dagger = \sqrt{\frac{\omega}{2}}q - \frac{1}{\sqrt{2\omega}}p 
 \end{align*}
-which corresponding give the 
+which yields the postition and momentum operators in terms of the newly definied operators. 
 \begin{align*}
-q = \frac{1}{\sqrt{2\omega}} (a + a^\dagger) \text{  } p = -i \frac{\omega}{2}( a - a^\dagger) 
+q = \frac{1}{\sqrt{2\omega}} (a + a^\dagger) \text{ and } p = -i \frac{\omega}{2}( a - a^\dagger) 
 \end{align*}
  substituting into the hamiltonian we find a simple solution after applying
 the commutation relation $[p,q]=-i$ (where we have set $\hbar=1$):
@@ -170,14 +172,12 @@ To be concrete, let us consider an action that is invariant under some field tra
 then the infinitesimal transformation is $\delta \phi = i \beta \phi$. Where we are taking for granted that $\delta S =0$ under
 this variation, or effectively $\delta \mathcal{L}$ up to surface terms in the action integral. More on this later.
 \begin{align*}
-\delta \mathcal{L} &=  \left [ \frac{\partial \mathcal{L}}{\partial \phi} \delta \phi  + \frac{\delta \mathcal{L}}{\partial_\mu (\partial_\mu \phi)} \delta(\partial_\mu \phi) \right]\\
-&= i\beta \left [ \frac{\partial \mathcal{L}}{\partial \phi}  \phi  + \frac{\partial \mathcal{L}}{\partial (\partial_\mu\phi)} (\partial_\mu \phi) \right]
+\delta \mathcal{L} &=  \left [ \frac{\partial \mathcal{L}}{\partial \phi} \delta \phi  + \frac{\delta \mathcal{L}}{\partial_\mu (\partial_\mu \phi)} \delta(\partial_\mu \phi) \right] =
+ i\beta \left [ \frac{\partial \mathcal{L}}{\partial \phi}  \phi  + \frac{\partial \mathcal{L}}{\partial (\partial_\mu\phi)} (\partial_\mu \phi) \right]
 \end{align*}
 We futher require that the solution satisfying the euler-lagrange equations, and exchange the first term:
 \begin{align*}
-&= i\beta \left [ \partial_\mu\left [ \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi)} \right ]  \phi  + \frac{\partial \mathcal{L}}{\partial_\mu \phi} (\partial_\mu \phi) \right]\\ 
-&= i\beta \left [ \partial_\mu  \left [  \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi)}   \phi  \right ] \right ]\\ 
-&= \partial_\mu \left [ \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi) }\right ] \\
+&= i\beta \left [ \partial_\mu\left [ \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi)} \right ]  \phi  + \frac{\partial \mathcal{L}}{\partial_\mu \phi} (\partial_\mu \phi) \right] = i\beta \left [ \partial_\mu  \left [  \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi)}   \phi  \right ] \right ] = \partial_\mu \left [ \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi) }\right ] \\
 \partial_\mu j^\mu &= 0 
 \end{align*}
 Where $j^\mu$ is the conserved current corresponding to the continuous symmetry. Now consider the consequences for fermonic lagrangian:
@@ -200,16 +200,18 @@ consists of a set $G$ (ex. Integers) and a pairwise operation (ex. multiplicatio
 The group must also contain an identity $i \in G$ (ex. 1) such that $i\cdot g = g$ for all $g\in G$. All elements 
 $g\in G$ must have an inverse $g^{-1} \in G$ such that $g \cdot g^{-1} = g^{-1} g = i$. The operation must additionally
 satisfy associativity $(a\cdot b) \cdot c = a \cdot (b \cdot c)$. Importantly, the group does not necessarily 
-need to be abelian $a\cdot b = b \cdot a$, a common example in physics is generic matrix multiplication.
+need to be abelian $a\cdot b = b \cdot a$, a common example in physics is matrix in general multiplication (multiples of the 
+identity matrix are abelian).
 
 For example, we can consider the group of rotations $SO(3)$ (read special orthogonal group of
 dimension 3) about the origin in euclidian $\mathbb{R}^3$ under composition. Clearly the composition
 of two rotations is another rotation, the inverse rotation is just rotatating back, and the identity is
-not rotation at all. The rotations can be represented by real 3 by 3 matrices, determinant $\pm 1$, 
+performing no rotation at all. The rotations can be represented by real 3 by 3 matrices, determinant $\pm 1$, 
 where element inverses are their transpose $g^{-1}=g^T$. Interestingly, the group $SU(2) \cong SO(3) / \mathbb{Z}_2$, that is, 
-SU(2) is a double covering of $SO(3)$. The isomorphism is exact 
+SU(2) is a double covering of $SO(3)$. 
 
-Sepcifically, a lie group is a continuous group with a multaplicative law that is a differentiable function of the parameters. linear combinations of generator elements:
+Sepcifically, a lie group is a continuous group with a multaplicative 
+law that is a differentiable function of the parameters. linear combinations of generator elements:
 \begin{align*}
 e^{-i\vec \beta \cdot \vec T} = e^{-i\beta^i T^i} = U_{G}(\vec \beta)
 \end{align*}
@@ -311,7 +313,7 @@ to a local symmetry. Local in the sense that a space dependent transformation   
 \begin{align*}
 \psi(x) \rightarrow e^{- \alpha(x)} \psi(x)
 \end{align*}
-If we then consider a direction derivative in the direction $n^\nu$ as defined:
+If we then consider a direction derivative in the direction $n^\mu$ as defined:
 \begin{align*}
 n^\mu \partial _\mu \psi (x) = lim_{\epsilon\rightarrow 0} \frac{\psi(x + \epsilon n) - \psi(x)}{\epsilon}
 \end{align*}
@@ -347,20 +349,57 @@ A_\mu(x) &=  \left [ -\frac{1}{n^\mu}\frac{1}{e}\partial_\mu \alpha(x) + A_\mu(x
 \end{align*}
 If we pick the axes such that $n^\mu = 1$ then we have the transformation law for the gauge field: $A_\mu(x) \rightarrow A_\mu(x) - \frac{1}{e} \partial_\mu \alpha(x)$.
 
+\subsection{The Standard Model Lagrangian}
 
+The Standard Model of particle physics is a quantum field theory of 3+1 dimensional 
+spacetime governed by a lagrangian with four sectors and three local gauge symmetries
+developed to describe the physics of fundamental particles in the physical, observable universe.  
 
-\subsection{Sectors of the Standard Model Lagrangian}
-The Standard Model of particle physics consists of a quantum field theory lagrangian with four sectors. and three gauge group symmetries: $U(1)_Y$ hypercharge, 
-$SU(2)_L$ left chiral and $SU(3)_c$ color. 
+The SM lagrangian has 3 types of fundamental fields spin-0 (scalar), spin-1/2 (dirac). and spin 1 (vector). The field
+content of the theory is listed in Table \ref{tab:fields} with the associated mass dimensions. Dimensional analysis tells
+us the mass dimension of the lagrangian is 4 as dictated by the action being unitless. Requiring dimension
+4 of each indivual term and requiring that all indices are contracted (lorrentz invariance) is highly constraining 
+to the types of terms within the lagrangian. The types of interactions (after electroweak symmetry breaking) are listed 
+in Table \ref{tab:interactions}. 
+
+It is important to understand the principal components of the theory, so we can separate the aspects which are emergent from
+the underlying assumptions and those which are put in by hand. Here we list
+
+\begin{itemize}
+\item \textbf{Relativistic Theory:} The Lagrangian must be invariant under lorrentz transformations as well as rotations and translations
+in 3+1 dimensional spacetime. 
+\item \textbf{Matter:} There are three families of fermonic particles each consisting of an up-type quark, 
+down-type quark, a lepton, and associated neutrino.
+\item \textbf{Fundamental Charges:} Each particle transforms as a multiplet of the gauge symmetries as dictated in \ref{tab:reps}. This sets which forces interact with which particles. 
+\item \textbf{Gauge Interactions:} The fundamental action must be invariant under local gauge transformations.
+\item \textbf{Free Parameters:} The Lagrangian includes 19 free parameters which set the experimentally observed fermion masses, 
+interaction strengths, mass-flavor mixing, the vaccum potential and the possible cp violating terms (Table \ref{tab:free_param}). 
+\end{itemize}  
+
+The simplicity of the governing assumptions and naturalness of free parameters are certainly an ambition of any theory of fundamental
+particle physics, but a more aesthetically pleasing theory is not necessarily the ultimate goal. The Standard
+Model, is  a tool towards finding a more complete theory. The theory admits its incompleteness in its formulation (ex. the exclusion of gravity), but achieves incredible theoretical predictions as accurate as 1 part in $10^{11}$ (cite-find-g-2-result). 
+
 \begin{align*}
 \mathcal{L}_{SM} &= \mathcal{L}_{Gauge} + \mathcal{L}_{Fermion} + \mathcal{L}_{Higgs} + \mathcal{L}_{Yukawa}\\
 &=\left(-\frac{1}{4} F_{\mu\nu}F^{\mu\nu} \right )
   + \left (\bar\psi i\gamma^\mu \partial_\mu \psi \right) +
  \left(\frac{1}{2}(\partial_\mu \phi)^2 + V(\phi) \right) + \left(\bar \psi_i y_{ij} \psi_j \phi \right ) 
 \end{align*}
-All standard model particles transform as a multiplet of $SU(3) \times SU(2)_L \times U(1)_Y$.
 
-\textbf{Gauge Sector}
+\begin{figure}
+\begin{center}
+\includegraphics[width=.45\textwidth]{pics/sm_model_particles}
+\includegraphics[width=.45\textwidth]{pics/principal_interactions}
+\caption{The }
+\end{center}
+\end{figure}
+\input{tables/table-sm_parts.tex}
+\input{tables/table-sm_fields.tex}
+\input{tables/table-sm_interactions.tex}
+\input{tables/table-free_params.tex}
+
+\subsubsection{Gauge Sector}
 
 The gauge sector consists of the field stress energy tensor of the 3 corresponding types of gauge bosons:
  $G^i$ (gluons of the color force), $W^i$ ($W$'s of the weak force) and $B$ (of the weak hypercharge). Here the index $i$ enumerates their multiplicity. There are 8 gluons, 3 $W$'s and a single B. Ultimately, we will arrive have 8 gluons, $W^{\pm}$ and the photon $A^\mu$ because the $SU(2)\times U(1)$ 
@@ -372,7 +411,7 @@ where the double scripts correspond to the commutation relations for the gauge g
 \begin{equation}
 X_{\mu\nu}^i   = [D_u X_\nu, D_\nu X_\mu] = \partial_\mu X_\nu^i - \partial_\nu X_\mu^i - g f_{ijk} X_\mu^j X_\nu^k
 \end{equation}
-where $g$ is the coupling constant, the $D_\mu$ terms correspond to the covariant derivative and the $f_{ijk}$ are the corresponding structure constants for the non-abelian groups that arise from the non commuting generators of the algebra when computing the commutator. In full, the field stress tensor terms are:
+where $g$ is the coupling constant, the $D_\mu$ terms correspond to the covariant derivative and the $f_{ijk}$ are the corresponding structure constants for the non-abelian groups that arise from the non commuting generators of the algebra. In full, the field stress tensor terms are:
 \begin{align*}
 G_{\mu\nu}^i &=  \partial_\mu G_\nu^i - \partial_\nu G_\mu^i - g_s f_{ijk} G_\mu^j G_\nu^k\\ 
 W_{\mu\nu}^i &=  \partial_\mu W_\nu^i - \partial_\nu W_\mu^i - g \epsilon_{ijk} W_\mu^j W_\nu^k\\ 
@@ -394,12 +433,37 @@ As the $SU(2)_L$ symmetry only acts on the left handed fermions we further separ
 + \bar{d}^0_{mR} i \gamma^\mu D_\mu d^0_{mR} + \bar{e}^0_{mR} i \gamma^\mu D_\mu e^0_{mR} + \bar{\nu}^0_{mR} i \gamma^\mu D_\mu \nu^0_{mR}
 \end{align*}
 
+The yukawa sector uniquely contains a large number of the free parameters in the standard model (13 of 19). 
+The individual masses of each fermion and lepton are generated by the $y_{ij}$
+terms which are set to agree with experimental values (9 free parameters). This sector also implicitly
+ includes parameters characterizing the mis-match 
+mixing betwen the quark flavor and mass eigeinstates which occur after electroweak 
+symmetry breaking (4 parameters). The mixing is characterized by  the 3x3 unitary Cabibbo-Kobayashi-Maskawa (CKM) matrix $V^{CKM}$. 
+The convention is chosen that flavor states $u^I$ for up type quarks are aligned with the mass states $u$ and the down type quarks are
+rotated through the transformation $d^I_i = V^{CKM}_{ij} d_{j}$. From the unitarity condition, the matrix can be parameterized in 4 parameters: three mixing angles $\theta_{12}, \theta_{23}, \theta_{13}$ and a CP violating phase $\delta$:
+
+\begin{align*}
+\begin{pmatrix}  d^I \\ s^I \\ b^I \end{pmatrix} &=
+ \begin{pmatrix} V_{ud} & V_{us} & V_{ub} \\ V_{cd} & V_{cs} & V_{cb} \\ V_{td} & V_{ts} & V_{tb} \end{pmatrix} 
+\begin{pmatrix}  d \\ s \\ b \end{pmatrix}  \\
+&= \begin{pmatrix} c_{12}c_{13} & s_{12} c_{13} & s_{13} e^{-i\delta} \\ 
+-s_{12}c_{23} - c_{12}s_{23}s_{13}e^{i\delta} & c_{12} c_{23} - s_{12} s_{23} s_{13} e^{i\delta} & s_{23} c_{13} \\
+s_{12}s_{23} - c_{12} c_{23} s_{13} e^{i\delta} & -c_{12}s_{23}-s_{12}c_{23}s_{13}e^{-\delta} & c_{23}c_{13}  \end{pmatrix} 
+\begin{pmatrix}  d \\ s \\ b \end{pmatrix} 
+\end{align*}
+where $c_{ij} = \cos \theta_{ij}$ and $s_{ij} = \sin \theta_{ij}$. It is important to note a similar matrix exists for leptons
+and is used for the study of neutrino oscillations known as the Pontecorvo-Maki-Nakagawa-Sakata (PMNS) matrix but is assumed to
+be $1$ in the standard model. 
+
 \textbf{Higgs Sector}
 
-The higgs sector consists of terms related to the single scalar field $\phi$:
+The higgs sector consists of terms related to the single scalar field $\phi$ that transforms as a doublet of $SU(2)$
+$\phi = (\phi^+ \phi^0)$.  
 \begin{equation}
 \mathcal{L}_{higgs} = (D^\mu \phi)^\dagger(D_\mu \phi) + \mu^2 \phi^\dagger \phi + \lambda (\phi^\dagger \phi)^2 
 \end{equation}
+This sector contains only two free parameters: $\mu$ and $\lambda$. The two parameters set the minimum and stability of the vaccum
+of the theory ($\langle \phi \rangle =  \nu = \sqrt{\frac{-\mu^2}{\lambda}}$) and set the masses of the fermions and gauge bosons after electroweak symmetry breaking. 
 
 \subsection{Electroweak Symmetry Breaking (EWSB)}
 
@@ -407,13 +471,13 @@ Expanding the kinetic term for the field phi about the vaccum $\langle \phi \ran
 \begin{align*}
 (D^\mu \phi)^\dagger (D_\mu \phi) = \frac{1}{\sqrt{2}} \left (\begin{array}{cc} 0  & \nu \end{array} \right )  \left | \partial_\mu + i g \frac{\tau}{2} \cdot W_\mu + i \frac{g'}{2} B_\mu \right|^2  \frac{1}{\sqrt{2}} \left (\begin{array}{c} 0 \\ \nu \end{array} \right ) 
 \end{align*}
-Considering only the the square gauge field terms (ignoring the derivative)  we obtain the matrix:
+Considering the weak gauge term:
 \begin{align*}
-\tau \cdot W + g'B_\mu I = \left (\begin{array}{cc} W_{\mu,3} & W_{\mu,1} - i W_{\mu,2}  \\ W_{\mu,1}+ i W_{\mu,2} & - W_{\mu,3} \end{array} \right )
+\tau \cdot W  = \left (\begin{array}{cc} W_{\mu,3} & W_{\mu,1} - i W_{\mu,2}  \\ W_{\mu,1}+ i W_{\mu,2} & - W_{\mu,3} \end{array} \right )
 \end{align*}
-adding in the diagonal $B_\mu$ terms and taking the square:
+adding in the diagonal $B_\mu$ terms and taking the square (ignoring the partial terms) 
 \begin{align*}
-(D^\mu \phi)^\dagger (D_\mu \phi) = \frac{\nu^2}{8} \left [g^2 (W_1^2 + W_2^2) + (g' B_\mu - g W_{\mu,3})^2 \right]
+(D^\mu \phi)^\dagger (D_\mu \phi) \supset \frac{\nu^2}{8} \left [g^2 (W_1^2 + W_2^2) + (g' B_\mu - g W_{\mu,3})^2 \right]
 \end{align*}
 Now if we perform a redefinition of the gauge fields into mass eigenstates we arrive at a clean expression:
 \begin{align*}
@@ -423,8 +487,8 @@ Z_{\mu} &= \frac{1}{\sqrt{g^2 + (g')^2}}( g' B_\mu - g W_{\mu,3}) = \sin \theta_
 \end{align*}
 Here we have defined the electroweak mixing angle $\theta_W$ in terms of a right trangle with legs $g$ and $g'$. With this substitution,
 \begin{align*}
-(D^\mu \phi)^\dagger (D_\mu \phi) &= \frac{\nu^2 g^2}{4} W_{\mu}^{-} W_{\mu}^{+} + \frac{(g+g')\nu^2}{8} Z_\mu^2  + 0 \times A_\mu^2 \\ 
-&= \frac{1}{2} m_{W}^2 W_\mu^- W_\mu^+ + \frac{1}{2} m_Z^2 Z_\mu^2  + 0 \times A_\mu^2
+(D^\mu \phi)^\dagger (D_\mu \phi) &= \frac{\nu^2 g^2}{4} W_{\mu}^{-} W_{\mu}^{+} + \frac{(g+g')\nu^2}{8} Z_\mu^2  + (0 \times A_\mu^2) \\ 
+&= \frac{1}{2} m_{W}^2 W_\mu^- W_\mu^+ + \frac{1}{2} m_Z^2 Z_\mu^2  + (0 \times A_\mu^2)
 \end{align*}
 Electroweak symmetry breaking has generated the mass terms for the gauge bosons! 
 $m_{W^{\pm}} = \frac{\nu g}{\sqrt{2}} = 90.385$~[GeV],
@@ -436,21 +500,7 @@ $m_{W^{\pm}} = \frac{\nu g}{\sqrt{2}} = 90.385$~[GeV],
 To explain why we need a mechanism like EWSB to generate the masses for the gauge bosons, we need to understand how we
 have motivated the terms of the Standard Model Lagrangian. 
 
-\subsection{Fundamental Fields and Free Parameters of the Standard Model}
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=.45\textwidth]{pics/sm_model_particles}
-\includegraphics[width=.45\textwidth]{pics/principal_interactions}
-\caption{}
-\end{center}
-\end{figure}
-
-\input{tables/table-sm_parts.tex}
-\input{tables/table-sm_fields.tex}
-
-
-\subsection{Re-deriving Maxwell's Laws} 
+\subsection{Maxwell's Laws} 
 
 After, electroweak symmetry breaking we would like to perform a sanity check that we can revive the well estabilished equations of
 Maxwell governing electrodynamics. 
@@ -458,7 +508,7 @@ Keeping only the terms that contain the field $A_\mu$:
 \begin{align*}
 \mathcal{L}_{EM} = -\frac{1}{4} F_{\mu\nu} F^{\mu\nu}  - ie \bar{\psi} \gamma^\mu A_\mu \psi \text{ for } F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu 
 \end{align*}
-where by definition $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$. Applying the left side of Euler-Lagrange we find:
+where by definition $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$. Applying the left side of Euler-Lagrange we find (FIX-ME):
 \begin{align*}
 \partial_\mu \left (\frac{\partial \mathcal L}{\partial(\partial_\mu A_\nu} \right) &=  
 -\frac{1}{2}\partial_\mu \left [ \left (\frac{\partial}{\partial(\partial_\mu A_\nu)} F_{\mu\nu} \right) F^{\mu\nu} \right ] 
@@ -482,19 +532,65 @@ and the fermonic field $\psi$ (here the electron) and geometric arguments about 
 under the $U(1)$ gauge symmetry in the Lagrangian. Everything we understood about about electromagnetism naturally 
 arises (including the gauge freedom of the field $\vec A$). Thats just awesome. 
 
+\subsection{Feynman Diagrams}
 
+Historically, the outcome of a scattering event in a quantum field theory was incredibly tedious to calculate. One of Feynman's greatest contributions to the field of particle physics was an organizational tool group and quickly calculating terms in the perturbative expansion of the action. The diagrams, which take the form of a directed
+graph of lines and vertices  provided a succinct representation of a complex calculation that was intuitive to work with. 
 
+To calculate a given scattering amplitude, one simply constructed all of the applicable diagrams between
+the incoming particles (say a proton-proton collision) and the outgoing final state say $q\bar{q}$. Lines  represented particles and vertices represented
+interacting terms in the lagrangian where four-momentum convservation was enforced. Internal lines of the diagram (not initial or final state particles) 
+were virtual and were allowed to go off shell. 
 
+Let us enumerate the feynman rules for calculating 
+
+\begin{itemize}
+\item External lines:
+\item Internal lines:
+\item Vertices: 
+\item Symmetry Factors: 
+\end{itemize}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.450\textwidth]{pics/first_diagram}
+\end{center}
+\caption{The feynman diagram for describing t-channel scattering of two electrons through
+the echange of a photo. This particular figure was the example used in feynman's original paper describing the pictoral representation
+of calculating matrix elements. (cite-first-feynman diagram)}
+\end{figure}
+
+\subsection{Radiative Corrections (Loop Diagrams)} 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.3\textwidth]{pics/vertex_correction}
+\includegraphics[width=.3\textwidth]{pics/self_energy}
+\includegraphics[width=.3\textwidth]{pics/mass_correction}
+\end{center}
+\caption{Radiative corrections at one loop in electron scattering. The Vertex correction for interaction strength (left).  Th self-energy correction for the electron (middle)  The photon self-energy correction (right) }
+\end{figure}
+
+The perturbative expansion of the scattering matrix introduces momenta unconstrained by the in-going and out-going particles that must be integrated out in our
+calculation of a scattering amplitude.
 
 \section{Beyond the Standard Model}
 
-\subsection{Problems with the Standard Model}
+\subsection{Open Questions and Incompleteness in the Standard Model}
+
+\begin{itemize}
+\item \textbf{Gravity}
+\item \textbf{The Hierarchy Problem}
+\item \textbf{Neutrino Masses} The Standard Model does not contain neutrino masses 
+\item \textbf{Dark Matter} There is no fundamental candidate for dark mater observed in the universe 
+\item \textbf{Stabilization of the Higgs Mass} 
+\item \textbf{UV Completeness} 
+\item \textbf{Strong CP Problem}
+\end{itemize}
 
 \subsection{Supersymmetry}
 
-\subsection{Electroweak Symmetry Breaking in Supersymmetric Theories}
-
-\section{Origins of Long-lived Signatures}
+\section{Long-lived Signatures}
 
 \subsection{Standard Model Particles with Long Lifetimes}
 
@@ -562,3 +658,5 @@ become very heavy $O(m_{SUSY})$ and the lightest sparticles (Higgsinos and gluin
 Because the scalars are so much heavier, the decay of gluinos through squarks is suppressed.
 The characteristic signature of split supersymmetry is thus long-lived gluinos; such processes 
 with long lifetimes are rare in the SM.
+
+\subsection{Hidden Valley Models} 

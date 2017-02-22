@@ -80,7 +80,7 @@ of the vertices. Many jets with $\alpha = 0$ have $\alpha_{max} > 0$ as they ori
 from a sub-leading vertex in the \texttt{offlinePrimaryVerticiesWithBS} collection. As the variable is calculated relative to all primary
 vertices, there is no dependence on selecting a single vertex. 
 
-\subsubsection{The 2D Angle $\Theta_{2D}$}
+\subsubsection{The 2D Angle $\hat{\Theta}_{2D}$}
 
 \begin{figure}
 \begin{center}
@@ -107,7 +107,7 @@ ray's extrapolation backward corresponds to a smaller and smaller distance from 
  As the lifetime approaches a few centimeters the signal is up to 50\% efficient in a nearly background free regime. Background jets capable of passing
 tight $\Theta_{2D}$ requirements typically consist of a single track. 
 
-\subsubsection{Jet $2DIP_{sig}$}
+\subsubsection{Jet $\hat{IP}_{\textrm{sig}}^{\textrm{2D}}$}
 
 \begin{figure}
 \begin{center}
@@ -130,16 +130,12 @@ preserving a high median value.
 \begin{table}
 \begin{center}
 \caption{The baseline tag definition in terms of the three displaced jet tagging variables \label{tab:tag_def}}
-\begin{tabular}{|c|c|c|}
-\hline 
-\textbf{Tagging Variable} & \textbf{$log_{10}(x)$ Requirement} & \textbf{Linear Requirement}\\
+\begin{tabular}{ccc}
+\textbf{Variable} & \textbf{$log_{10}(x)$ Requirement} & \textbf{Linear Requirement}\\
 \hline 
 $\alpha_{max}$  & N/A &  $<5\%$ \\
-\hline 
 $\hat{IP}^{2D}_{sig}$  &  $>1.5$ & $>31.6$ \\
-\hline 
-$\hat{\Theta}_{2D}$  &  $>-1.6$ & $>0.025$\\
-\hline 
+$\hat{\Theta}_{2D}$  &  $>-1.6$ & $>0.025$
 \end{tabular}
 \end{center}
 \end{table}
@@ -147,16 +143,12 @@ $\hat{\Theta}_{2D}$  &  $>-1.6$ & $>0.025$\\
 \begin{table}
 \caption{The loose tag definition in terms of the three displaced jet tagging variables. \label{tab:loose_tag_def}}
 \begin{center}
-\begin{tabular}{|c|c|c|}
-\hline 
-\textbf{Tagging Variable} & \textbf{$log_{10}(x)$ Requirement} & \textbf{Linear Requirement}\\
+\begin{tabular}{ccc}
+\textbf{Variable} & \textbf{$log_{10}(x)$ Requirement} & \textbf{Linear Requirement}\\
 \hline 
 $\alpha_{max}$  &  N/A & $<50\%$\\
-\hline 
 $\hat{IP}^{2D}_{sig}$  &  $>0.434$ &  $>2.71$\\
-\hline 
-$\hat{\Theta}_{2D}$  &  $>-1.70$ & $>0.02$ \\
-\hline 
+$\hat{\Theta}_{2D}$  &  $>-1.70$ & $>0.02$ 
 \end{tabular}
 \end{center}
 \end{table}
@@ -165,14 +157,11 @@ $\hat{\Theta}_{2D}$  &  $>-1.70$ & $>0.02$ \\
 \caption{The integrated fake-rate is precisely $N_{tagged}/N_{jets}$ for all jets passing the jet selection in events
 passing the event selection in data collected by the displaced jet triggers. \label{tab:fake_rate_wp}}
 \begin{center}
-\begin{tabular}{|c|c|c|}
-\hline 
+\begin{tabular}{ccc}
 \textbf{Working Point} & Flat Fake-Rate / Probability \\
 \hline 
 Loose Tag & 2.5816\%\\
-\hline 
 Baseline Tag & 0.0496\%\\
-\hline 
 \end{tabular}
 
 \end{center}
@@ -193,16 +182,12 @@ $fom(s_i,x)$ relative to the maximal value $fom_{max}$  Eq. \ref{eq:fom_opt}.
 \begin{table}
 \caption{The values of the tagging variables included in the scan for selecting the baseline tag definition  \label{tab:scan_space}}
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|}
-\hline 
+\begin{tabular}{ccccc}
 \textbf{Tagging Variable} & \textbf{Begin Scan} & \textbf{End Scan} & \textbf{Step Size} & \textbf{N Points}\\
 \hline 
 $\alpha_{max}$  & 0 &  0.5 & 0.05 & 11\\
-\hline 
 $log_{10}(\hat{IP}^{2D}_{sig})$  & 0.0 & 2.5 & 0.1 & 26\\
-\hline 
 $log_{10}(\hat{\Theta}_{2D})$  &  -2.5 & -0.5 & 0.1 & 21 \\
-\hline 
 \end{tabular}
 \end{center}
 \end{table}
