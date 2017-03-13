@@ -1,20 +1,26 @@
-\chapter{Collider Physics and Phenomenology}
+\chapter{Simulation and Collider Physics}
 
 \section{Introduction}
 
-In the previous chapter, we outlined how we reach a theory like the standard model from fundamental principles, but 
-a considerable amount of physics is required to reach a practical theoretical description of what occurs inside of 
-the experiment. The goal of this section is to connect the matrix elements $\mathcal{M}$ from the quantum field
-theoretic description  of the Standard Model to the Monte Carlo simulations used to test a given theory. 
-First, we will discuss the how
-we can compare the matrix amplitudes with the observations in a physical detector. After, we will the discuss the considerations 
-that must be made for the fact the LHC collides hadrons rather than fundamental particles. Finally, we will discuss the framework used to describe the particles actually observed in the detector after the hard scattering occurs where perturbative physics breaks down and  calculations from first principles cannot be performed. Generic principles for parton showering and hadronization models will be examined. 
+In the previous chapter, we outlined principle aspects and fundamental assumptions of the  standard model, 
+in addition, a considerable amount of physics is still required to reach a practical
+ description of what occurs inside of a physics experiment. The goal of this section is
+ to connect the matrix elements $\mathcal{M}$ from the quantum field
+theoretic description  of the Standard Model to the Monte Carlo simulations used to test our understanding of 
+a given theory in the conventions used by experiental high energy physics. First, we will discuss the how
+we can compare the matrix amplitudes with the observations in a physical detector. 
+After, we will the discuss the considerations that must be made for the fact the
+ LHC collides hadrons rather than fundamental particles. We will discuss the
+ framework used to describe the particles actually observed in the detector after the
+ hard scattering occurs where perturbative physics breaks down and  calculations from first
+principles cannot be performed. Generic principles for parton showering and hadronization
+ models will be examined. 
 
 \section{From Matrix Elements to Cross Sections} 
 
 In high energy experimental particle physics the key quantity (besides particle quantum numbers and masses) is the
-cross section $\sigma$ of the process. This is the rate or in essence, the probability that an event occurs. It is the proportionality between the number of observed collisions and the rate at which the Large Hadron Collider delivers collsions $L$ (the luminosity)
- expressed simply as:
+cross section $\sigma$ of the process. This is the rate or in essence, the probability that an event occurs. It is the proportionality between the number of observed collisions and the rate at which the Large Hadron Collider
+ delivers collsions $L$ (the luminosity)  expressed simply as:
 \begin{align*}
 N_{events} = L \times \sigma
 \end{align*}
@@ -235,10 +241,10 @@ E &= \gamma m = m \cosh{w} \\
 |p| &= \gamma m \beta  = m \sinh{w} 
 \end{align*}
 Now lets re-write a lorrentz boost $\gamma$ along the z-axis in terms of $w$:
-\begin{equation} \label{eq:boost}
-E' = \gamma (E - \beta p_z)   = E \cosh w - p_z \sinh w\\
+\begin{align*} \label{eq:boost}
+E' = \gamma (E - \beta p_z)   = E \cosh w - p_z \sinh w \\
 p_z' = \gamma (p_z - \beta E) = p_z \cosh - E \sinh w
-\end{equation}
+\end{align*}
 We now set $w = y = \tanh^{-1}(\beta_z^*)$ where $\beta_z^*$ is the boost required to reach the frame where the particle is
 moving only transversely to the beamline $p_\mu^*$. We can then reach the lab frame by performing
  the transformation from the $*$ frame. First lets write the four vector in the $*$ frame
@@ -276,7 +282,11 @@ combining this with the approximation with massless limit of $y$ we obtain pseud
 \end{figure}
 The energies of particles at the LHC are typically negligible in  mass relative to their energies and the approximation $\eta \approx y$ is accurate. This
  has a number of useful applications. Firstly, differences in rapidity are invariant 
-under longitudinal lorrentz boosts along the beam axis which can be seen by applying the transformation in terms of $\gamma$ factors to $y_1 - y_2$  as found in Equation \ref{eq:boost}. Given this relation, pseudorapidity provides an intuitive geometric interpretation as the angle from the beam axis. The ray extending directly transverse from the collision point is $\eta=0$ with symmetric values $\pm|\eta|$ to either side of this ray along the z-axis Figure \ref{fig:pseudorapidity}. 
+under longitudinal lorrentz boosts along the beam axis which can be seen by applying the transformation
+ in terms of $\gamma$ factors to $y_1 - y_2$. Given this relation, pseudorapidity provides an
+ intuitive geometric interpretation as the angle from the beam axis. The ray extending directly
+ transverse from the collision point is $\eta=0$ with symmetric values $\pm|\eta|$ to either
+ side of this ray along the z-axis Figure \ref{fig:pseudorapidity}. 
 \begin{align*}
 \Delta R = \sqrt{ (\Delta \phi)^2 + (\Delta \eta)^2}
 \end{align*}
@@ -341,7 +351,7 @@ branching we need shower evolution equations.
 (cite-mrenna-showering) Consider the branching of a particle $a$:  $a\rightarrow bc$ with a 
 momentum scale $Q^2$. We denote energy and momentum fraction imparted to particle $b$ as $z$
  such that particle $c$ receives $1-z$. We introduce the momentum
-transfer variable motivated by Equation \ref{eq:running_qcd} $t = \ln (Q^2 / \Lambda^2)$ yielding 
+transfer variable reminiscent of (Equation \ref{eq:running_qcd}) $t = \ln (Q^2 / \Lambda^2)$ yielding 
 a differential element $dt = d\ln (Q^2) = dQ^2/Q^2$. The
 differential probability for the particle $a$ to branch is given:
 \begin{align*}
@@ -394,7 +404,7 @@ terminates and the generation process is handed off to hadronization.
 When the quark model, the eight-fold way, was orignally introduced in 1961, it was a large simplification of the space of observed  particles. Each combination of possible light quarks was observed in nature (the third generation had not 
 yet been discovered). However, a  single ``bare'' quark had never been observed despite experimental efforts. Today
 we understand that it is the inherent nature of the strong force that prevents light quarks from being liberated from their 
-hadronic bound states. The discovery of the top quark, who's width is  larger than $\Lambda_{QCD}$, 
+hadronic bound states. As an interesting side note, the discovery of the top quark, who's width is  larger than $\Lambda_{QCD}$, 
 will decay before hadronization takes place allowing for the study of a ``bare'' quark. In this section, we breifly discuss
  the way  monte carlo simulation models the non-preturbative confinement of quarks.
 
@@ -409,8 +419,46 @@ parameter is unrelated to the hadronization process, an ideal hadronization mode
 (cite-mc-review) It is important to state that there are only models of hadronization and no calculations from first principles. 
 Even lattice QCD calculations which are made on euclidean space times fail for processes which are inherently minkowskian 
 such as hadron formation. Two main categories of hadronization models exist. The string 
-model which transforms virtual particles directly into hadrons and the cluster model which uses in intermediate clustering step. 
+model which transforms virtual particles directly into hadrons and the cluster model which uses in intermediate clustering step before
+the conversion to hadrons. 
 
+\begin{figure}
+\begin{center}
+\includegraphics[width=.9\textwidth]{pics/linear_confinement}
+\end{center}
+\caption{The static quark anti-quark potential as measured from lattice qcd calculations. An additional $f/R^2$ term is included to
+account for known artifacts from performing the measurement on a lattice. However, the linear at large $R$ (in units
+of fm  is clearly visible. (left) the quark anti-quark potential 
+including the coloumb term at short distances (right)}
+\label{fig:linear_confinement}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.55\textwidth]{pics/regge_trajectories}
+\end{center}
+\caption{When the spin  of mesons are plotted against their mass squared a linear relationship is found with nearly the same scaling. These lines are
+known as Regge trajectories.  }
+\label{fig:regge}
+\end{figure}
+
+The string model, the most well known of which is the Lund String Model (cite-lund-string), relies on an assumption of linear confinement. One expects
+a linear potential $V(r) = \kappa r$ at long distances, where the string constant $\kappa \approx 1$~ GeV/fm $\approx .2$ GeV$^2$. In general, 
+there is an additional coulomb potential at shorter distances (Figure \ref{fig:linear_confinement}). The Lund model assumes that this term is negligible
+in hadron formation. 
+
+One motivation for the linear confinement comes from the linear relationship between the spin of mesons $J$ and their $m^2$ (Figure \ref{fig:regge}). To explain why,
+lets consider a spinning rod of mass constant density $\sigma$ (that is to say linearlly scaling energy with length) and length 2$R$, we have can calculate the
+total energy as:
+\begin{align*}
+m = E &= 2 \int_0^R \gamma(r) \sigma dr = 2 \int_0^R \frac{\sigma dr}{\sqrt{1 - \frac{r^2}{R^2}}} = \pi \sigma R 
+\end{align*}
+and if we calculate the angular momentum
+\begin{align*}
+J = 2 \int_0^R r \beta \gamma (r)\sigma dr  =  2 \int_0^R \frac{\sigma r \beta }{\sqrt{1- \beta^2(r)}} =  \frac{2}{R} \int_0^R \frac{\sigma r^2 }{\sqrt{1- \frac{r^2}{R^2}}} = \frac{1}{2} \pi \sigma R^2 
+\end{align*}
+by comparison we see that $J=\frac{1}{2\pi\sigma}m^2 = \alpha m^2$. From data this constant relationship is found to be $\alpha = 0.9$ GeV/fm. This relationship
+was also found to be accurate in static calculations of the quark anti-quark potential in lattice QCD as shown in  Figure \ref{fig:linear_confinement}. 
 \begin{figure}
 \begin{center}
 \includegraphics[width=.45\textwidth]{pics/flux_tube}
@@ -420,15 +468,11 @@ model which transforms virtual particles directly into hadrons and the cluster m
 attempt is made to separate the two quarks, the string breaks producing two new ends i.e. quarks (right) (cite-string-sretch) }
 \label{fig:flux_tube}
 \end{figure}
-
-The string model, the most well known of which is the Lund String Model (cite-lund-string), relies on an assumption of linear confinement. One expects
-a linear potential $V(r) = \kappa r$ at long distances, where the string constant $\kappa \approx 1$~ GeV/fm $\approx .2$ GeV$^2$. In general, 
-there is an additonial coulomb potential at shorter distances, but it is an assumption of the Lund model that this term is negligible. It is
-important to note that string model of hadronization should not be confused with the strings of string theory where strings serve as the fundamental .  The linear
- confinement of QCD is best visuallized as a color flux tube being stretched between a quark and anti-quark (Figure. \ref{fig:flux_tube}). As the two
-quarks are increasingly separated in space, the flux tube is stretched maintaining constant energy per unit length $\kappa$. The lorrentz covariant and
+It is important to note that string model of hadronization should not be confused with the strings of string theory where strings serve as the fundamental .  The linear
+ confinement of QCD is best visuallized as a color flux tube being stretched between a quark and anti-quark (Figure. \ref{fig:flux_tube}). These flux lines are similar
+to those of the equipotential lines between a positive and negative electric charge but with a charactersitic $~r$ dependence rather than $~1/r$. 
+As the two quarks are increasingly separated in space, the flux tube is stretched maintaining constant energy per unit length $\kappa$. The lorrentz covariant and
 causal description of this energy flow uses a massless one dimensional string that parameterizes the axis of a cylindrically symmetric flux tube. 
-
 \begin{figure}
 \begin{center}
 \includegraphics[width=.65\textwidth]{pics/lund_model}
@@ -436,12 +480,27 @@ causal description of this energy flow uses a massless one dimensional string th
 \caption{The 1+1 dimensional propogation of the hadronization process beginning form a quark anti-quark pair.  }
 \label{fig:lund}
 \end{figure}
-
-
-In the simple case of quark anti-quark production (Figure \ref{fig:lund), the two quarks separate from each other along the $z$ axis and the potential energy stored in the 
-string increases. When the potential energy is large enough, the string can break through the production of a new quark anti-quark pair. These breaks 
-typically occur between 1 and 5 fm in the rest frame of the pair, however in the lab frame these processes highly length contracted. After the break,
-widening regions of no flux arise. 
+In the simple case of quark anti-quark production in the (Figure \ref{fig:lund}), the two quarks separate 
+from each other along the $z$ axis and the potential energy stored in the 
+string increases. When the potential energy is large enough, the string can break through the production
+ of a new quark anti-quark pair. These breaks typically occur between 1 and 5 fm in the rest
+ frame of the pair, however in the lab frame these processes are highly length contracted. 
+After the break, widening regions of no flux arise. By the end of the process, the string has been broken into many
+segements through the creation of $q\bar{q}$ pairs. Hadrons are formed by a quark from one break and the anti-quark
+of an adjacent break. The energy-momentum picture is derived from the space-time picture through the string
+tension as: (cite-mc-review)
+\begin{align*}
+\left |\frac{dE}{dz}\right|  = \left|\frac{dp_z}{dz}\right| = 
+\left|\frac{dE}{dt}\right| = \left|\frac{dp_z}{dt}\right|  = \kappa
+\end{align*}
+This is to say that the hadron has energy equal to the string constant times the separation in space between the 
+two quarks and momentum equalt o the string cosntant times the separation in time. Based on this relation we enforcing
+ the hadrons to be formed on shell requires the constuant two breaks that build a hadron to be causally separated i.e. space-like. 
+\begin{align*}
+m_T^2 = E^2 - p_z^2 = \kappa((\Delta t)^2 - (\Delta z)^2) > 0 
+\end{align*}
+This also means that as the hadron propagates, the kinks in the hadron pair will always occur with the same separation
+(the bound rectanges in Figure \ref{fig:lund} will always have the same area). This corresponds the hadron remaining on shell.
 
 The string model contains a large number of parameters related to flavor properties and must determined from data
 
@@ -450,12 +509,18 @@ non-preturbative splitting of gluons into quark anti-quarks pairs. Clusters are 
 with heavier clusters decaying first to lighter clusters. Cluster models tend to describe the data less accurately than 
 string models, but using fewer parameters.
 
-The incredibely dense and active enviroment of hadronic collisions could lead to significant collective eeffects which are not considered in current 
-hadronization models.
-
-
-
+The incredibly dense and active enviroment of hadronic collisions could lead to significant collective effects
+ which are not considered in current hadronization models.
 \section{Hadron Decay} 
+
+(cite-mc-review) Once we the final hadron picture, the hadrons must be decayed into particles which are stable on the length scales of the detector. That is,
+the final particles that measured by the individual sub-detectors.  It might seem simple that the generators could use
+ known branching ratios from the extensive Particle Data Group tables on particle decays (cite-pdg-tables), however, 
+this information is often incomplete. The least documented decay modes are excited multiplets including heavy quarks (bottom and charm).
+
+One important choice that must be made for different generators is which hadrons to include in their simulation. For starters,
+all simulators include the lighetsts pseudoscalar, vector, scalar, event and odd charge conjugation pseudovector and tensor multiplets of light mesons. These decisions 
+must be made carefully as in certain models the exclusion of any members of a given multiplet cause unphysical rates of isospin violation. 
 
 \section{Jet Clustering}
 
@@ -463,10 +528,10 @@ hadronization models.
 \begin{center}
 \includegraphics[width=.75\textwidth]{pics/antikt}
 \end{center}
-\caption{Comparisons made between varied clustering algorithms.}
+\caption{Comparisons made between varied clustering algorithms when many soft ``ghost'' entities are added
+to exaggerate the affect soft radiation has on the boundary of clustering algorithms for the same event}
 \label{fig:antikt}
 \end{figure}
-
 
 Once the showering and hadronization have constructed the final state particles we need a way of clustering the numerous deposits or
 particles in the final state simulation and data. While in simulation one can trace the
@@ -474,20 +539,48 @@ particles in the final state simulation and data. While in simulation one can tr
 data has no truth information. This problem necessitates a fast algorithm that takes as input energy deposits in the 
 detector and outputs clusters with kinematic properties representative of the hard scattering process quarks and gluons. 
 
-Any desirable clustering algorithm must satisfy collinear and infrared safety. An algorithm that is collinear safe, is insensitive to the 
+Any desirable clustering algorithm must satisfy collinear and infrared safety. Such an algorithm is insensitive to the soft radiation that alters the boundaries of clustered deposits. The most commonly utilized clustering algorithm is anti-kt (Figure \ref{fig:antikt}) which takes a size 
+parameter $R$.  The resultant four momentum of the cluster is given by the four-momentum sum of the individual deposits. 
 
-The most commonly utilized clustering algorithm is anti-kt (Figure \ref{fig:antikt}) which takes a size 
-parameter $R$ corresponding the $(\Delta R)^2 = (\Delta\eta)^2 + (\Delta \phi)^2$.  The resultant four momentum of
-the cluster is given by the four-momentum sum of the individual deposits. 
+(cite-ak5-paper) To cluster jets the inclusive algorithm defines two distances, $d_{ij}$, the distance between two recombining
+entities $i$ and $j$, and $d_{iB}$, the distance from the entity to the beam. 
+\begin{align*}
+d_{ij} &= \text{min}(k_{ti}^{2p}, k_{tj}^{2p}) \frac{\Delta_{ij}^2}{R^2} \text{ with } \Delta_{ij}^2 = (y_i - y_j)^2 + (\phi_i - \phi_j)^2\\
+d_{iB} &= k_{ti}^{2p} 
+\end{align*}
+Here $\Delta_{ij}$ is the typical definition of $(\Delta R)^2$ (not to be confused with the algorithm 
+size parameter $R$) using rapiditiy $y$. The value $k_{ti}$ is the transverse momentum of
+the i-th entity and $\phi$ is the azimuthal angle. The parameter $p$ allows one 
+to vary the relative strength of the momentum vs the geometrical
+distances in the clustering. For $p=1$ this is the $k_t$ algorithm, 
+for $p=0$ this is the Cambridge/Aachen algorithm, and for $p=-1$ this is the anti-$k_t$ algorithm. 
 
-Jets must be calibrated in data to account for energy lost. Common techniques include
+The algorithm proceeds by identifying the smallest of the two distances for two recombining entities. When the
+smaller is $d_{ij}$ the two entities are combined. If it is $d_{iB}$ then $i$ is a jet and its removed from the list
+of entities. Afterwards, distances are recalculated and the procedure is repeated until all entities have been
+removed from the list. 
 
-Additionally as luminosity increases and there are increasingly more 
-ineractions per event, jets must be corrected for additional clustered energy not related to the primary interaction. For this,
-an average energy density $\rho$ is calculated event by event and $\rho\times A$ is subtracted from the jet energy where $A$ is the
-jet area. 
+From the definition of the distances we first see two entites will not be combined unless they are within
+the size parameter. If we locally consider two entities within the size parameter, 
+the distance is determined by the higher momentum entity, with no dependence on the softer entity. 
+This means, the distance between a hard and soft entity will be much smaller than a 
+simillarly separated soft and soft
+combination. Thus, the clustering process tends to cluster soft entities with hard entities first. When a hard
+entity has no hard neighbors it will simply accumilate all of the soft entities nearby within the size parameter 
+leading to a conical jet. If only two hard entities are within $2R$ of eachother the two will be conical with a 
+boundary determined by $\Delta_{1b} / k_{t1}) = \Delta_{2b} / k_{t2}$. If two jets with $2R$ have 
+the same momentum then the boundary will be a straight line. Jets with significantly different momentum will induce
+a crescent shaped boundary.
 
-For 2015 data, at $\sqrt{s}=13$~TeV the size parameter for the displaced jets analysis was fixed at a cone size $R=0.4$. 
-Larger size parameters as well as different algorithms are utilized for boosted hadronic decays of bosons,
+By injecting soft radiation into an event and plotting the boundaries of the clustering, (Figure \ref{fig:antikt}) one 
+can see the strong insensitvity to soft radiation of the algorithm and the correspondingly conical resultant jets.
+
+
+
+%% Jets must be calibrated in data to account for energy lost. Common techniques include
+%% Additionally as luminosity increases and there are increasingly more 
+%% ineractions per event, jets must be corrected for additional clustered energy not related to the primary interaction. For this, an average energy density $\rho$ is calculated event by event and $\rho\times A$ is subtracted from the jet energy where $A$ is the
+%% jet area. 
+%% For 2015 data, at $\sqrt{s}=13$~TeV the size parameter for the displaced jets analysis was fixed at a cone size $R=0.4$. %% Larger size parameters as well as different algorithms are utilized for boosted hadronic decays of bosons,
 
 
