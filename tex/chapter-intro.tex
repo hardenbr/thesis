@@ -1,16 +1,170 @@
 \chapter{Introduction\label{ch:intro}}
+\begin{quote}
+\textit{``The first principle is that you must not fool yourself -- and that you are the easiest person to fool.''}
+\end{quote}
+\begin{center}-- Richard P. Feynman  \end{center}
+When convincing ourselves of something new, to make assertions with confidence, we must
+be cautious. Personally, this means avoiding believing I know something, when  
+I do not understand the underlying assumptions or the importance  of a conclusion.
+Using some theorem or an algorithm by name without knowing its origins or how
+it is implemented, while perhaps inevitable for practical purposes, is at best precarious and at worst dishonest.
+Rather, knowledge drawn by connecting a path of fundamental assumptions/principles
+with the necessary corollaries, and arriving at an ultimate conclusion
+affords a security in one's results. 
 
+Fortunate for those wish to take this bottom-up approach to its ultimate and earthly end, history's 
+scientific heroes have developed a field of study for the foundational principles of the physical world. 
+The study of high energy particle physics,  while limited in its applicable scope, 
+ allows one to make connected steps from core postulates of nature, to the experimental observations
+ inside of high energy experiments. 
+In this same way, this thesis is an effort to build up an intellectually continuous (albeit coarse)
+discussion on how to make quantitative statements about fundamental physics by
+utilizing the massively complex experiments found at the Large Hadron Collider (LHC). 
 
+\begin{figure}
+\begin{center}
+\includegraphics[width=.85\textwidth]{pics/paticle_discoveries}
+\end{center}
+\caption{The discovery of the standard model particle content through time. \cite{tuna}}
+\label{fig:particle_discoveries}
+\end{figure}
 
+In pursuit of a theory of fundamental interactions, the Standard Model of particle physics,
+has performed miraculously well within its scope. 
+As of the July 4, 2012 discovery of the Higgs Boson, the complete particle
+content of the theory has been discovered (Figure \ref{fig:particle_discoveries}). Precision electroweak 
+measurements have held up to calculations to 14 significant figures \cite{gminus2}. These measurements are
+more precise than correctly measuring the distance between the earth and the moon ($3.8\times10^8$ meters) 
+within the width of a human hair ($1.7\times 10^{-5}$ meters). 
 
+However, the Standard Model is not a theory capable of describing everything, 
+it rather functions as a tool to discover new fundamental physics. By consistently incorporating what we 
+understand into a single theory, we can search for more complete physics by looking for deviations from 
+the model in nature. 
 
-
+Here I list a series of outstanding questions within the Standard Model, while not complete, can sufficiently 
+motivate the need to search for beyond the standard model (BSM) physics. I group questions into two categories.
+The first set of questions are forward looking and ask how will known phenomenon be incorporated into 
+an extension of the Standard Model.
 \begin{itemize}
-\item \textbf{Gravity}
-\item \textbf{The Hierarchy Problem}
-\item \textbf{Neutrino Masses} The Standard Model does not contain neutrino masses 
-\item \textbf{Dark Matter} There is no fundamental candidate for dark mater observed in the universe 
-\item \textbf{Stabilization of the Higgs Mass} 
-\item \textbf{UV Completeness} 
-\item \textbf{Strong CP Problem}
+\item \textbf{Gravity:} How will the Standard Model which describes the weak, strong, and electromagnetic force
+be extended into a theory of quantum gravity?
+\item \textbf{The Hierarchy Problem:} How can the Higgs mass be so small compared to the size of the leading one loop
+contributions to the mass? How can the vacuum energy of the universe be nearly zero when calculations yield
+values that are 100 orders of magnitude larger? 
+\item \textbf{Neutrino Masses:} How will an extended theory
+ generate the masses of neutrinos which are known to be non-zero
+ from neutrino oscillation experiments?
+\item \textbf{Dark Matter:} How will the abundance of dark matter observed in the universe be described?
+\item \textbf{Stability of the Vacuum:} Given the mass of the Higgs, the universe's vacuum is meta-stable. 
+How has the vacuum not decayed? What physics, if any, would resolve this meta-stability?
+\item \textbf{UV Completeness:} The Standard Model is interpreted as the low energy effective theory
+of a larger theory. What physics will complete the theory at high energies? Will the gauge coupling strengths unify at high energies? 
 \end{itemize}
+The second set of questions asks why does the Standard Model take its specific form. Are there deeper
+principles that explain why? Or will we ultimately need to accept these ideas without a simpler explanation?
+\begin{itemize}
+\item \textbf{Gauge Theory}: Why does the Standard Model have the gauge group $SU(3) \times SU(2) \times U(1)$? Does the universe accept a more complete symmetry group that is then broken into these components? 
+\item \textbf{Space-time and Particle Content:} Why are there three families of particles and 3+1 space-time dimensions? Is space-time an emergent phenomenon? Are there extra dimensions which 
+explain the weakness of the gravitational force?
+\item \textbf{Naturalness:} Are the free parameters of our theory natural? That is, are
+small values of free parameters an artifact of new physics yet to be incorporated
+or are the observed values coincidental?
+%\item Why $M_{pl}=\sqrt{\frac{Gh}{c^3}}\approx 10^{19}$ whereas $M_{EW}\approx10^2$
+%\item Why is the vacuum energy of the universe nearly zero $\Lambda = 10^{-120} M_{pl}^4$
+\item \textbf{Strong CP Problem:} Why is there no evidence of the term $\theta \epsilon_{\mu\nu\rho\sigma} F^{\rho\sigma} F_{\mu\nu}$ in the Standard Model Lagrangian ($\theta < 10^{-10})$?  
+\end{itemize}
+\begin{figure}
+\begin{center}
+\includegraphics[width=.95\textwidth]{pics/susy_summary}
+\end{center}
+\caption{A summary of mass exclusions for supersymmetric models in 7 + 8 TeV data by the CMS experiment.}
+\label{fig:susy_summary}
+\end{figure}
+\begin{figure}
+\begin{center}
+\includegraphics[width=.95\textwidth]{pics/exo_summary}
+\end{center}
+\caption{A summary of mass exclusions for exotic models in 8 + 13 TeV data by the CMS experiment.}
+\label{fig:exo_summary}
+\end{figure}
+
+So what then are the candidates for BSM physics? A multitude of full and simplified models are 
+tested in hopes of observing statistically significant deviations from the Standard Model
+(Figures \ref{fig:susy_summary} and \ref{fig:exo_summary}) in 7, 8, and 13 TeV data by both
+the ATLAS and CMS experiments at the LHC. Searches for models containing the most theoretically motivated
+signatures (jets and missing energy, two leptons, two jets, missing energy, among many others) have significantly
+narrowed the remaining parameter space where BSM physics could be hiding.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.5\textwidth]{pics/higgs_mass_diverge}
+\end{center}
+\caption{(top) The 1 loop contribution to the Higgs mass induced by a fermionic top loop. (bottom) The one loop
+correction to the Higgs mass due to a scalar stop loop.}
+\label{fig:higgs_mass_diverge}
+\end{figure}
+
+The most popular answer to many of the questions posed above is Supersymmetry (SUSY), 
+a new symmetry of space time, that would imply heavy super partners to Standard Model particles
+whose masses are heavier, but still explorable at the LHC.
+The expectation of discovering SUSY at the LHC has been largely motivated
+by the naturalness of the theory. For a given model of Supersymmetry the mass of
+the Standard Model Higgs boson is sensitive to the high energy scale where SUSY
+is exists ($m_{\textrm{SUSY}}$), its mass, of order the electroweak 
+scale, $(m_h \approx m_{EW} \ll m_{\textrm{SUSY}})$
+would need to be tuned to order $m_{EW}^2/m_{\textrm{SUSY}}^2$. To avoid fine-tuning, 
+we would like  $m_h^2 \approx m_{\textrm{SUSY}}^2 \implies m_{\textrm{SUSY}} \leq$ 1 TeV.  
+More specifically, knowing $m_H \approx 125$ GeV we expect light SUSY partners (in particular, light top quark partners)
+less than 1 TeV to stabilize the quadratic divergences of 1 loop corrections to the Higgs mass 
+(Figure \ref{fig:higgs_mass_diverge}). The naturalness of a theory, has 
+long been a guiding principle of model building extensions to the Standard Model, 
+but unfortunately these scalar partners, despite considerable effort, have not 
+yet been discovered.
+
+As the parameter space of possible BSM physics continues to narrow and the kinematic gains from increasing the
+collider energy are no longer available, we must thoughtfully consider where we might have missed something. 
+If new physics exists at the TeV scale and is still probable at the LHC, why is it yet to reveal itself? One such
+possibility is that the new physics is long lived.
+
+A fundamental assumption of non-specific analyses is that the new physics will be prompt. That is to say,
+the BSM particles, when produced, will decay a distance from the original collision too small to detect. 
+In these scenarios, there is a reconstructable vertex where the collision took
+ place, and the final state particles will arrive
+at the detector face at predictable angles. In the case of long-lived physics, the BSM particles will travel 
+measurable distances in the detector before decaying. The resulting BSM decays will unlikely have a 
+primary collision vertex and the final state particles may arrive at glancing angles to the detector face. 
+In these cases, it has been shown standard particle identification techniques  are   
+inefficient and in many cases completely veto long-lived signatures. 
+If nature exhibited long-lived BSM behavior, prompt searches would unintentionally clean it from
+their signal regions at early stages in the data processing. 
+
+The theoretical motivations for long-lived particles arise in a variety of scenarios including, but not limited to:
+\begin{itemize}
+\item Split Supersymmetry \cite{nimalhc,splitsusy,nimasplit,nimahiggs,hewett}
+\item Twin Higgs Models  \cite{twinhiggs}
+\item WIMP Baryogenesis \cite{wimpbaryo}
+\item Hidden Valley Models and Higgs Portal Processes \cite{hiddenvalley}
+\item R-Parity Violating SUSY \cite{displacedsusy} 
+\end{itemize}
+
+This search was designed from the initial data collection algorithms to the final background prediction
+to be as inclusive as possible to all displaced signatures. 
+Prompt analyses have been shown to have strong
+sensitivity to signatures with proper lifetimes less than 1 mm. Accordingly, this analysis is tuned
+to target complementary lifetimes greater than 1 mm. Essential to this study is the definition of a 
+displaced jet tag, which does not rely on commonly utilized physics objects, but
+rather is constructed from the geometry of globally reconstructed charged particle tracks 
+matched to separately reconstructed clusters of calorimeter energy. The result is an object with
+strong background rejection (1 in 2000 false positives) with sensitivity to electrons, jets, and taus
+in any combination. The simplicity of the construction also exhibits sensitivity to exotic BSM
+jets without narrowing the scope of the analysis. 
+
+This document is organized beginning from the fundamental theory that describes the Standard Model
+(Chapter 2). The underlying framework of quantum field theory is built up from classical equations of motion and the structure of the Standard Model is described in some detail. The theory is then connected with  
+the methods of simulation and  physics necessary to evolve the initial scattering 
+amplitudes to the final state showering in Chapter 3. After a discussion of the individual 
+sub-detectors of the experiment in Chapter 4, Chapter 5 will outline the studies leading to definition
+of the displaced jet tag. Chapter 6 will describe the analysis and summarize the results
+of the search as found in the public document \cite{EXO-16-003} and presented at Moriond 2017 \cite{Mor} and Aspen 2017 \cite{Asp}. 
+Conclusions will be drawn in Chapter 7.

@@ -11,7 +11,7 @@ The majority of these searches focus on prompt particles with
 lifetimes $c\tau_0<1$mm and contain requirements on the
 physics objects that reject longer lived particle
 decays. This leaves open the possibility that light long-lived particles
-could exist and still remain undetected.  In this paper, we present an
+could exist and still remain undetected. In this study, we present an
 inclusive search for long-lived particles decaying to various
 combinations of jets and leptons. The analysis exploits the
 information originating from the CMS calorimeters to reconstruct jets
@@ -21,121 +21,212 @@ discriminate the displaced-jets signal from the background of ordinary
 multijet events.  The analysis is performed on data collected with the
 CMS detector at a center-of-mass energy $\sqrt{s}=13$~TeV in 2015. The
 data set corresponds to an integrated luminosity of
-2.7fb$^{-1}$. Results for similar signatures have been reported by
+2.6 fb$^{-1}$. Results for similar signatures have been reported by
 ATLAS~\cite{PhysRevD.92.012010,Aad:2015rba} and
 CMS~\cite{CMS:2014wda}, using data collected at $\sqrt{s}=8$~TeV.
 
-\section{Datasets} 
+\section{Datasets and simulated samples}
+\label{sec:samples}
 
+Events are collected from two dedicated online selection algorithms,
+designed to identify events with displaced jets.  The algorithms
+consider jets clustered from energy deposits in the calorimeters,
+using the FASTJET~\cite{fastjet} implementation of the
+anti-\textit{k}$_{\textit{t}}$ algorithm~\cite{Cacciari:2008gp}, with
+size parameter $0.4$. Jets with transverse momentum $p_{\textrm{t}}<60~$~GeV or
+$|\eta|>2.0$ are discarded.  An inclusive trigger algorithm accepts
+events when the scalar sum of the jet $p_{\textrm{t}}$'s, $H_{\textrm{T}}$, is
+greater than $500$~GeV and at least two jets with $|\eta|<2.0$ and at
+most two prompt tracks are found. Tracks are classified as prompt if
+their transverse impact parameter relative to the beam line,
+$IP^{\textrm{2D}}$, is less than $1$mm.  Another trigger
+algorithm is used, which requires $H_{\textrm{T}}>350~$~GeV and asks
+that there be two displaced jets each having at least one track with
+transverse impact parameter
+$IP^{\textrm{2D}}>5\sigma_{IP^{\textrm{2D}}}$,
+where $\sigma_{IP^{\textrm{2D}}}$ is the uncertainty on
+$IP^{\textrm{2D}}$. Samples with large $H_{\textrm{T}}$ are used to
+study the performance of the online selection algorithms. 
+
+The main source of background events originates from multijet
+production. The properties of this background process are studied
+using a simulated multijet sample, generated with
+Pythia 8~\cite{Sjostrand:2007gs}. The NNPDF 2.3~\cite{NNPDF23}
+parton distribution functions (PDFs) are used to model the parton
+momentum distribution inside the colliding protons. The event
+simulation includes the effect of multiple proton-proton collisions in
+the same bunch crossing and in bunch crossing nearby in time, referred
+to as pileup. Simulated samples are reweighted to match the pileup
+profile observed in data.
+
+The analysis is interpreted with a set of benchmark signal models.
+The Jet-Jet model predicts pair-produced long-lived
+scalar neutral particles $X^{0}$ \cite{ScalarX}, each decaying to two light quarks $u$,$d$,$s$,$c$, and $b$
+with equal probability. The resonance
+mass $m_{X^0}$ and proper lifetime $c\tau_0$ are scanned between
+50~and~1500~GeV and between 1~and~2000mm, respectively. The
+trigger efficiencies for a fixed  $m_{X^0}=300$ GeV and 
+$c\tau_0 = 1, 30,$ and $1000$ mm are 30\%, 81\%, and 42\%  
+ respectively. The trigger efficiencies for a fixed  $c\tau_0=30$
+ mm and $m_{X} = 50, 100,$ and $1000$ GeV
+ are 2\%, 14\%, and 92\%  respectively.
+
+The B-Lepton model contains pair-produced long-lived top squarks
+in R-parity violating models of Supersymmetry~\cite{displacedsusy}. Each top squark decays
+to one b quark and a lepton. The branching fractions of the
+decay to the three lepton flavors are equal. The
+resonance mass $m_{\tilde{t}}$ and proper lifetime $c\tau_0$ are
+scanned between 300~and~1000GeV and between 1~and~1000mm,
+respectively. The trigger efficiencies for a fixed mass 
+$m_{\tilde{t}}=300$ GeV and $c\tau_0 = 1, 30,$ and $1000$ mm
+ are 15\%, 41\%, and 23\%  respectively.
+The trigger efficiencies for  $m_{\tilde{t}} = 500, 700,$ and $1000$ GeV and fixed  $c\tau_0=30$ mm are 64\%, 71\%, and 74\% respectively.
+
+These models are also investigated with modified
+branching fractions.  The Light-Light model is the Jet-Jet
+model excluding decays to b quarks (equal decays to lighter quarks)
+and the B-Mu, B-Ele, and B-Tau models are
+derived from the B-Lepton model with 100\% branching fraction to
+muons, electrons, and taus, respectively.  Leptonic tau decays are included 
+in the B-Tau interpretation. All signal samples are
+generated with Pythia, with the setup described above for the
+multijet sample. 
+
+\section{Event selection}
+
+A signal is searched for by applying the selection described in
+section~\ref{sec:tagger} and counting the number of tagged displaced
+jets, $N_{\textrm{tags}}$.  In addition to the online and offline
+requirements described in section~\ref{sec:samples}, the analysis
+signal region requires $N_{\textrm{tags}} \geq 2$.  Efficiencies are
+reported for all interpreted models as a function of the lifetime with
+fixed mass (Table \ref{tab:cutflow_300gev} and
+\ref{tab:cutflow_BR_lifetime}) as well as a function of mass with
+fixed lifetime (Table \ref{tab:cutflow_30mm} and
+\ref{tab:cutflow_BR_mass}).
+
+The two classes of events: (i) events passing the inclusive trigger
+algorithm and with $H_{\textrm{T}}>650$~GeV; (ii) events passing the
+exclusive trigger algorithm and with $H_{\textrm{T}}>450$~GeV are
+treated as a single class.  
+
+\input{tables/table-cutflow_anal}
 
 \section{An inclusive displaced-jet tagger}
 
-
-The basic requirement for the displaced jet tagging criteria is at least a single track with $p_{t}>1$~GeV. 
-Besides the requirements implicitly enforced on the iterative tracking in the \texttt{generalTracks} collection, there are 
-no further requirements (no total and pixel hit requirements). All tracking related variables for tagging are computed
-with this collection of tracks i.e. \texttt{generalTracks} with $p_{t}>1$ GeV. 
+\label{sec:tagger}
+The basic requirement for the displaced jet tagging criteria is at least a single track with $p_{\textrm{t}}>1$~GeV. 
+Besides the requirements implicitly enforced on the iterative tracking in the global track collection collection (\texttt{generalTracks}), there are 
+no further requirements. This includes total and pixel hit requirements.
 There are no energy composition requirements of the calorimeter deposit
- and no requirements of a reconstructed secondary vertex, both of which can exclude sensitivity to long-lived decays
+ and no requirements of a reconstructed secondary vertex, 
+both of which can exclude sensitivity to long-lived decays
 to electrons and single prong taus. 
 
-All variables utilize 2D quantities. By excluding the longitudinal dimension we prevent large overestimation of displacement due to primary vertex mis-identification.
-When the signal model in question has a lifetime small on the scale of the longitudinal spread of pile up the primary vertex can still be accurately reconstructed. 
+The three tagging variables utilize 2D quantities. 
+By excluding the longitudinal dimension we prevent large overestimation of displacement due to primary vertex mis-identification.
+When the signal model in question has a lifetime small on the scale of the longitudinal spread of pile up, the primary vertex can still be accurately reconstructed. 
 In contrast, for a decay in the lab frame of a few centimeters the probability of selecting the correct primary vertex can be highly model dependent. In fact, with
-beam spot constraints applied and no initial state radiation it is possible the primary vertex would not be reconstructed at all. This is especially the case for relatively light particles produced with lifetimes longer than the beamspot radius. By utilizing the \texttt{offlineBeamSpotWithBS} collection to compute primary vertex 
-related quantities we limit the transverse spread relative to the z direction to approximately  0.001 cm. As the tag sensitivity becomes highly insensitive at distances smaller than 1 mm, the effect of choosing the wrong PV is negligible. 
+beam spot constraints applied and no initial state radiation it is possible the primary vertex would not be reconstructed at all. This is the case for relatively light particles produced with lifetimes longer than the beamspot radius. By utilizing the beamspot constraint to compute primary vertex 
+related quantities, we limit the transverse spread relative to the z direction to  $10^{-3}$ cm. As the tag sensitivity drops at distances 
+smaller than 1 mm, the effect of choosing the wrong PV is negligible. 
 
 In contrast to previous analyses, a fitted secondary vertex is not utilized in the tag definition. This decision is deliberate to maintain sensitivity to
-electrons and single track taus while maintaining a single definition. Previous analyses had possible sensitivity by fitting a secondary vertex to pairs of jets containing a single track. Additionally, by not vertexing pairs of jets the displaced object allows for sensitivity to odd (non-even) multiplicities of displaced jets. For example, in the Jet-Jet interpretation there is sensitivity to 3 jets when the 4th is reconstructed outside of the tracker acceptance. 
+electrons and single track taus while maintaining a single definition. Previous analyses had sensitivity to single tracks  by fitting a secondary vertex 
+to pairs of jets. By not vertexing pairs of jets the displaced object allows for sensitivity to odd (non-even) multiplicities of displaced jets. For example,
+in the Jet-Jet interpretation there is sensitivity to 3 jets when the 4th is reconstructed outside of the tracker acceptance. These high multiplicity events,
+in the case of a discovery would have higher statistical significance.
 
-\subsubsection{The Primary Vertex Compatibility Variable Alpha Max}
+\subsubsection{The Primary Vertex Compatibility Variable $\alpha_{\textrm{max}}$}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=.20\textwidth]{figures/pas/DIAGRAMS/alpha_diag.pdf}
 \includegraphics[width=.5\textwidth]{figures/pas/SELECTION/76x_pu/DJET_alphaMax.pdf}
 %\includegraphics[width=.38\textwidth]{figures/pas/SELECTION/76x/HT575/alpha_ht575_76x.pdf}\\
-\caption{Diagram (left) and data/MC comparison (right) for the displaced jet tagging variable $\alpha_{max}$. The left distribution  shows the data collected by the displaced jet triggers with kinematic cuts and $H_T$ trigger matching thresholds applied. Signal samples are taken from Jet-Jet interpretation with no generator matching for the signal jets, fixed $m_X=700$~GeV and varied proper lifetime $c\tau_0$ in the mother frame.  
+\caption{Diagram (left) and data/MC comparison (right) for the displaced jet tagging variable $\alpha_{\textrm{max}}$. The left distribution  shows the data collected by the displaced jet triggers with kinematic cuts and $H_T$ trigger matching thresholds applied. Signal samples are taken from Jet-Jet interpretation with no generator matching for the signal jets, fixed $m_{X^0}=700$~GeV and varied proper lifetime $c\tau_0$ in the mother frame.  
   \label{fig:alphaMax}}
 \end{center}
 \end{figure}
 
-The variable $\alpha_{max}$ characterizes the disassociation of the jet's tracks and all fitted primary vertices 
+The variable $\alpha_{\textrm{max}}$ characterizes the disassociation of the jet's tracks and all fitted primary vertices 
 in an event.
 Jets decaying displaced from the primary vertex are unlikely to contain tracks 
 included in the event's primary vertex fit.
 Background QCD jets, will contain a majority of tracks from either the true primary vertex or a pile up vertex.
-For a given jet $\alpha(PV)$ is calculated as the ratio of sums of $p_{t}$ taken over tracks matching in $\Delta R< 0.4$ between two
-collections of tracks: the tracks in the specified primary vertex and tracks from the \texttt{generalTracks} collection. 
-The sum is restricted to tracks with $p_{t}> 1.0$ ~GeV. 
+For a given jet $\alpha(PV)$ is calculated as the ratio of sums of $p_{\textrm{t}}$ taken over tracks matching in $\Delta R< 0.4$ between two
+collections of tracks: the tracks in the specified primary vertex and tracks from the global collection. 
+The sum is restricted to tracks with $p_{\textrm{t}}> 1.0$ ~GeV. 
 
-\begin{equation}
-\alpha_{jet}(PV) = \frac{\sum_{i\in PV,tracks} p_{t}^i}{ \sum_{j\in generalTracks} p_{t}^j }
-\end{equation}
+%% \begin{equation}
+%% \alpha_{\textrm{jet}}(\textrm{PV}) = \frac{\sum_{\textrm{tracks} \in \textrm{PV}} p_{\textrm{t}}^{\textrm{tracks}}}{\sum_{\textrm{tracks}} p_{\textrm{t}}^{\textrm{tracks}}}~,
+%% \end{equation}
+
+%% \begin{equation}
+%% \alpha_{jet}(PV) = \frac{\sum_{i\in PV,tracks} p_{t}^i}{ \sum_{j\in generalTracks} p_{t}^j }
+%% \end{equation}
 
 If a single PV is selected for all jets in the event, PU jets which are not from this vertex can have signal-like $\alpha \approx 0$. 
-To avoid this, we define $\alpha_{max}$ for each jet individually selecting the primary vertex with
+To avoid this, we define $\alpha_{\textrm{max}}$ for each jet individually selecting the primary vertex with
 the largest contribution to the sum. The assumption is PU jets will have high $\alpha$ for at least one 
-of the vertices. Many jets with $\alpha = 0$ have $\alpha_{max} > 0$ as they originate
-from a sub-leading vertex in the \texttt{offlinePrimaryVerticiesWithBS} collection. As the variable is calculated relative to all primary
+of the vertices. Many jets with $\alpha = 0$ have $\alpha_{\textrm{max}} > 0$ as they originate
+from a sub-leading vertex in the vertex collection. As the variable is calculated relative to all primary
 vertices, there is no dependence on selecting a single vertex. 
 
-\subsubsection{The 2D Angle $\hat{\Theta}_{2D}$}
+\subsubsection{The 2D Angle $\widehat{\Theta}_{2D}$}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=.2\textwidth]{figures/pas/DIAGRAMS/theta_diag.pdf}
 \includegraphics[width=.5\textwidth]{figures/pas/SELECTION/76x_pu/DJET_medianCosTheta.pdf}
 %\includegraphics[width=.38\textwidth]{FIGS/SELECTION/76x/HT575/theta_ht575_76x.pdf}
-\caption{Diagram (left) and data/MC comparison (right) for the displaced jet tagging variable $\theta_{2D}$. The left distribution  shows the quantities collected by the displaced jet triggers with kinematic cuts and $H_T$ trigger matching thresholds applied. Signal samples are taken from Jet-Jet interpretation with no generator matching for the signal jets, fixed $m_X=700$~GeV and varied proper lifetime $c\tau_0$ in the mother frame.
+\caption{Diagram (left) and data/MC comparison (right) for the displaced jet tagging variable $\theta_{\textrm{2D}}$. The left distribution  shows the quantities collected by the displaced jet triggers with kinematic cuts and $H_T$ trigger matching thresholds applied. Signal samples are taken from Jet-Jet interpretation with no generator matching for the signal jets, fixed $m_{X^0}=700$~GeV and varied proper lifetime $c\tau_0$ in the mother frame.
  \label{fig:theta}}
 \end{center}
 \end{figure}
 
-The variable $\Theta_{2D}$ is utilized to characterize the recoil angle
-of the tracks from the flight direction of the long lived particle. $\Theta_{2D}$ is defined as the angle between 1) the 2D ray extended from the primary vertex
-to the inner hit of the track and 2) the track 2D momentum vector at the inner hit of the track extended from the inner hit. The first vertex in the
-\texttt{offlinePrimaryVertexWithBS} collection is selected for all jets in the event.
+The variable $\Theta_{\textrm{2D}}$ is utilized to characterize the recoil angle
+of the tracks from the flight direction of the long lived particle. $\Theta_{\textrm{2D}}$ is defined as the angle between (i) the 2D ray extended from the primary vertex
+to the inner hit of the track and (ii) the track 2D momentum vector at the inner hit of the track extended from the inner hit. The highest sum scalar $p_{\textrm{t}}$ vertex is selected for all jets in the event.
 
-As Standard Model QCD jets do contain long lived particles and tracks associated to conversions,
-a typical jet has a  long tail in its distribution of $\Theta_{2D}$. To minimize the effect of this tail, the median value (2D) is used, $\hat{\Theta}_{2D}$ (for the same reasons as it is used for $2DIP_{sig}$). Additionally, as the range of $\Theta_{2D}$ spans many orders of magnitude near zero a logarithm is 
-applied constraining typical QCD jet values of $-2.5 <\log(\hat{\Theta}_{2D}) < -1$. 
+As Standard Model QCD jets do contain long lived particles and tracks associated with conversions,
+a typical jet has a  long tail in its distribution of $\Theta_{\textrm{2D}}$. To minimize the effect of this tail, the median value (2D)
+is used, $\widehat{\Theta}_{2D}$ (for the same reasons as it is used for $IP_{\textrm{sig}}^{\textrm{2D}}$). Additionally, as the range
+of $\Theta_{\textrm{2D}}$ spans many orders of magnitude near zero a logarithm is applied constraining 
+typical QCD jet values of $-2.5 <\log(\widehat{\Theta}_{2D}) < -1.5$. 
 
 As mentioned previously, the smaller the boost of the particle, the more isotropic the decay angles. Thus, the decays of heavier long-lived particles
- yield larger values of $\Theta_{2D}$. When the lifetime of the particle is small near $1$ mm it is more difficult to resolve this angle because the
-ray's extrapolation backward corresponds to a smaller and smaller distance from the primary vertex .
- As the lifetime approaches a few centimeters the signal is up to 50\% efficient in a nearly background free regime. Background jets capable of passing
-tight $\Theta_{2D}$ requirements typically consist of a single track. 
+yield larger values of $\Theta_{\textrm{2D}}$. When the lifetime of the particle is small near $1$ mm it is more difficult to resolve this angle because the
+ray's extrapolation backward corresponds to a smaller and smaller distance from the primary vertex. Background jets capable of passing strict $\Theta_{\textrm{2D}}$ requirements typically consist of a single track. 
 
-\subsubsection{Jet $\hat{IP}_{\textrm{sig}}^{\textrm{2D}}$}
+\subsubsection{Jet $\widehat{IP}_{\textrm{sig}}^{\textrm{2D}}$}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=.2\textwidth]{figures/pas/DIAGRAMS/ip_diag.pdf}
 \includegraphics[width=.5\textwidth]{figures/pas/SELECTION/76x_pu/DJET_ipsig2d.pdf}
 %\includegraphics[width=.38\textwidth]{FIGS/SELECTION/76x/HT575/ipsig_ht575_76x_linear.pdf}
-\caption{Diagram (left) and Data vs. Monte Carlo comparison (right) for the displaced jet tagging variable $2DIP_{sig}$. 
+\caption{Diagram (left) and Data vs. Monte Carlo comparison (right) for the displaced jet tagging variable $IP_{\textrm{sig}}^{\textrm{2D}}$. 
 The left distribution  shows the quantities collected by the displaced jet triggers with kinematic cuts and $H_T$ trigger
  matching thresholds applied. Signal samples are taken from Jet-Jet interpretation with no generator matching for the signal
- jets, fixed $m_X=700$~GeV and varied proper lifetime $c\tau_0$ in the mother frame. 
+ jets, fixed $m_{X^0}=700$~GeV and varied proper lifetime $c\tau_0$ in the mother frame. 
  \label{fig:2dipsig}}
 \end{center}
 \end{figure}
-
 Variables leveraging the impact parameter information for a given jet are derived from the distribution of impact parameter significances derived
 from the tracks matched to the jet. As background QCD jets contain a long tail from the presence of real displaced tracks with large IP significance,
-the median $2DIP_{sig}$ is chosen: $\hat{IP}^{2D}_{sig}$. For jets originating from displaced decay, most tracks have a large impact parameter 
+the median $IP_{\textrm{sig}}^{\textrm{2D}}$ is chosen: $\widehat{IP}^{\textrm{2D}}_{\textrm{sig}}$. For jets originating from displaced decay, most tracks have a large impact parameter 
 preserving a high median value. 
 
 \begin{table}
 \begin{center}
 \caption{The baseline tag definition in terms of the three displaced jet tagging variables \label{tab:tag_def}}
 \begin{tabular}{ccc}
-\textbf{Variable} & \textbf{$log_{10}(x)$ Requirement} & \textbf{Linear Requirement}\\
+\textbf{Variable} & \textbf{log$_{10}(x)$ Requirement} & \textbf{Linear Requirement}\\
 \hline 
-$\alpha_{max}$  & N/A &  $<5\%$ \\
-$\hat{IP}^{2D}_{sig}$  &  $>1.5$ & $>31.6$ \\
-$\hat{\Theta}_{2D}$  &  $>-1.6$ & $>0.025$
+$\alpha_{\textrm{max}}$  & N/A &  $<5\%$ \\
+$\widehat{IP}{}^{2D}_{sig}$  &  $>1.5$ & $>31.6$ \\
+$\widehat{\Theta}_{2D}$  &  $>-1.6$ & $>0.025$
 \end{tabular}
 \end{center}
 \end{table}
@@ -144,11 +235,11 @@ $\hat{\Theta}_{2D}$  &  $>-1.6$ & $>0.025$
 \caption{The loose tag definition in terms of the three displaced jet tagging variables. \label{tab:loose_tag_def}}
 \begin{center}
 \begin{tabular}{ccc}
-\textbf{Variable} & \textbf{$log_{10}(x)$ Requirement} & \textbf{Linear Requirement}\\
+\textbf{Variable} & \textbf{log$_{10}(x)$ Requirement} & \textbf{Linear Requirement}\\
 \hline 
-$\alpha_{max}$  &  N/A & $<50\%$\\
-$\hat{IP}^{2D}_{sig}$  &  $>0.434$ &  $>2.71$\\
-$\hat{\Theta}_{2D}$  &  $>-1.70$ & $>0.02$ 
+$\alpha_{\textrm{max}}$  &  N/A & $<50\%$\\
+$\widehat{IP}^{2D}_{sig}$  &  $>0.43$ &  $>2.71$\\
+$\widehat{\Theta}_{2D}$  &  $>-1.70$ & $>0.02$ 
 \end{tabular}
 \end{center}
 \end{table}
@@ -170,14 +261,15 @@ Baseline Tag & 0.0496\%\\
 
 \subsection{Tagging Variable Cut Optimization}
 
-The requirements included in the baseline tag definition are determined through a scan of the possible parameter space. The values
-of the tagging variables scanned can be found in Table \ref{tab:scan_space}. Firstly, a scan is performed to determine the optimal 
-selection relative to a figure of merit that is maximal labeled $fom_{max}(x)$ for a given sample $x\in X$ where $X$ is the set of training samples.
-The figure of merit for a given sample $x\in X$ and selection $s_{i} \in S$ is computed as $fom(x,s_i) = \bar{N}(s_i,x)/ \sqrt{\bar{N}(s_i,x) + \hat{N}_b(s_i)}$ where 
+The requirements included in the baseline tag definition are determined through a scan of the relavant parameter space. The values
+of the tagging variables scanned can be found in Table \ref{tab:scan_space}. First, a scan is performed to determine the optimal 
+selection relative to a figure of merit that is maximal labeled $fom_{\textrm{max}}(x)$ for a given sample $x\in X$ where $X$ is a pre-determined set of signals samples.
+ We will refer to these samples as the training set.
+The figure of merit for a given sample $x\in X$ and selection $s_{i} \in S$ is computed as $fom(x,s_i) = \bar{N}(s_i,x)/ \sqrt{\bar{N}(s_i,x) + \widehat{N}_b(s_i)}$ where 
 $\bar{N}$ is the average number of jets tagged per event passing the event selection and $\hat{N}_{b}$ is an estimate number of background events
- in the two tag bin. This estimation $\hat{N}_b$ is the  calculated as the total number of jets tagged in data times the fake rate $\hat{N}_{b}(s_i) = N^{data}_{jets-tagged} \times \frac{N_{jets-tagged}^{data}}{N_{jets}^{data}}$.  
-Once $fom_{max}$ is calculated for every sample and selection we choose the tagging requirements which minimize sum of the differences squared of the figure of merit
-$fom(s_i,x)$ relative to the maximal value $fom_{max}$  Eq. \ref{eq:fom_opt}.
+ in the two tag bin. This estimation $\hat{N}_b$ is the  calculated as the total number of jets tagged in data times the misidentification rate $\hat{N}_{b}(s_i) = N^{data}_{jets-tagged} \times \frac{N_{jets-tagged}^{data}}{N_{jets}^{data}}$.  
+Once $fom_{\textrm{max}}$ is calculated for every sample and selection we choose the tagging requirements which minimize sum of the differences squared of the figure of merit
+$fom(s_i,x)$ relative to the maximal value $fom_{\textrm{max}}$  Eq. \ref{eq:fom_opt}.
 
 \begin{table}
 \caption{The values of the tagging variables included in the scan for selecting the baseline tag definition  \label{tab:scan_space}}
@@ -185,129 +277,43 @@ $fom(s_i,x)$ relative to the maximal value $fom_{max}$  Eq. \ref{eq:fom_opt}.
 \begin{tabular}{ccccc}
 \textbf{Tagging Variable} & \textbf{Begin Scan} & \textbf{End Scan} & \textbf{Step Size} & \textbf{N Points}\\
 \hline 
-$\alpha_{max}$  & 0 &  0.5 & 0.05 & 11\\
-$log_{10}(\hat{IP}^{2D}_{sig})$  & 0.0 & 2.5 & 0.1 & 26\\
-$log_{10}(\hat{\Theta}_{2D})$  &  -2.5 & -0.5 & 0.1 & 21 \\
+$\alpha_{\textrm{max}}$  & 0 &  0.5 & 0.05 & 11\\
+$log_{10}(\widehat{IP}{}^{\textrm{2D}}_{\textrm{sig}})$  & 0.0 & 2.5 & 0.1 & 26\\
+$log_{10}(\widehat{\Theta}_{\textrm{2D}})$  &  -2.5 & -0.5 & 0.1 & 21 \\
 \end{tabular}
 \end{center}
 \end{table}
 
 \begin{equation}
-\chi^2(s_i)  =  \sum_{x\in X} \left (\frac{(fom(s_i,x) - fom_{max}(x))^{2}}{ fom_{max}(x)} \right)
+\chi^2(s_i)  =  \sum_{x\in X} \left (\frac{(fom(s_i,x) - fom_{\textrm{max}}(x))^{2}}{ fom_{\textrm{max}}(x)} \right)
 \label{eq:fom_opt}
 \end{equation}
 
-The training set is chosen as the set of all Jet-Jet samples with $c\tau_0=1,3$~mm. This set is chosen as it is the
- most difficult region for the analysis with the largest upper limit on the excluded cross-section. 
-
-\section{Event selection}
-
-
-A signal is searched for by applying the selection described in
-section~\ref{sec:tagger} and counting the number of tagged displaced
-jets, $N_{\textrm{tags}}$.  In addition to the online and offline
-requirements described in section~\ref{sec:samples}, the analysis
-signal region requires $N_{\textrm{tags}} \geq 2$.  Efficiencies are
-reported for all interpreted models as a function of the lifetime with
-fixed mass (Table \ref{tab:cutflow_300gev} and
-\ref{tab:cutflow_BR_lifetime}) as well as a function of mass with
-fixed lifetime (Table \ref{tab:cutflow_30mm} and
-\ref{tab:cutflow_BR_mass}).
-
-The two classes of events: (i) events passing the inclusive trigger
-algorithm and with $H_{\textrm{T}}>650$~GeV; (ii) events passing the
-exclusive trigger algorithm and with $H_{\textrm{T}}>450$~GeV are
-treated as a single class.  
-
-\input{tables/table-cutflow_anal}
-
-\section{Datasets and simulated samples}
-\label{sec:samples}
-
-Events are collected from two dedicated online selection algorithms,
-designed to identify events with displaced jets.  The algorithms
-consider jets clustered from energy deposits in the calorimeters,
-using the FASTJET~\cite{fastjet} implementation of the
-anti-\textit{k}$_{\textit{t}}$ algorithm~\cite{Cacciari:2008gp}, with
-size parameter $0.4$. Jets with transverse momentum $p_{t}<60~$~GeV or
-$|\eta|>2.0$ are discarded.  An inclusive trigger algorithm accepts
-events when the scalar sum of the jet $p_{t}$'s, $H_{\textrm{T}}$, is
-greater than $500$~GeV and at least two jets with $|\eta|<2.0$ and at
-most two prompt tracks are found. Tracks are classified as prompt if
-their transverse impact parameter relative to the beam line,
-$IP^{\textrm{2D}}$, is less than $1$mm.  Another trigger
-algorithm is used, which requires $H_{\textrm{T}}>350~$~GeV and asks
-that there be two displaced jets each having at least one track with
-transverse impact parameter
-$IP^{\textrm{2D}}>5\sigma_{IP^{\textrm{2D}}}$,
-where $\sigma_{IP^{\textrm{2D}}}$ is the uncertainty on
-$IP^{\textrm{2D}}$. Samples with large $H_{\textrm{T}}$ are used to
-study the performance of the online selection algorithms. 
-
-Events are selected offline requiring at least two jets with
-$p_{t}>60~$~GeV and $|\eta|<2.0$. As for the online selection, the
-offline jet reconstruction is performed clustering energy deposits in
-the calorimeters with the anti-\textit{k}$_{\textit{t}}$ algorithm,
-with jet size parameter of $0.4$. Two classes of events are
-considered: (i) events passing the inclusive trigger algorithm and
-with $H_{\textrm{T}}>650~$~GeV and (ii) events passing the exclusive
-trigger algorithm and with $H_{\textrm{T}}>450~$~GeV. The two classes 
-of events sum to 786,002 unique events passing the event selection.  
-
-The main source of background events originates from multijet
-production. The properties of this background process are studied
-using a simulated multijet sample, generated with
-PYTHIA 8~\cite{Sjostrand:2007gs}. The NNPDF 2.3~\cite{NNPDF23}
-parton distribution functions (PDFs) are used to model the parton
-momentum distribution inside the colliding protons. The event
-simulation includes the effect of multiple proton-proton collisions in
-the same bunch crossing and in bunch crossing nearby in time, referred
-to as pileup. Simulated samples are reweighted to match the pileup
-profile observed in data.
-
-The analysis is interpreted with a set of benchmark signal models.
-The \textbf{Jet-Jet} model predicts pair-produced long-lived
-scalar neutral particles $X^{0}$ \cite{ScalarX}, each decaying to two light quarks u,d,s,c, and b
-with equal probability. The resonance
-mass $m_X$ and proper lifetime $c\tau_0$ are scanned between
-50~and~1500~GeV and between 1~and~2000mm, respectively. The
-trigger efficiencies for a fixed  $m_X=300$ GeV and 
-$c\tau_0 = 1, 30,$ and $1000$ mm are 30\%, 81\%, and 42\%  
- respectively. The trigger efficiencies for a fixed  $c\tau_0=30$
- mm and $m_{X} = 50, 100,$ and $1000$ GeV
- are 2\%, 14\%, and 92\%  respectively.
-
-The \textbf{B-Lepton} model contains pair-produced long-lived top squarks
-in R-parity violating models of Supersymmetry~\cite{DisplacedSUSY}. Each top squark decays
-to one b quark and a lepton. The branching fractions of the
-decay to the three lepton flavors are equal. The
-resonance mass $m_{\tilde{t}}$ and proper lifetime $c\tau_0$ are
-scanned between 300~and~1000GeV and between 1~and~1000mm,
-respectively. The trigger efficiencies for a fixed mass 
-$m_{\tilde{t}}=300$ GeV and $c\tau_0 = 1, 30,$ and $1000$ mm
- are 15\%, 41\%, and 23\%  respectively.
-The trigger efficiencies for  $m_{\tilde{t}} = 500, 700,$ and $1000$ GeV and fixed  $c\tau_0=30$ mm are 64\%, 71\%, and 74\% respectively.
-
-These models are also investigated with modified
-branching fractions.  The \textbf{Light-Light} model is the Jet-Jet
-model excluding decays to b quarks (equal decays to lighter quarks)
-and the \textbf{B-Mu}, \textbf{B-Ele}, and \textbf{B-Tau} models are
-derived from the B-Lepton model with 100\% branching fraction to
-muons, electrons, and taus, respectively.  Leptonic tau decays are included 
-in the \textbf{B-Tau} interpretation. All signal samples are
-generated with PYTHIA, with the setup described above for the
-multijet sample. 
+The training set is chosen as the set of all Jet-Jet samples $m_{X^0}=50\ldots 1500$ GeV with $c\tau_0=1,3$~mm. 
+This set is chosen as it is the most difficult region for the analysis with the largest upper limit on the excluded cross-section.
 
 
 \section{Background prediction}
 \label{sec:bkg}
 
+\begin{figure}
+\begin{center}
+\includegraphics[width=.6\textwidth]{pics/nuclear_interactions}\\
+\includegraphics[width=.6\textwidth]{pics/signal_vertices}
+\caption{From the tracks associated with a calorimeter jet pairs of oppositely charged tracks are fit to a secondary vertex. These vertices are then overlayed from
+many events. The top figure shows these vertices in data. The bottom figure shows them for simulated signal. The simulated signal shows that including all combinatorial
+pairs of track vertices can produce clusters of vertices and distinct X patterns along the jet axes where the decay occurs. \label{fig:nuclear}}
+\end{center}
+\end{figure}
+
 As typical multijets contain only a sub dominant fraction of real displaced tracks,
-jets with a small multiplicity of tracks represent the dominant background.
+jets with a small multiplicity of tracks represent the dominant background. These tracks can occur from K Short or Lambdas decays, photon conversions, and/or 
+from nuclear interactions with the detector material. Figure \ref{fig:nuclear} shows vertices fit from pairs of oppositely charged
+displaced tracks overlaid from many events. The detector elements of the tracker as well as the beam pipe are clearly visible. 
 As the tagging criteria utilize averages of all tracks matched to the jet, the likelihood of tagging a fake decreases exponentially with $N_\textrm{tracks}$. 
 
  Figure~\ref{fig:fake_rate} shows the fraction of jets that are tagged as displaced 
-jets in data as a function of the number of tracks associated with the jet $N_\textrm{tracks}$.  
+jets in data as a function of the number of tracks associated with the jet, $N_\textrm{tracks}$.  
  This function is the misidentification rate of tagging a prompt jet as displaced (up to possible
  signal contamination)  and is interpreted as the probability  $p(N_\text{tracks})$ of being tagged. This
  parameterization allows for a representative estimation, event by event, of the probability of
@@ -322,7 +328,7 @@ $N_{\textrm{tags}} \geq 2$. Additionally, this limits signal contamination in th
 The control sample of $N_{\textrm{tags}}=1$ includes 1391 events. 
 
 The size of the bias introduced by only measuring the misidentification rate in  
-events with $N_\textrm{tags}\leq 1$ is quantifiable. For the nominal tag the size
+events with $N_\textrm{tags}\leq 1$ is quantifiable. For the nominal tag, the size
 of the effect of removing these events on the predicted number of
 two tag events is negligible (0.4\%)
 compared to the statistical uncertainty of the prediction.
@@ -372,13 +378,13 @@ Let $q_i$ be the misidentification rate corresponding to a jet with $i$ tracks a
  The statistical error $\sigma_{q_i}$ in the misidentification rate is propagated to 
 an error on the number of tagged events with $N_{tags} = 1,2,3,\ldots$
 \begin{align*}
-\sigma_{N_{n-tags}^{events}}^2 &=  \sum_{i = 1}^{N_{tracks}} \left (\frac{\partial N_{n-tags}^{events}}{\partial q_i}  \sigma_{q_i} \right)^{2} \\
- &=  \sum_{i = 1}^{N_{tracks}} \left ( \left (\sum_{m\in N_{events}} \frac{\partial P^m(N_{tags}=n)}{\partial q_i} \right) \sigma_{q_i} \right)^{2} 
+\sigma_{N_{\textrm{events}}(N_{\textrm{tags}})}^2 &=  \sum_{i = 1}^{N_{\textrm{tracks}}} \left (\frac{\partial N_{\textrm{events}}(N_{\textrm{tags}})}{\partial q_i}  \sigma_{q_i} \right)^{2} \\
+ &=  \sum_{i = 1}^{N_{\textrm{tracks}}} \left ( \left (\sum_{m\in N_{\textrm{events}}} \frac{\partial P^m(N_{\textrm{tags}}=n)}{\partial q_i} \right) \sigma_{q_i} \right)^{2} 
 \label{eq:ntag_prob_error}
 \end{align*}
 
-The probability is determined for each event for $N_{tags} \leq N_{jets}$. The predicted number of events with
-$N_{tags}$ is calculated as the sum over all events Eq. \ref{eq:ntag_calc}. 
+The probability is determined for each event for $N_{\textrm{tags}} \leq N_{\textrm{jets}}$. The predicted number of events with
+$N_{tags}$ is calculated as the sum over all events.
 
 We validate this procedure in the absence (background-only test) and
 presence (signal-injection test) of a signal, using simulated events.
@@ -392,8 +398,9 @@ event selection is divided into multiple independent samples and the background
 prediction validated. The predicted background of $N_{\textrm{tags}}$ events
 in simulated multijet events is found to be consistent within statistical uncertainty. 
 
-\input{signal_injection}
+\input{signal_removal}
 \input{cross_validation}
+\input{signal_injection}
 
 \section{Systematic uncertainties}
 \label{sec:sys}
@@ -429,8 +436,8 @@ $H_{\textrm{T}}$ trigger. The observed difference at threshold (5\%)
 is taken as an estimate of the uncertainty in the emulation of the
 online $H_{\textrm{T}}$ requirement.  Similarly, the uncertainty
 induced by the online versus offline jet acceptance is obtained from
-the shift in the trigger efficiency when the offline jet $p_{t}$
-requirement is increased from $p_{t}>60$ GeV to $p_{t}>80$ GeV (5\%).
+the shift in the trigger efficiency when the offline jet $p_{\textrm{t}}$
+requirement is increased from $p_{\textrm{t}}>60$ GeV to $p_{\textrm{t}}>80$ GeV (5\%).
 
 The systematic uncertainty on the luminosity is 2.7\% \cite{LUMI}.
 
@@ -440,7 +447,7 @@ The systematic uncertainty on the luminosity is 2.7\% \cite{LUMI}.
 \includegraphics[width=.70\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_pdf.pdf}
 \includegraphics[width=.70\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_pdf_dsusy.pdf}
 \caption{The PDF acceptance  systematics in the Jet-Jet (left)
- and B-Lepton (right) signal model as a function of the mass $m_X$ 
+ and B-Lepton (right) signal model as a function of the mass $m_{X^0}$ 
 or $c\tau_0$ for the 2 tag bin. The systematic is reported two sided 
 for the two tag bin in the analysis. The error to fluctuate up is in
  the upper half plane and the error to fluctuate down on the lower half plane.  \label{fig:pdf_sys}}
@@ -448,7 +455,7 @@ for the two tag bin in the analysis. The error to fluctuate up is in
 \end{figure}
 
 The uncertainty arising from the PDFs for pair-produced masses in the
-range of 50--1500GeV is found to be 1--6\% Figure \ref{fig:pdf_sys}.  An ensemble of
+range of 50--1500 GeV is found to be 1--6\% (Figure \ref{fig:pdf_sys}).  An ensemble of
 alternative PDF is sampled from the output of the NNPDF fit.  Events
 are reweighted according to the ratio between these alternative PDF
 sets and the nominal ones. The distribution of the signal prediction
@@ -458,9 +465,10 @@ for these PDF ensemble is used to quantify the uncertainty.
 \begin{center}
 \includegraphics[width=.70\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_hlt.pdf}
 \includegraphics[width=.70\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_hlt_dsusy.pdf}
-\caption{The onling tracking related systematics in the Jet-jet (top) and B-Lepton
- (bottom)  model as a function of $c\tau_0$. (Top) The online track 2DIP and
- 2DIP$_{sig}$ modeling in the 2 tag bin   \label{fig:online_tracking_sys}}
+\caption{The onling tracking related systematics in the Jet-Jet (top) and B-Lepton
+ (bottom)  model as a function of $c\tau_0$. The online track $IP_{\textrm{2D}}$ 
+and $IP_{\textrm{sig}}^{\textrm{2D}}$ modeling in the 2 tag bin.
+ \label{fig:online_tracking_sys}}
 \end{center}
 \end{figure}
 
@@ -469,7 +477,8 @@ for these PDF ensemble is used to quantify the uncertainty.
 \begin{center}
 \includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/76x_pu/SYS_offline_theta.pdf}
 \includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/76x_pu/SYS_offline_2dipsig.pdf}
-\caption{Comparison of the offline $\theta$ and 2DIP$_{sig}$ for individual tracks associated to jets passing $p_{T} > 60$ GeV and $|\eta| <2.0$ as collected by  \texttt{HLT\_HT425}.   \label{fig:variable_modeling}} 
+\caption{A comparison of the offline $\theta_{\textrm{2D}}$ and $IP_{\textrm{sig}}^{\textrm{2D}}$ for individual tracks associated to jets passing
+ $p_{\textrm{t}} > 60$ GeV and $|\eta| <2.0$ as collected by $H_{\textrm{T}}$ control triggers. \label{fig:variable_modeling}} 
 \end{center}
 \end{figure}
 
@@ -477,8 +486,9 @@ for these PDF ensemble is used to quantify the uncertainty.
 \begin{center}
 \includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/REGIONAL_SYSTEMATIC/2dipsig_regional_systematic.pdf}
 \includegraphics[width=.45\textwidth]{figures/an/SYSTEMATICS/REGIONAL_SYSTEMATIC/2dip_regional_systematic.pdf}
-\caption{Comparison of the online 2DIP and 2DIP$_{sig}$ for individual tracks associated to jets passing $p_{T} > 60$ GeV and $|\eta| <2.0$ as collected by  \texttt{HLT\_HT425}. For each variable $x$ the value is scaled as $x(1\pm\Delta)$ with positive in red and the negative in blue. A re-scaling of $+10/-45$ and $+20/-50$ for
-2DIP$_{sig}$ and 2DIP respectively provide an envelope for the DATA/MC differences  \label{fig:regional_modeling}}
+\caption{A comparison of the online $IP^{\textrm{2D}}$ and $IP_{\textrm{sig}}^{\textrm{2D}}$ for individual tracks associated to jets passing $p_{\textrm{t}} > 60$ GeV and $|\eta| <2.0$ as collected by $H_{\textrm{T}}$ control triggers. For each variable $x$ the value is scaled as $x(1\pm\Delta)$ with positive in red and the negative in blue. A re-scaling of $+10/-45$ and $+20/-50$ for
+$IP_{\textrm{sig}}^{\textrm{2D}}$ and $IP^{\textrm{2D}}$ respectively
+ provide an envelope for the Data/MC differences.  \label{fig:regional_modeling}}
 \end{center}
 \end{figure}
 
@@ -486,8 +496,8 @@ for these PDF ensemble is used to quantify the uncertainty.
 \begin{center}
 \includegraphics[width=.70\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_tracking.pdf}
 \includegraphics[width=.70\textwidth]{figures/an/SYSTEMATICS/76x_pu/sys_2tag_tracking_dsusy.pdf}
-\caption{The two tracking related systematics in the Jet-Jet (top) and B-Lepton
- (bottom)  model as a function of $c\tau_0$.  The displaced jet tagging variable 
+\caption{(top) Jet-Jet and (bottom) B-Lepton
+model as a function of $c\tau_0$.  The displaced jet offline tagging variable 
 systematic in the 2 tag bin. The systematic is reported two sided for the two tag
  bin in the analysis. The error to fluctuate up is in the upper half plane and the
  error to fluctuate down on the lower half plane.  \label{fig:offline_tracking_sys}}
@@ -505,7 +515,7 @@ re-calculated.  The $N_{\textrm{tags}}$ distribution is recalculated
 with the new values. The systematic uncertainty is assigned as the
 relative change in events, bin by bin in $N_{\textrm{tags}}$. For the
 two tag bin, this varies from 1 to 30\% depending on the mass and
-lifetime Figure \ref{fig:offline_tracking_sys}. The mismodeling of
+lifetime (Figure \ref{fig:offline_tracking_sys}). The mismodeling of
  $\alpha_{\textrm{max}}$ is found to have a negligible effect on the
  signal efficiency as the requirement is relatively loose.
 
@@ -513,14 +523,14 @@ The systematic uncertainty on the modeling of the online tracking
 efficiency is obtained by studying the online regional track
 reconstruction in data and MC. The online values of $IP^{\textrm{2D}}$
 and $IP^{\textrm{2D}}_{\textrm{sig}}$ are varied by the magnitude of
-the mismodeling found in events collected in control triggers.  The
-new values are used to determine if the event would still pass at
+the mismodeling found in events collected in control triggers (Figure \ref{fig:variable_modeling}).  The new values are used to determine if the
+ event would still pass at
 least one of the trigger paths and its associated offline
 $H_{\textrm{T}}$ requirement. The $N_{\textrm{tags}}$ distribution is
 recalculated with the values varied up and down. The relative change
 in the number of events per bin is taken as the systematic
 uncertainty. For the two tag bin, this uncertainty varies from
-1 to 35\%.
+1 to 35\% (Figure \ref{fig:online_tracking_sys}).
 
 All signal systematic uncertainties are calculated individually for
 each model for all individual mass and lifetime points, and for each
@@ -536,7 +546,7 @@ value of $N_\text{tags}$ in the signal region.
 \textbf{Signal systematic uncertainty} & \textbf{Effect on yield} \\
 \hline
 $H_{\textrm{T}}$ trigger inefficiency &  5.0\% \\
-Jet $p_{t}$ trigger inefficiency  & 5.0\% \\
+Jet $p_{\textrm{t}}$ trigger inefficiency  & 5.0\% \\
 Trigger online tracking modeling & 1.0--35.0\% \\
 Luminosity & 2.7\% \\
 Acceptance due to PDF & 1.0--6.0\% \\
@@ -570,6 +580,28 @@ be consistent with the predicted background, within the statistical
 and systematic uncertainties. No evidence for a signal at large values
 of $N_{\textrm{tags}}$ is observed. 
 
+The single observed event with two tagged jets is shown in Figure \ref{fig:candidate_r} and Figure \ref{fig:candidate_rz}. The event has an $H_{\textrm{T}} = 951$ GeV. 
+Both tagged jets have only one track. As jets with one associated track have the highest misidentification rate, 
+this event would be typical of background events. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.85\textwidth]{pics/signal_r_zoom}
+\caption{The candidate signal event with $N_{\textrm{tags}} = 2$ from a radial view. The two tagged jets and their corresponding tracks are highlighted in purple.
+Here one can see the three pixel layers. 
+\label{fig:candidate_r}}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.70\textwidth]{pics/signal_r}
+\includegraphics[width=.85\textwidth]{pics/signal_z}
+\caption{The candidate signal event with $N_{\textrm{tags}} = 2$ from a (top) radial (bottom) longitudinal view. 
+The two tagged jets and their corresponding tracks are highlighted in purple. \label{fig:candidate_rz}}
+\end{center}
+\end{figure}
+
 Exclusions for each model are obtained from the predicted and observed
 event yields in Table~\ref{tab:result} and the signal efficiencies in
 Tables~\ref{tab:cutflow_30mm}--\ref{tab:cutflow_BR_mass}.  All bounds
@@ -582,7 +614,7 @@ is found to have a negligible affect on the expected limits.
 Cross section upper limits are
  presented as a function of the
 mass and lifetime of the parent particle.  The analysis sensitivity is
-maximal for $(10 < c\tau_0 < 1000)$mm. Mass exclusion bounds at
+maximal for $(10 < c\tau_0 < 1000)$ mm. Mass exclusion bounds at
 fixed lifetime are also derived, comparing the excluded cross section
 with the values predicted for the benchmark models described in
 section~\ref{sec:samples}. In the case of SUSY models, the
@@ -600,9 +632,9 @@ final states, as shown in Fig.~\ref{fig:dsusy_limit_lepton}. The
 sensitivity is similar to what is observed for the Jet-Jet model,
 although less stringent as additional jets give higher efficiency than
 additional leptons from both the tagging and triggering
-perspectives. Cross sections larger than 2.47 fb are excluded at 95\%
+perspectives. Cross sections larger than 2.5 fb are excluded at 95\%
 CL, for $c\tau_0$ in the range $70$--$100$~mm excluding a
-parent mass value of 1135~GeV.  
+parent mass value of 1130~GeV.  
 
 Figures~\ref{fig:dsusy_limit_tau}~and~\ref{fig:dsusy_limit_ele} show
 the exclusions on the B-Tau and B-Ele models, respectively. The two
@@ -610,8 +642,8 @@ models have similar performance at high mass  with slightly stronger limits
 for the B-Ele model at lower
 mass $m_{\tilde{t}}=300$~GeV and lifetimes $c\tau_0>10$mm. The
 highest mass excluded in the B-Ele (B-Tau) model occurs at
-$m_{\tilde{t}}=1150$ (1155)GeV and $c\tau_0=70$ (70)mm at an
-observed cross section upper limit of 2.25 (2.17) fb at 95\% CL.
+$m_{\tilde{t}}=1145$ (1150) GeV and $c\tau_0=70$ (70)mm at an
+observed cross section upper limit of 2.3 (2.2) fb at 95\% CL.
 
 In contrast, Fig.~\ref{fig:dsusy_limit_mu} shows the exclusion for the
 B-Mu model. Since the analysis uses jets reconstructed from
@@ -619,14 +651,14 @@ calorimetric deposits while the two muons have small or no associated
 calorimeter deposit, the signal reconstruction efficiency and
 displaced-jet multiplicity are smaller in this case. This results in a
 weaker exclusion bound.  The highest mass excluded in the B-Mu model
-occurs at $m_{\tilde{t}}=1090$~GeV and $c\tau_0=70$mm at an
-observed cross section upper limit of 3.36 fb at 95\% CL.
+occurs at $m_{\tilde{t}}=1085$~GeV and $c\tau_0=70$mm at an
+observed cross section upper limit of 3.5 fb at 95\% CL.
 
 \begin{figure}[tb]
 \begin{center}
 
 \includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/Jet-Jet2D.pdf}
-\includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/Jet-Jet.pdf}
+\includegraphics[width=.85\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/Jet-Jet.pdf}
 \caption{The excluded cross section at 95\% CL for the Jet-Jet model
   as a function of the mass and lifetime of the parent particle $X^0$
   (top) and as a function of the lifetime for four values of the mass
@@ -637,7 +669,7 @@ observed cross section upper limit of 3.36 fb at 95\% CL.
 \begin{figure}[tb]
 \begin{center}
 \includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/Light-Light2D.pdf}
-\includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/Light-Light.pdf}
+\includegraphics[width=.85\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/Light-Light.pdf}
 \caption{The excluded cross section at 95\% CL for the Light-Light
   model as a function of the mass and lifetime of the parent particle
   $X^0$ (top) and as a function of the lifetime for four values of the
@@ -648,7 +680,7 @@ observed cross section upper limit of 3.36 fb at 95\% CL.
 \begin{figure}[tb]
 \begin{center}
 \includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Lepton2D.pdf}
-\includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Lepton.pdf}
+\includegraphics[width=.85\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Lepton.pdf}
 \caption{The excluded cross section at 95\% CL for the B-Lepton model
   as a function of the mass and lifetime of the parent particle
   $\tilde{t}$ (top) and as a function of the lifetime for two values
@@ -661,7 +693,7 @@ observed cross section upper limit of 3.36 fb at 95\% CL.
 \begin{figure}[tb]
 \begin{center}
 \includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Tau2D.pdf}
-\includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Tau.pdf}
+\includegraphics[width=.85\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Tau.pdf}
 \caption{The excluded cross section at 95\% CL for the B-Tau model as
   a function of the mass and lifetime of the parent particle
   $\tilde{t}$ (top) and as a function of the lifetime for two values
@@ -674,10 +706,10 @@ observed cross section upper limit of 3.36 fb at 95\% CL.
 \begin{figure}[tb]
 \begin{center}
 \includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Ele2D.pdf}
-\includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Ele.pdf}
+\includegraphics[width=.85\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Ele.pdf}
 \caption{ The excluded cross section at 95\% CL for the B-Ele model as
   a function of the mass and lifetime of the parent particle
-  $\tilde{t}$ (top) and as a function of the lifetime for four values
+  $\tilde{t}$ (top) and as a function of the lifetime for two values
   of the mass (bottom).  The bottom plot also shows the expected upper
   limits with one standard deviation
   uncertainties.\label{fig:dsusy_limit_ele}}
@@ -687,10 +719,10 @@ observed cross section upper limit of 3.36 fb at 95\% CL.
 \begin{figure}[tb]
 \begin{center}
 \includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Mu2D.pdf}
-\includegraphics[width=.75\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Mu.pdf}
+\includegraphics[width=.85\textwidth]{figures/pas//RESULT/UNBLINDED_LIMITS/B-Mu.pdf}
 \caption{ The excluded cross section at 95\% CL for the B-Mu model as
   a function of the mass and lifetime of the parent particle
-  $\tilde{t}$ (top) and as a function of the lifetime for four values
+  $\tilde{t}$ (top) and as a function of the lifetime for two values
   of the mass (bottom).  The bottom plot also shows the expected upper
   limits with one standard deviation
   uncertainties.\label{fig:dsusy_limit_mu}}

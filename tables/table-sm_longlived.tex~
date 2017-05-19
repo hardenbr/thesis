@@ -1,7 +1,7 @@
 \begin{table}
 \begin{center}
 \begin{tabular}{cccccc}
-\textbf{Name}  & \textbf{Content}                                    & \textbf{Particle}    & \textbf{Mass} (MeV) & $\tau_{0}$ (sec)  & c$\tau$ (cm)         \\
+\textbf{Name}  & \textbf{Content}                                    & \textbf{Particle}    & \textbf{Mass} [MeV] & $\tau_{0}$ [sec]  & c$\tau$ [cm]         \\
 \hline 
 Pion & $u\bar{d}$                                  & $\pi^{\pm}$ & 139        & $2.6 \times 10^{-8}$       & $7.8 \times 10^{2}$  \\
 \hline 
@@ -16,7 +16,7 @@ strange B  & $s\bar{b}$                                 & $B^{0}_s$   & 5366    
 charmed B  & $c\bar{b}$                                 & $B^{0}_c$   & 6275       & $4.5\times 10^{-13}$       & $1.4 \times 10^{-2}$ \\
 \end{tabular}
 \end{center}
-\caption{Mesons with proper lifetimes greater than $10^{-2}$ cm} 
+\caption{Mesons with proper lifetimes greater than $10^{-2}$ cm.} 
 \label{tab:mesons}
 \end{table}
 
@@ -42,6 +42,6 @@ bottom Omega  & $ssb$   & $\Omega_b^-$  & 6054       & $1.13 \times 10^{-12}$   
 Omega minus   & $sss$   & $\Omega^-$    & 1672       & $8 \times 10^{-11}$      & 2.4                  \\
 \end{tabular}
 \end{center}
-\caption{Baryons with proper lifetimes greater than $10^{-2}$ cm} 
+\caption{Baryons with proper lifetimes greater than $10^{-2}$ cm.} 
 \label{tab:baryons}
 \end{table}
